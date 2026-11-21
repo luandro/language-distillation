@@ -1,0 +1,82 @@
+{
+  "$defs": {
+    "AccessClass": {
+      "enum": [
+        "public",
+        "community",
+        "restricted",
+        "highly_restricted"
+      ],
+      "title": "AccessClass",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:source-object:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "access_class": {
+      "$ref": "#/$defs/AccessClass"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^sobj_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "media_type": {
+      "pattern": "^[a-z]+/[a-z0-9.+-]+$",
+      "title": "Media Type",
+      "type": "string"
+    },
+    "origin_uri": {
+      "pattern": "^file:///",
+      "title": "Origin Uri",
+      "type": "string"
+    },
+    "original_path": {
+      "title": "Original Path",
+      "type": "string"
+    },
+    "registration_run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Registration Run Id",
+      "type": "string"
+    },
+    "sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Sha256",
+      "type": "string"
+    },
+    "size_bytes": {
+      "minimum": 0,
+      "title": "Size Bytes",
+      "type": "integer"
+    },
+    "source_id": {
+      "pattern": "^src_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Source Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "source_id",
+    "original_path",
+    "origin_uri",
+    "sha256",
+    "size_bytes",
+    "media_type",
+    "access_class",
+    "registration_run_id",
+    "created_at"
+  ],
+  "title": "SourceObject",
+  "type": "object",
+  "x-schema-name": "source-object",
+  "x-schema-version": 1
+}

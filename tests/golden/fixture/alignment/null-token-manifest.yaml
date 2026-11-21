@@ -1,0 +1,16 @@
+manifest_version: 1
+key: golden-null-token
+title: Synthetic token alignment null challenge
+source_type: parallel_text
+languages: [qaa, por]
+provenance:
+  acquired_from: synthetic
+acquired_at: "2026-01-01T00:00:00Z"
+policy:
+  mode: direct
+  access_class: public
+  authority: synthetic fixture steward
+  allow: [ingest, extract, normalize, align, evaluation]
+objects:
+  - path: null-token.tsv
+    media_type: text/tab-separated-values

@@ -1,0 +1,157 @@
+{
+  "decisions": {
+    "dec:T1": {
+      "kind": "accept",
+      "notes": null,
+      "reviewer_id": "golden-reviewer",
+      "reviewer_role": "golden_lexicographer",
+      "superseding": null,
+      "target": "sense:03-wordlist:mabi:canoa",
+      "task": "task:T1"
+    },
+    "dec:T2": {
+      "kind": "reject",
+      "notes": null,
+      "reviewer_id": "golden-reviewer",
+      "reviewer_role": "golden_lexicographer",
+      "superseding": null,
+      "target": "sense:03-wordlist:mabi:tronco",
+      "task": "task:T2"
+    },
+    "dec:T3": {
+      "kind": "accept",
+      "notes": null,
+      "reviewer_id": "golden-reviewer",
+      "reviewer_role": "golden_lexicographer",
+      "superseding": null,
+      "target": "lex:03-wordlist:mabi",
+      "task": "task:T3"
+    },
+    "dec:T4": {
+      "kind": "accept",
+      "notes": null,
+      "reviewer_id": "golden-reviewer",
+      "reviewer_role": "golden_lexicographer",
+      "superseding": null,
+      "target": "lex:golden-lexicon-export:nawa",
+      "task": "task:T4"
+    },
+    "dec:T5": {
+      "kind": "accept",
+      "notes": null,
+      "reviewer_id": "golden-reviewer",
+      "reviewer_role": "golden_lexicographer",
+      "superseding": null,
+      "target": "sense:golden-lexicon-export:nawa:rio",
+      "task": "task:T5"
+    },
+    "dec:T6": {
+      "kind": "accept",
+      "notes": null,
+      "reviewer_id": "golden-reviewer",
+      "reviewer_role": "golden_lexicographer",
+      "superseding": null,
+      "target": "lex:01-parallel-distill:rumi",
+      "task": "task:T6"
+    },
+    "dec:T7": {
+      "kind": "accept",
+      "notes": null,
+      "reviewer_id": "golden-reviewer",
+      "reviewer_role": "golden_lexicographer",
+      "superseding": null,
+      "target": "sense:01-parallel-distill:rumi:pajé",
+      "task": "task:T7"
+    }
+  },
+  "tasks": {
+    "task:T1": {
+      "evidence": [],
+      "priority": 1.0,
+      "reason": "Lexical candidate review",
+      "required_role": "golden_lexicographer",
+      "run": "run:review:T1",
+      "status": "resolved",
+      "target": "sense:03-wordlist:mabi:canoa",
+      "type": "lexical_sense"
+    },
+    "task:T2": {
+      "evidence": [],
+      "priority": 1.0,
+      "reason": "Lexical candidate review",
+      "required_role": "golden_lexicographer",
+      "run": "run:review:T2",
+      "status": "resolved",
+      "target": "sense:03-wordlist:mabi:tronco",
+      "type": "lexical_sense"
+    },
+    "task:T3": {
+      "evidence": [
+        "ev:lex:03-wordlist:mabi:1",
+        "ev:lex:03-wordlist:mabi:2"
+      ],
+      "priority": 1.0,
+      "reason": "Lexical candidate review",
+      "required_role": "golden_lexicographer",
+      "run": "run:review:T3",
+      "status": "resolved",
+      "target": "lex:03-wordlist:mabi",
+      "type": "lexical_sense"
+    },
+    "task:T4": {
+      "evidence": [
+        "ev:lex:golden-lexicon-export:nawa:1"
+      ],
+      "priority": 1.0,
+      "reason": "Lexical candidate review",
+      "required_role": "golden_lexicographer",
+      "run": "run:review:T4",
+      "status": "resolved",
+      "target": "lex:golden-lexicon-export:nawa",
+      "type": "lexical_sense"
+    },
+    "task:T5": {
+      "evidence": [],
+      "priority": 1.0,
+      "reason": "Lexical candidate review",
+      "required_role": "golden_lexicographer",
+      "run": "run:review:T5",
+      "status": "resolved",
+      "target": "sense:golden-lexicon-export:nawa:rio",
+      "type": "lexical_sense"
+    },
+    "task:T6": {
+      "evidence": [
+        "ev:lex:01-parallel-distill:rumi:1",
+        "ev:lex:01-parallel-distill:rumi:2"
+      ],
+      "priority": 1.0,
+      "reason": "Lexical candidate review",
+      "required_role": "golden_lexicographer",
+      "run": "run:review:T6",
+      "status": "resolved",
+      "target": "lex:01-parallel-distill:rumi",
+      "type": "lexical_sense"
+    },
+    "task:T7": {
+      "evidence": [],
+      "priority": 1.0,
+      "reason": "Lexical candidate review",
+      "required_role": "golden_lexicographer",
+      "run": "run:review:T7",
+      "status": "resolved",
+      "target": "sense:01-parallel-distill:rumi:pajé",
+      "type": "lexical_sense"
+    },
+    "task:T8": {
+      "evidence": [],
+      "priority": 1.0,
+      "reason": "Lexical candidate review",
+      "required_role": "golden_lexicographer",
+      "run": "run:review:T8",
+      "status": "open",
+      "target": "sense:03-wordlist:rumi:pajé",
+      "type": "lexical_sense"
+    }
+  }
+}

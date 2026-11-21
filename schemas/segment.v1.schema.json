@@ -1,0 +1,113 @@
+{
+  "$defs": {
+    "SegmentStatus": {
+      "enum": [
+        "ok",
+        "normalization_failed"
+      ],
+      "title": "SegmentStatus",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:segment:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^seg_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "language": {
+      "pattern": "^[a-z]{3}$",
+      "title": "Language",
+      "type": "string"
+    },
+    "locator": {
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer"
+          }
+        ]
+      },
+      "title": "Locator",
+      "type": "object"
+    },
+    "normalization_profile": {
+      "anyOf": [
+        {
+          "pattern": "^[a-z0-9][a-z0-9_.-]*@[0-9A-Za-z_.-]+$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Normalization Profile"
+    },
+    "normalized_text": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Normalized Text"
+    },
+    "ordinal": {
+      "minimum": 0,
+      "title": "Ordinal",
+      "type": "integer"
+    },
+    "raw_text": {
+      "title": "Raw Text",
+      "type": "string"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "source_id": {
+      "pattern": "^src_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "source_object_id": {
+      "pattern": "^sobj_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Source Object Id",
+      "type": "string"
+    },
+    "status": {
+      "$ref": "#/$defs/SegmentStatus",
+      "default": "ok"
+    }
+  },
+  "required": [
+    "id",
+    "source_id",
+    "source_object_id",
+    "run_id",
+    "ordinal",
+    "language",
+    "raw_text",
+    "created_at"
+  ],
+  "title": "Segment",
+  "type": "object",
+  "x-schema-name": "segment",
+  "x-schema-version": 1
+}

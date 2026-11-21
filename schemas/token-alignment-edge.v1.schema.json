@@ -1,0 +1,103 @@
+{
+  "$defs": {
+    "AlignmentDirection": {
+      "enum": [
+        "forward",
+        "reverse",
+        "symmetrized"
+      ],
+      "title": "AlignmentDirection",
+      "type": "string"
+    },
+    "Symmetrization": {
+      "enum": [
+        "none",
+        "intersection",
+        "union"
+      ],
+      "title": "Symmetrization",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:token-alignment-edge:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "One directional token-pair link inside a segment alignment group.",
+  "properties": {
+    "algorithm": {
+      "pattern": "^[a-z0-9][a-z0-9_.-]*@[0-9A-Za-z_.-]+$",
+      "title": "Algorithm",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "direction": {
+      "$ref": "#/$defs/AlignmentDirection"
+    },
+    "id": {
+      "pattern": "^tal_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "raw_scores": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Raw Scores",
+      "type": "object"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "score": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Score"
+    },
+    "segment_alignment_id": {
+      "pattern": "^sal_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Segment Alignment Id",
+      "type": "string"
+    },
+    "source_token_id": {
+      "pattern": "^tok_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Source Token Id",
+      "type": "string"
+    },
+    "symmetrization": {
+      "$ref": "#/$defs/Symmetrization"
+    },
+    "target_token_id": {
+      "pattern": "^tok_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Target Token Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "segment_alignment_id",
+    "source_token_id",
+    "target_token_id",
+    "direction",
+    "algorithm",
+    "symmetrization",
+    "run_id",
+    "created_at"
+  ],
+  "title": "TokenAlignmentEdge",
+  "type": "object",
+  "x-schema-name": "token-alignment-edge",
+  "x-schema-version": 1
+}

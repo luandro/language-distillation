@@ -1,0 +1,190 @@
+[
+  {
+    "code_revision": "<rev>",
+    "config": {},
+    "config_hash": "<hash>",
+    "error_message": null,
+    "error_type": null,
+    "finished_at": "<ts>",
+    "id": "run:raw_ingestion:01-parallel-distill",
+    "random_seed": null,
+    "run_key": "<hash>",
+    "stage": "raw_ingestion",
+    "started_at": "<ts>",
+    "status": "succeeded",
+    "tool_name": "langpipe.ingest",
+    "tool_version": "<ver>"
+  },
+  {
+    "code_revision": "<rev>",
+    "config": {},
+    "config_hash": "<hash>",
+    "error_message": null,
+    "error_type": null,
+    "finished_at": "<ts>",
+    "id": "run:raw_ingestion:02-educational-direct",
+    "random_seed": null,
+    "run_key": "<hash>",
+    "stage": "raw_ingestion",
+    "started_at": "<ts>",
+    "status": "succeeded",
+    "tool_name": "langpipe.ingest",
+    "tool_version": "<ver>"
+  },
+  {
+    "code_revision": "<rev>",
+    "config": {},
+    "config_hash": "<hash>",
+    "error_message": null,
+    "error_type": null,
+    "finished_at": "<ts>",
+    "id": "run:raw_ingestion:03-wordlist",
+    "random_seed": null,
+    "run_key": "<hash>",
+    "stage": "raw_ingestion",
+    "started_at": "<ts>",
+    "status": "succeeded",
+    "tool_name": "langpipe.ingest",
+    "tool_version": "<ver>"
+  },
+  {
+    "code_revision": "<rev>",
+    "config": {},
+    "config_hash": "<hash>",
+    "error_message": null,
+    "error_type": null,
+    "finished_at": "<ts>",
+    "id": "run:raw_ingestion:04-igt",
+    "random_seed": null,
+    "run_key": "<hash>",
+    "stage": "raw_ingestion",
+    "started_at": "<ts>",
+    "status": "succeeded",
+    "tool_name": "langpipe.ingest",
+    "tool_version": "<ver>"
+  },
+  {
+    "code_revision": "<rev>",
+    "config": {},
+    "config_hash": "<hash>",
+    "error_message": null,
+    "error_type": null,
+    "finished_at": "<ts>",
+    "id": "run:raw_ingestion:05-monolingual",
+    "random_seed": null,
+    "run_key": "<hash>",
+    "stage": "raw_ingestion",
+    "started_at": "<ts>",
+    "status": "succeeded",
+    "tool_name": "langpipe.ingest",
+    "tool_version": "<ver>"
+  },
+  {
+    "code_revision": "<rev>",
+    "config": {
+      "manifest_sha256": "627545b634345f5d28d841ae9478b5115d939d5d3661e7ef78658a84c85ed24d"
+    },
+    "config_hash": "<hash>",
+    "error_message": null,
+    "error_type": null,
+    "finished_at": "<ts>",
+    "id": "run:source_registration:01-parallel-distill",
+    "random_seed": null,
+    "run_key": "<hash>",
+    "stage": "source_registration",
+    "started_at": "<ts>",
+    "status": "succeeded",
+    "tool_name": "langpipe.register",
+    "tool_version": "<ver>"
+  },
+  {
+    "code_revision": "<rev>",
+    "config": {
+      "manifest_sha256": "ad41b904677ab035f65139b362d6085b4e31a98bac7aeb88462ef5fd30d930dd"
+    },
+    "config_hash": "<hash>",
+    "error_message": null,
+    "error_type": null,
+    "finished_at": "<ts>",
+    "id": "run:source_registration:02-educational-direct",
+    "random_seed": null,
+    "run_key": "<hash>",
+    "stage": "source_registration",
+    "started_at": "<ts>",
+    "status": "succeeded",
+    "tool_name": "langpipe.register",
+    "tool_version": "<ver>"
+  },
+  {
+    "code_revision": "<rev>",
+    "config": {
+      "manifest_sha256": "99907ab82f910fc9911853685097261a32ae0aee68f7957238642334d675d04c"
+    },
+    "config_hash": "<hash>",
+    "error_message": null,
+    "error_type": null,
+    "finished_at": "<ts>",
+    "id": "run:source_registration:03-wordlist",
+    "random_seed": null,
+    "run_key": "<hash>",
+    "stage": "source_registration",
+    "started_at": "<ts>",
+    "status": "succeeded",
+    "tool_name": "langpipe.register",
+    "tool_version": "<ver>"
+  },
+  {
+    "code_revision": "<rev>",
+    "config": {
+      "manifest_sha256": "3681eed3d2a05302c2585a772d3e9741bf3b13f34ea62ae1d4649c5db290ec33"
+    },
+    "config_hash": "<hash>",
+    "error_message": null,
+    "error_type": null,
+    "finished_at": "<ts>",
+    "id": "run:source_registration:04-igt",
+    "random_seed": null,
+    "run_key": "<hash>",
+    "stage": "source_registration",
+    "started_at": "<ts>",
+    "status": "succeeded",
+    "tool_name": "langpipe.register",
+    "tool_version": "<ver>"
+  },
+  {
+    "code_revision": "<rev>",
+    "config": {
+      "manifest_sha256": "9fcb85c3e9d7c40b08004f822d2c6d8c48359ff48dc5d0c991eabadfbcf301b3"
+    },
+    "config_hash": "<hash>",
+    "error_message": null,
+    "error_type": null,
+    "finished_at": "<ts>",
+    "id": "run:source_registration:05-monolingual",
+    "random_seed": null,
+    "run_key": "<hash>",
+    "stage": "source_registration",
+    "started_at": "<ts>",
+    "status": "succeeded",
+    "tool_name": "langpipe.register",
+    "tool_version": "<ver>"
+  },
+  {
+    "code_revision": "<rev>",
+    "config": {
+      "manifest_sha256": "f34a8eaaf352493c5f21f4c4edbe32342d7512caca0b5ac6559793fe89cdce69"
+    },
+    "config_hash": "<hash>",
+    "error_message": null,
+    "error_type": null,
+    "finished_at": "<ts>",
+    "id": "run:source_registration:06-excluded",
+    "random_seed": null,
+    "run_key": "<hash>",
+    "stage": "source_registration",
+    "started_at": "<ts>",
+    "status": "succeeded",
+    "tool_name": "langpipe.register",
+    "tool_version": "<ver>"
+  }
+]

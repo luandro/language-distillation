@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+<title>Tradutor Marúbo ⇄ Português</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<style>
+:root {
+  color-scheme: light;
+  --bg: #faf7f2;
+  --ink: #26201a;
+  --muted: #877b6c;
+  --line: #eae2d5;
+  --brand: #FC4847;
+  --brand-hover: #e03837;
+  --brand-soft: rgba(252, 72, 71, 0.12);
+  --card-bg: #fffdf9;
+  --card-alt: #f3eadb;
+  --card-border: #e8ded0;
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-pill: 999px;
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "JetBrains Mono", Menlo, Consolas, monospace;
+}
+
+* { box-sizing: border-box; }
+
+/* Custom Floating Curved Scrollbars (#FC4847) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: #FC4847;
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d83433;
+}
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FC4847 transparent;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--ink);
+  padding: 32px 16px;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  width: min(620px, 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.brand-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+  margin-bottom: 12px;
+}
+
+.brand-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+
+h1 {
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+  color: var(--ink);
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.45;
+  margin: 0;
+}
+
+/* Direction Bar */
+.direction-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 6px 8px;
+  box-shadow: 0 2px 8px rgba(38, 32, 26, 0.04);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--muted);
+  padding: 8px 18px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.lang-btn.active {
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(252, 72, 71, 0.3);
+}
+
+.swap-btn {
+  background: var(--card-alt);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 18px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), background-color 0.15s;
+}
+
+.swap-btn:hover {
+  background: #ebdcc8;
+  transform: rotate(180deg);
+}
+
+.swap-btn:active {
+  transform: rotate(180deg) scale(0.92);
+}
+
+/* Input Card */
+.input-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px 12px;
+  box-shadow: 0 2px 12px rgba(38, 32, 26, 0.03);
+  display: flex;
+  flex-direction: column;
+}
+
+.input-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.input-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.clear-btn:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+textarea#source-input {
+  width: 100%;
+  min-height: 120px;
+  border: none;
+  outline: none;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--ink);
+  background: transparent;
+  padding: 4px 0 8px;
+}
+
+textarea#source-input::placeholder {
+  color: #b5a897;
+}
+
+.input-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px dashed var(--line);
+  margin-top: 4px;
+}
+
+.examples-wrap {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.example-title {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.chip {
+  background: var(--card-alt);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  font-size: 12px;
+  color: var(--ink);
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.chip:hover {
+  background: var(--brand-soft);
+  color: var(--brand);
+  border-color: var(--brand);
+}
+
+.char-counter {
+  font-size: 12px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
+}
+
+/* Action Button */
+.action-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.btn-primary {
+  flex: 1;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 14px 28px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  box-shadow: 0 4px 16px rgba(252, 72, 71, 0.35);
+  transition: all 0.15s ease;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--brand-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(252, 72, 71, 0.4);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.shortcut-hint {
+  font-size: 12px;
+  color: var(--muted);
+  display: none;
+}
+@media (min-width: 500px) {
+  .shortcut-hint { display: block; }
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Output Card */
+.output-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  box-shadow: 0 2px 14px rgba(38, 32, 26, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 140px;
+  transition: border-color 0.2s ease;
+}
+
+.output-card.highlight {
+  border-color: var(--brand);
+}
+
+.output-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.output-label-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.output-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.meta-badge {
+  font-size: 11px;
+  font-family: var(--font-mono);
+  background: var(--card-alt);
+  color: var(--muted);
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--line);
+}
+
+.meta-badge.latency {
+  color: #1a7f37;
+  background: #dafbe1;
+  border-color: #aceebb;
+}
+
+.copy-btn {
+  background: var(--card-alt);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.copy-btn:hover {
+  background: #e9ded0;
+}
+
+.output-text {
+  font-size: 20px;
+  line-height: 1.5;
+  color: var(--ink);
+  margin: 0;
+  user-select: all;
+  -webkit-user-select: all;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.output-placeholder {
+  color: #b5a897;
+  font-style: italic;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Status / Alert */
+.status-msg {
+  padding: 12px 16px;
+  border-radius: var(--radius-md);
+  font-size: 14px;
+  line-height: 1.45;
+  display: none;
+}
+
+.status-msg.error {
+  display: block;
+  background: #fde8e8;
+  border: 1px solid #f8b4b4;
+  color: #9b1c1c;
+}
+
+.status-msg.info {
+  display: block;
+  background: #fef08a;
+  border: 1px solid #fde047;
+  color: #713f12;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  transition: color 0.15s;
+}
+
+.footer-links a:hover {
+  color: var(--brand);
+  text-decoration: underline;
+}
+
+.footer-note {
+  font-size: 12px;
+  color: #a49786;
+  margin: 0;
+}
+</style>
+</head>
+<body>
+
+<main>
+  <header>
+    <div class="brand-badge">
+      <span class="brand-dot"></span>
+      Vale do Javari • IA Indígena
+    </div>
+    <h1>Tradutor Marúbo</h1>
+    <p class="subtitle">Tradução bidirecional Português ⇄ Marúbo (Pano) via NLLB-200 600M ajustado com evidências de campo.</p>
+  </header>
+
+  <!-- Direction Bar -->
+  <section class="direction-bar" aria-label="Direção da tradução">
+    <button class="lang-btn active" id="src-label" type="button">Português</button>
+    <button class="swap-btn" id="swap-btn" type="button" title="Inverter idiomas (⇄)" aria-label="Inverter idiomas">
+      ⇄
+    </button>
+    <button class="lang-btn" id="tgt-label" type="button">Marúbo</button>
+  </section>
+
+  <!-- Input Section -->
+  <section class="input-card">
+    <div class="input-header">
+      <span class="input-label" id="input-heading">Texto em Português</span>
+      <button class="clear-btn" id="clear-btn" type="button">Limpar</button>
+    </div>
+    <textarea id="source-input" placeholder="Digite uma frase em português..." rows="3" spellcheck="false"></textarea>
+    <div class="input-footer">
+      <div class="examples-wrap">
+        <span class="example-title">Exemplos:</span>
+        <div id="example-chips" style="display:inline-flex; gap:6px; flex-wrap:wrap;"></div>
+      </div>
+      <span class="char-counter" id="char-count">0 / 500</span>
+    </div>
+  </section>
+
+  <!-- Action Row -->
+  <div class="action-row">
+    <button class="btn-primary" id="translate-btn" type="button">
+      <span id="btn-text">Traduzir</span>
+      <div class="spinner" id="btn-spinner" style="display: none;"></div>
+    </button>
+    <span class="shortcut-hint">Pressione <kbd style="background:var(--card-alt); padding:2px 6px; border-radius:4px; border:1px solid var(--line); font-family:var(--font-mono); font-size:11px;">Ctrl + Enter</kbd></span>
+  </div>
+
+  <!-- Status / Error Banner -->
+  <div class="status-msg" id="status-banner" role="alert"></div>
+
+  <!-- Output Card -->
+  <section class="output-card" id="output-card">
+    <div class="output-header">
+      <div class="output-label-group">
+        <span class="output-label" id="output-heading">Tradução em Marúbo</span>
+        <span class="meta-badge latency" id="latency-badge" style="display: none;"></span>
+        <span class="meta-badge" id="model-badge">LoRA 600M</span>
+      </div>
+      <button class="copy-btn" id="copy-btn" type="button" style="display: none;">
+        <span id="copy-text">Copiar</span>
+      </button>
+    </div>
+    <p class="output-placeholder" id="output-empty">A tradução aparecerá aqui após o processamento...</p>
+    <p class="output-text" id="output-content" style="display: none;"></p>
+  </section>
+
+  <footer>
+    <div class="footer-links">
+      <a href="https://huggingface.co/luandro/marubo-nllb-600m-lora" target="_blank" rel="noopener">Modelo no Hugging Face</a>
+      <a href="https://modal.com" target="_blank" rel="noopener">API GPU no Modal</a>
+      <a href="https://github.com/luandro/language-distillation" target="_blank" rel="noopener">Código-Fonte & Metodologia</a>
+    </div>
+    <p class="footer-note">Treinado com dados humanamente atestados e preservação de linhagem evidencial.</p>
+  </footer>
+</main>
+
+<script>
+// Modal API Endpoint
+const API_URL = "https://luandro-84691--marubo-translation-marubotranslatorservice-web.us-east.modal.run";
+
+// State
+let direction = "por_to_mzr"; // or "mzr_to_por"
+let isTranslating = false;
+
+// DOM Elements
+const srcLabel = document.getElementById("src-label");
+const tgtLabel = document.getElementById("tgt-label");
+const swapBtn = document.getElementById("swap-btn");
+const sourceInput = document.getElementById("source-input");
+const inputHeading = document.getElementById("input-heading");
+const outputHeading = document.getElementById("output-heading");
+const charCount = document.getElementById("char-count");
+const clearBtn = document.getElementById("clear-btn");
+const translateBtn = document.getElementById("translate-btn");
+const btnText = document.getElementById("btn-text");
+const btnSpinner = document.getElementById("btn-spinner");
+const exampleChips = document.getElementById("example-chips");
+const outputContent = document.getElementById("output-content");
+const outputEmpty = document.getElementById("output-empty");
+const outputCard = document.getElementById("output-card");
+const copyBtn = document.getElementById("copy-btn");
+const copyText = document.getElementById("copy-text");
+const latencyBadge = document.getElementById("latency-badge");
+const statusBanner = document.getElementById("status-banner");
+
+// Example Datasets
+const EXAMPLES = {
+  por_to_mzr: [
+    "O menino vê o peixe no rio.",
+    "Nós caminhamos na floresta.",
+    "A mulher come a banana doce.",
+    "O pajé cura com cantos sagrados."
+  ],
+  mzr_to_por: [
+    "Yorashina roo oia.",
+    "Efe nami pia.",
+    "Txai nami piroti ikaiki.",
+    "Inka voo shavota vana akai."
+  ]
+};
+
+function renderExamples() {
+  exampleChips.innerHTML = "";
+  const list = EXAMPLES[direction];
+  list.forEach(text => {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "chip";
+    chip.textContent = text;
+    chip.addEventListener("click", () => {
+      sourceInput.value = text;
+      updateCharCount();
+      triggerTranslation();
+    });
+    exampleChips.appendChild(chip);
+  });
+}
+
+function updateCharCount() {
+  const len = sourceInput.value.length;
+  charCount.textContent = `${len} / 500`;
+  if (len > 500) {
+    charCount.style.color = "var(--brand)";
+  } else {
+    charCount.style.color = "var(--muted)";
+  }
+}
+
+function setDirection(newDir) {
+  direction = newDir;
+  if (direction === "por_to_mzr") {
+    srcLabel.textContent = "Português";
+    srcLabel.classList.add("active");
+    tgtLabel.textContent = "Marúbo";
+    tgtLabel.classList.remove("active");
+    inputHeading.textContent = "Texto em Português";
+    outputHeading.textContent = "Tradução em Marúbo";
+    sourceInput.placeholder = "Digite uma frase em português...";
+  } else {
+    srcLabel.textContent = "Marúbo";
+    srcLabel.classList.add("active");
+    tgtLabel.textContent = "Português";
+    tgtLabel.classList.remove("active");
+    inputHeading.textContent = "Texto em Marúbo";
+    outputHeading.textContent = "Tradução em Português";
+    sourceInput.placeholder = "Txoivo shavota vana...";
+  }
+  renderExamples();
+}
+
+swapBtn.addEventListener("click", () => {
+  const newDir = direction === "por_to_mzr" ? "mzr_to_por" : "por_to_mzr";
+  const prevOutput = outputContent.textContent.trim();
+  setDirection(newDir);
+  if (prevOutput && !outputContent.style.display.includes("none")) {
+    sourceInput.value = prevOutput;
+    updateCharCount();
+    clearOutput();
+  }
+});
+
+clearBtn.addEventListener("click", () => {
+  sourceInput.value = "";
+  updateCharCount();
+  clearOutput();
+  hideStatus();
+  sourceInput.focus();
+});
+
+sourceInput.addEventListener("input", () => {
+  updateCharCount();
+  hideStatus();
+});
+
+sourceInput.addEventListener("keydown", (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === "Enter") {
+    e.preventDefault();
+    triggerTranslation();
+  }
+});
+
+translateBtn.addEventListener("click", () => {
+  triggerTranslation();
+});
+
+function clearOutput() {
+  outputContent.style.display = "none";
+  outputContent.textContent = "";
+  outputEmpty.style.display = "block";
+  copyBtn.style.display = "none";
+  latencyBadge.style.display = "none";
+}
+
+function showStatus(msg, type = "error") {
+  statusBanner.textContent = msg;
+  statusBanner.className = `status-msg ${type}`;
+}
+
+function hideStatus() {
+  statusBanner.className = "status-msg";
+  statusBanner.textContent = "";
+}
+
+async function triggerTranslation() {
+  const text = sourceInput.value.trim();
+  if (!text) {
+    sourceInput.focus();
+    return;
+  }
+  if (isTranslating) return;
+
+  isTranslating = true;
+  translateBtn.disabled = true;
+  btnText.textContent = "Traduzindo...";
+  btnSpinner.style.display = "block";
+  hideStatus();
+
+  const sourceLang = direction === "por_to_mzr" ? "por" : "mzr";
+  const targetLang = direction === "por_to_mzr" ? "mzr" : "por";
+
+  const startTime = performance.now();
+
+  // If request takes more than 3 seconds, show friendly warm-up message
+  const warmTimer = setTimeout(() => {
+    if (isTranslating) {
+      showStatus("Iniciando GPU no Modal (cold start)... os pesos estão sendo carregados, aguarde alguns segundos.", "info");
+    }
+  }, 3500);
+
+  try {
+    const res = await fetch(`${API_URL}/translate`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        text: text,
+        source: sourceLang,
+        target: targetLang
+      })
+    });
+
+    clearTimeout(warmTimer);
+
+    if (!res.ok) {
+      const err = await res.json().catch(() => ({ detail: res.statusText }));
+      throw new Error(err.detail || "Falha na requisição de tradução");
+    }
+
+    const data = await res.json();
+    const elapsed = Math.round(performance.now() - startTime);
+
+    hideStatus();
+    outputEmpty.style.display = "none";
+    outputContent.textContent = data.translation;
+    outputContent.style.display = "block";
+    copyBtn.style.display = "inline-flex";
+
+    latencyBadge.textContent = `⚡ ${elapsed}ms`;
+    latencyBadge.style.display = "inline-block";
+
+    outputCard.classList.add("highlight");
+    setTimeout(() => outputCard.classList.remove("highlight"), 600);
+
+  } catch (err) {
+    clearTimeout(warmTimer);
+    console.error("Erro na tradução:", err);
+    showStatus(`Não foi possível traduzir: ${err.message}. Tente novamente em instantes.`, "error");
+  } finally {
+    isTranslating = false;
+    translateBtn.disabled = false;
+    btnText.textContent = "Traduzir";
+    btnSpinner.style.display = "none";
+  }
+}
+
+// Copy Action
+copyBtn.addEventListener("click", async () => {
+  const text = outputContent.textContent;
+  if (!text) return;
+  try {
+    await navigator.clipboard.writeText(text);
+    copyText.textContent = "✓ Copiado!";
+    setTimeout(() => {
+      copyText.textContent = "Copiar";
+    }, 2000);
+  } catch (e) {
+    copyText.textContent = "Erro ao copiar";
+  }
+});
+
+// Initial boot
+setDirection("por_to_mzr");
+updateCharCount();
+</script>
+</body>
+</html>

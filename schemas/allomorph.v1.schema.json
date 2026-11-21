@@ -1,0 +1,103 @@
+{
+  "$defs": {
+    "AllomorphConditioning": {
+      "enum": [
+        "phonological",
+        "morphosyntactic",
+        "lexical",
+        "unknown"
+      ],
+      "title": "AllomorphConditioning",
+      "type": "string"
+    },
+    "FormBasis": {
+      "enum": [
+        "surface",
+        "underlying"
+      ],
+      "title": "FormBasis",
+      "type": "string"
+    },
+    "LifecycleStatus": {
+      "enum": [
+        "candidate",
+        "supported",
+        "validated",
+        "rejected",
+        "deprecated"
+      ],
+      "title": "LifecycleStatus",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:allomorph:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "One realized form of a morpheme; unique by `(morpheme_id, form)` (ADR-0017 §8).",
+  "properties": {
+    "conditioning": {
+      "$ref": "#/$defs/AllomorphConditioning"
+    },
+    "conditioning_note": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Conditioning Note"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "form": {
+      "title": "Form",
+      "type": "string"
+    },
+    "form_basis": {
+      "$ref": "#/$defs/FormBasis"
+    },
+    "id": {
+      "pattern": "^allo_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "is_zero": {
+      "default": false,
+      "title": "Is Zero",
+      "type": "boolean"
+    },
+    "morpheme_id": {
+      "pattern": "^morph_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Morpheme Id",
+      "type": "string"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "status": {
+      "$ref": "#/$defs/LifecycleStatus",
+      "default": "candidate"
+    }
+  },
+  "required": [
+    "id",
+    "morpheme_id",
+    "form",
+    "form_basis",
+    "conditioning",
+    "run_id",
+    "created_at"
+  ],
+  "title": "Allomorph",
+  "type": "object",
+  "x-schema-name": "allomorph",
+  "x-schema-version": 1
+}

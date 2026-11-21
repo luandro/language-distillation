@@ -1,0 +1,51 @@
+[
+  {
+    "group_key": "<hash>",
+    "method": "canonical_locator@0.1.0",
+    "mode": "canonical",
+    "source_members": [
+      "segment:0:source:0"
+    ],
+    "status": "structural",
+    "target_members": [
+      "segment:0:target:0"
+    ]
+  },
+  {
+    "group_key": "<hash>",
+    "method": "canonical_locator@0.1.0",
+    "mode": "canonical",
+    "source_members": [
+      "segment:1:source:0"
+    ],
+    "status": "structural",
+    "target_members": [
+      "segment:1:target:0"
+    ]
+  },
+  {
+    "group_key": "<hash>",
+    "method": "canonical_locator@0.1.0",
+    "mode": "canonical",
+    "source_members": [
+      "segment:2:source:0"
+    ],
+    "status": "structural",
+    "target_members": [
+      "segment:2:target:0"
+    ]
+  },
+  {
+    "group_key": "<hash>",
+    "method": "canonical_locator@0.1.0",
+    "mode": "canonical",
+    "source_members": [
+      "segment:3:source:0"
+    ],
+    "status": "structural",
+    "target_members": [
+      "segment:3:target:0",
+      "segment:3:target:1"
+    ]
+  }
+]

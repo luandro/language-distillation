@@ -1,0 +1,242 @@
+{
+  "sense:01-parallel-distill:kanu:homem": {
+    "breakdown": {
+      "components": {
+        "alignment_support": 1.0,
+        "dictionary_support": 0.0,
+        "domain_stability": 1.0,
+        "igt_support": 0.0,
+        "monolingual_support": 0.0,
+        "source_diversity": 0.5
+      },
+      "independence_groups": [
+        "src:01-parallel-distill"
+      ],
+      "overall": 0.4,
+      "penalties": {
+        "formulaic_source": 0.1,
+        "related_language_only": 0.0,
+        "single_register_concentration": 0.0
+      },
+      "policy_version": "lexical-v1"
+    },
+    "domain": null,
+    "glosses": {
+      "por": [
+        "homem"
+      ]
+    },
+    "lexeme": "lex:01-parallel-distill:kanu",
+    "register": null,
+    "status": "candidate"
+  },
+  "sense:01-parallel-distill:mabi:canoa": {
+    "breakdown": {
+      "components": {
+        "alignment_support": 1.0,
+        "dictionary_support": 0.0,
+        "domain_stability": 1.0,
+        "igt_support": 0.0,
+        "monolingual_support": 0.0,
+        "source_diversity": 0.5
+      },
+      "independence_groups": [
+        "src:01-parallel-distill"
+      ],
+      "overall": 0.4,
+      "penalties": {
+        "formulaic_source": 0.1,
+        "related_language_only": 0.0,
+        "single_register_concentration": 0.0
+      },
+      "policy_version": "lexical-v1"
+    },
+    "domain": null,
+    "glosses": {
+      "por": [
+        "canoa"
+      ]
+    },
+    "lexeme": "lex:01-parallel-distill:mabi",
+    "register": null,
+    "status": "candidate"
+  },
+  "sense:01-parallel-distill:rumi:pajé": {
+    "breakdown": {
+      "components": {
+        "alignment_support": 0.0,
+        "dictionary_support": 0.0,
+        "domain_stability": 0.0,
+        "igt_support": 0.0,
+        "monolingual_support": 0.0,
+        "source_diversity": 0.0
+      },
+      "independence_groups": [],
+      "overall": 0.0,
+      "penalties": {
+        "formulaic_source": 0.0,
+        "related_language_only": 0.0,
+        "single_register_concentration": 0.0
+      },
+      "policy_version": "lexical-v1"
+    },
+    "domain": null,
+    "glosses": {
+      "por": [
+        "pajé"
+      ]
+    },
+    "lexeme": "lex:01-parallel-distill:rumi",
+    "register": null,
+    "status": "validated"
+  },
+  "sense:03-wordlist:kanu:homem": {
+    "breakdown": {
+      "components": {
+        "alignment_support": 0.0,
+        "dictionary_support": 1.0,
+        "domain_stability": 1.0,
+        "igt_support": 0.0,
+        "monolingual_support": 0.0,
+        "source_diversity": 0.5
+      },
+      "independence_groups": [
+        "src:03-wordlist"
+      ],
+      "overall": 0.4,
+      "penalties": {
+        "formulaic_source": 0.0,
+        "related_language_only": 0.0,
+        "single_register_concentration": 0.0
+      },
+      "policy_version": "lexical-v1"
+    },
+    "domain": null,
+    "glosses": {
+      "por": [
+        "homem"
+      ]
+    },
+    "lexeme": "lex:03-wordlist:kanu",
+    "register": null,
+    "status": "candidate"
+  },
+  "sense:03-wordlist:mabi:canoa": {
+    "breakdown": {
+      "components": {
+        "alignment_support": 0.0,
+        "dictionary_support": 0.0,
+        "domain_stability": 0.0,
+        "igt_support": 0.0,
+        "monolingual_support": 0.0,
+        "source_diversity": 0.0
+      },
+      "independence_groups": [],
+      "overall": 0.0,
+      "penalties": {
+        "formulaic_source": 0.0,
+        "related_language_only": 0.0,
+        "single_register_concentration": 0.0
+      },
+      "policy_version": "lexical-v1"
+    },
+    "domain": null,
+    "glosses": {
+      "por": [
+        "canoa"
+      ]
+    },
+    "lexeme": "lex:03-wordlist:mabi",
+    "register": null,
+    "status": "validated"
+  },
+  "sense:03-wordlist:mabi:tronco": {
+    "breakdown": {
+      "components": {
+        "alignment_support": 0.0,
+        "dictionary_support": 0.0,
+        "domain_stability": 0.0,
+        "igt_support": 0.0,
+        "monolingual_support": 0.0,
+        "source_diversity": 0.0
+      },
+      "independence_groups": [],
+      "overall": 0.0,
+      "penalties": {
+        "formulaic_source": 0.0,
+        "related_language_only": 0.0,
+        "single_register_concentration": 0.0
+      },
+      "policy_version": "lexical-v1"
+    },
+    "domain": null,
+    "glosses": {
+      "por": [
+        "tronco"
+      ]
+    },
+    "lexeme": "lex:03-wordlist:mabi",
+    "register": null,
+    "status": "rejected"
+  },
+  "sense:03-wordlist:rumi:pajé": {
+    "breakdown": {
+      "components": {
+        "alignment_support": 0.0,
+        "dictionary_support": 1.0,
+        "domain_stability": 1.0,
+        "igt_support": 0.0,
+        "monolingual_support": 0.0,
+        "source_diversity": 0.5
+      },
+      "independence_groups": [
+        "src:03-wordlist"
+      ],
+      "overall": 0.4,
+      "penalties": {
+        "formulaic_source": 0.0,
+        "related_language_only": 0.0,
+        "single_register_concentration": 0.0
+      },
+      "policy_version": "lexical-v1"
+    },
+    "domain": "ritual/traditional",
+    "glosses": {
+      "por": [
+        "pajé"
+      ]
+    },
+    "lexeme": "lex:03-wordlist:rumi",
+    "register": null,
+    "status": "candidate"
+  },
+  "sense:golden-lexicon-export:nawa:rio": {
+    "breakdown": {
+      "components": {
+        "alignment_support": 0.0,
+        "dictionary_support": 0.0,
+        "domain_stability": 0.0,
+        "igt_support": 0.0,
+        "monolingual_support": 0.0,
+        "source_diversity": 0.0
+      },
+      "independence_groups": [],
+      "overall": 0.0,
+      "penalties": {
+        "formulaic_source": 0.0,
+        "related_language_only": 0.0,
+        "single_register_concentration": 0.0
+      },
+      "policy_version": "lexical-v1"
+    },
+    "domain": null,
+    "glosses": {
+      "por": [
+        "rio"
+      ]
+    },
+    "lexeme": "lex:golden-lexicon-export:nawa",
+    "register": null,
+    "status": "validated"
+  }
+}

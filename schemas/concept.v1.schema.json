@@ -1,0 +1,70 @@
+{
+  "$id": "urn:langpipe:schema:concept:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "A semantic referent, `local` by default with an optional external mapping.",
+  "properties": {
+    "canonical_label": {
+      "minLength": 1,
+      "title": "Canonical Label",
+      "type": "string"
+    },
+    "concept_type": {
+      "default": "local",
+      "minLength": 1,
+      "title": "Concept Type",
+      "type": "string"
+    },
+    "concepticon_id": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Concepticon Id"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "external_urn": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "External Urn"
+    },
+    "id": {
+      "pattern": "^cpt_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "canonical_label",
+    "run_id",
+    "created_at"
+  ],
+  "title": "Concept",
+  "type": "object",
+  "x-schema-name": "concept",
+  "x-schema-version": 1
+}

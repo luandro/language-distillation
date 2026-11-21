@@ -1,0 +1,150 @@
+{
+  "$defs": {
+    "JsonValue": {},
+    "RunStage": {
+      "enum": [
+        "source_registration",
+        "raw_ingestion",
+        "extraction",
+        "normalization",
+        "tokenization",
+        "segment_alignment",
+        "token_alignment",
+        "lexical_induction",
+        "igt_import",
+        "morphology_induction",
+        "grammar_extraction",
+        "human_review",
+        "manual_annotation",
+        "export",
+        "evaluation"
+      ],
+      "title": "RunStage",
+      "type": "string"
+    },
+    "RunStatus": {
+      "enum": [
+        "running",
+        "succeeded",
+        "failed"
+      ],
+      "title": "RunStatus",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:processing-run:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "code_revision": {
+      "title": "Code Revision",
+      "type": "string"
+    },
+    "config": {
+      "additionalProperties": {
+        "$ref": "#/$defs/JsonValue"
+      },
+      "title": "Config",
+      "type": "object"
+    },
+    "config_hash": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Config Hash",
+      "type": "string"
+    },
+    "error_message": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Error Message"
+    },
+    "error_type": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Error Type"
+    },
+    "finished_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Finished At"
+    },
+    "id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "random_seed": {
+      "anyOf": [
+        {
+          "type": "integer"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Random Seed"
+    },
+    "run_key": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Run Key",
+      "type": "string"
+    },
+    "stage": {
+      "$ref": "#/$defs/RunStage"
+    },
+    "started_at": {
+      "format": "date-time",
+      "title": "Started At",
+      "type": "string"
+    },
+    "status": {
+      "$ref": "#/$defs/RunStatus"
+    },
+    "tool_name": {
+      "title": "Tool Name",
+      "type": "string"
+    },
+    "tool_version": {
+      "title": "Tool Version",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "stage",
+    "tool_name",
+    "tool_version",
+    "config",
+    "config_hash",
+    "code_revision",
+    "run_key",
+    "status",
+    "started_at"
+  ],
+  "title": "ProcessingRun",
+  "type": "object",
+  "x-schema-name": "processing-run",
+  "x-schema-version": 1
+}

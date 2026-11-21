@@ -1,0 +1,57 @@
+{
+  "direction": "symmetrized",
+  "gold_split": [
+    "test"
+  ],
+  "metrics": {
+    "aer": 0.0,
+    "aer_groups": [
+      "gold-null-token-1"
+    ],
+    "evaluated_groups": 1,
+    "f1": 1.0,
+    "null_source_annotated": 3,
+    "null_source_fn": 0,
+    "null_source_fp": 0,
+    "null_source_groups": [
+      "gold-null-token-1"
+    ],
+    "null_source_precision": 1.0,
+    "null_source_recall": 1.0,
+    "null_source_total": 3,
+    "null_source_tp": 2,
+    "null_target_annotated": 1,
+    "null_target_fn": 0,
+    "null_target_fp": 0,
+    "null_target_groups": [
+      "gold-null-token-1"
+    ],
+    "null_target_precision": null,
+    "null_target_recall": null,
+    "null_target_total": 1,
+    "null_target_tp": 0,
+    "possible_hits": 1,
+    "precision": 1.0,
+    "precision_groups": [
+      "gold-null-token-1"
+    ],
+    "reasons": [
+      "null_target_coverage_incomplete"
+    ],
+    "recall": 1.0,
+    "recall_groups": [
+      "gold-null-token-1"
+    ],
+    "sure_hits": 1,
+    "total_possible": 1,
+    "total_predicted": 1,
+    "total_sure": 1
+  },
+  "protocol": "transductive_unsupervised",
+  "reasons": [
+    "null_target_coverage_incomplete"
+  ],
+  "run_id": "benchmark-run",
+  "schema": "benchmark-report",
+  "schema_version": 1
+}

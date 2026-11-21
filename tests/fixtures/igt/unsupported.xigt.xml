@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xigt-corpus>
+  <igt id="i1">
+    <tier id="odin" type="odin-source-tag">
+      <item id="odin1" content="#w1"/>
+    </tier>
+    <tier id="tw" type="words">
+      <item id="w1">nawa</item>
+    </tier>
+    <tier id="tg" type="glosses" alignment="missing-tier">
+      <item id="g1" alignment="no-such-morph">rio</item>
+    </tier>
+  </igt>
+</xigt-corpus>

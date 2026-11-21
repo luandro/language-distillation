@@ -1,0 +1,711 @@
+{
+  "language_code": "mzr",
+  "language_name": "Marúbo",
+  "glottocode": "maru1252",
+  "family": "Pano",
+  "contact_language": "por",
+  "territory": "Terra Indígena Vale do Javari (Amazonas, Brasil)",
+  "rivers": [
+    "Ituí",
+    "Curuçá"
+  ],
+  "sources": [
+    {
+      "source_id": "costa_1992_dissertacao",
+      "author": "Costa, Raquel Guimarães Romankevicius",
+      "year": 1992,
+      "title": "Padrões rítmicos e marcação de caso em Marubo (Pano)",
+      "type": "academic_thesis",
+      "institution": "Universidade Federal do Rio de Janeiro (UFRJ)",
+      "url": "https://pantheon.ufrj.br/handle/11422/3194",
+      "local_path": "var/external/marubo_sources/costa_1992_padroes_ritmicos.pdf",
+      "sha256": "3f958e09a861eca1549aef44ee76f4640b5a69f24936f040a43a46f6385e49f2",
+      "license": "Academic / Fair Use (Research & Local Distillation)",
+      "harvest_status": "downloaded",
+      "features": [
+        "phonology",
+        "case_marking",
+        "split_ergativity",
+        "stress_patterns",
+        "IGT"
+      ],
+      "capabilities": [
+        "lexical_distillation",
+        "morphology_evidence",
+        "structural_alignment"
+      ],
+      "policy": "direct",
+      "license_status": "unrecorded",
+      "rights_holder": "Raquel Guimarães Romankevicius Costa"
+    },
+    {
+      "source_id": "costa_2000_tese",
+      "author": "Costa, Raquel Guimarães Romankevicius",
+      "year": 2000,
+      "title": "Aspectos da Fonologia Marubo (Pano): uma visão não-linear",
+      "type": "academic_thesis",
+      "institution": "Universidade Federal do Rio de Janeiro (UFRJ)",
+      "url": "https://pantheon.ufrj.br/handle/11422/3195",
+      "local_path": "var/external/marubo_sources/costa_2000_fonologia_marubo.pdf",
+      "sha256": "17aa935e0ee635c96080916bf6601acea702d2234a9f9d34fa97f91d0313d8fa",
+      "license": "Academic / Fair Use (Research & Local Distillation)",
+      "harvest_status": "downloaded",
+      "features": [
+        "phoneme_inventory",
+        "nasal_harmony",
+        "syllable_structure"
+      ],
+      "capabilities": [
+        "lexical_distillation",
+        "morphology_evidence",
+        "phonotactics"
+      ],
+      "policy": "direct",
+      "license_status": "unrecorded",
+      "rights_holder": "Raquel Guimarães Romankevicius Costa"
+    },
+    {
+      "source_id": "costa_2017_abralin",
+      "author": "Costa, Raquel Guimarães Romankevicius",
+      "year": 2017,
+      "title": "Interações entre Restrições em Marubo (Pano)",
+      "type": "academic_paper",
+      "institution": "Revista da ABRALIN / UFRJ",
+      "url": "https://doi.org/10.25189/rabralin.v1i1.727",
+      "local_path": "var/external/marubo_sources/Costa_2017_InteracoesRestricoesMarubo_Abralin.pdf",
+      "sha256": "8e699e66a97f0f87d9cc2151d46358f1e1987d32f044bf975971967ecb9dffa9",
+      "license": "CC-BY-4.0",
+      "harvest_status": "downloaded",
+      "features": [
+        "optimality_theory",
+        "syllable_inventory",
+        "trochees_iambs"
+      ],
+      "capabilities": [
+        "lexical_distillation",
+        "morphology_evidence",
+        "phonotactics"
+      ],
+      "policy": "direct",
+      "license_status": "conflicting",
+      "rights_holder": "Revista da ABRALIN; author"
+    },
+    {
+      "source_id": "zenodo_1008779_cesarino_2017",
+      "author": "Cesarino, Pedro de Niemeyer & Marubo Cherõpapa Txano, Armando & Doles Marubo, Robson",
+      "year": 2017,
+      "title": "Marubo: The teachings of the Death-Path",
+      "type": "igt_chapter",
+      "institution": "Language Science Press / USP",
+      "url": "https://doi.org/10.5281/zenodo.1008779",
+      "local_path": "var/external/marubo_sources/Cesarino_Marubo_2017_TeachingsDeathPath.pdf",
+      "sha256": "5347e9660cadb8e1efa10dfb00d8e9417a1b355c78bf3828d5d76184fb328e3b",
+      "license": "CC-BY-4.0",
+      "harvest_status": "downloaded",
+      "features": [
+        "105_igt_sentences",
+        "trilingual_glosses",
+        "collaborative_indigenous_authorship"
+      ],
+      "capabilities": [
+        "permissive_academic",
+        "igt_observation",
+        "parallel_sentences",
+        "lexical_distillation"
+      ],
+      "policy": "direct",
+      "license_status": "verified",
+      "rights_holder": "Language Science Press; authors"
+    },
+    {
+      "source_id": "costa_2002_ergatividade",
+      "author": "Costa, Raquel Guimarães Romankevicius",
+      "year": 2002,
+      "title": "Ergatividade cindida em Marúbo",
+      "type": "academic_paper",
+      "institution": "Línguas Indígenas Brasileiras / UFRJ",
+      "url": "https://pantheon.ufrj.br/",
+      "local_path": "var/external/marubo_sources/Costa_2002_ErgatividadeCindidaEmMarubo.pdf",
+      "license": "Academic / Fair Use",
+      "harvest_status": "downloaded",
+      "features": [
+        "ergative_case_suffix_n",
+        "absolutive_zero_marking",
+        "transitivity_harmony",
+        "IGT_sentences"
+      ],
+      "capabilities": [
+        "lexical_distillation",
+        "morphology_evidence",
+        "grammar_rules"
+      ],
+      "policy": "direct",
+      "license_status": "unrecorded",
+      "rights_holder": "Raquel Guimarães Romankevicius Costa"
+    },
+    {
+      "source_id": "cesarino_2013_mitologia",
+      "author": "Cesarino, Pedro de Niemeyer",
+      "year": 2013,
+      "title": "Quando a Terra Deixou de Falar: Cantos da Mitologia Marubo",
+      "type": "bilingual_corpus",
+      "institution": "Editora 34 / USP / FAPESP",
+      "url": "https://editora34.com.br/detalhe.asp?id=793",
+      "local_path": "var/external/marubo_sources/Cesarino_2013_QuandoATerraDeixouDeFalar_MitolMarubo.pdf",
+      "license": "Published Monograph / Collaborative Indigenous Orality",
+      "harvest_status": "downloaded",
+      "features": [
+        "parallel_poetic_chants",
+        "shamanic_register",
+        "esoteric_mythological_lexicon",
+        "collaborative_translations"
+      ],
+      "capabilities": [
+        "structural_alignment",
+        "lexical_distillation"
+      ],
+      "policy": "direct",
+      "license_status": "unrecorded",
+      "rights_holder": "Editora 34; author",
+      "parallel_text": "line-aligned mzr<->por: 3,951 row pairs / 10,302 mzr tokens (extracted 2026-10-18)",
+      "extraction_note": "Portuguese column repaired deterministically (408 repairs: cedilla markers, nasal diphthongs, footnote superscripts incl. spaced and quote-adjacent markers); Marubo column is NOT repairable from this scan: the OCR drops the printed nasality marks (Awẽ nimẽaitõ -> Awe nimeaito, inĩki -> inlki) and mixes tilde/macron conventions. 80.7% of rows carry at least one unattested mzr token; 753 rows (19.1%) screen clean. Shipped as alignment evidence in exports/parallel_candidates/ (outside the dataset glob), not as training data. Unblock with a clean digital transcription, not re-OCR.",
+      "register": "ritual_restricted review required (ADR-0025: metadata, not a gate)",
+      "extracted_artifact": "exports/parallel_candidates/cesarino_2013_columns.jsonl",
+      "extraction_extractor": "scripts/extract_pairs.py columns",
+      "clean_form_citations": "exports/parallel_candidates/cesarino_2013_clean_refs.jsonl",
+      "clean_form_citation_note": "867 of 4,033 rows have their whole token sequence printed with diacritics in born-digital works (Villada Castro 2018, Mundo Amazonico 9(1); Cesarino 2008 thesis, decoded; Cesarino 2018 Wenia as shared-formula only); 606 unanimous citations of which 319 add a nasal mark the scan lost, 191 conflicts kept unresolved, 70 uncorroborated. Cited forms are hypotheses, not validated observations: src is never rewritten. The 2008 UFRJ thesis (cesarino_2008_oniska) is a third quoted-chant reference via its decoded PDF text."
+    },
+    {
+      "source_id": "villada_2018_mundo_amazonico",
+      "author": "Villada Castro, Carolina",
+      "year": 2018,
+      "title": "De dobles y trocas: a proposito de la traduccion del portugues al espanol de cantos marubo",
+      "type": "secondary_citation",
+      "institution": "Mundo Amazonico 9(1): 105-117, Universidad Nacional de Colombia",
+      "url": "https://doi.org/10.15446/ma.v9n1.64860",
+      "local_path": "var/external/villada_2018/villada_2018.pdf",
+      "sha256": "226c17db109cead5b915868197bc485b3c3bad23638a8b599ee1e152e4163361",
+      "license": "not stated in the PDF; journal is open access",
+      "rights_holder": "author / Universidad Nacional de Colombia",
+      "harvest_status": "downloaded",
+      "governed_source_key": "villada-2018",
+      "governed_source_id": "src_01M5871WGJDC0DHVJXF7DB4MER",
+      "features": [
+        "born_digital_text_layer",
+        "quotes_book_chants_with_diacritics",
+        "kanã_kawã",
+        "rome_owe_romeya",
+        "roka"
+      ],
+      "capabilities": [
+        "orthography_recovery",
+        "alignment_evidence"
+      ],
+      "policy": "direct",
+      "license_status": "unrecorded",
+      "register_note": "academic analysis quoting ritual chant; the quoted lines are ritual register",
+      "role": "citation reference for the 2013 scan's lost diacritics; not a primary pair corpus",
+      "extracted_artifact": "exports/parallel_candidates/cesarino_2013_clean_refs.jsonl",
+      "extraction_extractor": "scripts/recover_chant_orthography.py"
+    },
+    {
+      "source_id": "cesarino_2008_oniska",
+      "author": "Cesarino, Pedro de Niemeyer",
+      "year": 2008,
+      "title": "Oniska: a poética da morte e do mundo entre os Marubo da Amazônia Ocidental",
+      "type": "academic_thesis",
+      "institution": "Universidade Federal do Rio de Janeiro (UFRJ) / Museu Nacional, PPGAS",
+      "url": "http://www.dominiopublico.gov.br/download/texto/cp059749.pdf",
+      "local_path": "var/external/cesarino_2008_thesis/cesarino_2008_thesis.pdf",
+      "license": "Open Academic Thesis (CAPES deposit)",
+      "harvest_status": "used",
+      "features": [
+        "ritual_chants",
+        "shamanic_names",
+        "metaphoric_senses"
+      ],
+      "capabilities": [
+        "orthography_recovery",
+        "lexical_distillation",
+        "chant_citations"
+      ],
+      "policy": "direct",
+      "license_status": "unrecorded",
+      "rights_holder": "Cesarino, Pedro de Niemeyer",
+      "advisor": "Eduardo Viveiros de Castro",
+      "pages": 469,
+      "catalogue_url": "https://cesta.fflch.usp.br/node/688",
+      "lead_note": "Born-digital 469-page doctorate (catalogue says 472 pp. counting 12 bound preliminary leaves; the thesis's own ficha says \"469 pp., xii pp.\") that quotes the same chant fragments as the 2013 book. Real PDF fetched; its nasal marks are private-use glyphs (U+F017/F018/F01C) decoded to U+0303 by scripts/cesarino_pua_decode.py into var/artifacts/cesarino_2008_thesis/decoded.txt, and used as a quoted-chant citation reference (recover_chant_orthography.py --reference-text cesarino-2008:...). The thesis prints refrains with inconsistent marks, so it also produces conflicts.",
+      "corrected_at": "2026-10-18"
+    },
+    {
+      "source_id": "scriptureearth_mzr_corpus",
+      "author": "Wycliffe / Associação Internacional de Linguística (SIL)",
+      "year": 2018,
+      "title": "Marúbo Scripture Portions (Genesis, Exodus, Ruth, Nehemiah, Luke, John, Acts, James, Revelation Portions)",
+      "type": "parallel_corpus_usfm",
+      "institution": "ScriptureEarth / Digital Bible Society",
+      "url": "https://www.scriptureearth.org/00por.php?iso=mzr",
+      "local_path": "var/scriptureearth_mzr/",
+      "license": "CC BY-NC-ND 4.0 — \"© 2023-2025, Missão Novas Tribos do Brasil; Wycliffe Bible Translators, Inc.\"",
+      "harvest_status": "downloaded",
+      "features": [
+        "5389_aligned_verses",
+        "standard_usfm_format",
+        "high_syntactic_diversity",
+        "aligned_mp3_audio"
+      ],
+      "capabilities": [
+        "structural_alignment",
+        "lexical_distillation",
+        "citation_mining"
+      ],
+      "policy": "direct",
+      "license_status": "stated",
+      "rights_holder": "Missão Novas Tribos do Brasil (MNTB); Wycliffe Bible Translators, Inc.",
+      "coverage_note": "published set GEN / EXO 1-20 / RUT / NEH / JHN / JAS; LUK and ACT in the local corpus are not in that set and need provenance verification",
+      "youversion_parallel": "same translation is served as YouVersion version 4026 (YKV), \"Yové Koĩni Vana\"",
+      "pivot_note": "parallel_por is porbr2018 Biblia Livre (CC BY 4.0 BR, (c) 2018 Diego Santos/Mario Sergio/Marco Teles); 6,382 verses vs 5,389 mzr -> left-join on mzr availability, carry mzr_missing"
+    },
+    {
+      "source_id": "prodoclin_museu_do_indio",
+      "author": "Museu Nacional dos Povos Indígenas / FUNAI / UNESCO",
+      "year": 2012,
+      "title": "Programa de Documentação de Línguas Indígenas (PRODOCLIN) - Acervo Marúbo",
+      "type": "institutional_archive",
+      "institution": "Museu do Índio",
+      "url": "http://prodoc.museudoindio.gov.br/",
+      "local_path": null,
+      "license": "Public Cultural Heritage",
+      "harvest_status": "indexed",
+      "features": [
+        "audio_recordings",
+        "ethnographic_lexicon",
+        "traditional_tools_and_fauna"
+      ],
+      "capabilities": [
+        "lexical_distillation",
+        "audio_reference"
+      ],
+      "policy": "direct",
+      "license_status": "unrecorded",
+      "rights_holder": "Museu Nacional dos Povos Indígenas / FUNAI / UNESCO"
+    },
+    {
+      "source_id": "glottolog_maru1252",
+      "author": "Hammarström, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian",
+      "year": 2024,
+      "title": "Glottolog 5.0 Language Reference: Marúbo",
+      "type": "linguistic_database",
+      "institution": "Max Planck Institute for Evolutionary Anthropology",
+      "url": "https://glottolog.org/resource/languoid/id/maru1252",
+      "local_path": "var/external/glottolog/maru1252.json",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "harvest_status": "downloaded",
+      "sha256": "109b14c26e4c8c68b1eb631656c93dd10fe6f64f4978a57815576cd84a7a5029",
+      "features": [
+        "glottocode",
+        "iso639_3",
+        "family_tree",
+        "geocoordinates",
+        "bibliography"
+      ],
+      "capabilities": [
+        "metadata",
+        "typology",
+        "dialects"
+      ],
+      "policy": "direct",
+      "license_status": "verified",
+      "rights_holder": "Max Planck Institute for Evolutionary Anthropology"
+    },
+    {
+      "source_id": "asjp_swadesh_wordlist",
+      "author": "Wichmann, Søren & Holman, Eric W. & Brown, Cecil H.",
+      "year": 2022,
+      "title": "Automated Similarity Judgment Program (ASJP) Database: Marúbo Wordlist",
+      "type": "wordlist",
+      "institution": "Max Planck Institute for Evolutionary Anthropology",
+      "url": "https://asjp.clld.org/languages/MARUBO",
+      "local_path": null,
+      "license": "CC BY 4.0",
+      "harvest_status": "indexed",
+      "features": [
+        "swadesh_100",
+        "phonetic_transcription",
+        "cognate_coding"
+      ],
+      "capabilities": [
+        "grounding",
+        "lexical_distillation"
+      ],
+      "policy": "direct",
+      "license_status": "unrecorded",
+      "rights_holder": "Wichmann, Søren & Holman, Eric W. & Brown, Cecil H.",
+      "note": "ASJP Swadesh list; not on disk, fetch from asjp.clld.org before use (a record, not a gate)."
+    },
+    {
+      "source_id": "grn_words_of_life_mzr",
+      "author": "Global Recordings Network (GRN)",
+      "year": 2016,
+      "title": "Palavras de Vida - Língua Marúbo (Gravações e Roteiros Bilíngues)",
+      "type": "audio_spoken_corpus",
+      "institution": "Global Recordings Network",
+      "url": "https://globalrecordings.net/pt/language/mzr",
+      "local_path": null,
+      "license": "GRN Freely Distributable Audio with Rights Attribution",
+      "harvest_status": "indexed",
+      "features": [
+        "70_audio_segments",
+        "portuguese_accompanying_scripts",
+        "natural_spoken_speed"
+      ],
+      "capabilities": [
+        "audio_alignment",
+        "lexical_distillation"
+      ],
+      "policy": "direct",
+      "license_status": "unrecorded",
+      "rights_holder": "Global Recordings Network (GRN)"
+    },
+    {
+      "source_id": "vana_rasi_cti_2024",
+      "author": "Manoel Corrêas Marubo (Mese Papa); Davi Martins Rodrigues Marubo (Wanĩn Eshenpa); CTI",
+      "year": 2024,
+      "title": "Vaná rasĩ — As plantas que cultivamos na roça (1. ed.)",
+      "type": "educational_publication",
+      "institution": "Centro de Trabalho Indigenista (CTI)",
+      "url": "https://biblioteca.trabalhoindigenista.org.br/wp-content/uploads/tainacan-items/137/114455/Marubo-AgroBioDiversidade-Final-capa-e-miolo-baixa.pdf",
+      "local_path": "var/external/vana_rasi/vana_rasi.pdf",
+      "sha256": "6b06cb2b0290b9bd8c1f22970acba59d34acd84400e424b4173084c17eceec1c",
+      "license": "© CTI 2024; no open licence stated (recorded, not a gate per ADR-0025)",
+      "rights_holder": "Centro de Trabalho Indigenista (CTI) and the Marúbo authors (Sanĩ Nawa/Alfredo Barbosa Filho Marubo; Manoel Corrêas Marubo; Davi Martins Rodrigues Marubo)",
+      "harvest_status": "downloaded",
+      "features": [
+        "marubo_prose",
+        "pedagogical_register",
+        "plant_vocabulary",
+        "facing_portuguese_sections"
+      ],
+      "capabilities": [
+        "monolingual_text",
+        "lexical_distillation",
+        "register_evidence"
+      ],
+      "policy": "direct",
+      "license_status": "unrecorded",
+      "extraction": "exports/monolingual/vana_rasi_mzr.jsonl (19 blocks); pair alignment deferred to human review",
+      "isbn": "978-85-60028-22-1",
+      "year_note": "catalogued by CTI as 2023; the colophon of this PDF gives 1. ed. 2024, ISBN 978-85-60028-22-1"
+    },
+    {
+      "source_id": "smith_2021_twu",
+      "author": "C. Sean Smith",
+      "year": 2021,
+      "title": "Aspects of Switch Reference in Marubo, a Panoan Language of Western Amazonia",
+      "type": "grammar_description",
+      "institution": "Trinity Western University",
+      "url": "https://twu.arcabc.ca/_flysystem/repo-bin/2021-05/twu_778.pdf",
+      "local_path": "var/external/smith_2021_twu/smith_2021_twu.pdf",
+      "sha256": "dded03b4e4c6b44448f9244834ad6024fccad8aa894eec895884b52f1d396911",
+      "license": "copyright C. Sean Smith 2021; no open licence stated (recorded, not a gate per ADR-0025)",
+      "rights_holder": "C. Sean Smith; Trinity Western University",
+      "harvest_status": "downloaded",
+      "features": [
+        "switch_reference",
+        "phonology",
+        "igt",
+        "two_glossed_narratives"
+      ],
+      "capabilities": [
+        "morphology_evidence",
+        "syntax_evidence"
+      ],
+      "policy": "direct",
+      "license_status": "unrecorded",
+      "extraction": "exports/igt/smith_2021_twu_igt.jsonl (31 validated clauses; English pivot, not training pairs)"
+    },
+    {
+      "source_id": "pinturas_marubo_cti_2021",
+      "author": "Marúbo community authors (CTI edition)",
+      "year": 2021,
+      "title": "Pinturas Marubo",
+      "type": "educational_publication",
+      "institution": "Biblioteca Digital CTI / Centro de Trabalho Indigenista",
+      "url": "https://biblioteca.trabalhoindigenista.org.br/",
+      "local_path": null,
+      "license": "© Todos os direitos reservados ao povo Marubo (rights holder is the Marúbo people, not CTI)",
+      "rights_holder": "Povo Marúbo",
+      "harvest_status": "indexed",
+      "features": [
+        "kene_design_names",
+        "clan_names",
+        "shamanic_exegesis",
+        "168_pages"
+      ],
+      "capabilities": [
+        "lexical_distillation"
+      ],
+      "policy": "review_required",
+      "license_status": "stated",
+      "register_note": "kene names are lexicon-safe; the associated exegesis may be recorded as ritual_restricted if a reviewer agrees. Labels are descriptive and never gate processing (ADR-0025)."
+    },
+    {
+      "source_id": "marubo_bichos_casco_itui_2021",
+      "author": "Marúbo community authors (CTI edition)",
+      "year": 2021,
+      "title": "Os Marubo e os bichos de casco do rio Ituí",
+      "type": "educational_publication",
+      "institution": "Biblioteca Digital CTI / Centro de Trabalho Indigenista",
+      "url": "https://biblioteca.trabalhoindigenista.org.br/",
+      "local_path": null,
+      "license": "not stated in the survey record (verify on the colophon when convenient; a record, not an ingest gate)",
+      "rights_holder": "Marúbo authors / CTI",
+      "harvest_status": "indexed",
+      "features": [
+        "folk_taxonomy",
+        "shakayavo_shaawe_terms",
+        "species_cards",
+        "57_pages",
+        "seasonal_terms"
+      ],
+      "capabilities": [
+        "lexical_distillation"
+      ],
+      "policy": "direct",
+      "license_status": "unrecorded",
+      "duplicate_note": "acervo.socioambiental.org/.../mbl00006.pdf is the same text - ingest once"
+    },
+    {
+      "source_id": "youversion_mzr_ykv",
+      "author": "Wycliffe Bible Translators (translation), Missão Novas Tribos do Brasil",
+      "year": 2025,
+      "title": "Yové Koĩni Vana — Marúbo Bible (YouVersion version 4026 / YKV)",
+      "type": "parallel_corpus_usfm",
+      "institution": "YouVersion / Wycliffe Bible Translators",
+      "url": "https://www.bible.com/languages/mzr",
+      "local_path": null,
+      "license": "CC BY-NC-ND 4.0 (same translation as the local ScriptureEarth package); YouVersion ToU forbids extraction",
+      "rights_holder": "Missão Novas Tribos do Brasil; Wycliffe Bible Translators, Inc.",
+      "harvest_status": "indexed",
+      "features": [
+        "marubo_scripture",
+        "verse_keyed",
+        "same_translation_as_local_usfm"
+      ],
+      "capabilities": [
+        "parallel_alignment",
+        "lexical_distillation"
+      ],
+      "policy": "direct",
+      "license_status": "stated",
+      "coverage_note": "published coverage GEN / EXO 1-20 / RUT / NEH / JHN / JAS; text acquisition forbidden by platform terms - human decision"
+    },
+    {
+      "source_id": "cti_serie_oralidade",
+      "author": "CTI / Marúbo, Matis, Matsés authors",
+      "year": 2021,
+      "title": "Série Oralidade (CTI school booklets)",
+      "type": "educational_publication",
+      "institution": "Centro de Trabalho Indigenista (CTI)",
+      "url": "https://biblioteca.trabalhoindigenista.org.br/",
+      "local_path": null,
+      "license": "not stated",
+      "rights_holder": "CTI and the named indigenous authors",
+      "harvest_status": "indexed",
+      "features": [
+        "five_booklets",
+        "wordless_drawings"
+      ],
+      "capabilities": [],
+      "policy": "exclude",
+      "license_status": "unrecorded",
+      "negative_note": "the celebrated Série Oralidade booklets are wordless drawing books - no linguistic text; do not ingest as text"
+    },
+    {
+      "source_id": "cesarino_2018_wenia",
+      "author": "Pedro de Niemeyer Cesarino",
+      "year": 2018,
+      "title": "Wenía: o surgimento dos antepassados - leitura e tradução de um canto narrativo ameríndio (Marubo, Amazônia Ocidental)",
+      "type": "parallel_corpus_text",
+      "institution": "Estudos de Literatura Brasileira Contemporânea 53",
+      "url": "https://doi.org/10.1590/2316-4018533",
+      "local_path": "var/external/wenia_2018/wenia_2018.pdf",
+      "license": "CC BY-NC 4.0 (SciELO record)",
+      "rights_holder": "author / SciELO journal",
+      "harvest_status": "downloaded",
+      "features": [
+        "921_marubo_chant_verse_lines",
+        "2401_marubo_tokens",
+        "line_aligned_por",
+        "printed_margin_line_numbers",
+        "born_digital_text_layer"
+      ],
+      "capabilities": [
+        "parallel_alignment",
+        "register_evidence",
+        "lexical_distillation"
+      ],
+      "policy": "direct",
+      "license_status": "verified",
+      "register_note": "ritual/chant register; record the label (descriptive, not a gate).",
+      "sha256": "a3661ae5ce22ee60ef9d0376a39a77d541447126cfd497b9978a372e4dfab767",
+      "governed_source_key": "wenia-2018",
+      "governed_source_id": "src_01M5866N90VRTA9RAC6BJ2V51H",
+      "extracted_artifact": "exports/harvested_parallel/cesarino_2018_wenia_parallel.jsonl",
+      "extraction_extractor": "scripts/extract_pairs.py table",
+      "igt_artifact": "exports/igt/cesarino_2018_wenia_igt.jsonl (41 annex verses 545-585, segmented + glossed, por free translation from main-text verses 497-537; morphology evidence, not training pairs; legend: exports/igt/cesarino_2018_wenia_igt.legend.json)",
+      "igt_extractor": "scripts/extract_wenia_igt.py",
+      "parallel_text": "line-aligned mzr<->por: 921 verse rows / 2,401 mzr tokens, PDF pages 15-48 (extracted 2026-10-18)",
+      "extraction_note": "Born-digital PDF (Producer: Microsoft Word 2010): the text layer is the author's own manuscript, so the Marúbo nasality diacritics (ẽ ĩ ũ ã õ) are intact - unlike the scanned 2013 book. The chant table prints each verse beside its Portuguese translation, numbered every fifth line; extracted from pdftotext -layout, so each row is read out of the source (20.1% of rows keep the printed line number as a locator). 76 Portuguese footnote superscripts stripped deterministically (qc.tgt_raw keeps the raw line); zero residual damage, zero OCR-artefact flags. 87.7% of rows use at least one token absent from the scripture/academic reference vocabulary - that is chant lexicon, not damage, because there is no OCR layer. This is a DIFFERENT chant from the twelve in the 2013 book, so it does not repair the book's OCR.",
+      "register": "ritual_restricted review label (ADR-0025: metadata, not a gate)"
+    },
+    {
+      "source_id": "dollis_2022_noke_yora",
+      "author": "Marúbo author (Dollis)",
+      "year": 2022,
+      "title": "Nokẽ Yora (Marúbo-authored dissertation)",
+      "type": "monolingual_text",
+      "institution": "academic",
+      "url": "",
+      "local_path": null,
+      "license": "unknown",
+      "rights_holder": "Marúbo author",
+      "harvest_status": "indexed",
+      "features": [
+        "183_pages",
+        "2538_marubo_orthography_lines"
+      ],
+      "capabilities": [
+        "monolingual_text",
+        "register_evidence"
+      ],
+      "policy": "review_required",
+      "license_status": "unrecorded",
+      "note": "largest Marúbo-authored text lead; unquantified and not yet located at a stable URL",
+      "register_note": "ritual/chant register; record the label (descriptive, not a gate)."
+    },
+    {
+      "source_id": "cti_palavras_matis",
+      "author": "CTI / Matis authors",
+      "year": 2021,
+      "title": "Palavras Matis (CTI)",
+      "type": "dictionary",
+      "institution": "Centro de Trabalho Indigenista",
+      "url": "https://biblioteca.trabalhoindigenista.org.br/",
+      "local_path": null,
+      "license": "not stated",
+      "rights_holder": "CTI / Matis authors",
+      "harvest_status": "indexed",
+      "features": [
+        "97_pages_scanned",
+        "no_text_layer"
+      ],
+      "capabilities": [
+        "lexical_distillation"
+      ],
+      "policy": "direct",
+      "license_status": "unrecorded",
+      "note": "sister language mpu - hypotheses only (invariant 8); OCR required"
+    },
+    {
+      "source_id": "marubo_vocab_lexicon",
+      "author": "project compilation (see per-entry citations)",
+      "year": 2026,
+      "title": "Marúbo lexicon (marubo_lexicon.tsv)",
+      "type": "wordlist",
+      "institution": "local compilation",
+      "url": null,
+      "local_path": "var/external/marubo_vocab/marubo_lexicon.tsv",
+      "license": "not stated",
+      "rights_holder": "entry-level citations in the file",
+      "harvest_status": "downloaded",
+      "features": [
+        "mzr_por_glosses",
+        "pos"
+      ],
+      "capabilities": [
+        "wordlist",
+        "lexical_distillation"
+      ],
+      "policy": "direct",
+      "register": "technical"
+    },
+    {
+      "source_id": "marubo_academic_lexicon",
+      "author": "project compilation (Costa citations)",
+      "year": 2026,
+      "title": "Academic Marúbo lexicon (academic_lexicon.tsv)",
+      "type": "wordlist",
+      "institution": "local compilation",
+      "url": null,
+      "local_path": "var/external/marubo_sources/academic_lexicon.tsv",
+      "license": "not stated",
+      "rights_holder": "entry-level citations in the file",
+      "harvest_status": "downloaded",
+      "features": [
+        "headword_por_eng_glosses",
+        "examples"
+      ],
+      "capabilities": [
+        "wordlist",
+        "lexical_distillation"
+      ],
+      "policy": "direct",
+      "register": "technical"
+    },
+    {
+      "source_id": "parallel_por_corpus",
+      "author": "Portuguese edition (see ScriptureEarth package record)",
+      "year": 2026,
+      "title": "Portuguese parallel text (parallel_por)",
+      "type": "parallel_corpus_text",
+      "institution": "local package",
+      "url": null,
+      "local_path": "var/external/parallel_por/",
+      "license": "not stated",
+      "rights_holder": "not stated",
+      "harvest_status": "downloaded",
+      "features": [
+        "eight_books",
+        "verse_aligned_txt"
+      ],
+      "capabilities": [
+        "parallel_text",
+        "alignment"
+      ],
+      "policy": "direct",
+      "register": "religious"
+    },
+    {
+      "source_id": "cldf_oliveiraprotopanoan",
+      "author": "Oliveira (CLDF dataset)",
+      "year": 2026,
+      "title": "Proto-Panoan CLDF import (reference language)",
+      "type": "cldf_dataset",
+      "institution": "CLDF",
+      "url": null,
+      "local_path": "var/external/cldf_oliveiraprotopanoan/",
+      "license": "see dataset metadata",
+      "rights_holder": "see dataset metadata",
+      "harvest_status": "downloaded",
+      "features": [
+        "proto_panoan_forms"
+      ],
+      "capabilities": [
+        "related_language_reference"
+      ],
+      "policy": "direct",
+      "register": "historical",
+      "note": "Related-language evidence creates hypotheses only, never Marúbo truth (AGENTS.md invariant 8)."
+    }
+  ],
+  "replication_protocol": {
+    "step_1": "Query academic repositories (Pantheon UFRJ, USP, UFAM, Museu do Índio) for ISO code and language name.",
+    "step_2": "Harvest ScriptureEarth USFM text and timed audio if available.",
+    "step_3": "Ingest ASJP Swadesh wordlists and Glottolog bibliography.",
+    "step_4": "Record governance policy for each source in sources_index.json before pipeline extraction.",
+    "step_5": "Run Langpipe citation miner and valence induction on harvested parallel segments."
+  },
+  "policy_basis": "ADR-0025: a source present in var/external/ is authorized for processing and training; licence and ownership are records, not gates. Entries here that carry `exclude` or `review_required` are research triage for indexed (not yet acquired) leads, not licence gates; once a source is downloaded into the repository, presence authorizes it and the policy is `direct` unless the operator explicitly excludes it."
+}

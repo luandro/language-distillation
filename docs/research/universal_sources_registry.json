@@ -1,0 +1,1046 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Universal Indigenous Resource Registry",
+  "version": "1.0.0",
+  "description": "Cross-language indexing and automated discovery registry for indigenous languages, repository taxonomy, and harvest pipelines.",
+  "repository_taxonomy": {
+    "scholarly_aggregators": [
+      {
+        "id": "openalex",
+        "name": "OpenAlex Global Scholarly Graph",
+        "type": "rest_api",
+        "endpoint": "https://api.openalex.org/works",
+        "rate_limit": "10 req/s with mailto header",
+        "features": [
+          "open_access_pdf_resolution",
+          "doi_resolution",
+          "author_graph",
+          "citation_traversal"
+        ],
+        "search_template": "{endpoint}?search={language_name}+{family}&filter=default.search:{language_name}"
+      },
+      {
+        "id": "zenodo",
+        "name": "Zenodo Open Science Archive",
+        "type": "rest_api",
+        "endpoint": "https://zenodo.org/api/records",
+        "rate_limit": "60 req/min",
+        "features": [
+          "direct_file_download",
+          "cc_license_metadata",
+          "igt_data",
+          "language_science_press_books"
+        ],
+        "search_template": "{endpoint}?q={language_name}&type=publication"
+      },
+      {
+        "id": "bdtd",
+        "name": "Biblioteca Digital Brasileira de Teses e Dissertações (IBICT)",
+        "type": "vufind_rest_api",
+        "endpoint": "https://bdtd.ibict.br/vufind/api/v1/search",
+        "rate_limit": "30 req/min",
+        "features": [
+          "brazilian_academic_theses",
+          "handle_resolution",
+          "full_text_links",
+          "indigenous_studies"
+        ],
+        "search_template": "{endpoint}?lookfor={language_name}&type=AllFields"
+      }
+    ],
+    "linguistic_archives": [
+      {
+        "id": "glottolog",
+        "name": "Glottolog Language Reference",
+        "type": "rest_api",
+        "endpoint": "https://glottolog.org/resource/languoid/id/{glottocode}.json",
+        "features": [
+          "family_tree",
+          "geographic_coordinates",
+          "iso_mapping",
+          "exhaustive_bibliography"
+        ]
+      },
+      {
+        "id": "asjp",
+        "name": "Automated Similarity Judgment Program (ASJP)",
+        "type": "clld_web",
+        "endpoint": "https://asjp.clld.org/languages/{asjp_code}",
+        "features": [
+          "swadesh_100_wordlist",
+          "standardized_phonetic_transcription",
+          "cognate_sets"
+        ]
+      },
+      {
+        "id": "etnolinguistica",
+        "name": "Biblioteca Digital Curt Nimuendajú / Etnolinguistica.org",
+        "type": "curated_archive_crawl",
+        "endpoint": "http://www.etnolinguistica.org/lingua:{iso639_3}",
+        "features": [
+          "rare_grammars",
+          "amazonian_linguistics",
+          "historical_manuscripts",
+          "vocabularies"
+        ]
+      },
+      {
+        "id": "cla_berkeley",
+        "name": "California Language Archive (CLA)",
+        "type": "oai_pmh_web",
+        "endpoint": "https://cla.berkeley.edu",
+        "features": [
+          "field_recordings",
+          "linguistic_notebooks",
+          "indigenous_texts"
+        ]
+      },
+      {
+        "id": "ailla",
+        "name": "Archive of the Indigenous Languages of Latin America (AILLA)",
+        "type": "digital_repository",
+        "endpoint": "https://ailla.utexas.edu",
+        "features": [
+          "igt_corpora",
+          "audio_transcriptions",
+          "ethnographic_texts"
+        ]
+      },
+      {
+        "id": "prodoclin",
+        "name": "Programa de Documentação de Línguas Indígenas (Museu do Índio / UNESCO)",
+        "type": "institutional_archive",
+        "endpoint": "http://prodoc.museudoindio.gov.br",
+        "features": [
+          "field_recordings",
+          "dictionaries",
+          "cultural_documentation"
+        ]
+      }
+    ],
+    "parallel_corpora": [
+      {
+        "id": "scriptureearth",
+        "name": "ScriptureEarth (SIL / Wycliffe)",
+        "type": "structured_web",
+        "endpoint": "https://www.scriptureearth.org/00por.php?iso={iso639_3}",
+        "features": [
+          "usfm_scripture",
+          "aligned_mp3_audio",
+          "timing_files",
+          "high_token_volume"
+        ]
+      },
+      {
+        "id": "grn",
+        "name": "Global Recordings Network",
+        "type": "rest_api_scrape",
+        "endpoint": "https://globalrecordings.net/pt/language/{iso639_3}",
+        "features": [
+          "audio_phrasebooks",
+          "multilingual_scripts",
+          "evangelical_oral_texts"
+        ]
+      }
+    ]
+  },
+  "language_profiles": {
+    "mzr": {
+      "iso639_3": "mzr",
+      "glottocode": "maru1252",
+      "asjp_code": "MARUBO",
+      "name": "Marúbo",
+      "autonym": "Yawanahua / Chai Nawavo / Vari Nawavo",
+      "family": "Pano",
+      "branch": "Mainline Panoan / Mayoruna-Panoan contact zone",
+      "contact_languages": [
+        "por"
+      ],
+      "geographic_region": "Vale do Javari, Amazonas, Brazil (Ituí and Curuçá rivers)",
+      "sister_languages": [
+        "mcf",
+        "kax",
+        "shn",
+        "yma",
+        "cul"
+      ],
+      "query_aliases": [
+        "Marubo",
+        "Marúbo",
+        "Marupa",
+        "Chai Nawavo",
+        "Kachinawa do Javari",
+        "qkf"
+      ],
+      "harvested_sources": [
+        {
+          "source_id": "zenodo_1008779_cesarino_marubo_2017",
+          "repository": "zenodo",
+          "title": "Marubo (The teachings of the Death-Path)",
+          "authors": [
+            "Pedro de Niemeyer Cesarino",
+            "Armando Mariano Marubo Cherõpapa Txano",
+            "Robson Dionísio Doles Marubo"
+          ],
+          "year": 2017,
+          "publication": "On this and other worlds: Voices from Amazonia (Language Science Press)",
+          "doi": "10.5281/zenodo.1008779",
+          "license": "CC-BY-4.0",
+          "access_category": "direct",
+          "local_path": "var/external/marubo_sources/Cesarino_Marubo_2017_TeachingsDeathPath.pdf",
+          "sha256": "3cbdd08779b5c3ff3e0b2e8fa4402636f32e29e924a4f89d389658e4544d6db3",
+          "status": "downloaded_verified",
+          "artifacts": {
+            "text": "var/external/marubo_sources/Cesarino_Marubo_2017_TeachingsDeathPath.txt",
+            "igt_records": 105,
+            "bilingual_alignment": true
+          }
+        },
+        {
+          "source_id": "ufrj_pantheon_costa_1992",
+          "repository": "bdtd",
+          "title": "Padrões rítmicos e marcação de caso em Marubo (Pano)",
+          "authors": [
+            "Raquel Guimarães Romankevicius Costa"
+          ],
+          "year": 1992,
+          "institution": "UFRJ",
+          "handle": "11422/3194",
+          "download_url": "https://pantheon.ufrj.br/bitstreams/1311d6aa-47c8-4e8f-bf0d-2c116db75dd7/download",
+          "license": "Academic Research / Fair Use",
+          "access_category": "direct",
+          "local_path": "var/external/marubo_sources/costa_1992_padroes_ritmicos.pdf",
+          "status": "downloaded",
+          "features": [
+            "case_marking_ergative",
+            "split_ergativity",
+            "stress_patterns",
+            "igt_examples"
+          ]
+        },
+        {
+          "source_id": "ufrj_pantheon_costa_2000",
+          "repository": "bdtd",
+          "title": "Aspectos da Fonologia Marubo (Pano): uma visão não-linear",
+          "authors": [
+            "Raquel Guimarães Romankevicius Costa"
+          ],
+          "year": 2000,
+          "institution": "UFRJ",
+          "handle": "11422/3195",
+          "download_url": "https://pantheon.ufrj.br/bitstreams/c11e6029-024d-4f11-9e8d-584e3d51ab86/download",
+          "license": "Academic Research / Fair Use",
+          "access_category": "direct",
+          "local_path": "var/external/marubo_sources/costa_2000_fonologia_marubo.pdf",
+          "status": "downloaded",
+          "features": [
+            "phoneme_inventory",
+            "nasal_harmony",
+            "syllable_structure",
+            "stress_clitics"
+          ]
+        },
+        {
+          "source_id": "abralin_costa_2017",
+          "repository": "openalex",
+          "title": "Interações entre restrições em Marubo (Pano)",
+          "authors": [
+            "Raquel Guimarães Romankevicius Costa"
+          ],
+          "year": 2017,
+          "journal": "Revista da ABRALIN",
+          "doi": "10.25189/rabralin.v1i1.727",
+          "download_url": "https://revista.abralin.org/index.php/abralin/article/download/727/1827",
+          "license": "CC-BY-4.0 Open Access",
+          "access_category": "direct",
+          "local_path": "var/external/marubo_sources/Costa_2017_InteracoesRestricoesMarubo_Abralin.pdf",
+          "status": "downloaded",
+          "features": [
+            "phonological_rules",
+            "stress_assignment",
+            "morpheme_boundaries"
+          ]
+        },
+        {
+          "source_id": "editora34_cesarino_2013",
+          "repository": "etnolinguistica",
+          "title": "Quando a Terra Deixou de Falar: Cantos da Mitologia Marubo",
+          "authors": [
+            "Pedro de Niemeyer Cesarino"
+          ],
+          "year": 2013,
+          "license": "Monograph / Indigenous Orality Rights",
+          "access_category": "direct",
+          "local_path": "var/external/marubo_sources/Cesarino_2013_QuandoATerraDeixouDeFalar_MitolMarubo.pdf",
+          "status": "downloaded_verified",
+          "features": [
+            "parallel_poetic_chants",
+            "shamanic_register",
+            "traditional_lexicon"
+          ]
+        },
+        {
+          "source_id": "scriptureearth_mzr_corpus",
+          "repository": "scriptureearth",
+          "title": "Marúbo Scripture Portions",
+          "authors": [
+            "SIL / Associação Internacional de Linguística"
+          ],
+          "year": 2018,
+          "license": "ScriptureEarth Online Access / Fair Use Distillation",
+          "access_category": "direct",
+          "local_path": "var/scriptureearth_mzr/",
+          "status": "downloaded_ingested",
+          "features": [
+            "5389_aligned_verses",
+            "usfm_structured",
+            "audio_aligned"
+          ]
+        }
+      ],
+      "policy_basis": "ADR-0025: a source present in the repository is authorized for processing and training; licence and ownership are records, not gates. `access_category` is a legacy harvest label, not a permission decision."
+    },
+    "mcf": {
+      "iso639_3": "mcf",
+      "glottocode": "mats1244",
+      "asjp_code": "MATSES",
+      "name": "Matsés (Mayoruna)",
+      "family": "Pano",
+      "contact_languages": [
+        "por",
+        "spa"
+      ],
+      "geographic_region": "Javari River basin (Brazil / Peru border)",
+      "sister_languages": [
+        "mzr",
+        "kax"
+      ],
+      "shared_repositories": [
+        "bdtd",
+        "openalex",
+        "scriptureearth",
+        "cla_berkeley",
+        "ailla"
+      ],
+      "cross_linguistic_significance": "Direct neighbor of Marúbo in Vale do Javari; David Fleck's monumental Matsés Grammar provides comparative evidentiary anchors for split ergativity, evidentials, and spatial enclitics."
+    },
+    "tca": {
+      "iso639_3": "tca",
+      "glottocode": "ticu1245",
+      "asjp_code": "TIKUNA",
+      "name": "Tikuna (Ticuna)",
+      "family": "Ticuna-Yuri (Isolate/Small family)",
+      "contact_languages": [
+        "por",
+        "spa"
+      ],
+      "geographic_region": "Alto Solimões / Vale do Javari periphery (Brazil / Colombia / Peru)",
+      "sister_languages": [],
+      "shared_repositories": [
+        "bdtd",
+        "openalex",
+        "zenodo",
+        "scriptureearth",
+        "cla_berkeley",
+        "etnolinguistica"
+      ],
+      "cross_linguistic_significance": "Target of tikuna-ai initiatives; shares regional archival nodes (UFAM, Museu Magüta, Curt Nimuendajú, SIL Brazil).",
+      "language_name": "Tikuna (Ticuna)"
+    },
+    "cul": {
+      "iso639_3": "cul",
+      "glottocode": "culi1244",
+      "asjp_code": "CULINA",
+      "name": "Culina (Madija)",
+      "family": "Arawan",
+      "contact_languages": [
+        "por"
+      ],
+      "geographic_region": "Juruá-Purus basins / Vale do Javari",
+      "sister_languages": [
+        "jam",
+        "paum"
+      ],
+      "shared_repositories": [
+        "bdtd",
+        "openalex",
+        "etnolinguistica",
+        "scriptureearth"
+      ],
+      "cross_linguistic_significance": "Historical contact language with Marúbo (cf. Lorrain 2007 'Did the Kulinas become the Marubos?'); critical for identifying contact-induced lexical borrowings and substrate morphology."
+    }
+  },
+  "cross_language_discovery_engine": {
+    "expansion_rules": [
+      {
+        "trigger": "comparative_paper_indexed",
+        "action": "extract_related_languages_and_queue_searches",
+        "example": "Soares (2006) indexes mzr, mcf, kax -> automatically queues mcf and kax bibliographic searches on OpenAlex and BDTD"
+      },
+      {
+        "trigger": "archive_collection_discovered",
+        "action": "scan_collection_for_all_registered_isos",
+        "example": "When PRODOCLIN or Curt Nimuendajú archive page is scraped, extract records for all ISO codes in registry"
+      },
+      {
+        "trigger": "thesis_bibliography_mined",
+        "action": "resolve_dois_and_handles_for_citations",
+        "example": "Citations in Costa (2000) citing Montagner (1985) or Melatti (1977) are passed to BDTD/OpenAlex crawler"
+      }
+    ]
+  },
+  "discovered_resources": [
+    {
+      "source_id": "costa_1992_padroes_ritmicos",
+      "language_code": "mzr",
+      "glottocode": "maru1252",
+      "title": "Padrões rítmicos e marcação de caso em Marubo (Pano)",
+      "author": "Costa, Raquel Guimarães Romankevicius",
+      "year": 1992,
+      "repository_id": "pantheon_ufrj",
+      "url": "https://pantheon.ufrj.br/handle/11422/3194",
+      "download_url": "https://pantheon.ufrj.br/bitstreams/1311d6aa-47c8-4e8f-bf0d-2c116db75dd7/download",
+      "local_path": "var/external/marubo_sources/costa_1992_padroes_ritmicos.pdf",
+      "sha256": "3f958e09a861eca1549aef44ee76f4640b5a69f24936f040a43a46f6385e49f2",
+      "file_size_bytes": 45854648,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "downloaded",
+      "features": [
+        "phonology",
+        "case_marking",
+        "split_ergativity",
+        "stress_patterns",
+        "IGT"
+      ],
+      "related_languages": [
+        "mcf",
+        "kax"
+      ],
+      "metadata": {
+        "license": null,
+        "license_url": null,
+        "license_checked_at": "2026-10-18",
+        "license_status": "unrecorded",
+        "rights_holder": "Raquel Guimarães Romankevicius Costa",
+        "rights_note": "UFRJ Pantheon dc.rights is \"Acesso Aberto\" (access), not a license"
+      },
+      "discovered_at": "2026-10-17T18:05:32.437331Z",
+      "policy_note": "ADR-0025: presence authorizes processing and training; license/ownership are records, not gates"
+    },
+    {
+      "source_id": "costa_2000_fonologia_marubo",
+      "language_code": "mzr",
+      "glottocode": "maru1252",
+      "title": "Aspectos da Fonologia Marubo (Pano): uma visão não-linear",
+      "author": "Costa, Raquel Guimarães Romankevicius",
+      "year": 2000,
+      "repository_id": "pantheon_ufrj",
+      "url": "https://pantheon.ufrj.br/handle/11422/3195",
+      "download_url": "https://pantheon.ufrj.br/bitstreams/c11e6029-024d-4f11-9e8d-584e3d51ab86/download",
+      "local_path": "var/external/marubo_sources/costa_2000_fonologia_marubo.pdf",
+      "sha256": "17aa935e0ee635c96080916bf6601acea702d2234a9f9d34fa97f91d0313d8fa",
+      "file_size_bytes": 13500008,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "downloaded",
+      "features": [
+        "phoneme_inventory",
+        "nasal_harmony",
+        "syllable_structure"
+      ],
+      "related_languages": [
+        "mcf"
+      ],
+      "metadata": {
+        "license": null,
+        "license_url": null,
+        "license_checked_at": "2026-10-18",
+        "license_status": "unrecorded",
+        "rights_holder": "Raquel Guimarães Romankevicius Costa",
+        "rights_note": "UFRJ Pantheon dc.rights is \"Acesso Aberto\" (access), not a license"
+      },
+      "discovered_at": "2026-10-17T18:05:32.443257Z",
+      "policy_note": "ADR-0025: presence authorizes processing and training; license/ownership are records, not gates"
+    },
+    {
+      "source_id": "costa_2017_abralin",
+      "language_code": "mzr",
+      "glottocode": "maru1252",
+      "title": "Interações entre Restrições em Marubo (Pano)",
+      "author": "Costa, Raquel Guimarães Romankevicius",
+      "year": 2017,
+      "repository_id": "openalex",
+      "url": "https://doi.org/10.25189/rabralin.v1i1.727",
+      "download_url": "https://revista.abralin.org/index.php/abralin/article/download/727/1827",
+      "local_path": "var/external/marubo_sources/Costa_2017_InteracoesRestricoesMarubo_Abralin.pdf",
+      "sha256": "8e699e66a97f0f87d9cc2151d46358f1e1987d32f044bf975971967ecb9dffa9",
+      "file_size_bytes": 201374,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "downloaded",
+      "features": [
+        "optimality_theory",
+        "syllables",
+        "trochees_iambs"
+      ],
+      "related_languages": [
+        "mcf"
+      ],
+      "metadata": {
+        "license": "CC-BY-4.0",
+        "license_url": "https://revista.abralin.org/index.php/abralin/article/view/727",
+        "license_checked_at": "2026-10-18",
+        "license_status": "conflicting",
+        "rights_holder": "Revista da ABRALIN; author",
+        "rights_note": "page shows a CC BY 4.0 badge and \"© Todos os direitos reservados aos autores\""
+      },
+      "discovered_at": "2026-10-17T18:05:32.445726Z",
+      "policy_note": "ADR-0025: presence authorizes processing and training; license/ownership are records, not gates"
+    },
+    {
+      "source_id": "zenodo_1008779_cesarino_2017",
+      "language_code": "mzr",
+      "glottocode": "maru1252",
+      "title": "Marubo: The teachings of the Death-Path",
+      "author": "Cesarino, Pedro de Niemeyer & Marubo Cherõpapa Txano, Armando & Doles Marubo, Robson",
+      "year": 2017,
+      "repository_id": "zenodo",
+      "url": "https://doi.org/10.5281/zenodo.1008779",
+      "download_url": "https://zenodo.org/api/records/1008779/files/4.pdf/content",
+      "local_path": "var/external/marubo_sources/Cesarino_Marubo_2017_TeachingsDeathPath.pdf",
+      "sha256": "5347e9660cadb8e1efa10dfb00d8e9417a1b355c78bf3828d5d76184fb328e3b",
+      "file_size_bytes": 507588,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "downloaded",
+      "features": [
+        "105_igt_sentences",
+        "trilingual_glosses",
+        "collaborative_indigenous_authorship"
+      ],
+      "related_languages": [
+        "mcf"
+      ],
+      "metadata": {
+        "license": "CC-BY-4.0",
+        "license_url": "https://zenodo.org/records/1008779",
+        "license_checked_at": "2026-10-18",
+        "license_status": "verified",
+        "rights_holder": "Language Science Press; authors",
+        "rights_note": "publisher record states Creative Commons Attribution 4.0 International"
+      },
+      "discovered_at": "2026-10-17T18:05:32.448116Z",
+      "policy_note": "ADR-0025: presence authorizes processing and training; license/ownership are records, not gates"
+    },
+    {
+      "source_id": "glottolog_maru1252",
+      "language_code": "mzr",
+      "glottocode": "maru1252",
+      "title": "Glottolog 5.0 Language Reference: Marúbo",
+      "author": "Hammarström et al.",
+      "year": 2024,
+      "repository_id": "glottolog",
+      "url": "https://glottolog.org/resource/languoid/id/maru1252",
+      "download_url": "https://glottolog.org/resource/languoid/id/maru1252.json",
+      "local_path": "var/external/glottolog/maru1252.json",
+      "sha256": "109b14c26e4c8c68b1eb631656c93dd10fe6f64f4978a57815576cd84a7a5029",
+      "file_size_bytes": 1705,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "downloaded",
+      "features": [
+        "typology",
+        "family_tree",
+        "geocoordinates",
+        "bibliography"
+      ],
+      "related_languages": [
+        "mcf",
+        "cul",
+        "tca",
+        "kax"
+      ],
+      "metadata": {
+        "license": "CC-BY-4.0",
+        "license_url": "https://glottolog.org/",
+        "license_checked_at": "2026-10-18",
+        "license_status": "verified",
+        "rights_holder": "Max Planck Institute for Evolutionary Anthropology",
+        "rights_note": "homepage footer names the CC BY 4.0 license"
+      },
+      "discovered_at": "2026-10-17T18:05:32.450501Z",
+      "policy_note": "ADR-0025: presence authorizes processing and training; license/ownership are records, not gates"
+    },
+    {
+      "source_id": "openalex_w4288733773",
+      "language_code": "tca",
+      "glottocode": "ticu1245",
+      "title": "Nominal Agreement Class Assignment in Tikuna (Isolate, Western Amazonia): a Dynamic Process Conditioned by Both Lexicon and Context",
+      "author": "Denis Bertet",
+      "year": 2022,
+      "repository_id": "openalex",
+      "url": "https://doi.org/10.1163/19589514-05202009",
+      "download_url": "https://shs.hal.science/halshs-03773726/document",
+      "local_path": null,
+      "sha256": null,
+      "file_size_bytes": null,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "indexed",
+      "features": [
+        "scholarly_paper",
+        "openalex"
+      ],
+      "related_languages": [],
+      "metadata": {
+        "openalex_id": "https://openalex.org/W4288733773",
+        "doi": "https://doi.org/10.1163/19589514-05202009",
+        "is_oa": true,
+        "type": "article",
+        "cited_by_count": 1
+      },
+      "discovered_at": "2026-10-17T18:31:15.410691Z"
+    },
+    {
+      "source_id": "openalex_w4312124281",
+      "language_code": "tca",
+      "glottocode": "ticu1245",
+      "title": "The social lives of isolates (and small language families): the case of the Northwest Amazon",
+      "author": "Rik van Gijn; Sietze J. Norder; Leonardo Arias; Nicholas Q. Emlen; Matheus C. B. C. Azevedo; Allison Caine; Saskia Dunn; Austin Howard; Nora Julmi; Olga Krasnoukhova; Mark Stoneking; Jurriaan Wiegertjes",
+      "year": 2022,
+      "repository_id": "openalex",
+      "url": "https://doi.org/10.1098/rsfs.2022.0054",
+      "download_url": "https://doi.org/10.1098/rsfs.2022.0054",
+      "local_path": null,
+      "sha256": null,
+      "file_size_bytes": null,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "indexed",
+      "features": [
+        "scholarly_paper",
+        "openalex"
+      ],
+      "related_languages": [],
+      "metadata": {
+        "openalex_id": "https://openalex.org/W4312124281",
+        "doi": "https://doi.org/10.1098/rsfs.2022.0054",
+        "is_oa": true,
+        "type": "article",
+        "cited_by_count": 44
+      },
+      "discovered_at": "2026-10-17T18:31:15.410875Z"
+    },
+    {
+      "source_id": "openalex_w2947650464",
+      "language_code": "tca",
+      "glottocode": "ticu1245",
+      "title": "Tikuna - Fènǖèkǖ rǜ âi - El Cazador y el Tigre",
+      "author": "Denis Bertet; Loida Ángel Ruiz; Eulalia Ángel Ruiz",
+      "year": 2019,
+      "repository_id": "openalex",
+      "url": "https://doi.org/10.31513/linguistica.2019.v15n1a25564",
+      "download_url": "https://doi.org/10.31513/linguistica.2019.v15n1a25564",
+      "local_path": null,
+      "sha256": null,
+      "file_size_bytes": null,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "indexed",
+      "features": [
+        "scholarly_paper",
+        "openalex"
+      ],
+      "related_languages": [],
+      "metadata": {
+        "openalex_id": "https://openalex.org/W2947650464",
+        "doi": "https://doi.org/10.31513/linguistica.2019.v15n1a25564",
+        "is_oa": true,
+        "type": "article",
+        "cited_by_count": 2
+      },
+      "discovered_at": "2026-10-17T18:31:15.411010Z"
+    },
+    {
+      "source_id": "bdtd_UNICAMP-30_5710697f615b35ea76cafdadd53db419",
+      "language_code": "tca",
+      "glottocode": "ticu1245",
+      "title": "O suprassegmental em Tikuna e a teoria fonologica",
+      "author": "Soares, Marília Facó, 1951-",
+      "year": null,
+      "repository_id": "bdtd",
+      "url": "https://hdl.handle.net/20.500.12733/1576795",
+      "download_url": "https://hdl.handle.net/20.500.12733/1576795",
+      "local_path": null,
+      "sha256": null,
+      "file_size_bytes": null,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "indexed",
+      "features": [
+        "academic_thesis",
+        "bdtd",
+        "brazilian_repository"
+      ],
+      "related_languages": [],
+      "metadata": {
+        "bdtd_id": "UNICAMP-30_5710697f615b35ea76cafdadd53db419",
+        "formats": [
+          "doctoralThesis"
+        ],
+        "languages": [
+          "por"
+        ]
+      },
+      "discovered_at": "2026-10-17T18:31:15.736229Z"
+    },
+    {
+      "source_id": "bdtd_UFAM_e467ee021f15cdbf415bcb5ae2aad7e4",
+      "language_code": "tca",
+      "glottocode": "ticu1245",
+      "title": "A língua portuguesa na comunidade indígena Tikuna São José I, Ilha do Camaleão, município de Anamã - AM",
+      "author": "Cazuza, Rauciele da Silva",
+      "year": null,
+      "repository_id": "bdtd",
+      "url": "https://tede.ufam.edu.br/handle/tede/8488",
+      "download_url": null,
+      "local_path": null,
+      "sha256": null,
+      "file_size_bytes": null,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "indexed",
+      "features": [
+        "academic_thesis",
+        "bdtd",
+        "brazilian_repository"
+      ],
+      "related_languages": [],
+      "metadata": {
+        "bdtd_id": "UFAM_e467ee021f15cdbf415bcb5ae2aad7e4",
+        "formats": [
+          "masterThesis"
+        ],
+        "languages": [
+          "por"
+        ]
+      },
+      "discovered_at": "2026-10-17T18:31:15.736250Z"
+    },
+    {
+      "source_id": "bdtd_UFRJ_32f073867a0141f87ff55c66ac5fd42f",
+      "language_code": "tca",
+      "glottocode": "ticu1245",
+      "title": "Língua Tikuna: variações na tríplice fronteira Brasil, Peru e Colômbia",
+      "author": "Serra (Mecüracü rü Tchai’erucü), Bernabé Bitencourt",
+      "year": null,
+      "repository_id": "bdtd",
+      "url": "http://hdl.handle.net/11422/24477",
+      "download_url": "http://hdl.handle.net/11422/24477",
+      "local_path": null,
+      "sha256": null,
+      "file_size_bytes": null,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "indexed",
+      "features": [
+        "academic_thesis",
+        "bdtd",
+        "brazilian_repository"
+      ],
+      "related_languages": [],
+      "metadata": {
+        "bdtd_id": "UFRJ_32f073867a0141f87ff55c66ac5fd42f",
+        "formats": [
+          "masterThesis"
+        ],
+        "languages": [
+          "por"
+        ]
+      },
+      "discovered_at": "2026-10-17T18:31:15.736260Z"
+    },
+    {
+      "source_id": "zenodo_7042764",
+      "language_code": "tca",
+      "glottocode": "ticu1245",
+      "title": "FIGURE 3. A and B in Taxonomic revision of Augochloropsis (Glyptochlora) Moure, a rare bee subgenus from the Amazon Basin (Hymenoptera: Halictinae)",
+      "author": "Celis, Cindy Julieth; Melo, Gabriel A. R.",
+      "year": 2022,
+      "repository_id": "zenodo",
+      "url": "https://zenodo.org/records/7042764",
+      "download_url": "https://zenodo.org/api/records/7042764/files/figure.png/content",
+      "local_path": null,
+      "sha256": null,
+      "file_size_bytes": 18644872,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "indexed",
+      "features": [
+        "zenodo_record",
+        "open_science"
+      ],
+      "related_languages": [],
+      "metadata": {
+        "zenodo_id": "7042764",
+        "doi": "10.5281/zenodo.7042764",
+        "license": "notspecified",
+        "md5": "md5:088a7dd04d854a83ae9a8d2adce267a9",
+        "communities": [
+          "biosyslit"
+        ]
+      },
+      "discovered_at": "2026-10-17T18:31:17.634261Z"
+    },
+    {
+      "source_id": "zenodo_13193779",
+      "language_code": "tca",
+      "glottocode": "ticu1245",
+      "title": "Tikuna bilineata",
+      "author": "Angeli, Kamila Batista; do Rozário, Ezinete Moreira M.; Salles, Frederico Falcão",
+      "year": 2015,
+      "repository_id": "zenodo",
+      "url": "https://zenodo.org/records/13193779",
+      "download_url": "https://zenodo.org/api/records/13193779/files/treatment.html/content",
+      "local_path": null,
+      "sha256": null,
+      "file_size_bytes": 664,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "indexed",
+      "features": [
+        "zenodo_record",
+        "open_science"
+      ],
+      "related_languages": [],
+      "metadata": {
+        "zenodo_id": "13193779",
+        "doi": "10.5281/zenodo.13193779",
+        "license": "cc-zero",
+        "md5": "md5:de6b39db3f5dae32688d2d853ba3f754",
+        "communities": [
+          "biosyslit"
+        ]
+      },
+      "discovered_at": "2026-10-17T18:31:17.634290Z"
+    },
+    {
+      "source_id": "zenodo_234336",
+      "language_code": "tca",
+      "glottocode": "ticu1245",
+      "title": "FIGURE 1 in A new species of monadal coral snake of the genus Micrurus (Serpentes, Elapidae) from western Amazon",
+      "author": "Feitosa, Darlan Tavares; Jr, Nelson Jorge Da Silva; Pires, Matheus Godoy; Zaher, Hussam; Prudente, Ana Lúcia Da Costa",
+      "year": 2015,
+      "repository_id": "zenodo",
+      "url": "https://zenodo.org/records/234336",
+      "download_url": "https://zenodo.org/api/records/234336/files/figure.png/content",
+      "local_path": null,
+      "sha256": null,
+      "file_size_bytes": 4934597,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "indexed",
+      "features": [
+        "zenodo_record",
+        "open_science"
+      ],
+      "related_languages": [],
+      "metadata": {
+        "zenodo_id": "234336",
+        "doi": "10.5281/zenodo.234336",
+        "license": "notspecified",
+        "md5": "md5:4a156b5720685c6885a3a7c4d29334d5",
+        "communities": [
+          "biosyslit"
+        ]
+      },
+      "discovered_at": "2026-10-17T18:31:17.634305Z"
+    },
+    {
+      "source_id": "glottolog_ticu1245",
+      "language_code": "tca",
+      "glottocode": "ticu1245",
+      "title": "Glottolog Languoid Reference: Ticuna",
+      "author": "Hammarström, Harald & Forkel, Robert & Haspelmath, Martin & Bank, Sebastian",
+      "year": 2024,
+      "repository_id": "glottolog",
+      "url": "https://glottolog.org/resource/languoid/id/ticu1245",
+      "download_url": "https://glottolog.org/resource/languoid/id/ticu1245.json",
+      "local_path": null,
+      "sha256": null,
+      "file_size_bytes": null,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "indexed",
+      "features": [
+        "typology",
+        "classification",
+        "family_tree",
+        "geocoordinates"
+      ],
+      "related_languages": [],
+      "metadata": {
+        "latitude": -3.66289,
+        "longitude": -69.8723,
+        "macroareas": {},
+        "classification_tree": [
+          "Ticuna-Yuri"
+        ],
+        "child_dialect_count": 0
+      },
+      "discovered_at": "2026-10-17T18:31:18.808186Z"
+    },
+    {
+      "source_id": "etnolinguistica_biblio_ferreira_2026_memorias",
+      "language_code": "tca",
+      "glottocode": "ticu1245",
+      "title": "Curt Nimuendajú Document: ferreira-2026-memorias",
+      "author": "Ferreira",
+      "year": 2026,
+      "repository_id": "etnolinguistica",
+      "url": "http://www.etnolinguistica.org/biblio:ferreira-2026-memorias",
+      "download_url": null,
+      "local_path": null,
+      "sha256": null,
+      "file_size_bytes": null,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "indexed",
+      "features": [
+        "rare_grammar",
+        "amazonian_linguistics",
+        "nimuendaju"
+      ],
+      "related_languages": [],
+      "metadata": {
+        "slug": "/biblio:ferreira-2026-memorias"
+      },
+      "discovered_at": "2026-10-17T18:31:20.208819Z"
+    },
+    {
+      "source_id": "etnolinguistica_biblio_ribeiro_2006_povo",
+      "language_code": "tca",
+      "glottocode": "ticu1245",
+      "title": "Curt Nimuendajú Document: ribeiro-2006-povo",
+      "author": "Ribeiro",
+      "year": 2006,
+      "repository_id": "etnolinguistica",
+      "url": "http://www.etnolinguistica.org/biblio:ribeiro-2006-povo",
+      "download_url": null,
+      "local_path": null,
+      "sha256": null,
+      "file_size_bytes": null,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "indexed",
+      "features": [
+        "rare_grammar",
+        "amazonian_linguistics",
+        "nimuendaju"
+      ],
+      "related_languages": [],
+      "metadata": {
+        "slug": "/biblio:ribeiro-2006-povo"
+      },
+      "discovered_at": "2026-10-17T18:31:20.208868Z"
+    },
+    {
+      "source_id": "etnolinguistica_biblio_schmidt_1926_primitive",
+      "language_code": "tca",
+      "glottocode": "ticu1245",
+      "title": "Curt Nimuendajú Document: schmidt-1926-primitive",
+      "author": "Schmidt",
+      "year": 1926,
+      "repository_id": "etnolinguistica",
+      "url": "http://www.etnolinguistica.org/biblio:schmidt-1926-primitive",
+      "download_url": null,
+      "local_path": null,
+      "sha256": null,
+      "file_size_bytes": null,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "indexed",
+      "features": [
+        "rare_grammar",
+        "amazonian_linguistics",
+        "nimuendaju"
+      ],
+      "related_languages": [],
+      "metadata": {
+        "slug": "/biblio:schmidt-1926-primitive"
+      },
+      "discovered_at": "2026-10-17T18:31:20.208897Z"
+    },
+    {
+      "source_id": "costa_2002_ergatividade",
+      "language_code": "mzr",
+      "glottocode": "maru1252",
+      "title": "Ergatividade cindida em Marúbo",
+      "author": "Costa, Raquel Guimarães Romankevicius",
+      "year": 2002,
+      "repository_id": "unlocated",
+      "url": "https://pantheon.ufrj.br/",
+      "download_url": null,
+      "local_path": "var/external/marubo_sources/Costa_2002_ErgatividadeCindidaEmMarubo.pdf",
+      "sha256": "921d82315c12afbd817d2512643e161a177208d81396ca5385dd4c67e8e41dd3",
+      "file_size_bytes": 3471343,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "downloaded",
+      "features": [
+        "split_ergativity",
+        "case_marking",
+        "IGT"
+      ],
+      "related_languages": [
+        "mcf"
+      ],
+      "metadata": {
+        "license": null,
+        "license_url": null,
+        "license_checked_at": "2026-10-18",
+        "license_status": "unrecorded",
+        "rights_holder": "Raquel Guimarães Romankevicius Costa",
+        "rights_note": "publication venue not recorded; no license page found"
+      },
+      "discovered_at": "2026-10-18T00:00:00Z",
+      "policy_note": "ADR-0025: presence authorizes processing and training; license/ownership are records, not gates"
+    },
+    {
+      "source_id": "cesarino_2013_mitologia",
+      "language_code": "mzr",
+      "glottocode": "maru1252",
+      "title": "Quando a Terra Deixou de Falar: Cantos da Mitologia Marubo",
+      "author": "Cesarino, Pedro de Niemeyer",
+      "year": 2013,
+      "repository_id": "editora34",
+      "url": "https://editora34.com.br/detalhe.asp?id=793",
+      "download_url": null,
+      "local_path": "var/external/marubo_sources/Cesarino_2013_QuandoATerraDeixouDeFalar_MitolMarubo.pdf",
+      "sha256": "585b9308fe9faef26dd70afe27964df11148a1a0f67a23ac537c70db3f6d2c4f",
+      "file_size_bytes": 63124331,
+      "mime_type": "application/pdf",
+      "policy": "direct",
+      "status": "downloaded",
+      "features": [
+        "parallel_poetic_chants",
+        "shamanic_register",
+        "mythological_lexicon"
+      ],
+      "related_languages": [
+        "mcf"
+      ],
+      "metadata": {
+        "license": null,
+        "license_url": null,
+        "license_checked_at": "2026-10-18",
+        "license_status": "unrecorded",
+        "rights_holder": "Editora 34; author",
+        "rights_note": "published monograph; no license statement found"
+      },
+      "discovered_at": "2026-10-18T00:00:00Z",
+      "policy_note": "ADR-0025: presence authorizes processing and training; license/ownership are records, not gates"
+    }
+  ]
+}

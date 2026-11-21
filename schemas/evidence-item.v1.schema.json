@@ -1,0 +1,166 @@
+{
+  "$defs": {
+    "EvidenceKind": {
+      "enum": [
+        "dictionary_assertion",
+        "token_alignment",
+        "segment_cooccurrence",
+        "igt_assertion",
+        "grammar_description",
+        "speaker_review",
+        "morphology_induction",
+        "related_language_comparison",
+        "monolingual_distribution",
+        "manual_annotation"
+      ],
+      "title": "EvidenceKind",
+      "type": "string"
+    },
+    "EvidencePolarity": {
+      "enum": [
+        "supports",
+        "contradicts",
+        "context_only"
+      ],
+      "title": "EvidencePolarity",
+      "type": "string"
+    },
+    "JsonValue": {}
+  },
+  "$id": "urn:langpipe:schema:evidence-item:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Evidence about a target object. Evidence is not a hypothesis and never a validation.",
+  "properties": {
+    "claim": {
+      "anyOf": [
+        {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Claim"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "domain": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Domain"
+    },
+    "extensions": {
+      "additionalProperties": {
+        "additionalProperties": {
+          "$ref": "#/$defs/JsonValue"
+        },
+        "type": "object"
+      },
+      "title": "Extensions",
+      "type": "object"
+    },
+    "id": {
+      "pattern": "^ev_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "independence_group": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Independence Group"
+    },
+    "kind": {
+      "$ref": "#/$defs/EvidenceKind"
+    },
+    "polarity": {
+      "$ref": "#/$defs/EvidencePolarity"
+    },
+    "policy_version": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Policy Version"
+    },
+    "register": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Register"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "source_id": {
+      "anyOf": [
+        {
+          "pattern": "^src_[0-9A-HJKMNP-TV-Z]{26}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Id"
+    },
+    "strength": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Strength",
+      "type": "object"
+    },
+    "target_id": {
+      "title": "Target Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "kind",
+    "polarity",
+    "target_id",
+    "run_id",
+    "created_at"
+  ],
+  "title": "EvidenceItem",
+  "type": "object",
+  "x-schema-name": "evidence-item",
+  "x-schema-version": 1
+}

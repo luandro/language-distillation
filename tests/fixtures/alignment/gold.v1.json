@@ -1,0 +1,40 @@
+{
+  "groups": [
+    {
+      "id": "fixture-1",
+      "locator_selector": {
+        "namespace": "refs",
+        "source_members": [
+          {"source_object_path": "texts/fixture-a.tsv", "locator": {"row": 2, "column": "qaa", "ref": "T.1"}}
+        ],
+        "target_members": [
+          {"source_object_path": "texts/fixture-b.tsv", "locator": {"row": 2, "column": "por", "ref": "T.1"}},
+          {"source_object_path": "texts/fixture-b.tsv", "locator": {"row": 3, "column": "por", "ref": "T.1"}}
+        ]
+      },
+      "source_normalization_version": "default_text@0.1.0",
+      "target_normalization_version": "default_text@0.1.0",
+      "source_tokenizer_version": "whitespace_punct@0.1.0",
+      "target_tokenizer_version": "whitespace_punct@0.1.0",
+      "source_tokens": [
+        {"member": 0, "ordinal": 0},
+        {"member": 0, "ordinal": 1},
+        {"member": 0, "ordinal": 2}
+      ],
+      "target_tokens": [
+        {"member": 0, "ordinal": 0},
+        {"member": 0, "ordinal": 1},
+        {"member": 0, "ordinal": 2},
+        {"member": 1, "ordinal": 0},
+        {"member": 1, "ordinal": 1},
+        {"member": 1, "ordinal": 2}
+      ],
+      "sure_links": [[0, 0], [1, 1]],
+      "possible_links": [[0, 0], [1, 1], [2, 2]],
+      "annotated_null_source": [],
+      "annotated_null_target": [],
+      "split": "test",
+      "authority": "synthetic_fixture"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "algorithm": "mock@0.1.0",
+    "alignment": "alignment:0",
+    "direction": "forward",
+    "source": "token:0:source:0:0",
+    "symmetrization": "none",
+    "target": "token:0:target:0:0"
+  },
+  {
+    "algorithm": "mock@0.1.0",
+    "alignment": "alignment:0",
+    "direction": "reverse",
+    "source": "token:0:source:0:0",
+    "symmetrization": "none",
+    "target": "token:0:target:0:0"
+  },
+  {
+    "algorithm": "mock@0.1.0",
+    "alignment": "alignment:0",
+    "direction": "symmetrized",
+    "source": "token:0:source:0:0",
+    "symmetrization": "intersection",
+    "target": "token:0:target:0:0"
+  },
+  {
+    "algorithm": "mock@0.1.0",
+    "alignment": "alignment:1",
+    "direction": "forward",
+    "source": "token:1:source:0:0",
+    "symmetrization": "none",
+    "target": "token:1:target:0:0"
+  },
+  {
+    "algorithm": "mock@0.1.0",
+    "alignment": "alignment:1",
+    "direction": "reverse",
+    "source": "token:1:source:0:0",
+    "symmetrization": "none",
+    "target": "token:1:target:0:0"
+  },
+  {
+    "algorithm": "mock@0.1.0",
+    "alignment": "alignment:1",
+    "direction": "symmetrized",
+    "source": "token:1:source:0:0",
+    "symmetrization": "intersection",
+    "target": "token:1:target:0:0"
+  },
+  {
+    "algorithm": "mock@0.1.0",
+    "alignment": "alignment:3",
+    "direction": "forward",
+    "source": "token:3:source:0:0",
+    "symmetrization": "none",
+    "target": "token:3:target:0:0"
+  },
+  {
+    "algorithm": "mock@0.1.0",
+    "alignment": "alignment:3",
+    "direction": "reverse",
+    "source": "token:3:source:0:0",
+    "symmetrization": "none",
+    "target": "token:3:target:0:0"
+  },
+  {
+    "algorithm": "mock@0.1.0",
+    "alignment": "alignment:3",
+    "direction": "symmetrized",
+    "source": "token:3:source:0:0",
+    "symmetrization": "intersection",
+    "target": "token:3:target:0:0"
+  }
+]

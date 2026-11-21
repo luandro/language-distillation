@@ -1,0 +1,57 @@
+{
+  "$id": "urn:langpipe:schema:form-lexeme-link:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Explicit many-to-many join between orthographic forms and lexical hypotheses.",
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "form_id": {
+      "pattern": "^form_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Form Id",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^flx_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "lexeme_id": {
+      "pattern": "^lex_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Lexeme Id",
+      "type": "string"
+    },
+    "role": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Role"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "form_id",
+    "lexeme_id",
+    "run_id",
+    "created_at"
+  ],
+  "title": "FormLexemeLink",
+  "type": "object",
+  "x-schema-name": "form-lexeme-link",
+  "x-schema-version": 1
+}

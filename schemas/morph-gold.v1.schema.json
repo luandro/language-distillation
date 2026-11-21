@@ -1,0 +1,301 @@
+{
+  "$defs": {
+    "MorphGoldItem": {
+      "additionalProperties": false,
+      "description": "One gold annotation item with selector and character spans. Character spans must be [start, end] pairs with 0 <= start <= end. When surface is provided, end <= len(surface) is strictly enforced.",
+      "properties": {
+        "affix_spans": {
+          "items": {
+            "description": "[start, end] character offset pair where 0 <= start <= end",
+            "items": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+          },
+          "title": "Affix Spans",
+          "type": "array"
+        },
+        "root_span": {
+          "anyOf": [
+            {
+              "description": "[start, end] character offset pair where 0 <= start <= end",
+              "items": {
+                "minimum": 0,
+                "type": "integer"
+              },
+              "maxItems": 2,
+              "minItems": 2,
+              "type": "array"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Root Span"
+        },
+        "segments": {
+          "items": {
+            "description": "[start, end] character offset pair where 0 <= start <= end",
+            "items": {
+              "minimum": 0,
+              "type": "integer"
+            },
+            "maxItems": 2,
+            "minItems": 2,
+            "type": "array"
+          },
+          "minItems": 1,
+          "title": "Segments",
+          "type": "array"
+        },
+        "selector": {
+          "$ref": "#/$defs/MorphGoldSelector"
+        },
+        "surface": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Surface"
+        },
+        "tags": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tags",
+          "type": "array"
+        }
+      },
+      "required": [
+        "selector",
+        "segments"
+      ],
+      "title": "MorphGoldItem",
+      "type": "object"
+    },
+    "MorphGoldSelector": {
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "properties": {
+            "observation_id": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "observation_id"
+          ]
+        },
+        {
+          "properties": {
+            "igt_ref": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "igt_ref"
+          ]
+        },
+        {
+          "properties": {
+            "record_ref": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "record_ref"
+          ]
+        },
+        {
+          "properties": {
+            "record_ordinal": {
+              "type": "integer"
+            }
+          },
+          "required": [
+            "record_ordinal"
+          ]
+        },
+        {
+          "properties": {
+            "segment_locator": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "segment_locator"
+          ]
+        }
+      ],
+      "description": "Selector identifying an observed token in the corpus or IGT. Must specify at least one of observation_id, igt_ref, record_ref, record_ordinal, or segment_locator with non-empty values.",
+      "properties": {
+        "igt_ref": {
+          "anyOf": [
+            {
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Igt Ref"
+        },
+        "observation_id": {
+          "anyOf": [
+            {
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Observation Id"
+        },
+        "record_ordinal": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Record Ordinal"
+        },
+        "record_ref": {
+          "anyOf": [
+            {
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Record Ref"
+        },
+        "segment_id": {
+          "anyOf": [
+            {
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Segment Id"
+        },
+        "segment_locator": {
+          "anyOf": [
+            {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "minProperties": 1,
+          "title": "Segment Locator"
+        },
+        "source_key": {
+          "anyOf": [
+            {
+              "pattern": "\\S",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Source Key"
+        },
+        "token_ordinal": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Token Ordinal"
+        },
+        "word_ordinal": {
+          "anyOf": [
+            {
+              "minimum": 0,
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Word Ordinal"
+        }
+      },
+      "title": "MorphGoldSelector",
+      "type": "object"
+    }
+  },
+  "$id": "urn:langpipe:schema:morph-gold:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "A frozen benchmark fixture over held-out items; never linguistic truth.",
+  "properties": {
+    "gold_id": {
+      "title": "Gold Id",
+      "type": "string"
+    },
+    "items": {
+      "items": {
+        "$ref": "#/$defs/MorphGoldItem"
+      },
+      "minItems": 1,
+      "title": "Items",
+      "type": "array"
+    },
+    "language": {
+      "pattern": "^[a-z]{3}$",
+      "title": "Language",
+      "type": "string"
+    },
+    "provenance": {
+      "additionalProperties": true,
+      "title": "Provenance",
+      "type": "object"
+    }
+  },
+  "required": [
+    "gold_id",
+    "language",
+    "items"
+  ],
+  "title": "MorphGold",
+  "type": "object",
+  "x-schema-name": "morph-gold",
+  "x-schema-version": 1
+}

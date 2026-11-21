@@ -1,0 +1,910 @@
+{
+  "counts": {
+    "allomorph": 0,
+    "artifact": 7,
+    "concept": 0,
+    "evidence_item": 8,
+    "feature": 0,
+    "form": 21,
+    "form_lexeme": 0,
+    "igt_observation": 0,
+    "lexeme": 3,
+    "morph_analysis": 0,
+    "morph_segment": 0,
+    "morpheme": 0,
+    "processing_run": 0,
+    "review_decision": 2,
+    "review_task": 2,
+    "segment": 18,
+    "segment_alignment": 4,
+    "sense": 3,
+    "source": 0,
+    "source_object": 1,
+    "source_use_approval": 0,
+    "token_alignment_edge": 12,
+    "token_occurrence": 44
+  },
+  "eligibility": {
+    "lex:01-parallel-distill:kanu": {
+      "distill_lexicon": [
+        "allow",
+        "deny"
+      ],
+      "human_review": [
+        "allow",
+        "deny"
+      ],
+      "redistribute_derived": [
+        "deny",
+        "deny"
+      ]
+    },
+    "lex:01-parallel-distill:mabi": {
+      "distill_lexicon": [
+        "allow",
+        "deny"
+      ],
+      "human_review": [
+        "allow",
+        "deny"
+      ],
+      "redistribute_derived": [
+        "deny",
+        "deny"
+      ]
+    },
+    "lex:01-parallel-distill:rumi": {
+      "distill_lexicon": [
+        "allow",
+        "deny"
+      ],
+      "human_review": [
+        "allow",
+        "deny"
+      ],
+      "redistribute_derived": [
+        "deny",
+        "deny"
+      ]
+    },
+    "sense:01-parallel-distill:kanu:homem": {
+      "distill_lexicon": [
+        "allow",
+        "deny"
+      ],
+      "human_review": [
+        "allow",
+        "deny"
+      ],
+      "redistribute_derived": [
+        "deny",
+        "deny"
+      ]
+    },
+    "sense:01-parallel-distill:mabi:canoa": {
+      "distill_lexicon": [
+        "allow",
+        "deny"
+      ],
+      "human_review": [
+        "allow",
+        "deny"
+      ],
+      "redistribute_derived": [
+        "deny",
+        "deny"
+      ]
+    },
+    "sense:01-parallel-distill:rumi:pajé": {
+      "distill_lexicon": [
+        "allow",
+        "deny"
+      ],
+      "human_review": [
+        "allow",
+        "deny"
+      ],
+      "redistribute_derived": [
+        "deny",
+        "deny"
+      ]
+    }
+  },
+  "entries": [
+    {
+      "depth": 1,
+      "entity_type": "artifact",
+      "object": "artifact:run:token_alignment:01-parallel-distill:token-alignment-report"
+    },
+    {
+      "depth": 1,
+      "entity_type": "source_object",
+      "object": "sobj:01-parallel-distill/parallel.tsv"
+    },
+    {
+      "depth": 2,
+      "entity_type": "artifact",
+      "object": "artifact:run:extraction:01-parallel-distill:extraction-report"
+    },
+    {
+      "depth": 2,
+      "entity_type": "artifact",
+      "object": "artifact:run:raw_ingestion:01-parallel-distill:ingest-report"
+    },
+    {
+      "depth": 2,
+      "entity_type": "segment",
+      "object": "segraw:por:TXT.1.1:0"
+    },
+    {
+      "depth": 2,
+      "entity_type": "segment",
+      "object": "segraw:por:TXT.1.2:0"
+    },
+    {
+      "depth": 2,
+      "entity_type": "segment",
+      "object": "segraw:por:TXT.1.3:0"
+    },
+    {
+      "depth": 2,
+      "entity_type": "segment",
+      "object": "segraw:por:TXT.1.4:0"
+    },
+    {
+      "depth": 2,
+      "entity_type": "segment",
+      "object": "segraw:por:TXT.1.4:1"
+    },
+    {
+      "depth": 2,
+      "entity_type": "segment",
+      "object": "segraw:qaa:TXT.1.1"
+    },
+    {
+      "depth": 2,
+      "entity_type": "segment",
+      "object": "segraw:qaa:TXT.1.2"
+    },
+    {
+      "depth": 2,
+      "entity_type": "segment",
+      "object": "segraw:qaa:TXT.1.3"
+    },
+    {
+      "depth": 2,
+      "entity_type": "segment",
+      "object": "segraw:qaa:TXT.1.4"
+    },
+    {
+      "depth": 3,
+      "entity_type": "segment",
+      "object": "seg:por:TXT.1.1:0"
+    },
+    {
+      "depth": 3,
+      "entity_type": "segment",
+      "object": "seg:por:TXT.1.2:0"
+    },
+    {
+      "depth": 3,
+      "entity_type": "segment",
+      "object": "seg:por:TXT.1.3:0"
+    },
+    {
+      "depth": 3,
+      "entity_type": "segment",
+      "object": "seg:por:TXT.1.4:0"
+    },
+    {
+      "depth": 3,
+      "entity_type": "segment",
+      "object": "seg:por:TXT.1.4:1"
+    },
+    {
+      "depth": 3,
+      "entity_type": "segment",
+      "object": "seg:qaa:TXT.1.1"
+    },
+    {
+      "depth": 3,
+      "entity_type": "segment",
+      "object": "seg:qaa:TXT.1.2"
+    },
+    {
+      "depth": 3,
+      "entity_type": "segment",
+      "object": "seg:qaa:TXT.1.3"
+    },
+    {
+      "depth": 3,
+      "entity_type": "segment",
+      "object": "seg:qaa:TXT.1.4"
+    },
+    {
+      "depth": 4,
+      "entity_type": "artifact",
+      "object": "artifact:run:lexical_induction:01-parallel-distill:lexical-induction-report"
+    },
+    {
+      "depth": 4,
+      "entity_type": "artifact",
+      "object": "artifact:run:normalization:01-parallel-distill:normalization-report"
+    },
+    {
+      "depth": 4,
+      "entity_type": "artifact",
+      "object": "artifact:run:segment_alignment:01-parallel-distill:segment-alignment-report"
+    },
+    {
+      "depth": 4,
+      "entity_type": "artifact",
+      "object": "artifact:run:tokenization:01-parallel-distill:tokenization-report"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "por/default_text@0.1.0/A"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "por/default_text@0.1.0/Ele"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "por/default_text@0.1.0/O"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "por/default_text@0.1.0/a"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "por/default_text@0.1.0/ao"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "por/default_text@0.1.0/canoa"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "por/default_text@0.1.0/foi"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "por/default_text@0.1.0/homem"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "por/default_text@0.1.0/não"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "por/default_text@0.1.0/pajé"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "por/default_text@0.1.0/rio"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "por/default_text@0.1.0/sorri"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "por/default_text@0.1.0/vê"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "qaa/default_text@0.1.0/kanu"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "qaa/default_text@0.1.0/mabi"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "qaa/default_text@0.1.0/mabi-ki"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "qaa/default_text@0.1.0/nawa"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "qaa/default_text@0.1.0/rumi"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "qaa/default_text@0.1.0/tesa"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "qaa/default_text@0.1.0/wesa"
+    },
+    {
+      "depth": 4,
+      "entity_type": "form",
+      "object": "qaa/default_text@0.1.0/wesa-ra"
+    },
+    {
+      "depth": 4,
+      "entity_type": "segment_alignment",
+      "object": "sal:01-parallel-distill:TXT.1.1"
+    },
+    {
+      "depth": 4,
+      "entity_type": "segment_alignment",
+      "object": "sal:01-parallel-distill:TXT.1.2"
+    },
+    {
+      "depth": 4,
+      "entity_type": "segment_alignment",
+      "object": "sal:01-parallel-distill:TXT.1.3"
+    },
+    {
+      "depth": 4,
+      "entity_type": "segment_alignment",
+      "object": "sal:01-parallel-distill:TXT.1.4"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.1:0:0"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.1:0:1"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.1:0:2"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.1:0:3"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.1:0:4"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.1:0:5"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.2:0:0"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.2:0:1"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.2:0:2"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.2:0:3"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.2:0:4"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.2:0:5"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.3:0:0"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.3:0:1"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.3:0:2"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.3:0:3"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.3:0:4"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.3:0:5"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.3:0:6"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.4:0:0"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.4:0:1"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.4:0:2"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.4:0:3"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.4:0:4"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.4:0:5"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.4:1:0"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.4:1:1"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:por:TXT.1.4:1:2"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.1:0"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.1:1"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.1:2"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.1:3"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.2:0"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.2:1"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.2:2"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.2:3"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.3:0"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.3:1"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.3:2"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.3:3"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.4:0"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.4:1"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.4:2"
+    },
+    {
+      "depth": 4,
+      "entity_type": "token_occurrence",
+      "object": "tok:qaa:TXT.1.4:3"
+    },
+    {
+      "depth": 5,
+      "entity_type": "token_alignment_edge",
+      "object": "edge:01-parallel-distill:TXT.1.1:0->1:forward"
+    },
+    {
+      "depth": 5,
+      "entity_type": "token_alignment_edge",
+      "object": "edge:01-parallel-distill:TXT.1.1:0->1:reverse"
+    },
+    {
+      "depth": 5,
+      "entity_type": "token_alignment_edge",
+      "object": "edge:01-parallel-distill:TXT.1.1:0->1:symmetrized"
+    },
+    {
+      "depth": 5,
+      "entity_type": "token_alignment_edge",
+      "object": "edge:01-parallel-distill:TXT.1.1:1->4:forward"
+    },
+    {
+      "depth": 5,
+      "entity_type": "token_alignment_edge",
+      "object": "edge:01-parallel-distill:TXT.1.1:1->4:reverse"
+    },
+    {
+      "depth": 5,
+      "entity_type": "token_alignment_edge",
+      "object": "edge:01-parallel-distill:TXT.1.1:1->4:symmetrized"
+    },
+    {
+      "depth": 5,
+      "entity_type": "token_alignment_edge",
+      "object": "edge:01-parallel-distill:TXT.1.3:0->1:forward"
+    },
+    {
+      "depth": 5,
+      "entity_type": "token_alignment_edge",
+      "object": "edge:01-parallel-distill:TXT.1.3:0->1:reverse"
+    },
+    {
+      "depth": 5,
+      "entity_type": "token_alignment_edge",
+      "object": "edge:01-parallel-distill:TXT.1.3:0->1:symmetrized"
+    },
+    {
+      "depth": 5,
+      "entity_type": "token_alignment_edge",
+      "object": "edge:01-parallel-distill:TXT.1.4:0->1:forward"
+    },
+    {
+      "depth": 5,
+      "entity_type": "token_alignment_edge",
+      "object": "edge:01-parallel-distill:TXT.1.4:0->1:reverse"
+    },
+    {
+      "depth": 5,
+      "entity_type": "token_alignment_edge",
+      "object": "edge:01-parallel-distill:TXT.1.4:0->1:symmetrized"
+    },
+    {
+      "depth": 5,
+      "entity_type": "evidence_item",
+      "object": "ev:lex:01-parallel-distill:kanu:1"
+    },
+    {
+      "depth": 5,
+      "entity_type": "evidence_item",
+      "object": "ev:lex:01-parallel-distill:kanu:2"
+    },
+    {
+      "depth": 5,
+      "entity_type": "evidence_item",
+      "object": "ev:lex:01-parallel-distill:mabi:1"
+    },
+    {
+      "depth": 5,
+      "entity_type": "evidence_item",
+      "object": "ev:lex:01-parallel-distill:rumi:1"
+    },
+    {
+      "depth": 5,
+      "entity_type": "lexeme",
+      "object": "lex:01-parallel-distill:kanu"
+    },
+    {
+      "depth": 5,
+      "entity_type": "lexeme",
+      "object": "lex:01-parallel-distill:mabi"
+    },
+    {
+      "depth": 5,
+      "entity_type": "lexeme",
+      "object": "lex:01-parallel-distill:rumi"
+    },
+    {
+      "depth": 5,
+      "entity_type": "sense",
+      "object": "sense:01-parallel-distill:kanu:homem"
+    },
+    {
+      "depth": 5,
+      "entity_type": "sense",
+      "object": "sense:01-parallel-distill:mabi:canoa"
+    },
+    {
+      "depth": 5,
+      "entity_type": "sense",
+      "object": "sense:01-parallel-distill:rumi:pajé"
+    },
+    {
+      "depth": 6,
+      "entity_type": "evidence_item",
+      "object": "ev:lex:01-parallel-distill:kanu:3"
+    },
+    {
+      "depth": 6,
+      "entity_type": "evidence_item",
+      "object": "ev:lex:01-parallel-distill:kanu:4"
+    },
+    {
+      "depth": 6,
+      "entity_type": "evidence_item",
+      "object": "ev:lex:01-parallel-distill:mabi:2"
+    },
+    {
+      "depth": 6,
+      "entity_type": "evidence_item",
+      "object": "ev:lex:01-parallel-distill:rumi:2"
+    },
+    {
+      "depth": 6,
+      "entity_type": "review_task",
+      "object": "task:T6"
+    },
+    {
+      "depth": 6,
+      "entity_type": "review_task",
+      "object": "task:T7"
+    },
+    {
+      "depth": 7,
+      "entity_type": "review_decision",
+      "object": "dec:T6"
+    },
+    {
+      "depth": 7,
+      "entity_type": "review_decision",
+      "object": "dec:T7"
+    }
+  ],
+  "ids": {
+    "allomorph": [],
+    "artifact": [
+      "artifact:run:extraction:01-parallel-distill:extraction-report",
+      "artifact:run:lexical_induction:01-parallel-distill:lexical-induction-report",
+      "artifact:run:normalization:01-parallel-distill:normalization-report",
+      "artifact:run:raw_ingestion:01-parallel-distill:ingest-report",
+      "artifact:run:segment_alignment:01-parallel-distill:segment-alignment-report",
+      "artifact:run:token_alignment:01-parallel-distill:token-alignment-report",
+      "artifact:run:tokenization:01-parallel-distill:tokenization-report"
+    ],
+    "concept": [],
+    "evidence_item": [
+      "ev:lex:01-parallel-distill:kanu:1",
+      "ev:lex:01-parallel-distill:kanu:2",
+      "ev:lex:01-parallel-distill:kanu:3",
+      "ev:lex:01-parallel-distill:kanu:4",
+      "ev:lex:01-parallel-distill:mabi:1",
+      "ev:lex:01-parallel-distill:mabi:2",
+      "ev:lex:01-parallel-distill:rumi:1",
+      "ev:lex:01-parallel-distill:rumi:2"
+    ],
+    "feature": [],
+    "form": [
+      "por/default_text@0.1.0/A",
+      "por/default_text@0.1.0/Ele",
+      "por/default_text@0.1.0/O",
+      "por/default_text@0.1.0/a",
+      "por/default_text@0.1.0/ao",
+      "por/default_text@0.1.0/canoa",
+      "por/default_text@0.1.0/foi",
+      "por/default_text@0.1.0/homem",
+      "por/default_text@0.1.0/não",
+      "por/default_text@0.1.0/pajé",
+      "por/default_text@0.1.0/rio",
+      "por/default_text@0.1.0/sorri",
+      "por/default_text@0.1.0/vê",
+      "qaa/default_text@0.1.0/kanu",
+      "qaa/default_text@0.1.0/mabi",
+      "qaa/default_text@0.1.0/mabi-ki",
+      "qaa/default_text@0.1.0/nawa",
+      "qaa/default_text@0.1.0/rumi",
+      "qaa/default_text@0.1.0/tesa",
+      "qaa/default_text@0.1.0/wesa",
+      "qaa/default_text@0.1.0/wesa-ra"
+    ],
+    "form_lexeme": [],
+    "igt_observation": [],
+    "lexeme": [
+      "lex:01-parallel-distill:kanu",
+      "lex:01-parallel-distill:mabi",
+      "lex:01-parallel-distill:rumi"
+    ],
+    "morph_analysis": [],
+    "morph_segment": [],
+    "morpheme": [],
+    "processing_run": [],
+    "review_decision": [
+      "dec:T6",
+      "dec:T7"
+    ],
+    "review_task": [
+      "task:T6",
+      "task:T7"
+    ],
+    "segment": [
+      "seg:por:TXT.1.1:0",
+      "seg:por:TXT.1.2:0",
+      "seg:por:TXT.1.3:0",
+      "seg:por:TXT.1.4:0",
+      "seg:por:TXT.1.4:1",
+      "seg:qaa:TXT.1.1",
+      "seg:qaa:TXT.1.2",
+      "seg:qaa:TXT.1.3",
+      "seg:qaa:TXT.1.4",
+      "segraw:por:TXT.1.1:0",
+      "segraw:por:TXT.1.2:0",
+      "segraw:por:TXT.1.3:0",
+      "segraw:por:TXT.1.4:0",
+      "segraw:por:TXT.1.4:1",
+      "segraw:qaa:TXT.1.1",
+      "segraw:qaa:TXT.1.2",
+      "segraw:qaa:TXT.1.3",
+      "segraw:qaa:TXT.1.4"
+    ],
+    "segment_alignment": [
+      "sal:01-parallel-distill:TXT.1.1",
+      "sal:01-parallel-distill:TXT.1.2",
+      "sal:01-parallel-distill:TXT.1.3",
+      "sal:01-parallel-distill:TXT.1.4"
+    ],
+    "sense": [
+      "sense:01-parallel-distill:kanu:homem",
+      "sense:01-parallel-distill:mabi:canoa",
+      "sense:01-parallel-distill:rumi:pajé"
+    ],
+    "source": [],
+    "source_object": [
+      "sobj:01-parallel-distill/parallel.tsv"
+    ],
+    "source_use_approval": [],
+    "token_alignment_edge": [
+      "edge:01-parallel-distill:TXT.1.1:0->1:forward",
+      "edge:01-parallel-distill:TXT.1.1:0->1:reverse",
+      "edge:01-parallel-distill:TXT.1.1:0->1:symmetrized",
+      "edge:01-parallel-distill:TXT.1.1:1->4:forward",
+      "edge:01-parallel-distill:TXT.1.1:1->4:reverse",
+      "edge:01-parallel-distill:TXT.1.1:1->4:symmetrized",
+      "edge:01-parallel-distill:TXT.1.3:0->1:forward",
+      "edge:01-parallel-distill:TXT.1.3:0->1:reverse",
+      "edge:01-parallel-distill:TXT.1.3:0->1:symmetrized",
+      "edge:01-parallel-distill:TXT.1.4:0->1:forward",
+      "edge:01-parallel-distill:TXT.1.4:0->1:reverse",
+      "edge:01-parallel-distill:TXT.1.4:0->1:symmetrized"
+    ],
+    "token_occurrence": [
+      "tok:por:TXT.1.1:0:0",
+      "tok:por:TXT.1.1:0:1",
+      "tok:por:TXT.1.1:0:2",
+      "tok:por:TXT.1.1:0:3",
+      "tok:por:TXT.1.1:0:4",
+      "tok:por:TXT.1.1:0:5",
+      "tok:por:TXT.1.2:0:0",
+      "tok:por:TXT.1.2:0:1",
+      "tok:por:TXT.1.2:0:2",
+      "tok:por:TXT.1.2:0:3",
+      "tok:por:TXT.1.2:0:4",
+      "tok:por:TXT.1.2:0:5",
+      "tok:por:TXT.1.3:0:0",
+      "tok:por:TXT.1.3:0:1",
+      "tok:por:TXT.1.3:0:2",
+      "tok:por:TXT.1.3:0:3",
+      "tok:por:TXT.1.3:0:4",
+      "tok:por:TXT.1.3:0:5",
+      "tok:por:TXT.1.3:0:6",
+      "tok:por:TXT.1.4:0:0",
+      "tok:por:TXT.1.4:0:1",
+      "tok:por:TXT.1.4:0:2",
+      "tok:por:TXT.1.4:0:3",
+      "tok:por:TXT.1.4:0:4",
+      "tok:por:TXT.1.4:0:5",
+      "tok:por:TXT.1.4:1:0",
+      "tok:por:TXT.1.4:1:1",
+      "tok:por:TXT.1.4:1:2",
+      "tok:qaa:TXT.1.1:0",
+      "tok:qaa:TXT.1.1:1",
+      "tok:qaa:TXT.1.1:2",
+      "tok:qaa:TXT.1.1:3",
+      "tok:qaa:TXT.1.2:0",
+      "tok:qaa:TXT.1.2:1",
+      "tok:qaa:TXT.1.2:2",
+      "tok:qaa:TXT.1.2:3",
+      "tok:qaa:TXT.1.3:0",
+      "tok:qaa:TXT.1.3:1",
+      "tok:qaa:TXT.1.3:2",
+      "tok:qaa:TXT.1.3:3",
+      "tok:qaa:TXT.1.4:0",
+      "tok:qaa:TXT.1.4:1",
+      "tok:qaa:TXT.1.4:2",
+      "tok:qaa:TXT.1.4:3"
+    ]
+  },
+  "revoked": true,
+  "source": "src:01-parallel-distill",
+  "source_status": "revoked",
+  "total": 125,
+  "validated_affected": [
+    "lex:01-parallel-distill:rumi",
+    "sense:01-parallel-distill:rumi:pajé"
+  ]
+}

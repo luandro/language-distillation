@@ -1,0 +1,64 @@
+var/
+.venv/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# graft's local graph cache — regenerable, not committed (run `graft build`).
+/graft/
+
+.env
+.env.*
+checkpoints/
+*.log
+*_output.ipynb
+
+# Font faces staged next to a generated print edition. The canonical copies
+# live in assets/fonts/ and are tracked there; these are per-export copies
+# written by PrintableDictionaryExporter._stage_fonts.
+exports/**/fonts/
+
+# Generated data exports are local artifacts only: rebuild with `uv run langpipe synth
+# export`, `langpipe lexicon` and `langpipe cldf`. They embed third-party text
+# (ScriptureEarth verses, Wenía 2018 chants CC BY-NC 4.0, Cesarino 2013) that this
+# repository is not licensed to redistribute.
+#
+# Default deny: nothing under exports/ is tracked unless un-ignored here. A new export
+# of any shape (jsonl, csv, parquet, txt, b64, ...) therefore stays local.
+/exports/*
+!/exports/README.md
+!/exports/*.py
+!/exports/mzr/
+!/exports/harvested_parallel/
+!/exports/parallel_candidates/
+!/exports/web/
+
+/exports/mzr/*
+!/exports/mzr/MODEL_CARD.md
+!/exports/mzr/datasets/
+!/exports/mzr/datasets_legacy/
+/exports/mzr/datasets/*
+!/exports/mzr/datasets/README.md
+/exports/mzr/datasets_legacy/*
+!/exports/mzr/datasets_legacy/README.md
+
+/exports/harvested_parallel/*
+!/exports/harvested_parallel/README.md
+!/exports/harvested_parallel/candidates/
+/exports/harvested_parallel/candidates/*
+!/exports/harvested_parallel/candidates/README.md
+
+/exports/parallel_candidates/*
+!/exports/parallel_candidates/README.md
+
+/exports/web/*
+!/exports/web/index.html
+!/exports/web/server.py
+
+# Local scratch files, never part of the project.
+/Texto colado*.txt
+
+# In-progress WP5.16 golden fixtures (tsk #221); regenerate with tests/golden/normalize_m5.py.
+/tests/golden/expected/m5/
+/tests/golden/fixture/morphology/

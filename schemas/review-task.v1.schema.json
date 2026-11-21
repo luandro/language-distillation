@@ -1,0 +1,101 @@
+{
+  "$defs": {
+    "ReviewTaskType": {
+      "description": "Queue task kinds (§REVIEW-WORKFLOW.md). M4 services generate lexical types only.",
+      "enum": [
+        "lexical_sense",
+        "lemma",
+        "morphology_segmentation",
+        "morpheme_function",
+        "grammar_construction",
+        "register_domain",
+        "alignment_spotcheck",
+        "governance_export",
+        "pronunciation"
+      ],
+      "title": "ReviewTaskType",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:review-task:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "One queued human review request about a candidate object.",
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "creator_run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Creator Run Id",
+      "type": "string"
+    },
+    "evidence_item_ids": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Evidence Item Ids",
+      "type": "array"
+    },
+    "id": {
+      "pattern": "^rtask_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "priority": {
+      "title": "Priority",
+      "type": "number"
+    },
+    "reason": {
+      "minLength": 1,
+      "title": "Reason",
+      "type": "string"
+    },
+    "required_role": {
+      "minLength": 1,
+      "title": "Required Role",
+      "type": "string"
+    },
+    "status": {
+      "default": "open",
+      "title": "Status",
+      "type": "string"
+    },
+    "target_id": {
+      "title": "Target Id",
+      "type": "string"
+    },
+    "target_version": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Target Version"
+    },
+    "task_type": {
+      "$ref": "#/$defs/ReviewTaskType"
+    }
+  },
+  "required": [
+    "id",
+    "task_type",
+    "target_id",
+    "required_role",
+    "priority",
+    "reason",
+    "creator_run_id",
+    "created_at"
+  ],
+  "title": "ReviewTask",
+  "type": "object",
+  "x-schema-name": "review-task",
+  "x-schema-version": 1
+}

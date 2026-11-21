@@ -1,0 +1,190 @@
+{
+  "lex:01-parallel-distill:kanu": [
+    {
+      "claim": {
+        "gloss": "homem",
+        "source_form": "kanu"
+      },
+      "domain": null,
+      "independence_group": null,
+      "kind": "segment_cooccurrence",
+      "polarity": "supports",
+      "strength": {
+        "alignment_support": 1.0
+      }
+    },
+    {
+      "claim": {
+        "gloss": "homem",
+        "source_form": "kanu"
+      },
+      "domain": null,
+      "independence_group": null,
+      "kind": "segment_cooccurrence",
+      "polarity": "supports",
+      "strength": {
+        "alignment_support": 1.0
+      }
+    },
+    {
+      "claim": {
+        "gloss": "homem",
+        "source_form": "kanu"
+      },
+      "domain": null,
+      "independence_group": null,
+      "kind": "token_alignment",
+      "polarity": "supports",
+      "strength": {
+        "alignment_support": 1.0
+      }
+    },
+    {
+      "claim": {
+        "gloss": "homem",
+        "source_form": "kanu"
+      },
+      "domain": null,
+      "independence_group": null,
+      "kind": "token_alignment",
+      "polarity": "supports",
+      "strength": {
+        "alignment_support": 1.0
+      }
+    }
+  ],
+  "lex:01-parallel-distill:mabi": [
+    {
+      "claim": {
+        "gloss": "canoa",
+        "source_form": "mabi"
+      },
+      "domain": null,
+      "independence_group": null,
+      "kind": "segment_cooccurrence",
+      "polarity": "supports",
+      "strength": {
+        "alignment_support": 1.0
+      }
+    },
+    {
+      "claim": {
+        "gloss": "canoa",
+        "source_form": "mabi"
+      },
+      "domain": null,
+      "independence_group": null,
+      "kind": "token_alignment",
+      "polarity": "supports",
+      "strength": {
+        "alignment_support": 1.0
+      }
+    }
+  ],
+  "lex:01-parallel-distill:rumi": [
+    {
+      "claim": {
+        "gloss": "pajé",
+        "source_form": "rumi"
+      },
+      "domain": null,
+      "independence_group": null,
+      "kind": "segment_cooccurrence",
+      "polarity": "supports",
+      "strength": {
+        "alignment_support": 1.0
+      }
+    },
+    {
+      "claim": {
+        "gloss": "pajé",
+        "source_form": "rumi"
+      },
+      "domain": null,
+      "independence_group": null,
+      "kind": "token_alignment",
+      "polarity": "supports",
+      "strength": {
+        "alignment_support": 1.0
+      }
+    }
+  ],
+  "lex:03-wordlist:kanu": [
+    {
+      "claim": {
+        "gloss": "homem",
+        "headword": "kanu",
+        "note": null
+      },
+      "domain": null,
+      "independence_group": "src:03-wordlist",
+      "kind": "dictionary_assertion",
+      "polarity": "supports",
+      "strength": {
+        "dictionary_support": 1.0
+      }
+    }
+  ],
+  "lex:03-wordlist:mabi": [
+    {
+      "claim": {
+        "gloss": "canoa",
+        "headword": "mabi",
+        "note": "two candidate senses"
+      },
+      "domain": null,
+      "independence_group": "src:03-wordlist",
+      "kind": "dictionary_assertion",
+      "polarity": "supports",
+      "strength": {
+        "dictionary_support": 1.0
+      }
+    },
+    {
+      "claim": {
+        "gloss": "tronco",
+        "headword": "mabi",
+        "note": "two candidate senses"
+      },
+      "domain": null,
+      "independence_group": "src:03-wordlist",
+      "kind": "dictionary_assertion",
+      "polarity": "supports",
+      "strength": {
+        "dictionary_support": 1.0
+      }
+    }
+  ],
+  "lex:03-wordlist:rumi": [
+    {
+      "claim": {
+        "gloss": "pajé",
+        "headword": "rumi",
+        "note": "domain-specific (ritual/traditional)"
+      },
+      "domain": "ritual/traditional",
+      "independence_group": "src:03-wordlist",
+      "kind": "dictionary_assertion",
+      "polarity": "supports",
+      "strength": {
+        "dictionary_support": 1.0
+      }
+    }
+  ],
+  "lex:golden-lexicon-export:nawa": [
+    {
+      "claim": {
+        "gloss": "rio",
+        "headword": "nawa",
+        "note": null
+      },
+      "domain": null,
+      "independence_group": "src:golden-lexicon-export",
+      "kind": "dictionary_assertion",
+      "polarity": "supports",
+      "strength": {
+        "dictionary_support": 1.0
+      }
+    }
+  ]
+}

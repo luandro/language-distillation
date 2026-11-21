@@ -1,0 +1,131 @@
+{
+  "bundle": "language-distillation-docs-v0.3",
+  "markdown_file_count": 25,
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "e5ecca3cb88ce74127d39e695f1bad8e3237edf054656f1d8b84512470fb6f7a",
+      "bytes": 5969
+    },
+    {
+      "path": "LOCAL-AGENT-HANDOFF.md",
+      "sha256": "fbde0893cf66e2c0bf44f147d6a86b2f9a72b568888df11c3a7090027a2d3e3b",
+      "bytes": 5109
+    },
+    {
+      "path": "README.md",
+      "sha256": "4e5515f2d8aa079b57cdb9f7f4af866802f2aa1f9eef319d28457ba945b8067d",
+      "bytes": 1673
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "sha256": "427e1b05a0210da7aef4cc52a4f30043b44f6cd0e3148372acd381a59cd13a8e",
+      "bytes": 4457
+    },
+    {
+      "path": "docs/DEVELOPMENT.md",
+      "sha256": "a446248fc5b1f0d9e264147d28f8501a5cb3197577583fdbce290f8ff3fdd0c8",
+      "bytes": 3239
+    },
+    {
+      "path": "docs/DOMAIN-MODEL.md",
+      "sha256": "8cda2e77990e7a99d3a0d9189eb563aa556ecb5318368d0491f0cb24f71ab9a4",
+      "bytes": 7468
+    },
+    {
+      "path": "docs/EVALUATION.md",
+      "sha256": "5d38946d86e31c200a1697cd147af16aa01b4f483cc78386f8cf8fa731c6b23c",
+      "bytes": 2268
+    },
+    {
+      "path": "docs/EVIDENCE-AND-CONFIDENCE.md",
+      "sha256": "1c67a4036b0c70b7a05494462493507dbea6228020afb2b3d9dc55f00334ff6b",
+      "bytes": 2204
+    },
+    {
+      "path": "docs/GOLDEN-FIXTURE.md",
+      "sha256": "8d334c178758e7c199b675aead0c10d9f002327c559029b10f00b77425f22534",
+      "bytes": 1793
+    },
+    {
+      "path": "docs/GOVERNANCE.md",
+      "sha256": "54c4727f03578661983421d0fa76764ff2638377b7c3f64ee6b2c785e6c00afd",
+      "bytes": 3609
+    },
+    {
+      "path": "docs/MORPHOLOGY.md",
+      "sha256": "93da16e5c035992609e4397e781593d45febfcfc4915fadddc90e08f39cefd28",
+      "bytes": 4349
+    },
+    {
+      "path": "docs/PIPELINE-CONTRACTS.md",
+      "sha256": "4a7c4f0114beee4397ea5e915a1e0126902eae6f6506128f20d8dd5749efd1d2",
+      "bytes": 6482
+    },
+    {
+      "path": "docs/PRODUCT.md",
+      "sha256": "80358bb6b8cd4b535434a60b483a819e44c74639bc1b1979501ffe2b4b035ce3",
+      "bytes": 2560
+    },
+    {
+      "path": "docs/README.md",
+      "sha256": "82d88eaeb0e521a024a6a387ea27ed3119d27a7665b9095140191a81f0eb743e",
+      "bytes": 1883
+    },
+    {
+      "path": "docs/REVIEW-WORKFLOW.md",
+      "sha256": "3ebe533a6db6383b02d0c4222ef10b8b9e1c287ffab06404d58ee5db88af47c8",
+      "bytes": 1858
+    },
+    {
+      "path": "docs/SCHEMAS.md",
+      "sha256": "5f53e899d961eaaad36084b4dc49705b5b20845e9a7a19dba46cf9449ee32ad2",
+      "bytes": 1334
+    },
+    {
+      "path": "docs/adr/0001-evidence-first-architecture.md",
+      "sha256": "25c243b664bf9fbfda6d5d076bd437a37494808fa71577135c8995c12ebc21bc",
+      "bytes": 693
+    },
+    {
+      "path": "docs/adr/0002-postgresql-canonical-store.md",
+      "sha256": "41b2a6684e7973f43673c07fc1baff8b6c66e82a0fd7fd9eb5c1449b8cc518f1",
+      "bytes": 459
+    },
+    {
+      "path": "docs/adr/0003-cldf-interchange.md",
+      "sha256": "a04b99095e71b275daceda46a154fda6a655f4c4799927e788cd71a4f3fb1ef5",
+      "bytes": 479
+    },
+    {
+      "path": "docs/adr/0004-eflomal-cold-start-baseline.md",
+      "sha256": "51a93b7d3ac6514e7b020a50b27a865ccdd7053248236a80aa9bb7fd27225eba",
+      "bytes": 622
+    },
+    {
+      "path": "docs/adr/0005-deterministic-synthesis-first.md",
+      "sha256": "df4a77807ea5bf9b562bafe3309250465023748d076f077f60d767dfb5c3ff9b",
+      "bytes": 603
+    },
+    {
+      "path": "docs/adr/0006-decision-models-restricted.md",
+      "sha256": "859b3f1e0d5325a03ad13fe37c2560f496219cad69065efc934a3c5e11de780b",
+      "bytes": 564
+    },
+    {
+      "path": "docs/adr/README.md",
+      "sha256": "6d7b355b83480a99177802ca0b750a57967bcd7957a2fa320e3f2c6c8e135bc5",
+      "bytes": 382
+    },
+    {
+      "path": "docs/languages/README.md",
+      "sha256": "3d743c4d04d3893e0ded2a10374bf3e33ecfe20fcf31474290ad9d9ea8a2668d",
+      "bytes": 1380
+    },
+    {
+      "path": "docs/languages/mzr.md",
+      "sha256": "35af541ce053a88463ab2c21f324fe7329f764f386e2aa6055937a6c1e4b27a0",
+      "bytes": 2990
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "$defs": {
+    "GoldGroup": {
+      "additionalProperties": false,
+      "description": "One frozen, ordered annotation matrix.",
+      "properties": {
+        "annotated_null_source": {
+          "default": [],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Annotated Null Source",
+          "type": "array"
+        },
+        "annotated_null_target": {
+          "default": [],
+          "items": {
+            "type": "integer"
+          },
+          "title": "Annotated Null Target",
+          "type": "array"
+        },
+        "authority": {
+          "title": "Authority",
+          "type": "string"
+        },
+        "group_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Group Id"
+        },
+        "group_key": {
+          "anyOf": [
+            {
+              "pattern": "^[0-9a-f]{64}$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Group Key"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "locator_selector": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/GoldGroupLocatorSelector"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "possible_links": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Possible Links",
+          "type": "array"
+        },
+        "source_normalization_version": {
+          "title": "Source Normalization Version",
+          "type": "string"
+        },
+        "source_tokenizer_version": {
+          "title": "Source Tokenizer Version",
+          "type": "string"
+        },
+        "source_tokens": {
+          "items": {
+            "$ref": "#/$defs/GoldTokenSelector"
+          },
+          "title": "Source Tokens",
+          "type": "array"
+        },
+        "split": {
+          "default": "test",
+          "title": "Split",
+          "type": "string"
+        },
+        "sure_links": {
+          "items": {
+            "maxItems": 2,
+            "minItems": 2,
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array"
+          },
+          "title": "Sure Links",
+          "type": "array"
+        },
+        "target_normalization_version": {
+          "title": "Target Normalization Version",
+          "type": "string"
+        },
+        "target_tokenizer_version": {
+          "title": "Target Tokenizer Version",
+          "type": "string"
+        },
+        "target_tokens": {
+          "items": {
+            "$ref": "#/$defs/GoldTokenSelector"
+          },
+          "title": "Target Tokens",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "source_normalization_version",
+        "target_normalization_version",
+        "source_tokenizer_version",
+        "target_tokenizer_version",
+        "source_tokens",
+        "target_tokens",
+        "sure_links",
+        "possible_links",
+        "authority"
+      ],
+      "title": "GoldGroup",
+      "type": "object"
+    },
+    "GoldGroupLocatorSelector": {
+      "additionalProperties": false,
+      "description": "ID-independent group selector, scoped to a coordinate namespace and side roles.",
+      "properties": {
+        "namespace": {
+          "minLength": 1,
+          "title": "Namespace",
+          "type": "string"
+        },
+        "source_members": {
+          "items": {
+            "$ref": "#/$defs/GoldSegmentMemberSelector"
+          },
+          "minItems": 1,
+          "title": "Source Members",
+          "type": "array"
+        },
+        "target_members": {
+          "items": {
+            "$ref": "#/$defs/GoldSegmentMemberSelector"
+          },
+          "minItems": 1,
+          "title": "Target Members",
+          "type": "array"
+        }
+      },
+      "required": [
+        "namespace",
+        "source_members",
+        "target_members"
+      ],
+      "title": "GoldGroupLocatorSelector",
+      "type": "object"
+    },
+    "GoldSegmentMemberSelector": {
+      "additionalProperties": false,
+      "description": "Portable identity for one ordered segment member in a frozen fixture.",
+      "properties": {
+        "locator": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "integer"
+              }
+            ]
+          },
+          "title": "Locator",
+          "type": "object"
+        },
+        "source_object_path": {
+          "title": "Source Object Path",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source_object_path",
+        "locator"
+      ],
+      "title": "GoldSegmentMemberSelector",
+      "type": "object"
+    },
+    "GoldTokenSelector": {
+      "additionalProperties": false,
+      "description": "Stable selector for one occurrence in a group's ordered side.",
+      "properties": {
+        "member": {
+          "minimum": 0,
+          "title": "Member",
+          "type": "integer"
+        },
+        "ordinal": {
+          "minimum": 0,
+          "title": "Ordinal",
+          "type": "integer"
+        },
+        "token_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Token Id"
+        }
+      },
+      "required": [
+        "member",
+        "ordinal"
+      ],
+      "title": "GoldTokenSelector",
+      "type": "object"
+    }
+  },
+  "$id": "urn:langpipe:schema:alignment-gold:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "groups": {
+      "items": {
+        "$ref": "#/$defs/GoldGroup"
+      },
+      "title": "Groups",
+      "type": "array"
+    }
+  },
+  "required": [
+    "groups"
+  ],
+  "title": "GoldAlignment",
+  "type": "object",
+  "x-schema-name": "alignment-gold",
+  "x-schema-version": 1
+}

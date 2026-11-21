@@ -1,0 +1,279 @@
+{
+  "$defs": {
+    "AccessClass": {
+      "enum": [
+        "public",
+        "community",
+        "restricted",
+        "highly_restricted"
+      ],
+      "title": "AccessClass",
+      "type": "string"
+    },
+    "JsonValue": {},
+    "ObjectSpec": {
+      "additionalProperties": false,
+      "properties": {
+        "access_class": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/AccessClass"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "media_type": {
+          "pattern": "^[a-z]+/[a-z0-9.+-]+$",
+          "title": "Media Type",
+          "type": "string"
+        },
+        "path": {
+          "minLength": 1,
+          "title": "Path",
+          "type": "string"
+        }
+      },
+      "required": [
+        "path",
+        "media_type"
+      ],
+      "title": "ObjectSpec",
+      "type": "object"
+    },
+    "Operation": {
+      "enum": [
+        "ingest",
+        "read_raw",
+        "extract",
+        "normalize",
+        "align",
+        "distill_lexicon",
+        "distill_morphology",
+        "distill_grammar",
+        "audio_align",
+        "human_review",
+        "third_party_api",
+        "cloud_processing",
+        "redistribute_raw",
+        "redistribute_derived",
+        "direct_training",
+        "synthetic_generation_support",
+        "evaluation"
+      ],
+      "title": "Operation",
+      "type": "string"
+    },
+    "PolicyMode": {
+      "enum": [
+        "direct",
+        "distill_only",
+        "review_required",
+        "restricted",
+        "archive_only",
+        "exclude"
+      ],
+      "title": "PolicyMode",
+      "type": "string"
+    },
+    "PolicySpec": {
+      "additionalProperties": false,
+      "properties": {
+        "access_class": {
+          "$ref": "#/$defs/AccessClass"
+        },
+        "allow": {
+          "items": {
+            "$ref": "#/$defs/Operation"
+          },
+          "title": "Allow",
+          "type": "array"
+        },
+        "authority": {
+          "minLength": 1,
+          "title": "Authority",
+          "type": "string"
+        },
+        "deny": {
+          "items": {
+            "$ref": "#/$defs/Operation"
+          },
+          "title": "Deny",
+          "type": "array"
+        },
+        "mode": {
+          "$ref": "#/$defs/PolicyMode"
+        },
+        "restrictions": {
+          "additionalProperties": {
+            "$ref": "#/$defs/JsonValue"
+          },
+          "title": "Restrictions",
+          "type": "object"
+        }
+      },
+      "required": [
+        "mode",
+        "access_class",
+        "authority"
+      ],
+      "title": "PolicySpec",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "acquired_from": {
+          "minLength": 1,
+          "title": "Acquired From",
+          "type": "string"
+        },
+        "collector": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Collector"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "rights_holder": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rights Holder"
+        }
+      },
+      "required": [
+        "acquired_from"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "SourceType": {
+      "enum": [
+        "parallel_text",
+        "educational_publication",
+        "publication",
+        "dictionary",
+        "wordlist",
+        "grammar_description",
+        "igt",
+        "monolingual_text",
+        "audio",
+        "video",
+        "other"
+      ],
+      "title": "SourceType",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:source-manifest:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "acquired_at": {
+      "format": "date-time",
+      "title": "Acquired At",
+      "type": "string"
+    },
+    "domains": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Domains",
+      "type": "array"
+    },
+    "key": {
+      "pattern": "^[a-z0-9][a-z0-9-]{1,62}$",
+      "title": "Key",
+      "type": "string"
+    },
+    "languages": {
+      "items": {
+        "pattern": "^[a-z]{3}$",
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Languages",
+      "type": "array"
+    },
+    "manifest_version": {
+      "const": 1,
+      "title": "Manifest Version",
+      "type": "integer"
+    },
+    "objects": {
+      "items": {
+        "$ref": "#/$defs/ObjectSpec"
+      },
+      "title": "Objects",
+      "type": "array"
+    },
+    "policy": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/PolicySpec"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "registers": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Registers",
+      "type": "array"
+    },
+    "source_type": {
+      "$ref": "#/$defs/SourceType"
+    },
+    "title": {
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    }
+  },
+  "required": [
+    "manifest_version",
+    "key",
+    "title",
+    "source_type",
+    "languages",
+    "provenance",
+    "acquired_at"
+  ],
+  "title": "SourceManifest",
+  "type": "object",
+  "x-schema-name": "source-manifest",
+  "x-schema-version": 1
+}

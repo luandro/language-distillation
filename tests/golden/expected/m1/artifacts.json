@@ -1,0 +1,62 @@
+[
+  {
+    "access_class": "community",
+    "created_at": "<ts>",
+    "id": "artifact:ingest_report:01-parallel-distill",
+    "kind": "ingest_report",
+    "media_type": "application/json",
+    "run_id": "run:raw_ingestion:01-parallel-distill",
+    "schema_name": "ingest-report",
+    "schema_version": 1,
+    "sha256": "<hash>",
+    "size_bytes": 292
+  },
+  {
+    "access_class": "public",
+    "created_at": "<ts>",
+    "id": "artifact:ingest_report:02-educational-direct",
+    "kind": "ingest_report",
+    "media_type": "application/json",
+    "run_id": "run:raw_ingestion:02-educational-direct",
+    "schema_name": "ingest-report",
+    "schema_version": 1,
+    "sha256": "<hash>",
+    "size_bytes": 291
+  },
+  {
+    "access_class": "public",
+    "created_at": "<ts>",
+    "id": "artifact:ingest_report:03-wordlist",
+    "kind": "ingest_report",
+    "media_type": "application/json",
+    "run_id": "run:raw_ingestion:03-wordlist",
+    "schema_name": "ingest-report",
+    "schema_version": 1,
+    "sha256": "<hash>",
+    "size_bytes": 292
+  },
+  {
+    "access_class": "community",
+    "created_at": "<ts>",
+    "id": "artifact:ingest_report:04-igt",
+    "kind": "ingest_report",
+    "media_type": "application/json",
+    "run_id": "run:raw_ingestion:04-igt",
+    "schema_name": "ingest-report",
+    "schema_version": 1,
+    "sha256": "<hash>",
+    "size_bytes": 292
+  },
+  {
+    "access_class": "community",
+    "created_at": "<ts>",
+    "id": "artifact:ingest_report:05-monolingual",
+    "kind": "ingest_report",
+    "media_type": "application/json",
+    "run_id": "run:raw_ingestion:05-monolingual",
+    "schema_name": "ingest-report",
+    "schema_version": 1,
+    "sha256": "<hash>",
+    "size_bytes": 291
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "schema": "scriptureearth-parallel-counts",
+  "schema_version": 1,
+  "status": "unsigned",
+  "reviewed_by": null,
+  "reviewed_at": null,
+  "review_note": "Metadata-only. A senior must run both reviewed packages, cross-check the counts against an independent rescan and set reviewed_by/reviewed_at. No surface text, corpus bytes, book content or operator paths are recorded here.",
+  "source_mzr": {
+    "declared_edition_language": "mzr",
+    "edition": "UNREVIEWED - operator must record the declared mzr edition",
+    "versification": "UNREVIEWED - operator must record the mzr declared versification_id",
+    "package_sha256_inventory": {}
+  },
+  "source_por": {
+    "declared_edition_language": "por",
+    "edition": "UNREVIEWED - operator must record the declared por edition",
+    "versification": "UNREVIEWED - operator must record the por declared versification_id",
+    "package_sha256_inventory": {}
+  },
+  "expected_counts": {
+    "common_groups": null,
+    "unmatched_source": null,
+    "unmatched_target": null,
+    "book_inventory": {}
+  },
+  "notes": "Counts are null until a senior signs them. Do not reuse 5,594 or mzr marker counts as paired alignment counts, and do not guess a Portuguese edition or total. The mzr package alone provides one side; the Portuguese package's presence in the repository authorizes its processing (ADR-0025), while versification compatibility is a processing precondition, not a licence gate. Count meanings, used identically on memory and PostgreSQL: common_groups is every Stage 4 group (structural and partial-coverage candidate groups) produced by one canonical alignment run over the full pair; unmatched_source and unmatched_target are ALL-UNIT unmatched entries of that run's report, i.e. verse locators without a counterpart plus every non-verse unit (headings, titles, notes, XXF front matter) reported with a fixed reason; book_inventory maps each declared book code to [source, target] verse-piece counts, keeping verse-free books as [0, 0]."
+}

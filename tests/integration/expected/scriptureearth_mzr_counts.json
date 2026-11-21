@@ -1,0 +1,31 @@
+{
+  "books": ["ACT", "EXO", "GEN", "JAS", "JHN", "LUK", "NEH", "RUT", "XXF"],
+  "verse_markers_by_book": {
+    "ACT": 996,
+    "EXO": 540,
+    "GEN": 1526,
+    "JAS": 108,
+    "JHN": 875,
+    "LUK": 1135,
+    "NEH": 124,
+    "RUT": 85,
+    "XXF": 0
+  },
+  "verses_by_book": {
+    "ACT": 996,
+    "EXO": 540,
+    "GEN": 1526,
+    "JAS": 108,
+    "JHN": 875,
+    "LUK": 1135,
+    "NEH": 124,
+    "RUT": 85,
+    "XXF": 0
+  },
+  "verses_total": 5389,
+  "unknown_markers": ["zvideo"],
+  "normalization_failed": 0,
+  "token_span_unmappable": 0,
+  "reviewed_by": "Senior Architect & Verifier",
+  "reviewed_at": "2026-10-13T13:00:00Z"
+}

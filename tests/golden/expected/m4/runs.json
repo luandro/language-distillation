@@ -1,0 +1,304 @@
+{
+  "run:export:pre": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "lex:golden-lexicon-export:nawa",
+      "sense:golden-lexicon-export:nawa:rio"
+    ],
+    "method": null,
+    "outputs": [
+      "artifact:run:export:pre:Dictionary-metadata.json",
+      "artifact:run:export:pre:cldf-export-report",
+      "artifact:run:export:pre:entries.csv",
+      "artifact:run:export:pre:languages.csv",
+      "artifact:run:export:pre:senses.csv",
+      "artifact:run:export:pre:sources.bib"
+    ],
+    "stage": "export",
+    "status": "succeeded",
+    "tool": "langpipe.cldf-export"
+  },
+  "run:extraction:03-wordlist": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "sobj:03-wordlist/wordlist.tsv"
+    ],
+    "method": "wordlist_tabular@0.1.0",
+    "outputs": [
+      "artifact:run:extraction:03-wordlist:wordlist-extraction-report"
+    ],
+    "stage": "extraction",
+    "status": "succeeded",
+    "tool": "langpipe.wordlist-extract"
+  },
+  "run:extraction:golden-lexicon-export": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "sobj:golden-lexicon-export/export-wordlist.tsv"
+    ],
+    "method": "wordlist_tabular@0.1.0",
+    "outputs": [
+      "artifact:run:extraction:golden-lexicon-export:wordlist-extraction-report"
+    ],
+    "stage": "extraction",
+    "status": "succeeded",
+    "tool": "langpipe.wordlist-extract"
+  },
+  "run:lexical_induction:01-parallel-distill": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "edge:01-parallel-distill:TXT.1.1:0->1:forward",
+      "edge:01-parallel-distill:TXT.1.1:0->1:reverse",
+      "edge:01-parallel-distill:TXT.1.1:0->1:symmetrized",
+      "edge:01-parallel-distill:TXT.1.1:1->4:forward",
+      "edge:01-parallel-distill:TXT.1.1:1->4:reverse",
+      "edge:01-parallel-distill:TXT.1.1:1->4:symmetrized",
+      "edge:01-parallel-distill:TXT.1.3:0->1:forward",
+      "edge:01-parallel-distill:TXT.1.3:0->1:reverse",
+      "edge:01-parallel-distill:TXT.1.3:0->1:symmetrized",
+      "edge:01-parallel-distill:TXT.1.4:0->1:forward",
+      "edge:01-parallel-distill:TXT.1.4:0->1:reverse",
+      "edge:01-parallel-distill:TXT.1.4:0->1:symmetrized",
+      "run:token_alignment:01-parallel-distill",
+      "seg:por:TXT.1.1:0",
+      "seg:por:TXT.1.3:0",
+      "seg:por:TXT.1.4:0",
+      "seg:qaa:TXT.1.1",
+      "seg:qaa:TXT.1.3",
+      "seg:qaa:TXT.1.4",
+      "tok:por:TXT.1.1:0:1",
+      "tok:por:TXT.1.1:0:4",
+      "tok:por:TXT.1.3:0:1",
+      "tok:por:TXT.1.4:0:1",
+      "tok:qaa:TXT.1.1:0",
+      "tok:qaa:TXT.1.1:1",
+      "tok:qaa:TXT.1.3:0",
+      "tok:qaa:TXT.1.4:0"
+    ],
+    "method": "alignment_cooccurrence@0.1.0",
+    "outputs": [
+      "artifact:run:lexical_induction:01-parallel-distill:lexical-induction-report",
+      "ev:lex:01-parallel-distill:kanu:1",
+      "ev:lex:01-parallel-distill:kanu:2",
+      "ev:lex:01-parallel-distill:kanu:3",
+      "ev:lex:01-parallel-distill:kanu:4",
+      "ev:lex:01-parallel-distill:mabi:1",
+      "ev:lex:01-parallel-distill:mabi:2",
+      "ev:lex:01-parallel-distill:rumi:1",
+      "ev:lex:01-parallel-distill:rumi:2",
+      "lex:01-parallel-distill:kanu",
+      "lex:01-parallel-distill:mabi",
+      "lex:01-parallel-distill:rumi",
+      "link:lex:01-parallel-distill:kanu",
+      "link:lex:01-parallel-distill:mabi",
+      "link:lex:01-parallel-distill:rumi",
+      "sense:01-parallel-distill:kanu:homem",
+      "sense:01-parallel-distill:mabi:canoa",
+      "sense:01-parallel-distill:rumi:pajé"
+    ],
+    "stage": "lexical_induction",
+    "status": "succeeded",
+    "tool": "langpipe.lexicon-induce"
+  },
+  "run:lexical_induction:03-wordlist": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "run:extraction:03-wordlist",
+      "sobj:03-wordlist/wordlist.tsv"
+    ],
+    "method": "wordlist_tabular@0.1.0",
+    "outputs": [
+      "artifact:run:lexical_induction:03-wordlist:lexical-induction-report",
+      "ev:lex:03-wordlist:kanu:1",
+      "ev:lex:03-wordlist:mabi:1",
+      "ev:lex:03-wordlist:mabi:2",
+      "ev:lex:03-wordlist:rumi:1",
+      "lex:03-wordlist:kanu",
+      "lex:03-wordlist:mabi",
+      "lex:03-wordlist:rumi",
+      "sense:03-wordlist:kanu:homem",
+      "sense:03-wordlist:mabi:canoa",
+      "sense:03-wordlist:mabi:tronco",
+      "sense:03-wordlist:rumi:pajé"
+    ],
+    "stage": "lexical_induction",
+    "status": "succeeded",
+    "tool": "langpipe.lexicon-induce"
+  },
+  "run:lexical_induction:golden-lexicon-export": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "run:extraction:golden-lexicon-export",
+      "sobj:golden-lexicon-export/export-wordlist.tsv"
+    ],
+    "method": "wordlist_tabular@0.1.0",
+    "outputs": [
+      "artifact:run:lexical_induction:golden-lexicon-export:lexical-induction-report",
+      "ev:lex:golden-lexicon-export:nawa:1",
+      "lex:golden-lexicon-export:nawa",
+      "sense:golden-lexicon-export:nawa:rio"
+    ],
+    "stage": "lexical_induction",
+    "status": "succeeded",
+    "tool": "langpipe.lexicon-induce"
+  },
+  "run:raw_ingestion:03-wordlist": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "sobj:03-wordlist/wordlist.tsv"
+    ],
+    "method": null,
+    "outputs": [
+      "artifact:run:raw_ingestion:03-wordlist:ingest-report"
+    ],
+    "stage": "raw_ingestion",
+    "status": "succeeded",
+    "tool": "langpipe.ingest"
+  },
+  "run:raw_ingestion:golden-lexicon-export": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "sobj:golden-lexicon-export/export-wordlist.tsv"
+    ],
+    "method": null,
+    "outputs": [
+      "artifact:run:raw_ingestion:golden-lexicon-export:ingest-report"
+    ],
+    "stage": "raw_ingestion",
+    "status": "succeeded",
+    "tool": "langpipe.ingest"
+  },
+  "run:review:T1": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "sense:03-wordlist:mabi:canoa"
+    ],
+    "method": null,
+    "outputs": [
+      "task:T1"
+    ],
+    "stage": "human_review",
+    "status": "succeeded",
+    "tool": "langpipe.review"
+  },
+  "run:review:T2": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "sense:03-wordlist:mabi:tronco"
+    ],
+    "method": null,
+    "outputs": [
+      "task:T2"
+    ],
+    "stage": "human_review",
+    "status": "succeeded",
+    "tool": "langpipe.review"
+  },
+  "run:review:T3": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "ev:lex:03-wordlist:mabi:1",
+      "ev:lex:03-wordlist:mabi:2",
+      "lex:03-wordlist:mabi"
+    ],
+    "method": null,
+    "outputs": [
+      "task:T3"
+    ],
+    "stage": "human_review",
+    "status": "succeeded",
+    "tool": "langpipe.review"
+  },
+  "run:review:T4": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "ev:lex:golden-lexicon-export:nawa:1",
+      "lex:golden-lexicon-export:nawa"
+    ],
+    "method": null,
+    "outputs": [
+      "task:T4"
+    ],
+    "stage": "human_review",
+    "status": "succeeded",
+    "tool": "langpipe.review"
+  },
+  "run:review:T5": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "sense:golden-lexicon-export:nawa:rio"
+    ],
+    "method": null,
+    "outputs": [
+      "task:T5"
+    ],
+    "stage": "human_review",
+    "status": "succeeded",
+    "tool": "langpipe.review"
+  },
+  "run:review:T6": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "ev:lex:01-parallel-distill:rumi:1",
+      "ev:lex:01-parallel-distill:rumi:2",
+      "lex:01-parallel-distill:rumi"
+    ],
+    "method": null,
+    "outputs": [
+      "task:T6"
+    ],
+    "stage": "human_review",
+    "status": "succeeded",
+    "tool": "langpipe.review"
+  },
+  "run:review:T7": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "sense:01-parallel-distill:rumi:pajé"
+    ],
+    "method": null,
+    "outputs": [
+      "task:T7"
+    ],
+    "stage": "human_review",
+    "status": "succeeded",
+    "tool": "langpipe.review"
+  },
+  "run:review:T8": {
+    "config_hash": "<sha256>",
+    "inputs": [
+      "sense:03-wordlist:rumi:pajé"
+    ],
+    "method": null,
+    "outputs": [
+      "task:T8"
+    ],
+    "stage": "human_review",
+    "status": "succeeded",
+    "tool": "langpipe.review"
+  },
+  "run:source_registration:03-wordlist": {
+    "config_hash": "<sha256>",
+    "inputs": [],
+    "method": null,
+    "outputs": [
+      "sobj:03-wordlist/wordlist.tsv",
+      "src:03-wordlist"
+    ],
+    "stage": "source_registration",
+    "status": "succeeded",
+    "tool": "langpipe.register"
+  },
+  "run:source_registration:golden-lexicon-export": {
+    "config_hash": "<sha256>",
+    "inputs": [],
+    "method": null,
+    "outputs": [
+      "sobj:golden-lexicon-export/export-wordlist.tsv",
+      "src:golden-lexicon-export"
+    ],
+    "stage": "source_registration",
+    "status": "succeeded",
+    "tool": "langpipe.register"
+  }
+}

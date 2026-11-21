@@ -1,0 +1,49 @@
+{
+  "$id": "urn:langpipe:schema:form:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^form_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "language": {
+      "pattern": "^[a-z]{3}$",
+      "title": "Language",
+      "type": "string"
+    },
+    "orthography_profile": {
+      "pattern": "^[a-z0-9][a-z0-9_.-]*@[0-9A-Za-z_.-]+$",
+      "title": "Orthography Profile",
+      "type": "string"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "text": {
+      "minLength": 1,
+      "title": "Text",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "language",
+    "orthography_profile",
+    "text",
+    "run_id",
+    "created_at"
+  ],
+  "title": "Form",
+  "type": "object",
+  "x-schema-name": "form",
+  "x-schema-version": 1
+}

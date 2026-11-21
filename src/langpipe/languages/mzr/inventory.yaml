@@ -1,0 +1,6 @@
+language: mzr
+status: unverified
+characters: []
+digraphs: []
+reviewed_by: null
+notes: "Populate only from the WP2.15 observed-inventory report after senior and community review. See docs/languages/mzr.md."

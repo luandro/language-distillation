@@ -1,0 +1,16 @@
+manifest_version: 1
+key: 02-educational-direct
+title: Synthetic educational lessons (direct)
+source_type: educational_publication
+languages: [qaa, por]
+provenance:
+  acquired_from: "synthetic"
+acquired_at: "2026-01-01T00:00:00Z"
+registers: [pedagogical]
+policy:
+  mode: direct
+  access_class: public
+  authority: "synthetic fixture steward"
+objects:
+  - path: lessons.tsv
+    media_type: text/tab-separated-values

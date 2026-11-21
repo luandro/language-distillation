@@ -1,0 +1,19 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: langpipe
+      POSTGRES_PASSWORD: langpipe
+      POSTGRES_DB: langpipe
+    ports:
+      - "55432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./docker/postgres/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U langpipe -d langpipe"]
+      interval: 2s
+      retries: 30
+
+volumes:
+  pgdata:

@@ -1,0 +1,173 @@
+[
+  {
+    "actor": "test-actor",
+    "details": {},
+    "event_type": "policy_created",
+    "id": "aud:pol:01-parallel-distill:policy_created",
+    "occurred_at": "<ts>",
+    "run_id": "run:source_registration:01-parallel-distill",
+    "subject_id": "pol:01-parallel-distill"
+  },
+  {
+    "actor": "test-actor",
+    "details": {},
+    "event_type": "policy_created",
+    "id": "aud:pol:02-educational-direct:policy_created",
+    "occurred_at": "<ts>",
+    "run_id": "run:source_registration:02-educational-direct",
+    "subject_id": "pol:02-educational-direct"
+  },
+  {
+    "actor": "test-actor",
+    "details": {},
+    "event_type": "policy_created",
+    "id": "aud:pol:03-wordlist:policy_created",
+    "occurred_at": "<ts>",
+    "run_id": "run:source_registration:03-wordlist",
+    "subject_id": "pol:03-wordlist"
+  },
+  {
+    "actor": "test-actor",
+    "details": {},
+    "event_type": "policy_created",
+    "id": "aud:pol:04-igt:policy_created",
+    "occurred_at": "<ts>",
+    "run_id": "run:source_registration:04-igt",
+    "subject_id": "pol:04-igt"
+  },
+  {
+    "actor": "test-actor",
+    "details": {},
+    "event_type": "policy_created",
+    "id": "aud:pol:05-monolingual:policy_created",
+    "occurred_at": "<ts>",
+    "run_id": "run:source_registration:05-monolingual",
+    "subject_id": "pol:05-monolingual"
+  },
+  {
+    "actor": "test-actor",
+    "details": {},
+    "event_type": "policy_created",
+    "id": "aud:pol:06-excluded:policy_created",
+    "occurred_at": "<ts>",
+    "run_id": "run:source_registration:06-excluded",
+    "subject_id": "pol:06-excluded"
+  },
+  {
+    "actor": "test-actor",
+    "details": {},
+    "event_type": "raw_ingested",
+    "id": "aud:src:01-parallel-distill:raw_ingested",
+    "occurred_at": "<ts>",
+    "run_id": "run:raw_ingestion:01-parallel-distill",
+    "subject_id": "src:01-parallel-distill"
+  },
+  {
+    "actor": "test-actor",
+    "details": {
+      "mode": "distill_only",
+      "objects": 1
+    },
+    "event_type": "source_registered",
+    "id": "aud:src:01-parallel-distill:source_registered",
+    "occurred_at": "<ts>",
+    "run_id": "run:source_registration:01-parallel-distill",
+    "subject_id": "src:01-parallel-distill"
+  },
+  {
+    "actor": "test-actor",
+    "details": {},
+    "event_type": "raw_ingested",
+    "id": "aud:src:02-educational-direct:raw_ingested",
+    "occurred_at": "<ts>",
+    "run_id": "run:raw_ingestion:02-educational-direct",
+    "subject_id": "src:02-educational-direct"
+  },
+  {
+    "actor": "test-actor",
+    "details": {
+      "mode": "direct",
+      "objects": 1
+    },
+    "event_type": "source_registered",
+    "id": "aud:src:02-educational-direct:source_registered",
+    "occurred_at": "<ts>",
+    "run_id": "run:source_registration:02-educational-direct",
+    "subject_id": "src:02-educational-direct"
+  },
+  {
+    "actor": "test-actor",
+    "details": {},
+    "event_type": "raw_ingested",
+    "id": "aud:src:03-wordlist:raw_ingested",
+    "occurred_at": "<ts>",
+    "run_id": "run:raw_ingestion:03-wordlist",
+    "subject_id": "src:03-wordlist"
+  },
+  {
+    "actor": "test-actor",
+    "details": {
+      "mode": "direct",
+      "objects": 1
+    },
+    "event_type": "source_registered",
+    "id": "aud:src:03-wordlist:source_registered",
+    "occurred_at": "<ts>",
+    "run_id": "run:source_registration:03-wordlist",
+    "subject_id": "src:03-wordlist"
+  },
+  {
+    "actor": "test-actor",
+    "details": {},
+    "event_type": "raw_ingested",
+    "id": "aud:src:04-igt:raw_ingested",
+    "occurred_at": "<ts>",
+    "run_id": "run:raw_ingestion:04-igt",
+    "subject_id": "src:04-igt"
+  },
+  {
+    "actor": "test-actor",
+    "details": {
+      "mode": "review_required",
+      "objects": 1
+    },
+    "event_type": "source_registered",
+    "id": "aud:src:04-igt:source_registered",
+    "occurred_at": "<ts>",
+    "run_id": "run:source_registration:04-igt",
+    "subject_id": "src:04-igt"
+  },
+  {
+    "actor": "test-actor",
+    "details": {},
+    "event_type": "raw_ingested",
+    "id": "aud:src:05-monolingual:raw_ingested",
+    "occurred_at": "<ts>",
+    "run_id": "run:raw_ingestion:05-monolingual",
+    "subject_id": "src:05-monolingual"
+  },
+  {
+    "actor": "test-actor",
+    "details": {
+      "mode": "direct",
+      "objects": 1
+    },
+    "event_type": "source_registered",
+    "id": "aud:src:05-monolingual:source_registered",
+    "occurred_at": "<ts>",
+    "run_id": "run:source_registration:05-monolingual",
+    "subject_id": "src:05-monolingual"
+  },
+  {
+    "actor": "test-actor",
+    "details": {
+      "mode": "exclude",
+      "objects": 0
+    },
+    "event_type": "source_registered",
+    "id": "aud:src:06-excluded:source_registered",
+    "occurred_at": "<ts>",
+    "run_id": "run:source_registration:06-excluded",
+    "subject_id": "src:06-excluded"
+  }
+]

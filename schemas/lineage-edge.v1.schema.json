@@ -1,0 +1,62 @@
+{
+  "$defs": {
+    "LineageKind": {
+      "enum": [
+        "derived_from",
+        "generated_from",
+        "normalized_from",
+        "extracted_from",
+        "imported_from",
+        "supersedes",
+        "stale_dependent",
+        "recalculated"
+      ],
+      "title": "LineageKind",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:lineage-edge:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "`from_id` depends on `to_id` (child → parent). ADR-0009.",
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "from_id": {
+      "title": "From Id",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^lin_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "kind": {
+      "$ref": "#/$defs/LineageKind"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "to_id": {
+      "title": "To Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "from_id",
+    "to_id",
+    "kind",
+    "run_id",
+    "created_at"
+  ],
+  "title": "LineageEdge",
+  "type": "object",
+  "x-schema-name": "lineage-edge",
+  "x-schema-version": 1
+}

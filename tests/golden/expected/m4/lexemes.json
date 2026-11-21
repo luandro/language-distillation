@@ -1,0 +1,72 @@
+{
+  "lex:01-parallel-distill:kanu": {
+    "domain": null,
+    "headword": "kanu",
+    "language": "qaa",
+    "lemma_form": "qaa/default_text@0.1.0/kanu",
+    "register": null,
+    "run": "run:lexical_induction:01-parallel-distill",
+    "source": "src:01-parallel-distill",
+    "status": "candidate"
+  },
+  "lex:01-parallel-distill:mabi": {
+    "domain": null,
+    "headword": "mabi",
+    "language": "qaa",
+    "lemma_form": "qaa/default_text@0.1.0/mabi",
+    "register": null,
+    "run": "run:lexical_induction:01-parallel-distill",
+    "source": "src:01-parallel-distill",
+    "status": "candidate"
+  },
+  "lex:01-parallel-distill:rumi": {
+    "domain": null,
+    "headword": "rumi",
+    "language": "qaa",
+    "lemma_form": "qaa/default_text@0.1.0/rumi",
+    "register": null,
+    "run": "run:lexical_induction:01-parallel-distill",
+    "source": "src:01-parallel-distill",
+    "status": "validated"
+  },
+  "lex:03-wordlist:kanu": {
+    "domain": null,
+    "headword": "kanu",
+    "language": "qaa",
+    "lemma_form": null,
+    "register": null,
+    "run": "run:lexical_induction:03-wordlist",
+    "source": "src:03-wordlist",
+    "status": "candidate"
+  },
+  "lex:03-wordlist:mabi": {
+    "domain": null,
+    "headword": "mabi",
+    "language": "qaa",
+    "lemma_form": null,
+    "register": null,
+    "run": "run:lexical_induction:03-wordlist",
+    "source": "src:03-wordlist",
+    "status": "validated"
+  },
+  "lex:03-wordlist:rumi": {
+    "domain": null,
+    "headword": "rumi",
+    "language": "qaa",
+    "lemma_form": null,
+    "register": null,
+    "run": "run:lexical_induction:03-wordlist",
+    "source": "src:03-wordlist",
+    "status": "candidate"
+  },
+  "lex:golden-lexicon-export:nawa": {
+    "domain": null,
+    "headword": "nawa",
+    "language": "qaa",
+    "lemma_form": null,
+    "register": null,
+    "run": "run:lexical_induction:golden-lexicon-export",
+    "source": "src:golden-lexicon-export",
+    "status": "validated"
+  }
+}

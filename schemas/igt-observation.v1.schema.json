@@ -1,0 +1,243 @@
+{
+  "$defs": {
+    "IgtFormat": {
+      "enum": [
+        "toolbox",
+        "xigt"
+      ],
+      "title": "IgtFormat",
+      "type": "string"
+    },
+    "IgtMorph": {
+      "additionalProperties": false,
+      "description": "One parsed morph inside a word, with its verbatim source gloss (if any).",
+      "properties": {
+        "boundary_before": {
+          "anyOf": [
+            {
+              "pattern": "^[-=]$",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Boundary Before"
+        },
+        "gloss": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Gloss"
+        },
+        "ordinal": {
+          "title": "Ordinal",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ordinal",
+        "text"
+      ],
+      "title": "IgtMorph",
+      "type": "object"
+    },
+    "IgtParseStatus": {
+      "enum": [
+        "ok",
+        "tier_mismatch",
+        "missing_tier",
+        "unparsed"
+      ],
+      "title": "IgtParseStatus",
+      "type": "string"
+    },
+    "IgtTierLine": {
+      "additionalProperties": false,
+      "description": "One verbatim source line of an IGT record (Invariant 1: never rewritten).",
+      "properties": {
+        "line_number": {
+          "title": "Line Number",
+          "type": "integer"
+        },
+        "marker": {
+          "title": "Marker",
+          "type": "string"
+        },
+        "raw": {
+          "title": "Raw",
+          "type": "string"
+        }
+      },
+      "required": [
+        "marker",
+        "line_number",
+        "raw"
+      ],
+      "title": "IgtTierLine",
+      "type": "object"
+    },
+    "IgtWord": {
+      "additionalProperties": false,
+      "description": "One parsed word of the text tier, segmented into its morphs.",
+      "properties": {
+        "morphs": {
+          "items": {
+            "$ref": "#/$defs/IgtMorph"
+          },
+          "title": "Morphs",
+          "type": "array"
+        },
+        "ordinal": {
+          "title": "Ordinal",
+          "type": "integer"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        }
+      },
+      "required": [
+        "ordinal",
+        "text",
+        "morphs"
+      ],
+      "title": "IgtWord",
+      "type": "object"
+    }
+  },
+  "$id": "urn:langpipe:schema:igt-observation:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "A tiered interlinear record captured verbatim from a source object.\n\nImmutable evidence: append-only at the storage layer, `segment_id` links the\ntext-tier `Segment` produced by the same extraction run (stage 7a), and\n`diagnostics` carries fixed parse codes — never free text, never source prose\n(Invariant: no restricted text in reports).",
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "diagnostics": {
+      "items": {
+        "pattern": "^[a-z][a-z0-9_]*$",
+        "type": "string"
+      },
+      "title": "Diagnostics",
+      "type": "array"
+    },
+    "format": {
+      "$ref": "#/$defs/IgtFormat"
+    },
+    "id": {
+      "pattern": "^igt_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "locator": {
+      "additionalProperties": true,
+      "title": "Locator",
+      "type": "object"
+    },
+    "parse_status": {
+      "$ref": "#/$defs/IgtParseStatus"
+    },
+    "record_ordinal": {
+      "minimum": 0,
+      "title": "Record Ordinal",
+      "type": "integer"
+    },
+    "record_ref": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Record Ref"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "segment_id": {
+      "anyOf": [
+        {
+          "pattern": "^seg_[0-9A-HJKMNP-TV-Z]{26}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Segment Id"
+    },
+    "source_id": {
+      "pattern": "^src_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Source Id",
+      "type": "string"
+    },
+    "source_object_id": {
+      "pattern": "^sobj_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Source Object Id",
+      "type": "string"
+    },
+    "tiers": {
+      "items": {
+        "$ref": "#/$defs/IgtTierLine"
+      },
+      "title": "Tiers",
+      "type": "array"
+    },
+    "translations": {
+      "patternProperties": {
+        "^[a-z]{3}$": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "title": "Translations",
+      "type": "object"
+    },
+    "words": {
+      "items": {
+        "$ref": "#/$defs/IgtWord"
+      },
+      "title": "Words",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "source_id",
+    "source_object_id",
+    "run_id",
+    "record_ordinal",
+    "format",
+    "locator",
+    "tiers",
+    "words",
+    "parse_status",
+    "created_at"
+  ],
+  "title": "IGTObservation",
+  "type": "object",
+  "x-schema-name": "igt-observation",
+  "x-schema-version": 1
+}

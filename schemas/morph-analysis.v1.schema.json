@@ -1,0 +1,171 @@
+{
+  "$defs": {
+    "Abstention": {
+      "description": "Abstention reasons (EVIDENCE-AND-CONFIDENCE.md §Abstention).",
+      "enum": [
+        "insufficient_evidence",
+        "conflicting_evidence",
+        "unsupported_language_or_domain",
+        "human_review"
+      ],
+      "title": "Abstention",
+      "type": "string"
+    },
+    "AnalysisKind": {
+      "enum": [
+        "segmented",
+        "unsegmented"
+      ],
+      "title": "AnalysisKind",
+      "type": "string"
+    },
+    "LexicalScoreBreakdown": {
+      "additionalProperties": false,
+      "description": "Versioned raw scoring record for a lexical hypothesis. Never creates validation.",
+      "properties": {
+        "components": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Components",
+          "type": "object"
+        },
+        "independence_groups": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Independence Groups",
+          "type": "array"
+        },
+        "overall": {
+          "title": "Overall",
+          "type": "number"
+        },
+        "penalties": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Penalties",
+          "type": "object"
+        },
+        "policy_version": {
+          "minLength": 1,
+          "title": "Policy Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "policy_version",
+        "overall"
+      ],
+      "title": "LexicalScoreBreakdown",
+      "type": "object"
+    },
+    "LifecycleStatus": {
+      "enum": [
+        "candidate",
+        "supported",
+        "validated",
+        "rejected",
+        "deprecated"
+      ],
+      "title": "LifecycleStatus",
+      "type": "string"
+    },
+    "SpanRepresentation": {
+      "enum": [
+        "raw",
+        "normalized"
+      ],
+      "title": "SpanRepresentation",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:morph-analysis:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "A hypothesized segmentation of one token occurrence (competing rows allowed).\n\n`signature` is the canonical segmentation signature (``morphology.spans``);\n`method` is a versioned method name; an `unsegmented` analysis carries an\noptional `abstention` reason and is a hypothesis like any other (ADR-0017 §5).",
+  "properties": {
+    "abstention": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Abstention"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "analysis_kind": {
+      "$ref": "#/$defs/AnalysisKind"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^ma_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "method": {
+      "pattern": "^[a-z0-9][a-z0-9_.-]*@[0-9A-Za-z_.-]+$",
+      "title": "Method",
+      "type": "string"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "score_breakdown": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/LexicalScoreBreakdown"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "signature": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Signature",
+      "type": "string"
+    },
+    "span_representation": {
+      "$ref": "#/$defs/SpanRepresentation"
+    },
+    "status": {
+      "$ref": "#/$defs/LifecycleStatus",
+      "default": "candidate"
+    },
+    "surface": {
+      "title": "Surface",
+      "type": "string"
+    },
+    "target_token_id": {
+      "pattern": "^tok_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Target Token Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "target_token_id",
+    "analysis_kind",
+    "method",
+    "span_representation",
+    "surface",
+    "signature",
+    "run_id",
+    "created_at"
+  ],
+  "title": "MorphAnalysis",
+  "type": "object",
+  "x-schema-name": "morph-analysis",
+  "x-schema-version": 1
+}

@@ -1,0 +1,15 @@
+manifest_version: 1
+key: 04-igt
+title: Synthetic interlinear glossed text (review required)
+source_type: igt
+languages: [qaa, por]
+provenance:
+  acquired_from: "synthetic"
+acquired_at: "2026-01-01T00:00:00Z"
+policy:
+  mode: review_required
+  access_class: community
+  authority: "synthetic fixture steward"
+objects:
+  - path: igt.txt
+    media_type: text/plain

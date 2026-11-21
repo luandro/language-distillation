@@ -1,0 +1,1072 @@
+[
+  {
+    "from": "alignment:0",
+    "kind": "derived_from",
+    "to": "segment:0:source:0"
+  },
+  {
+    "from": "alignment:0",
+    "kind": "derived_from",
+    "to": "segment:0:target:0"
+  },
+  {
+    "from": "alignment:1",
+    "kind": "derived_from",
+    "to": "segment:1:source:0"
+  },
+  {
+    "from": "alignment:1",
+    "kind": "derived_from",
+    "to": "segment:1:target:0"
+  },
+  {
+    "from": "alignment:2",
+    "kind": "derived_from",
+    "to": "segment:2:source:0"
+  },
+  {
+    "from": "alignment:2",
+    "kind": "derived_from",
+    "to": "segment:2:target:0"
+  },
+  {
+    "from": "alignment:3",
+    "kind": "derived_from",
+    "to": "segment:3:source:0"
+  },
+  {
+    "from": "alignment:3",
+    "kind": "derived_from",
+    "to": "segment:3:target:0"
+  },
+  {
+    "from": "alignment:3",
+    "kind": "derived_from",
+    "to": "segment:3:target:1"
+  },
+  {
+    "from": "aux0-alignment:0",
+    "kind": "derived_from",
+    "to": "aux0-segment:0:source:0"
+  },
+  {
+    "from": "aux0-alignment:0",
+    "kind": "derived_from",
+    "to": "aux0-segment:0:target:0"
+  },
+  {
+    "from": "aux0-edge:0",
+    "kind": "derived_from",
+    "to": "aux0-alignment:0"
+  },
+  {
+    "from": "aux0-edge:0",
+    "kind": "derived_from",
+    "to": "aux0-token:0:source:0:0"
+  },
+  {
+    "from": "aux0-edge:0",
+    "kind": "derived_from",
+    "to": "aux0-token:0:target:0:0"
+  },
+  {
+    "from": "aux0-edge:1",
+    "kind": "derived_from",
+    "to": "aux0-alignment:0"
+  },
+  {
+    "from": "aux0-edge:1",
+    "kind": "derived_from",
+    "to": "aux0-token:0:source:0:0"
+  },
+  {
+    "from": "aux0-edge:1",
+    "kind": "derived_from",
+    "to": "aux0-token:0:target:0:0"
+  },
+  {
+    "from": "aux0-edge:2",
+    "kind": "derived_from",
+    "to": "aux0-alignment:0"
+  },
+  {
+    "from": "aux0-edge:2",
+    "kind": "derived_from",
+    "to": "aux0-token:0:source:0:0"
+  },
+  {
+    "from": "aux0-edge:2",
+    "kind": "derived_from",
+    "to": "aux0-token:0:target:0:0"
+  },
+  {
+    "from": "aux0-gold-artifact",
+    "kind": "derived_from",
+    "to": "aux0-source0"
+  },
+  {
+    "from": "aux0-raw-segment-object:0",
+    "kind": "imported_from",
+    "to": "aux0-source0"
+  },
+  {
+    "from": "aux0-raw-segment:0",
+    "kind": "extracted_from",
+    "to": "aux0-raw-segment-object:0"
+  },
+  {
+    "from": "aux0-raw-segment:1",
+    "kind": "extracted_from",
+    "to": "aux0-raw-segment-object:0"
+  },
+  {
+    "from": "aux0-segment:0:source:0",
+    "kind": "normalized_from",
+    "to": "aux0-raw-segment:0"
+  },
+  {
+    "from": "aux0-segment:0:target:0",
+    "kind": "normalized_from",
+    "to": "aux0-raw-segment:1"
+  },
+  {
+    "from": "aux0-token:0:source:0:0",
+    "kind": "derived_from",
+    "to": "aux0-segment:0:source:0"
+  },
+  {
+    "from": "aux0-token:0:source:0:1",
+    "kind": "derived_from",
+    "to": "aux0-segment:0:source:0"
+  },
+  {
+    "from": "aux0-token:0:source:0:2",
+    "kind": "derived_from",
+    "to": "aux0-segment:0:source:0"
+  },
+  {
+    "from": "aux0-token:0:target:0:0",
+    "kind": "derived_from",
+    "to": "aux0-segment:0:target:0"
+  },
+  {
+    "from": "benchmark-report",
+    "kind": "derived_from",
+    "to": "aux0-alignment:0"
+  },
+  {
+    "from": "benchmark-report",
+    "kind": "derived_from",
+    "to": "aux0-edge:2"
+  },
+  {
+    "from": "benchmark-report",
+    "kind": "derived_from",
+    "to": "aux0-gold-artifact"
+  },
+  {
+    "from": "benchmark-report",
+    "kind": "derived_from",
+    "to": "aux0-input-normalization-run"
+  },
+  {
+    "from": "benchmark-report",
+    "kind": "derived_from",
+    "to": "aux0-input-segment_alignment-run"
+  },
+  {
+    "from": "benchmark-report",
+    "kind": "derived_from",
+    "to": "aux0-input-tokenization-run"
+  },
+  {
+    "from": "benchmark-report",
+    "kind": "derived_from",
+    "to": "aux0-segment:0:source:0"
+  },
+  {
+    "from": "benchmark-report",
+    "kind": "derived_from",
+    "to": "aux0-segment:0:target:0"
+  },
+  {
+    "from": "benchmark-report",
+    "kind": "derived_from",
+    "to": "aux0-source0"
+  },
+  {
+    "from": "benchmark-report",
+    "kind": "derived_from",
+    "to": "aux0-token-run"
+  },
+  {
+    "from": "benchmark-report",
+    "kind": "derived_from",
+    "to": "aux0-token:0:source:0:0"
+  },
+  {
+    "from": "benchmark-report",
+    "kind": "derived_from",
+    "to": "aux0-token:0:source:0:1"
+  },
+  {
+    "from": "benchmark-report",
+    "kind": "derived_from",
+    "to": "aux0-token:0:source:0:2"
+  },
+  {
+    "from": "benchmark-report",
+    "kind": "derived_from",
+    "to": "aux0-token:0:target:0:0"
+  },
+  {
+    "from": "edge:0",
+    "kind": "derived_from",
+    "to": "alignment:0"
+  },
+  {
+    "from": "edge:0",
+    "kind": "derived_from",
+    "to": "token:0:source:0:0"
+  },
+  {
+    "from": "edge:0",
+    "kind": "derived_from",
+    "to": "token:0:target:0:0"
+  },
+  {
+    "from": "edge:1",
+    "kind": "derived_from",
+    "to": "alignment:0"
+  },
+  {
+    "from": "edge:1",
+    "kind": "derived_from",
+    "to": "token:0:source:0:0"
+  },
+  {
+    "from": "edge:1",
+    "kind": "derived_from",
+    "to": "token:0:target:0:0"
+  },
+  {
+    "from": "edge:2",
+    "kind": "derived_from",
+    "to": "alignment:0"
+  },
+  {
+    "from": "edge:2",
+    "kind": "derived_from",
+    "to": "token:0:source:0:0"
+  },
+  {
+    "from": "edge:2",
+    "kind": "derived_from",
+    "to": "token:0:target:0:0"
+  },
+  {
+    "from": "edge:3",
+    "kind": "derived_from",
+    "to": "alignment:1"
+  },
+  {
+    "from": "edge:3",
+    "kind": "derived_from",
+    "to": "token:1:source:0:0"
+  },
+  {
+    "from": "edge:3",
+    "kind": "derived_from",
+    "to": "token:1:target:0:0"
+  },
+  {
+    "from": "edge:4",
+    "kind": "derived_from",
+    "to": "alignment:1"
+  },
+  {
+    "from": "edge:4",
+    "kind": "derived_from",
+    "to": "token:1:source:0:0"
+  },
+  {
+    "from": "edge:4",
+    "kind": "derived_from",
+    "to": "token:1:target:0:0"
+  },
+  {
+    "from": "edge:5",
+    "kind": "derived_from",
+    "to": "alignment:1"
+  },
+  {
+    "from": "edge:5",
+    "kind": "derived_from",
+    "to": "token:1:source:0:0"
+  },
+  {
+    "from": "edge:5",
+    "kind": "derived_from",
+    "to": "token:1:target:0:0"
+  },
+  {
+    "from": "edge:6",
+    "kind": "derived_from",
+    "to": "alignment:3"
+  },
+  {
+    "from": "edge:6",
+    "kind": "derived_from",
+    "to": "token:3:source:0:0"
+  },
+  {
+    "from": "edge:6",
+    "kind": "derived_from",
+    "to": "token:3:target:0:0"
+  },
+  {
+    "from": "edge:7",
+    "kind": "derived_from",
+    "to": "alignment:3"
+  },
+  {
+    "from": "edge:7",
+    "kind": "derived_from",
+    "to": "token:3:source:0:0"
+  },
+  {
+    "from": "edge:7",
+    "kind": "derived_from",
+    "to": "token:3:target:0:0"
+  },
+  {
+    "from": "edge:8",
+    "kind": "derived_from",
+    "to": "alignment:3"
+  },
+  {
+    "from": "edge:8",
+    "kind": "derived_from",
+    "to": "token:3:source:0:0"
+  },
+  {
+    "from": "edge:8",
+    "kind": "derived_from",
+    "to": "token:3:target:0:0"
+  },
+  {
+    "from": "raw-segment-object:0",
+    "kind": "imported_from",
+    "to": "source:0"
+  },
+  {
+    "from": "raw-segment:0",
+    "kind": "extracted_from",
+    "to": "raw-segment-object:0"
+  },
+  {
+    "from": "raw-segment:1",
+    "kind": "extracted_from",
+    "to": "raw-segment-object:0"
+  },
+  {
+    "from": "raw-segment:2",
+    "kind": "extracted_from",
+    "to": "raw-segment-object:0"
+  },
+  {
+    "from": "raw-segment:3",
+    "kind": "extracted_from",
+    "to": "raw-segment-object:0"
+  },
+  {
+    "from": "raw-segment:4",
+    "kind": "extracted_from",
+    "to": "raw-segment-object:0"
+  },
+  {
+    "from": "raw-segment:5",
+    "kind": "extracted_from",
+    "to": "raw-segment-object:0"
+  },
+  {
+    "from": "raw-segment:6",
+    "kind": "extracted_from",
+    "to": "raw-segment-object:0"
+  },
+  {
+    "from": "raw-segment:7",
+    "kind": "extracted_from",
+    "to": "raw-segment-object:0"
+  },
+  {
+    "from": "raw-segment:8",
+    "kind": "extracted_from",
+    "to": "raw-segment-object:0"
+  },
+  {
+    "from": "segment-report",
+    "kind": "derived_from",
+    "to": "alignment:0"
+  },
+  {
+    "from": "segment-report",
+    "kind": "derived_from",
+    "to": "alignment:1"
+  },
+  {
+    "from": "segment-report",
+    "kind": "derived_from",
+    "to": "alignment:2"
+  },
+  {
+    "from": "segment-report",
+    "kind": "derived_from",
+    "to": "alignment:3"
+  },
+  {
+    "from": "segment-report",
+    "kind": "derived_from",
+    "to": "segment:0:source:0"
+  },
+  {
+    "from": "segment-report",
+    "kind": "derived_from",
+    "to": "segment:0:target:0"
+  },
+  {
+    "from": "segment-report",
+    "kind": "derived_from",
+    "to": "segment:1:source:0"
+  },
+  {
+    "from": "segment-report",
+    "kind": "derived_from",
+    "to": "segment:1:target:0"
+  },
+  {
+    "from": "segment-report",
+    "kind": "derived_from",
+    "to": "segment:2:source:0"
+  },
+  {
+    "from": "segment-report",
+    "kind": "derived_from",
+    "to": "segment:2:target:0"
+  },
+  {
+    "from": "segment-report",
+    "kind": "derived_from",
+    "to": "segment:3:source:0"
+  },
+  {
+    "from": "segment-report",
+    "kind": "derived_from",
+    "to": "segment:3:target:0"
+  },
+  {
+    "from": "segment-report",
+    "kind": "derived_from",
+    "to": "segment:3:target:1"
+  },
+  {
+    "from": "segment:0:source:0",
+    "kind": "normalized_from",
+    "to": "raw-segment:0"
+  },
+  {
+    "from": "segment:0:target:0",
+    "kind": "normalized_from",
+    "to": "raw-segment:1"
+  },
+  {
+    "from": "segment:1:source:0",
+    "kind": "normalized_from",
+    "to": "raw-segment:2"
+  },
+  {
+    "from": "segment:1:target:0",
+    "kind": "normalized_from",
+    "to": "raw-segment:3"
+  },
+  {
+    "from": "segment:2:source:0",
+    "kind": "normalized_from",
+    "to": "raw-segment:4"
+  },
+  {
+    "from": "segment:2:target:0",
+    "kind": "normalized_from",
+    "to": "raw-segment:5"
+  },
+  {
+    "from": "segment:3:source:0",
+    "kind": "normalized_from",
+    "to": "raw-segment:6"
+  },
+  {
+    "from": "segment:3:target:0",
+    "kind": "normalized_from",
+    "to": "raw-segment:7"
+  },
+  {
+    "from": "segment:3:target:1",
+    "kind": "normalized_from",
+    "to": "raw-segment:8"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "alignment:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "alignment:1"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "alignment:2"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "alignment:3"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "edge:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "edge:1"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "edge:2"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "edge:3"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "edge:4"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "edge:5"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "edge:6"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "edge:7"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "edge:8"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "segment:0:source:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "segment:0:target:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "segment:1:source:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "segment:1:target:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "segment:2:source:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "segment:2:target:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "segment:3:source:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "segment:3:target:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "segment:3:target:1"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "source:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:0:source:0:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:0:source:0:1"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:0:source:0:2"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:0:source:0:3"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:0:target:0:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:0:target:0:1"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:0:target:0:2"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:0:target:0:3"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:0:target:0:4"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:0:target:0:5"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:1:source:0:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:1:source:0:1"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:1:source:0:2"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:1:source:0:3"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:1:target:0:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:1:target:0:1"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:1:target:0:2"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:1:target:0:3"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:1:target:0:4"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:1:target:0:5"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:2:source:0:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:2:source:0:1"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:2:source:0:2"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:2:source:0:3"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:2:target:0:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:2:target:0:1"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:2:target:0:2"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:2:target:0:3"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:2:target:0:4"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:2:target:0:5"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:2:target:0:6"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:3:source:0:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:3:source:0:1"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:3:source:0:2"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:3:source:0:3"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:3:target:0:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:3:target:0:1"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:3:target:0:2"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:3:target:0:3"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:3:target:0:4"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:3:target:0:5"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:3:target:1:0"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:3:target:1:1"
+  },
+  {
+    "from": "token-report",
+    "kind": "derived_from",
+    "to": "token:3:target:1:2"
+  },
+  {
+    "from": "token:0:source:0:0",
+    "kind": "derived_from",
+    "to": "segment:0:source:0"
+  },
+  {
+    "from": "token:0:source:0:1",
+    "kind": "derived_from",
+    "to": "segment:0:source:0"
+  },
+  {
+    "from": "token:0:source:0:2",
+    "kind": "derived_from",
+    "to": "segment:0:source:0"
+  },
+  {
+    "from": "token:0:source:0:3",
+    "kind": "derived_from",
+    "to": "segment:0:source:0"
+  },
+  {
+    "from": "token:0:target:0:0",
+    "kind": "derived_from",
+    "to": "segment:0:target:0"
+  },
+  {
+    "from": "token:0:target:0:1",
+    "kind": "derived_from",
+    "to": "segment:0:target:0"
+  },
+  {
+    "from": "token:0:target:0:2",
+    "kind": "derived_from",
+    "to": "segment:0:target:0"
+  },
+  {
+    "from": "token:0:target:0:3",
+    "kind": "derived_from",
+    "to": "segment:0:target:0"
+  },
+  {
+    "from": "token:0:target:0:4",
+    "kind": "derived_from",
+    "to": "segment:0:target:0"
+  },
+  {
+    "from": "token:0:target:0:5",
+    "kind": "derived_from",
+    "to": "segment:0:target:0"
+  },
+  {
+    "from": "token:1:source:0:0",
+    "kind": "derived_from",
+    "to": "segment:1:source:0"
+  },
+  {
+    "from": "token:1:source:0:1",
+    "kind": "derived_from",
+    "to": "segment:1:source:0"
+  },
+  {
+    "from": "token:1:source:0:2",
+    "kind": "derived_from",
+    "to": "segment:1:source:0"
+  },
+  {
+    "from": "token:1:source:0:3",
+    "kind": "derived_from",
+    "to": "segment:1:source:0"
+  },
+  {
+    "from": "token:1:target:0:0",
+    "kind": "derived_from",
+    "to": "segment:1:target:0"
+  },
+  {
+    "from": "token:1:target:0:1",
+    "kind": "derived_from",
+    "to": "segment:1:target:0"
+  },
+  {
+    "from": "token:1:target:0:2",
+    "kind": "derived_from",
+    "to": "segment:1:target:0"
+  },
+  {
+    "from": "token:1:target:0:3",
+    "kind": "derived_from",
+    "to": "segment:1:target:0"
+  },
+  {
+    "from": "token:1:target:0:4",
+    "kind": "derived_from",
+    "to": "segment:1:target:0"
+  },
+  {
+    "from": "token:1:target:0:5",
+    "kind": "derived_from",
+    "to": "segment:1:target:0"
+  },
+  {
+    "from": "token:2:source:0:0",
+    "kind": "derived_from",
+    "to": "segment:2:source:0"
+  },
+  {
+    "from": "token:2:source:0:1",
+    "kind": "derived_from",
+    "to": "segment:2:source:0"
+  },
+  {
+    "from": "token:2:source:0:2",
+    "kind": "derived_from",
+    "to": "segment:2:source:0"
+  },
+  {
+    "from": "token:2:source:0:3",
+    "kind": "derived_from",
+    "to": "segment:2:source:0"
+  },
+  {
+    "from": "token:2:target:0:0",
+    "kind": "derived_from",
+    "to": "segment:2:target:0"
+  },
+  {
+    "from": "token:2:target:0:1",
+    "kind": "derived_from",
+    "to": "segment:2:target:0"
+  },
+  {
+    "from": "token:2:target:0:2",
+    "kind": "derived_from",
+    "to": "segment:2:target:0"
+  },
+  {
+    "from": "token:2:target:0:3",
+    "kind": "derived_from",
+    "to": "segment:2:target:0"
+  },
+  {
+    "from": "token:2:target:0:4",
+    "kind": "derived_from",
+    "to": "segment:2:target:0"
+  },
+  {
+    "from": "token:2:target:0:5",
+    "kind": "derived_from",
+    "to": "segment:2:target:0"
+  },
+  {
+    "from": "token:2:target:0:6",
+    "kind": "derived_from",
+    "to": "segment:2:target:0"
+  },
+  {
+    "from": "token:3:source:0:0",
+    "kind": "derived_from",
+    "to": "segment:3:source:0"
+  },
+  {
+    "from": "token:3:source:0:1",
+    "kind": "derived_from",
+    "to": "segment:3:source:0"
+  },
+  {
+    "from": "token:3:source:0:2",
+    "kind": "derived_from",
+    "to": "segment:3:source:0"
+  },
+  {
+    "from": "token:3:source:0:3",
+    "kind": "derived_from",
+    "to": "segment:3:source:0"
+  },
+  {
+    "from": "token:3:target:0:0",
+    "kind": "derived_from",
+    "to": "segment:3:target:0"
+  },
+  {
+    "from": "token:3:target:0:1",
+    "kind": "derived_from",
+    "to": "segment:3:target:0"
+  },
+  {
+    "from": "token:3:target:0:2",
+    "kind": "derived_from",
+    "to": "segment:3:target:0"
+  },
+  {
+    "from": "token:3:target:0:3",
+    "kind": "derived_from",
+    "to": "segment:3:target:0"
+  },
+  {
+    "from": "token:3:target:0:4",
+    "kind": "derived_from",
+    "to": "segment:3:target:0"
+  },
+  {
+    "from": "token:3:target:0:5",
+    "kind": "derived_from",
+    "to": "segment:3:target:0"
+  },
+  {
+    "from": "token:3:target:1:0",
+    "kind": "derived_from",
+    "to": "segment:3:target:1"
+  },
+  {
+    "from": "token:3:target:1:1",
+    "kind": "derived_from",
+    "to": "segment:3:target:1"
+  },
+  {
+    "from": "token:3:target:1:2",
+    "kind": "derived_from",
+    "to": "segment:3:target:1"
+  }
+]

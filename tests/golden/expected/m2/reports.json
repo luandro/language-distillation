@@ -1,0 +1,132 @@
+[
+  {
+    "id": "artifact:extraction_report:01-parallel-distill",
+    "objects": [
+      {
+        "empty_units": 0,
+        "extractor": "tsv@0.1.0",
+        "object": "sobj:01-parallel-distill/parallel.tsv",
+        "stats": {},
+        "units": 8
+      }
+    ],
+    "schema": "extraction-report",
+    "skipped": 0
+  },
+  {
+    "id": "artifact:extraction_report:02-educational-direct",
+    "objects": [
+      {
+        "empty_units": 0,
+        "extractor": "tsv@0.1.0",
+        "object": "sobj:02-educational-direct/lessons.tsv",
+        "stats": {},
+        "units": 4
+      }
+    ],
+    "schema": "extraction-report",
+    "skipped": 0
+  },
+  {
+    "id": "artifact:extraction_report:05-monolingual",
+    "objects": [
+      {
+        "empty_units": 0,
+        "extractor": "plain_lines@0.1.0",
+        "object": "sobj:05-monolingual/text.txt",
+        "stats": {},
+        "units": 3
+      }
+    ],
+    "schema": "extraction-report",
+    "skipped": 0
+  },
+  {
+    "failure_codes": {},
+    "id": "artifact:normalization_report:01-parallel-distill",
+    "profiles": {
+      "por": "default_text@0.1.0",
+      "qaa": "default_text@0.1.0"
+    },
+    "schema": "normalization-report",
+    "totals": {
+      "failed": 0,
+      "segments": 8
+    }
+  },
+  {
+    "failure_codes": {},
+    "id": "artifact:normalization_report:02-educational-direct",
+    "profiles": {
+      "por": "default_text@0.1.0",
+      "qaa": "default_text@0.1.0"
+    },
+    "schema": "normalization-report",
+    "totals": {
+      "failed": 0,
+      "segments": 4
+    }
+  },
+  {
+    "failure_codes": {},
+    "id": "artifact:normalization_report:05-monolingual",
+    "profiles": {
+      "qaa": "default_text@0.1.0"
+    },
+    "schema": "normalization-report",
+    "totals": {
+      "failed": 0,
+      "segments": 3
+    }
+  },
+  {
+    "id": "artifact:tokenization_report:01-parallel-distill",
+    "schema": "tokenization-report",
+    "skipped": 0,
+    "tokenizers": {
+      "por": "whitespace_punct@0.1.0",
+      "qaa": "whitespace_punct@0.1.0"
+    },
+    "totals": {
+      "forms": 21,
+      "numbers": 0,
+      "punct": 9,
+      "skipped": 0,
+      "tokens": 44,
+      "words": 35
+    }
+  },
+  {
+    "id": "artifact:tokenization_report:02-educational-direct",
+    "schema": "tokenization-report",
+    "skipped": 0,
+    "tokenizers": {
+      "por": "whitespace_punct@0.1.0",
+      "qaa": "whitespace_punct@0.1.0"
+    },
+    "totals": {
+      "forms": 11,
+      "numbers": 0,
+      "punct": 4,
+      "skipped": 0,
+      "tokens": 15,
+      "words": 11
+    }
+  },
+  {
+    "id": "artifact:tokenization_report:05-monolingual",
+    "schema": "tokenization-report",
+    "skipped": 0,
+    "tokenizers": {
+      "qaa": "whitespace_punct@0.1.0"
+    },
+    "totals": {
+      "forms": 7,
+      "numbers": 0,
+      "punct": 3,
+      "skipped": 0,
+      "tokens": 10,
+      "words": 7
+    }
+  }
+]

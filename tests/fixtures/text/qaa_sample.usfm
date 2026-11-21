@@ -1,0 +1,17 @@
+\id RUT Synthetic qaa sample
+\h Ruth
+\toc1 Ruth
+\mt1 Ruth
+\c 1
+\s1 Opening heading
+\p
+\v 1 Kanu \w kanu|lemma="x"\w* mabi-ki ~ ok // done
+\v 2-3 Kanú \add ge\add* \+nd Ruth\+nd* ya
+\p
+more of verse three \f + \fr 1:2 \ft a note\f* after note
+\q1 line one \x - \xo 1:2 \xt Gen 1:1\x* and line two
+\v 4 Four
+\zfoo marker content
+\v 5
+\c 2
+\v 1 Ruth \jmp here|href="x"\jmp* end

@@ -1,0 +1,92 @@
+{
+  "$defs": {
+    "ReviewDecisionKind": {
+      "description": "Allowed reviewer dispositions (§REVIEW-WORKFLOW.md). Decisions are immutable.",
+      "enum": [
+        "accept",
+        "reject",
+        "modify",
+        "uncertain",
+        "defer"
+      ],
+      "title": "ReviewDecisionKind",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:review-decision:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "An immutable reviewer disposition for one review task.",
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "decision": {
+      "$ref": "#/$defs/ReviewDecisionKind"
+    },
+    "id": {
+      "pattern": "^rdec_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Notes"
+    },
+    "reviewer_id": {
+      "minLength": 1,
+      "title": "Reviewer Id",
+      "type": "string"
+    },
+    "reviewer_role": {
+      "minLength": 1,
+      "title": "Reviewer Role",
+      "type": "string"
+    },
+    "superseding_object_id": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Superseding Object Id"
+    },
+    "target_id": {
+      "title": "Target Id",
+      "type": "string"
+    },
+    "task_id": {
+      "pattern": "^rtask_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Task Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "task_id",
+    "target_id",
+    "decision",
+    "reviewer_id",
+    "reviewer_role",
+    "created_at"
+  ],
+  "title": "ReviewDecision",
+  "type": "object",
+  "x-schema-name": "review-decision",
+  "x-schema-version": 1
+}

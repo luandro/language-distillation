@@ -1,0 +1,137 @@
+{
+  "$defs": {
+    "AlignmentMode": {
+      "enum": [
+        "canonical",
+        "heuristic",
+        "experimental"
+      ],
+      "title": "AlignmentMode",
+      "type": "string"
+    },
+    "AlignmentStatus": {
+      "enum": [
+        "structural",
+        "inferred",
+        "candidate",
+        "approved",
+        "rejected"
+      ],
+      "title": "AlignmentStatus",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:segment-alignment:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Ordered binary n:m alignment group over persisted segments. Evidence, never truth.",
+  "properties": {
+    "authorization_basis_id": {
+      "anyOf": [
+        {
+          "pattern": "^artifact_[0-9A-HJKMNP-TV-Z]{26}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Authorization Basis Id"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "group_key": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Group Key",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^sal_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "method": {
+      "pattern": "^[a-z0-9][a-z0-9_.-]*@[0-9A-Za-z_.-]+$",
+      "title": "Method",
+      "type": "string"
+    },
+    "mode": {
+      "$ref": "#/$defs/AlignmentMode"
+    },
+    "raw_scores": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Raw Scores",
+      "type": "object"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "score": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Score"
+    },
+    "source_segment_ids": {
+      "items": {
+        "pattern": "^seg_[0-9A-HJKMNP-TV-Z]{26}$",
+        "type": "string"
+      },
+      "title": "Source Segment Ids",
+      "type": "array"
+    },
+    "status": {
+      "$ref": "#/$defs/AlignmentStatus"
+    },
+    "supersedes_id": {
+      "anyOf": [
+        {
+          "pattern": "^sal_[0-9A-HJKMNP-TV-Z]{26}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Supersedes Id"
+    },
+    "target_segment_ids": {
+      "items": {
+        "pattern": "^seg_[0-9A-HJKMNP-TV-Z]{26}$",
+        "type": "string"
+      },
+      "title": "Target Segment Ids",
+      "type": "array"
+    }
+  },
+  "required": [
+    "id",
+    "source_segment_ids",
+    "target_segment_ids",
+    "method",
+    "mode",
+    "status",
+    "group_key",
+    "run_id",
+    "created_at"
+  ],
+  "title": "SegmentAlignment",
+  "type": "object",
+  "x-schema-name": "segment-alignment",
+  "x-schema-version": 1
+}

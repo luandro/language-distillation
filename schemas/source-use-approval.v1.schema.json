@@ -1,0 +1,97 @@
+{
+  "$defs": {
+    "ApprovalAction": {
+      "enum": [
+        "grant",
+        "withdraw"
+      ],
+      "title": "ApprovalAction",
+      "type": "string"
+    },
+    "Operation": {
+      "enum": [
+        "ingest",
+        "read_raw",
+        "extract",
+        "normalize",
+        "align",
+        "distill_lexicon",
+        "distill_morphology",
+        "distill_grammar",
+        "audio_align",
+        "human_review",
+        "third_party_api",
+        "cloud_processing",
+        "redistribute_raw",
+        "redistribute_derived",
+        "direct_training",
+        "synthetic_generation_support",
+        "evaluation"
+      ],
+      "title": "Operation",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:source-use-approval:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "One grant or withdrawal of a source-use operation (append-only).",
+  "properties": {
+    "action": {
+      "$ref": "#/$defs/ApprovalAction"
+    },
+    "approver_id": {
+      "minLength": 1,
+      "title": "Approver Id",
+      "type": "string"
+    },
+    "approver_role": {
+      "minLength": 1,
+      "title": "Approver Role",
+      "type": "string"
+    },
+    "basis": {
+      "minLength": 1,
+      "title": "Basis",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^sua_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "operation": {
+      "$ref": "#/$defs/Operation"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "source_id": {
+      "pattern": "^src_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Source Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "source_id",
+    "operation",
+    "action",
+    "approver_id",
+    "approver_role",
+    "basis",
+    "run_id",
+    "created_at"
+  ],
+  "title": "SourceUseApproval",
+  "type": "object",
+  "x-schema-name": "source-use-approval",
+  "x-schema-version": 1
+}

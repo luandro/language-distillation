@@ -1,0 +1,22 @@
+manifest_version: 1
+key: golden-lexicon-export
+title: Synthetic redistributable wordlist (export challenge)
+source_type: wordlist
+languages: [qaa, por]
+provenance:
+  acquired_from: synthetic
+acquired_at: "2026-01-01T00:00:00Z"
+policy:
+  mode: direct
+  access_class: public
+  authority: synthetic fixture steward
+  allow: [redistribute_derived]
+  restrictions:
+    attribution:
+      required: true
+      license: "CC-BY-4.0"
+      license_url: "https://creativecommons.org/licenses/by/4.0/"
+      text: "Synthetic Golden Lexicon, CC BY 4.0"
+objects:
+  - path: export-wordlist.tsv
+    media_type: text/tab-separated-values

@@ -1,0 +1,117 @@
+{
+  "p12b": {
+    "denials": [
+      {
+        "decision": "deny",
+        "source": "src:01-parallel-distill"
+      },
+      {
+        "decision": "deny",
+        "source": "src:03-wordlist"
+      },
+      {
+        "decision": "deny",
+        "source": "src:golden-lexicon-export"
+      }
+    ],
+    "operation": "redistribute_derived"
+  },
+  "post": {
+    "entries": [
+      {
+        "Headword": "nawa",
+        "ID": "lex:golden-lexicon-export:nawa",
+        "Language_ID": "qaa",
+        "Part_Of_Speech": "",
+        "Source": "golden-lexicon-export"
+      }
+    ],
+    "exported": {
+      "entries": 1,
+      "languages": 1,
+      "senses": 1,
+      "sources": 1
+    },
+    "files": [
+      "Dictionary-metadata.json",
+      "entries.csv",
+      "languages.csv",
+      "senses.csv",
+      "sources.bib"
+    ],
+    "omitted": {
+      "ambiguous_form": 0,
+      "denied": 1,
+      "no_exportable_sense": 0,
+      "no_form": 0,
+      "review_required": 0,
+      "revoked": 1,
+      "stale_dependent": 0,
+      "status_below_threshold": 5
+    },
+    "reused": true,
+    "run": "run:export:pre",
+    "senses": [
+      {
+        "Concept_Label": "",
+        "Concepticon_ID": "",
+        "Description": "rio",
+        "Domain": "",
+        "Entry_ID": "lex:golden-lexicon-export:nawa",
+        "Glosses": "{\"por\":[\"rio\"]}",
+        "ID": "sense:golden-lexicon-export:nawa:rio",
+        "Register": "",
+        "Source": "golden-lexicon-export"
+      }
+    ]
+  },
+  "pre": {
+    "entries": [
+      {
+        "Headword": "nawa",
+        "ID": "lex:golden-lexicon-export:nawa",
+        "Language_ID": "qaa",
+        "Part_Of_Speech": "",
+        "Source": "golden-lexicon-export"
+      }
+    ],
+    "exported": {
+      "entries": 1,
+      "languages": 1,
+      "senses": 1,
+      "sources": 1
+    },
+    "files": [
+      "Dictionary-metadata.json",
+      "entries.csv",
+      "languages.csv",
+      "senses.csv",
+      "sources.bib"
+    ],
+    "omitted": {
+      "ambiguous_form": 0,
+      "denied": 2,
+      "no_exportable_sense": 0,
+      "no_form": 0,
+      "review_required": 0,
+      "revoked": 0,
+      "stale_dependent": 0,
+      "status_below_threshold": 5
+    },
+    "reused": false,
+    "run": "run:export:pre",
+    "senses": [
+      {
+        "Concept_Label": "",
+        "Concepticon_ID": "",
+        "Description": "rio",
+        "Domain": "",
+        "Entry_ID": "lex:golden-lexicon-export:nawa",
+        "Glosses": "{\"por\":[\"rio\"]}",
+        "ID": "sense:golden-lexicon-export:nawa:rio",
+        "Register": "",
+        "Source": "golden-lexicon-export"
+      }
+    ]
+  }
+}

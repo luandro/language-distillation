@@ -1,0 +1,4 @@
+\ref IGT-1
+\t mabi-ki nawa
+\m mabi-ki nawa
+\g canoa-ERG rio extra

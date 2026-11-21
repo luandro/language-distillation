@@ -1,0 +1,38 @@
+[
+  {
+    "count": 30,
+    "from": "artifact",
+    "kind": "derived_from",
+    "to": "segment"
+  },
+  {
+    "count": 3,
+    "from": "artifact",
+    "kind": "derived_from",
+    "to": "source_object"
+  },
+  {
+    "count": 53,
+    "from": "form",
+    "kind": "derived_from",
+    "to": "segment"
+  },
+  {
+    "count": 15,
+    "from": "segment",
+    "kind": "extracted_from",
+    "to": "source_object"
+  },
+  {
+    "count": 15,
+    "from": "segment",
+    "kind": "normalized_from",
+    "to": "segment"
+  },
+  {
+    "count": 69,
+    "from": "token_occurrence",
+    "kind": "derived_from",
+    "to": "segment"
+  }
+]

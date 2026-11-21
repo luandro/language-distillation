@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xigt-corpus>
+  <igt id="i1">
+    <tier id="tw" type="words">
+      <item id="w1">mabi-ki</item>
+      <item id="w2">nawa</item>
+    </tier>
+    <tier id="tm" type="morphemes" segmentation="tw">
+      <item id="m1" segmentation="w1">mabi</item>
+      <item id="m2" segmentation="w1">ki</item>
+      <item id="m3" segmentation="w2">nawa</item>
+    </tier>
+    <tier id="tg" type="glosses" alignment="tm">
+      <item id="g1" alignment="m1">canoa</item>
+      <!-- content reference: g2 has no own text, it points at g1 -->
+      <item id="g2" alignment="m2" content="#g1"/>
+      <item id="g3" alignment="m3">rio</item>
+    </tier>
+    <tier id="tt" type="translations">
+      <item id="t1" xml:lang="por">A canoa foi ao rio.</item>
+    </tier>
+  </igt>
+</xigt-corpus>

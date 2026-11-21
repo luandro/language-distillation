@@ -1,0 +1,25 @@
+\id TEST-TOOLBOX-IGT Sample Toolbox File
+\header Some header notes before the first ref
+
+\ref IGT-1
+\t mabi-ki nawa wesa
+\m mabi-ki nawa wesa
+\g canoa-ERG rio ir.PST
+\f por: A canoa foi ao rio.
+
+\ref IGT-2
+\tx wesa-ra
+\mb wesa-ra
+\ge ir-NEG
+\ft não foi
+
+\ref IGT-MISMATCH
+\tx a b
+\mb a-b c
+\ge A-B C D
+\ft mismatch
+
+\ref IGT-MISSING-TX
+\mb wesa
+\ge ir
+\ft sem texto

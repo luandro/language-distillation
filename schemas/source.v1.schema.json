@@ -1,0 +1,183 @@
+{
+  "$defs": {
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "acquired_from": {
+          "minLength": 1,
+          "title": "Acquired From",
+          "type": "string"
+        },
+        "collector": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Collector"
+        },
+        "notes": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Notes"
+        },
+        "rights_holder": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Rights Holder"
+        }
+      },
+      "required": [
+        "acquired_from"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "SourceStatus": {
+      "enum": [
+        "registered",
+        "ingested",
+        "revoked"
+      ],
+      "title": "SourceStatus",
+      "type": "string"
+    },
+    "SourceType": {
+      "enum": [
+        "parallel_text",
+        "educational_publication",
+        "publication",
+        "dictionary",
+        "wordlist",
+        "grammar_description",
+        "igt",
+        "monolingual_text",
+        "audio",
+        "video",
+        "other"
+      ],
+      "title": "SourceType",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:source:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "acquired_at": {
+      "format": "date-time",
+      "title": "Acquired At",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "domains": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Domains",
+      "type": "array"
+    },
+    "id": {
+      "pattern": "^src_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "key": {
+      "pattern": "^[a-z0-9][a-z0-9-]{1,62}$",
+      "title": "Key",
+      "type": "string"
+    },
+    "languages": {
+      "items": {
+        "pattern": "^[a-z]{3}$",
+        "type": "string"
+      },
+      "title": "Languages",
+      "type": "array"
+    },
+    "manifest_sha256": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Manifest Sha256",
+      "type": "string"
+    },
+    "policy_id": {
+      "pattern": "^pol_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Policy Id",
+      "type": "string"
+    },
+    "provenance": {
+      "$ref": "#/$defs/Provenance"
+    },
+    "registers": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Registers",
+      "type": "array"
+    },
+    "registration_run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Registration Run Id",
+      "type": "string"
+    },
+    "source_type": {
+      "$ref": "#/$defs/SourceType"
+    },
+    "status": {
+      "$ref": "#/$defs/SourceStatus",
+      "default": "registered"
+    },
+    "title": {
+      "minLength": 1,
+      "title": "Title",
+      "type": "string"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "key",
+    "title",
+    "source_type",
+    "languages",
+    "provenance",
+    "policy_id",
+    "acquired_at",
+    "domains",
+    "registers",
+    "manifest_sha256",
+    "registration_run_id",
+    "created_at",
+    "updated_at"
+  ],
+  "title": "Source",
+  "type": "object",
+  "x-schema-name": "source",
+  "x-schema-version": 1
+}

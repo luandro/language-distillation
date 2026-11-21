@@ -1,0 +1,126 @@
+{
+  "$defs": {
+    "MorphRole": {
+      "enum": [
+        "root",
+        "lexical_stem",
+        "derivational_affix",
+        "inflectional_affix",
+        "clitic",
+        "reduplicant",
+        "bound_lexical",
+        "unknown_bound",
+        "unknown"
+      ],
+      "title": "MorphRole",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:morph-segment:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "One piece of one analysis: a span fact plus optional morpheme/role links.\n\nAppend-only; a segment links at most one `Morpheme` (fusion stays open,\nOPEN-MORPH-001) and realizes features through `MorphSegmentFeature`.",
+  "properties": {
+    "allomorph_id": {
+      "anyOf": [
+        {
+          "pattern": "^allo_[0-9A-HJKMNP-TV-Z]{26}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Allomorph Id"
+    },
+    "analysis_id": {
+      "pattern": "^ma_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Analysis Id",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "end": {
+      "minimum": 0,
+      "title": "End",
+      "type": "integer"
+    },
+    "id": {
+      "pattern": "^mseg_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "is_zero": {
+      "default": false,
+      "title": "Is Zero",
+      "type": "boolean"
+    },
+    "morpheme_id": {
+      "anyOf": [
+        {
+          "pattern": "^morph_[0-9A-HJKMNP-TV-Z]{26}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Morpheme Id"
+    },
+    "ordinal": {
+      "minimum": 0,
+      "title": "Ordinal",
+      "type": "integer"
+    },
+    "role": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/MorphRole"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "source_gloss": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Source Gloss"
+    },
+    "start": {
+      "minimum": 0,
+      "title": "Start",
+      "type": "integer"
+    },
+    "surface": {
+      "title": "Surface",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "analysis_id",
+    "ordinal",
+    "start",
+    "end",
+    "surface",
+    "created_at"
+  ],
+  "title": "MorphSegment",
+  "type": "object",
+  "x-schema-name": "morph-segment",
+  "x-schema-version": 1
+}

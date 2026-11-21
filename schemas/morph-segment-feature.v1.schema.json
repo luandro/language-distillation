@@ -1,0 +1,46 @@
+{
+  "$defs": {
+    "FeatureAssignmentBasis": {
+      "enum": [
+        "igt_gloss",
+        "adapter"
+      ],
+      "title": "FeatureAssignmentBasis",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:morph-segment-feature:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "Assignment of a feature to a segment, with its assignment basis.\n\nThis join carries the governed link between vocabulary and sources: the\nfeature row itself has no source lineage (ADR-0017 §6).",
+  "properties": {
+    "basis": {
+      "$ref": "#/$defs/FeatureAssignmentBasis"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "feature_id": {
+      "pattern": "^feat_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Feature Id",
+      "type": "string"
+    },
+    "segment_id": {
+      "pattern": "^mseg_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Segment Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "segment_id",
+    "feature_id",
+    "basis",
+    "created_at"
+  ],
+  "title": "MorphSegmentFeature",
+  "type": "object",
+  "x-schema-name": "morph-segment-feature",
+  "x-schema-version": 1
+}

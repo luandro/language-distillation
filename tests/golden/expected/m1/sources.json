@@ -1,0 +1,156 @@
+[
+  {
+    "acquired_at": "<ts>",
+    "created_at": "<ts>",
+    "domains": [
+      "religious"
+    ],
+    "id": "src:01-parallel-distill",
+    "key": "01-parallel-distill",
+    "languages": [
+      "qaa",
+      "por"
+    ],
+    "manifest_sha256": "627545b634345f5d28d841ae9478b5115d939d5d3661e7ef78658a84c85ed24d",
+    "policy_id": "pol:01-parallel-distill",
+    "provenance": {
+      "acquired_from": "synthetic",
+      "collector": null,
+      "notes": null,
+      "rights_holder": null
+    },
+    "registers": [
+      "religious"
+    ],
+    "registration_run_id": "run:source_registration:01-parallel-distill",
+    "source_type": "parallel_text",
+    "status": "ingested",
+    "title": "Synthetic parallel text (distill only)",
+    "updated_at": "<ts>"
+  },
+  {
+    "acquired_at": "<ts>",
+    "created_at": "<ts>",
+    "domains": [],
+    "id": "src:02-educational-direct",
+    "key": "02-educational-direct",
+    "languages": [
+      "qaa",
+      "por"
+    ],
+    "manifest_sha256": "ad41b904677ab035f65139b362d6085b4e31a98bac7aeb88462ef5fd30d930dd",
+    "policy_id": "pol:02-educational-direct",
+    "provenance": {
+      "acquired_from": "synthetic",
+      "collector": null,
+      "notes": null,
+      "rights_holder": null
+    },
+    "registers": [
+      "pedagogical"
+    ],
+    "registration_run_id": "run:source_registration:02-educational-direct",
+    "source_type": "educational_publication",
+    "status": "ingested",
+    "title": "Synthetic educational lessons (direct)",
+    "updated_at": "<ts>"
+  },
+  {
+    "acquired_at": "<ts>",
+    "created_at": "<ts>",
+    "domains": [],
+    "id": "src:03-wordlist",
+    "key": "03-wordlist",
+    "languages": [
+      "qaa",
+      "por"
+    ],
+    "manifest_sha256": "99907ab82f910fc9911853685097261a32ae0aee68f7957238642334d675d04c",
+    "policy_id": "pol:03-wordlist",
+    "provenance": {
+      "acquired_from": "synthetic",
+      "collector": null,
+      "notes": null,
+      "rights_holder": null
+    },
+    "registers": [],
+    "registration_run_id": "run:source_registration:03-wordlist",
+    "source_type": "wordlist",
+    "status": "ingested",
+    "title": "Synthetic tiny wordlist (direct)",
+    "updated_at": "<ts>"
+  },
+  {
+    "acquired_at": "<ts>",
+    "created_at": "<ts>",
+    "domains": [],
+    "id": "src:04-igt",
+    "key": "04-igt",
+    "languages": [
+      "qaa",
+      "por"
+    ],
+    "manifest_sha256": "3681eed3d2a05302c2585a772d3e9741bf3b13f34ea62ae1d4649c5db290ec33",
+    "policy_id": "pol:04-igt",
+    "provenance": {
+      "acquired_from": "synthetic",
+      "collector": null,
+      "notes": null,
+      "rights_holder": null
+    },
+    "registers": [],
+    "registration_run_id": "run:source_registration:04-igt",
+    "source_type": "igt",
+    "status": "ingested",
+    "title": "Synthetic interlinear glossed text (review required)",
+    "updated_at": "<ts>"
+  },
+  {
+    "acquired_at": "<ts>",
+    "created_at": "<ts>",
+    "domains": [],
+    "id": "src:05-monolingual",
+    "key": "05-monolingual",
+    "languages": [
+      "qaa"
+    ],
+    "manifest_sha256": "9fcb85c3e9d7c40b08004f822d2c6d8c48359ff48dc5d0c991eabadfbcf301b3",
+    "policy_id": "pol:05-monolingual",
+    "provenance": {
+      "acquired_from": "synthetic",
+      "collector": null,
+      "notes": null,
+      "rights_holder": null
+    },
+    "registers": [],
+    "registration_run_id": "run:source_registration:05-monolingual",
+    "source_type": "monolingual_text",
+    "status": "ingested",
+    "title": "Synthetic monolingual text (direct)",
+    "updated_at": "<ts>"
+  },
+  {
+    "acquired_at": "<ts>",
+    "created_at": "<ts>",
+    "domains": [],
+    "id": "src:06-excluded",
+    "key": "06-excluded",
+    "languages": [
+      "und"
+    ],
+    "manifest_sha256": "f34a8eaaf352493c5f21f4c4edbe32342d7512caca0b5ac6559793fe89cdce69",
+    "policy_id": "pol:06-excluded",
+    "provenance": {
+      "acquired_from": "synthetic",
+      "collector": null,
+      "notes": null,
+      "rights_holder": null
+    },
+    "registers": [],
+    "registration_run_id": "run:source_registration:06-excluded",
+    "source_type": "other",
+    "status": "registered",
+    "title": "Synthetic excluded source (governance check)",
+    "updated_at": "<ts>"
+  }
+]

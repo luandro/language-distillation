@@ -1,0 +1,62 @@
+[
+  {
+    "access_class": "community",
+    "created_at": "<ts>",
+    "id": "sobj:01-parallel-distill/parallel.tsv",
+    "media_type": "text/tab-separated-values",
+    "origin_uri": "fixture:01-parallel-distill/parallel.tsv",
+    "original_path": "parallel.tsv",
+    "registration_run_id": "run:source_registration:01-parallel-distill",
+    "sha256": "9072b67a6368f953bbb15b998ebd7f10874a870a393514d83a05152f59e2238e",
+    "size_bytes": 215,
+    "source_id": "src:01-parallel-distill"
+  },
+  {
+    "access_class": "public",
+    "created_at": "<ts>",
+    "id": "sobj:02-educational-direct/lessons.tsv",
+    "media_type": "text/tab-separated-values",
+    "origin_uri": "fixture:02-educational-direct/lessons.tsv",
+    "original_path": "lessons.tsv",
+    "registration_run_id": "run:source_registration:02-educational-direct",
+    "sha256": "9d67f7cc3343f5cceb43a55b8e79fd849b2701a02598c3d0e6a0e164524c3736",
+    "size_bytes": 74,
+    "source_id": "src:02-educational-direct"
+  },
+  {
+    "access_class": "public",
+    "created_at": "<ts>",
+    "id": "sobj:03-wordlist/wordlist.tsv",
+    "media_type": "text/tab-separated-values",
+    "origin_uri": "fixture:03-wordlist/wordlist.tsv",
+    "original_path": "wordlist.tsv",
+    "registration_run_id": "run:source_registration:03-wordlist",
+    "sha256": "c37ab63715c94f2ece8f257c12e15405340268dfa0324d1d1587d4222712338b",
+    "size_bytes": 112,
+    "source_id": "src:03-wordlist"
+  },
+  {
+    "access_class": "community",
+    "created_at": "<ts>",
+    "id": "sobj:04-igt/igt.txt",
+    "media_type": "text/plain",
+    "origin_uri": "fixture:04-igt/igt.txt",
+    "original_path": "igt.txt",
+    "registration_run_id": "run:source_registration:04-igt",
+    "sha256": "93c4683df277b00c1044ffc2012bc488415fc06c9553ede97fd6fc3d2139198b",
+    "size_bytes": 156,
+    "source_id": "src:04-igt"
+  },
+  {
+    "access_class": "community",
+    "created_at": "<ts>",
+    "id": "sobj:05-monolingual/text.txt",
+    "media_type": "text/plain",
+    "origin_uri": "fixture:05-monolingual/text.txt",
+    "original_path": "text.txt",
+    "registration_run_id": "run:source_registration:05-monolingual",
+    "sha256": "ee454b2cdcf36c3428cbb935d72c918b5431e881f029cd1bff6c01f3cf1c5e46",
+    "size_bytes": 41,
+    "source_id": "src:05-monolingual"
+  }
+]

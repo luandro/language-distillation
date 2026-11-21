@@ -1,0 +1,160 @@
+{
+  "$defs": {
+    "LexicalScoreBreakdown": {
+      "additionalProperties": false,
+      "description": "Versioned raw scoring record for a lexical hypothesis. Never creates validation.",
+      "properties": {
+        "components": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Components",
+          "type": "object"
+        },
+        "independence_groups": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Independence Groups",
+          "type": "array"
+        },
+        "overall": {
+          "title": "Overall",
+          "type": "number"
+        },
+        "penalties": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Penalties",
+          "type": "object"
+        },
+        "policy_version": {
+          "minLength": 1,
+          "title": "Policy Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "policy_version",
+        "overall"
+      ],
+      "title": "LexicalScoreBreakdown",
+      "type": "object"
+    },
+    "LifecycleStatus": {
+      "enum": [
+        "candidate",
+        "supported",
+        "validated",
+        "rejected",
+        "deprecated"
+      ],
+      "title": "LifecycleStatus",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:lexeme:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "An induced or curated lexical unit. No paradigms, slots or feature bundles (M4).",
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "domain": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Domain"
+    },
+    "id": {
+      "pattern": "^lex_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "language": {
+      "pattern": "^[a-z]{3}$",
+      "title": "Language",
+      "type": "string"
+    },
+    "lemma_form_id": {
+      "anyOf": [
+        {
+          "pattern": "^form_[0-9A-HJKMNP-TV-Z]{26}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Lemma Form Id"
+    },
+    "pos": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Pos"
+    },
+    "register": {
+      "anyOf": [
+        {
+          "minLength": 1,
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Register"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "score_breakdown": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/LexicalScoreBreakdown"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "status": {
+      "$ref": "#/$defs/LifecycleStatus",
+      "default": "candidate"
+    }
+  },
+  "required": [
+    "id",
+    "language",
+    "run_id",
+    "created_at"
+  ],
+  "title": "Lexeme",
+  "type": "object",
+  "x-schema-name": "lexeme",
+  "x-schema-version": 1
+}

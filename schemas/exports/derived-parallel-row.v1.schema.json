@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://langpipe.local/schemas/derived-parallel-row.v1.schema.json",
+  "title": "DerivedParallelRow",
+  "description": "A train-only full-phrase row: the deterministic concatenation of consecutive attested line rows of one harvested source (ADR-0026). Hand-authored; not generated from a pydantic model.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "id", "lang", "src", "tgt", "unit_kind", "register",
+    "split_constraint", "member_refs", "separator", "line_count", "source", "derivation"
+  ],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "minLength": 1, "description": "Stable id: derived:<source>:<location>."},
+    "lang": {"type": "string", "minLength": 2},
+    "src": {"type": "string", "minLength": 1},
+    "tgt": {"type": "string", "minLength": 1},
+    "unit_kind": {"enum": ["stanza", "sentence"]},
+    "register": {"const": "ritual_chant"},
+    "split_constraint": {"const": "train_only"},
+    "member_refs": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Ordered, source-qualified refs of the member line rows. Order is the concatenation order. A sentence may have a single member.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["provenance", "ref"],
+        "properties": {
+          "provenance": {"type": "string", "minLength": 1},
+          "ref": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "separator": {"type": "string", "description": "String placed between members on both sides; the only text not copied from a member."},
+    "line_count": {"type": "integer", "minimum": 1},
+    "source": {
+      "type": "object",
+      "required": ["file", "sha256", "location"],
+      "properties": {
+        "file": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "layout_pdf_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "location": {"type": "string"},
+        "block_end": {"enum": ["blank", "unpaired", "page_end"]}
+      }
+    },
+    "derivation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["version", "run_id"],
+      "properties": {
+        "version": {"type": "string"},
+        "run_id": {"type": "string", "pattern": "^derive_[0-9a-f]{16}$"}
+      }
+    }
+  }
+}

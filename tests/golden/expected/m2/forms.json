@@ -1,0 +1,241 @@
+[
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill",
+      "src:02-educational-direct"
+    ],
+    "id": "form:por/default_text@0.1.0/A",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "A"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill"
+    ],
+    "id": "form:por/default_text@0.1.0/Ele",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "Ele"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill",
+      "src:02-educational-direct"
+    ],
+    "id": "form:por/default_text@0.1.0/O",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "O"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill"
+    ],
+    "id": "form:por/default_text@0.1.0/a",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "a"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill"
+    ],
+    "id": "form:por/default_text@0.1.0/ao",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "ao"
+  },
+  {
+    "attesting_sources": [
+      "src:02-educational-direct"
+    ],
+    "id": "form:por/default_text@0.1.0/boa",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "boa"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill",
+      "src:02-educational-direct"
+    ],
+    "id": "form:por/default_text@0.1.0/canoa",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "canoa"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill"
+    ],
+    "id": "form:por/default_text@0.1.0/foi",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "foi"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill",
+      "src:02-educational-direct"
+    ],
+    "id": "form:por/default_text@0.1.0/homem",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "homem"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill"
+    ],
+    "id": "form:por/default_text@0.1.0/não",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "não"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill"
+    ],
+    "id": "form:por/default_text@0.1.0/pajé",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "pajé"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill"
+    ],
+    "id": "form:por/default_text@0.1.0/rio",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "rio"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill"
+    ],
+    "id": "form:por/default_text@0.1.0/sorri",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "sorri"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill",
+      "src:02-educational-direct"
+    ],
+    "id": "form:por/default_text@0.1.0/vê",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "vê"
+  },
+  {
+    "attesting_sources": [
+      "src:02-educational-direct"
+    ],
+    "id": "form:por/default_text@0.1.0/é",
+    "language": "por",
+    "profile": "default_text@0.1.0",
+    "text": "é"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill",
+      "src:05-monolingual"
+    ],
+    "id": "form:qaa/default_text@0.1.0/kanu",
+    "language": "qaa",
+    "profile": "default_text@0.1.0",
+    "text": "kanu"
+  },
+  {
+    "attesting_sources": [
+      "src:02-educational-direct",
+      "src:05-monolingual"
+    ],
+    "id": "form:qaa/default_text@0.1.0/kanú",
+    "language": "qaa",
+    "profile": "default_text@0.1.0",
+    "text": "kanú"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill",
+      "src:02-educational-direct",
+      "src:05-monolingual"
+    ],
+    "id": "form:qaa/default_text@0.1.0/mabi",
+    "language": "qaa",
+    "profile": "default_text@0.1.0",
+    "text": "mabi"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill"
+    ],
+    "id": "form:qaa/default_text@0.1.0/mabi-ki",
+    "language": "qaa",
+    "profile": "default_text@0.1.0",
+    "text": "mabi-ki"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill"
+    ],
+    "id": "form:qaa/default_text@0.1.0/nawa",
+    "language": "qaa",
+    "profile": "default_text@0.1.0",
+    "text": "nawa"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill",
+      "src:05-monolingual"
+    ],
+    "id": "form:qaa/default_text@0.1.0/rumi",
+    "language": "qaa",
+    "profile": "default_text@0.1.0",
+    "text": "rumi"
+  },
+  {
+    "attesting_sources": [
+      "src:02-educational-direct",
+      "src:05-monolingual"
+    ],
+    "id": "form:qaa/default_text@0.1.0/shara",
+    "language": "qaa",
+    "profile": "default_text@0.1.0",
+    "text": "shara"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill",
+      "src:02-educational-direct",
+      "src:05-monolingual"
+    ],
+    "id": "form:qaa/default_text@0.1.0/tesa",
+    "language": "qaa",
+    "profile": "default_text@0.1.0",
+    "text": "tesa"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill",
+      "src:05-monolingual"
+    ],
+    "id": "form:qaa/default_text@0.1.0/wesa",
+    "language": "qaa",
+    "profile": "default_text@0.1.0",
+    "text": "wesa"
+  },
+  {
+    "attesting_sources": [
+      "src:01-parallel-distill"
+    ],
+    "id": "form:qaa/default_text@0.1.0/wesa-ra",
+    "language": "qaa",
+    "profile": "default_text@0.1.0",
+    "text": "wesa-ra"
+  }
+]

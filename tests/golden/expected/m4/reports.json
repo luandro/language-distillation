@@ -1,0 +1,168 @@
+{
+  "artifact:run:export:pre:cldf-export-report": {
+    "dataset_module": "Dictionary",
+    "entries": [
+      "lex:golden-lexicon-export:nawa"
+    ],
+    "exported": {
+      "entries": 1,
+      "languages": 1,
+      "senses": 1,
+      "sources": 1
+    },
+    "exporter_version": "0.1.0",
+    "files": [
+      {
+        "name": "Dictionary-metadata.json",
+        "sha256": "<sha256>",
+        "size_bytes": 8551
+      },
+      {
+        "name": "entries.csv",
+        "sha256": "<sha256>",
+        "size_bytes": 111
+      },
+      {
+        "name": "languages.csv",
+        "sha256": "<sha256>",
+        "size_bytes": 76
+      },
+      {
+        "name": "senses.csv",
+        "sha256": "<sha256>",
+        "size_bytes": 202
+      },
+      {
+        "name": "sources.bib",
+        "sha256": "<sha256>",
+        "size_bytes": 216
+      }
+    ],
+    "omitted": {
+      "ambiguous_form": 0,
+      "denied": 2,
+      "no_exportable_sense": 0,
+      "no_form": 0,
+      "review_required": 0,
+      "revoked": 0,
+      "stale_dependent": 0,
+      "status_below_threshold": 5
+    },
+    "run": "run:export:pre",
+    "schema": "cldf-export-report",
+    "schema_version": 2,
+    "senses": [
+      "sense:golden-lexicon-export:nawa:rio"
+    ],
+    "sources": [
+      "src:golden-lexicon-export"
+    ]
+  },
+  "artifact:run:extraction:03-wordlist:wordlist-extraction-report": {
+    "contact_language": "por",
+    "objects": [
+      {
+        "object": "sobj:03-wordlist/wordlist.tsv",
+        "sha256": "c37ab63715c94f2ece8f257c12e15405340268dfa0324d1d1587d4222712338b",
+        "size_bytes": 112
+      }
+    ],
+    "run": "run:extraction:03-wordlist",
+    "schema": "wordlist-extraction-report",
+    "schema_version": 1,
+    "source": "src:03-wordlist",
+    "target_language": "qaa",
+    "totals": {
+      "evidence_items": 4,
+      "form_links": 0,
+      "lexemes": 3,
+      "lineage_edges": 26,
+      "senses": 4
+    }
+  },
+  "artifact:run:extraction:golden-lexicon-export:wordlist-extraction-report": {
+    "contact_language": "por",
+    "objects": [
+      {
+        "object": "sobj:golden-lexicon-export/export-wordlist.tsv",
+        "sha256": "cfb2c788c7d5730ad7d6c220463fda06dc739b16baacf58f1c376cd61a55475e",
+        "size_bytes": 22
+      }
+    ],
+    "run": "run:extraction:golden-lexicon-export",
+    "schema": "wordlist-extraction-report",
+    "schema_version": 1,
+    "source": "src:golden-lexicon-export",
+    "target_language": "qaa",
+    "totals": {
+      "evidence_items": 1,
+      "form_links": 0,
+      "lexemes": 1,
+      "lineage_edges": 7,
+      "senses": 1
+    }
+  },
+  "artifact:run:lexical_induction:01-parallel-distill:lexical-induction-report": {
+    "contact_language": "por",
+    "input_run": "run:token_alignment:01-parallel-distill",
+    "method": "alignment_cooccurrence@0.1.0",
+    "mode": "token_alignment",
+    "run": "run:lexical_induction:01-parallel-distill",
+    "schema": "lexical-induction-report",
+    "schema_version": 1,
+    "status_counts": {
+      "candidate": 6
+    },
+    "target_language": "qaa",
+    "totals": {
+      "concepts": 0,
+      "evidence_items": 8,
+      "form_links": 3,
+      "lexemes": 3,
+      "lineage_edges": 49,
+      "senses": 3
+    }
+  },
+  "artifact:run:lexical_induction:03-wordlist:lexical-induction-report": {
+    "contact_language": "por",
+    "input_run": "run:extraction:03-wordlist",
+    "method": "wordlist_tabular@0.1.0",
+    "mode": "wordlist",
+    "run": "run:lexical_induction:03-wordlist",
+    "schema": "lexical-induction-report",
+    "schema_version": 1,
+    "status_counts": {
+      "candidate": 7
+    },
+    "target_language": "qaa",
+    "totals": {
+      "concepts": 0,
+      "evidence_items": 4,
+      "form_links": 0,
+      "lexemes": 3,
+      "lineage_edges": 26,
+      "senses": 4
+    }
+  },
+  "artifact:run:lexical_induction:golden-lexicon-export:lexical-induction-report": {
+    "contact_language": "por",
+    "input_run": "run:extraction:golden-lexicon-export",
+    "method": "wordlist_tabular@0.1.0",
+    "mode": "wordlist",
+    "run": "run:lexical_induction:golden-lexicon-export",
+    "schema": "lexical-induction-report",
+    "schema_version": 1,
+    "status_counts": {
+      "candidate": 2
+    },
+    "target_language": "qaa",
+    "totals": {
+      "concepts": 0,
+      "evidence_items": 1,
+      "form_links": 0,
+      "lexemes": 1,
+      "lineage_edges": 7,
+      "senses": 1
+    }
+  }
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "config": {
+      "extractors": {
+        "sobj:01-parallel-distill/parallel.tsv": "tsv@0.1.0"
+      },
+      "language": null
+    },
+    "id": "run:extraction:01-parallel-distill",
+    "stage": "extraction",
+    "status": "succeeded",
+    "tool": "langpipe.extract"
+  },
+  {
+    "config": {
+      "extractors": {
+        "sobj:02-educational-direct/lessons.tsv": "tsv@0.1.0"
+      },
+      "language": null
+    },
+    "id": "run:extraction:02-educational-direct",
+    "stage": "extraction",
+    "status": "succeeded",
+    "tool": "langpipe.extract"
+  },
+  {
+    "config": {
+      "extractors": {
+        "sobj:05-monolingual/text.txt": "plain_lines@0.1.0"
+      },
+      "language": null
+    },
+    "id": "run:extraction:05-monolingual",
+    "stage": "extraction",
+    "status": "succeeded",
+    "tool": "langpipe.extract"
+  },
+  {
+    "config": {
+      "extraction_run_id": "run:extraction:01-parallel-distill",
+      "profiles": {
+        "por": "default_text@0.1.0",
+        "qaa": "default_text@0.1.0"
+      }
+    },
+    "id": "run:normalization:01-parallel-distill",
+    "stage": "normalization",
+    "status": "succeeded",
+    "tool": "langpipe.normalize"
+  },
+  {
+    "config": {
+      "extraction_run_id": "run:extraction:02-educational-direct",
+      "profiles": {
+        "por": "default_text@0.1.0",
+        "qaa": "default_text@0.1.0"
+      }
+    },
+    "id": "run:normalization:02-educational-direct",
+    "stage": "normalization",
+    "status": "succeeded",
+    "tool": "langpipe.normalize"
+  },
+  {
+    "config": {
+      "extraction_run_id": "run:extraction:05-monolingual",
+      "profiles": {
+        "qaa": "default_text@0.1.0"
+      }
+    },
+    "id": "run:normalization:05-monolingual",
+    "stage": "normalization",
+    "status": "succeeded",
+    "tool": "langpipe.normalize"
+  },
+  {
+    "config": {
+      "normalization_run_id": "run:normalization:01-parallel-distill",
+      "tokenizers": {
+        "por": "whitespace_punct@0.1.0",
+        "qaa": "whitespace_punct@0.1.0"
+      }
+    },
+    "id": "run:tokenization:01-parallel-distill",
+    "stage": "tokenization",
+    "status": "succeeded",
+    "tool": "langpipe.tokenize"
+  },
+  {
+    "config": {
+      "normalization_run_id": "run:normalization:02-educational-direct",
+      "tokenizers": {
+        "por": "whitespace_punct@0.1.0",
+        "qaa": "whitespace_punct@0.1.0"
+      }
+    },
+    "id": "run:tokenization:02-educational-direct",
+    "stage": "tokenization",
+    "status": "succeeded",
+    "tool": "langpipe.tokenize"
+  },
+  {
+    "config": {
+      "normalization_run_id": "run:normalization:05-monolingual",
+      "tokenizers": {
+        "qaa": "whitespace_punct@0.1.0"
+      }
+    },
+    "id": "run:tokenization:05-monolingual",
+    "stage": "tokenization",
+    "status": "succeeded",
+    "tool": "langpipe.tokenize"
+  }
+]

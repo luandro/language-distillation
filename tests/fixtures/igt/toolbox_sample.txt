@@ -1,0 +1,26 @@
+\id header-sample
+\dt 2026-01-01 updated by wp5.6 test fixture
+
+\ref IGT-1
+\t mabi-ki nawa wesa
+\m mabi-ki nawa wesa
+\g canoa-ERG rio ir.PST
+\f por: A canoa foi ao rio.
+
+\ref IGT-2
+\t wesa-ra
+\m wesa-ra
+\g ir-NEG
+\ft não foi
+
+\ref IGT-3
+\t akwã-ra
+\m akwã-ra
+\g falls-NEG
+\x foreign-extra
+unknown tier continuation
+
+\ref IGT-4
+\t aka-ra-ra
+\m aka-ra-ra
+\g butt-NEG-but ?

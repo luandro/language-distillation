@@ -1,0 +1,82 @@
+[
+  {
+    "created_at": "<ts>",
+    "from_id": "artifact:ingest_report:01-parallel-distill",
+    "id": "lin:artifact:ingest_report:01-parallel-distill:derived_from:sobj:01-parallel-distill/parallel.tsv",
+    "kind": "derived_from",
+    "run_id": "run:raw_ingestion:01-parallel-distill",
+    "to_id": "sobj:01-parallel-distill/parallel.tsv"
+  },
+  {
+    "created_at": "<ts>",
+    "from_id": "artifact:ingest_report:02-educational-direct",
+    "id": "lin:artifact:ingest_report:02-educational-direct:derived_from:sobj:02-educational-direct/lessons.tsv",
+    "kind": "derived_from",
+    "run_id": "run:raw_ingestion:02-educational-direct",
+    "to_id": "sobj:02-educational-direct/lessons.tsv"
+  },
+  {
+    "created_at": "<ts>",
+    "from_id": "artifact:ingest_report:03-wordlist",
+    "id": "lin:artifact:ingest_report:03-wordlist:derived_from:sobj:03-wordlist/wordlist.tsv",
+    "kind": "derived_from",
+    "run_id": "run:raw_ingestion:03-wordlist",
+    "to_id": "sobj:03-wordlist/wordlist.tsv"
+  },
+  {
+    "created_at": "<ts>",
+    "from_id": "artifact:ingest_report:04-igt",
+    "id": "lin:artifact:ingest_report:04-igt:derived_from:sobj:04-igt/igt.txt",
+    "kind": "derived_from",
+    "run_id": "run:raw_ingestion:04-igt",
+    "to_id": "sobj:04-igt/igt.txt"
+  },
+  {
+    "created_at": "<ts>",
+    "from_id": "artifact:ingest_report:05-monolingual",
+    "id": "lin:artifact:ingest_report:05-monolingual:derived_from:sobj:05-monolingual/text.txt",
+    "kind": "derived_from",
+    "run_id": "run:raw_ingestion:05-monolingual",
+    "to_id": "sobj:05-monolingual/text.txt"
+  },
+  {
+    "created_at": "<ts>",
+    "from_id": "sobj:01-parallel-distill/parallel.tsv",
+    "id": "lin:sobj:01-parallel-distill/parallel.tsv:imported_from:src:01-parallel-distill",
+    "kind": "imported_from",
+    "run_id": "run:source_registration:01-parallel-distill",
+    "to_id": "src:01-parallel-distill"
+  },
+  {
+    "created_at": "<ts>",
+    "from_id": "sobj:02-educational-direct/lessons.tsv",
+    "id": "lin:sobj:02-educational-direct/lessons.tsv:imported_from:src:02-educational-direct",
+    "kind": "imported_from",
+    "run_id": "run:source_registration:02-educational-direct",
+    "to_id": "src:02-educational-direct"
+  },
+  {
+    "created_at": "<ts>",
+    "from_id": "sobj:03-wordlist/wordlist.tsv",
+    "id": "lin:sobj:03-wordlist/wordlist.tsv:imported_from:src:03-wordlist",
+    "kind": "imported_from",
+    "run_id": "run:source_registration:03-wordlist",
+    "to_id": "src:03-wordlist"
+  },
+  {
+    "created_at": "<ts>",
+    "from_id": "sobj:04-igt/igt.txt",
+    "id": "lin:sobj:04-igt/igt.txt:imported_from:src:04-igt",
+    "kind": "imported_from",
+    "run_id": "run:source_registration:04-igt",
+    "to_id": "src:04-igt"
+  },
+  {
+    "created_at": "<ts>",
+    "from_id": "sobj:05-monolingual/text.txt",
+    "id": "lin:sobj:05-monolingual/text.txt:imported_from:src:05-monolingual",
+    "kind": "imported_from",
+    "run_id": "run:source_registration:05-monolingual",
+    "to_id": "src:05-monolingual"
+  }
+]

@@ -1,0 +1,116 @@
+{
+  "$defs": {
+    "AccessClass": {
+      "enum": [
+        "public",
+        "community",
+        "restricted",
+        "highly_restricted"
+      ],
+      "title": "AccessClass",
+      "type": "string"
+    },
+    "JsonValue": {},
+    "Operation": {
+      "enum": [
+        "ingest",
+        "read_raw",
+        "extract",
+        "normalize",
+        "align",
+        "distill_lexicon",
+        "distill_morphology",
+        "distill_grammar",
+        "audio_align",
+        "human_review",
+        "third_party_api",
+        "cloud_processing",
+        "redistribute_raw",
+        "redistribute_derived",
+        "direct_training",
+        "synthetic_generation_support",
+        "evaluation"
+      ],
+      "title": "Operation",
+      "type": "string"
+    },
+    "PolicyMode": {
+      "enum": [
+        "direct",
+        "distill_only",
+        "review_required",
+        "restricted",
+        "archive_only",
+        "exclude"
+      ],
+      "title": "PolicyMode",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:source-policy:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "access_class": {
+      "$ref": "#/$defs/AccessClass"
+    },
+    "allow": {
+      "items": {
+        "$ref": "#/$defs/Operation"
+      },
+      "title": "Allow",
+      "type": "array"
+    },
+    "authority": {
+      "minLength": 1,
+      "title": "Authority",
+      "type": "string"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "deny": {
+      "items": {
+        "$ref": "#/$defs/Operation"
+      },
+      "title": "Deny",
+      "type": "array"
+    },
+    "id": {
+      "pattern": "^pol_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "mode": {
+      "$ref": "#/$defs/PolicyMode"
+    },
+    "policy_version": {
+      "default": 1,
+      "minimum": 1,
+      "title": "Policy Version",
+      "type": "integer"
+    },
+    "restrictions": {
+      "additionalProperties": {
+        "$ref": "#/$defs/JsonValue"
+      },
+      "title": "Restrictions",
+      "type": "object"
+    }
+  },
+  "required": [
+    "id",
+    "mode",
+    "access_class",
+    "authority",
+    "allow",
+    "deny",
+    "created_at"
+  ],
+  "title": "SourcePolicy",
+  "type": "object",
+  "x-schema-name": "source-policy",
+  "x-schema-version": 1
+}

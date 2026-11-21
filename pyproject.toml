@@ -1,0 +1,85 @@
+[project]
+name = "langpipe"
+version = "0.1.0"
+requires-python = ">=3.12"
+dependencies = [
+    "pydantic>=2.8,<3",
+    "sqlalchemy>=2.0.30,<3",
+    "alembic>=1.13",
+    "psycopg[binary]>=3.2",
+    "typer>=0.12",
+    "pyyaml>=6",
+    "python-ulid>=2.7,<4",
+    "pycldf>=1.39",
+    "weasyprint>=70,<71",
+]
+
+[project.scripts]
+langpipe = "langpipe.cli.app:main"
+
+[project.optional-dependencies]
+# Native alignment backend (ADR-0011): sdist-only upstream, builds a C binary at
+# install time (compiler + make + OpenMP); never installed in compiler-free base CI.
+alignment = ["eflomal==2.0.0"]
+# Baseline morphology inducer spike (WP5.12, ADR-0019): optional baseline; never in base CI.
+morphology = ["morfessor==2.0.6"]
+
+[dependency-groups]
+dev = [
+    "pytest>=8",
+    "hypothesis>=6.100",
+    "ruff>=0.6",
+    "mypy>=1.11",
+    "types-PyYAML",
+    # `test_scorer_matches_sacrebleu_corpus_score` checks our BLEU/chrF against the
+    # reference implementation. It used importorskip, but CI runs with
+    # LANGPIPE_REQUIRE_POSTGRES=1, which fails the run on *any* skip -- so leaving this
+    # undeclared made the gate unpassable rather than making the check optional (tsk #277).
+    "sacrebleu>=2.4",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/langpipe"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+# Markdown code blocks in docs/ are reference text, not source; ruff 0.17 would reformat them.
+extend-exclude = ["*.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+strict = true
+plugins = ["pydantic.mypy"]
+python_version = "3.12"
+mypy_path = "src"
+
+[[tool.mypy.overrides]]
+# weasyprint ships no py.typed marker; it is imported lazily inside
+# langpipe.lexicon.exporters.pdf.render_pdf, never at module import time.
+module = ["pycldf.*", "csvw.*", "clldutils.*", "weasyprint.*", "morfessor.*"]
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+# WP4.11 reuses test_golden_m3's builder helpers by import; that pre-existing golden
+# module predates strict annotations. Its own errors are silenced while its types
+# still flow to importing modules (WP4.11 notes; senior ratification pending).
+module = "tests.golden.test_golden_m3"
+ignore_errors = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = [
+    "integration: requires PostgreSQL (docker compose up -d db)",
+    "realdata: requires a locally acquired ScriptureEarth package (LANGPIPE_MZR_SE_DIR); never run in default CI",
+    "native_alignment: requires the optional alignment extra (eflomal==2.0.0, compiled at install time); explicit selection only, never run in default CI",
+    "optional_morphology: requires the optional morphology extra (morfessor==2.0.6); explicit selection only, never run in default CI",
+]
+addopts = "-ra --strict-markers -m 'not realdata and not native_alignment and not optional_morphology'"

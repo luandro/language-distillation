@@ -1,0 +1,660 @@
+{
+  "benchmark-report": {
+    "direction": "symmetrized",
+    "gold_split": [
+      "test"
+    ],
+    "metrics": {
+      "aer": 0.0,
+      "aer_groups": [
+        "gold-null-token-1"
+      ],
+      "evaluated_groups": 1,
+      "f1": 1.0,
+      "null_source_annotated": 3,
+      "null_source_fn": 0,
+      "null_source_fp": 0,
+      "null_source_groups": [
+        "gold-null-token-1"
+      ],
+      "null_source_precision": 1.0,
+      "null_source_recall": 1.0,
+      "null_source_total": 3,
+      "null_source_tp": 2,
+      "null_target_annotated": 1,
+      "null_target_fn": 0,
+      "null_target_fp": 0,
+      "null_target_groups": [
+        "gold-null-token-1"
+      ],
+      "null_target_precision": null,
+      "null_target_recall": null,
+      "null_target_total": 1,
+      "null_target_tp": 0,
+      "possible_hits": 1,
+      "precision": 1.0,
+      "precision_groups": [
+        "gold-null-token-1"
+      ],
+      "reasons": [
+        "null_target_coverage_incomplete"
+      ],
+      "recall": 1.0,
+      "recall_groups": [
+        "gold-null-token-1"
+      ],
+      "sure_hits": 1,
+      "total_possible": 1,
+      "total_predicted": 1,
+      "total_sure": 1
+    },
+    "protocol": "transductive_unsupervised",
+    "reasons": [
+      "null_target_coverage_incomplete"
+    ],
+    "run_id": "benchmark-run",
+    "schema": "benchmark-report",
+    "schema_version": 1
+  },
+  "segment-report": {
+    "groups": [
+      {
+        "alignment_id": "alignment:0",
+        "group_key": "<hash>",
+        "reason": null,
+        "score": null,
+        "source_segment_ids": [
+          "segment:0:source:0"
+        ],
+        "status": "structural",
+        "target_segment_ids": [
+          "segment:0:target:0"
+        ]
+      },
+      {
+        "alignment_id": "alignment:1",
+        "group_key": "<hash>",
+        "reason": null,
+        "score": null,
+        "source_segment_ids": [
+          "segment:1:source:0"
+        ],
+        "status": "structural",
+        "target_segment_ids": [
+          "segment:1:target:0"
+        ]
+      },
+      {
+        "alignment_id": "alignment:2",
+        "group_key": "<hash>",
+        "reason": null,
+        "score": null,
+        "source_segment_ids": [
+          "segment:2:source:0"
+        ],
+        "status": "structural",
+        "target_segment_ids": [
+          "segment:2:target:0"
+        ]
+      },
+      {
+        "alignment_id": "alignment:3",
+        "group_key": "<hash>",
+        "reason": null,
+        "score": null,
+        "source_segment_ids": [
+          "segment:3:source:0"
+        ],
+        "status": "structural",
+        "target_segment_ids": [
+          "segment:3:target:0",
+          "segment:3:target:1"
+        ]
+      }
+    ],
+    "method": "canonical_locator@0.1.0",
+    "mode": "canonical",
+    "namespace": "tsv",
+    "run_id": "segment-run",
+    "schema": "segment-alignment-report",
+    "schema_version": 1,
+    "sides": [
+      {
+        "language": "qaa",
+        "normalization_run_id": "normalization-run",
+        "source_id": "source:0"
+      },
+      {
+        "language": "por",
+        "normalization_run_id": "normalization-run",
+        "source_id": "source:0"
+      }
+    ],
+    "totals": {
+      "groups": 4,
+      "unmatched_source": 0,
+      "unmatched_target": 0
+    },
+    "unmatched_source": [],
+    "unmatched_target": [],
+    "versification_id": null
+  },
+  "token-report": {
+    "backend": {
+      "archive_sha256": null,
+      "options": {},
+      "seed_supported": false,
+      "version": "0.1.0"
+    },
+    "excluded_groups": [],
+    "groups": [
+      {
+        "alignment_id": "alignment:0",
+        "counts": {
+          "forward": 1,
+          "reverse": 1,
+          "symmetrized": 1
+        },
+        "index_pairs": {
+          "forward": [
+            [
+              0,
+              0
+            ]
+          ],
+          "reverse": [
+            [
+              0,
+              0
+            ]
+          ],
+          "symmetrized": [
+            [
+              "token:0:source:0:0",
+              "token:0:target:0:0"
+            ]
+          ]
+        },
+        "links": {
+          "forward": [
+            {
+              "score": null,
+              "source_index": 0,
+              "target_index": 0
+            }
+          ],
+          "reverse": [
+            {
+              "score": null,
+              "source_index": 0,
+              "target_index": 0
+            }
+          ]
+        },
+        "reason": null,
+        "score_reason": "score_unavailable",
+        "source_segment_ids": [
+          "segment:0:source:0"
+        ],
+        "source_token_ids": [
+          "token:0:source:0:0",
+          "token:0:source:0:1",
+          "token:0:source:0:2",
+          "token:0:source:0:3"
+        ],
+        "status": "structural",
+        "target_segment_ids": [
+          "segment:0:target:0"
+        ],
+        "target_token_ids": [
+          "token:0:target:0:0",
+          "token:0:target:0:1",
+          "token:0:target:0:2",
+          "token:0:target:0:3",
+          "token:0:target:0:4",
+          "token:0:target:0:5"
+        ],
+        "unaligned_by_direction": {
+          "forward": {
+            "source": [
+              "token:0:source:0:1",
+              "token:0:source:0:2",
+              "token:0:source:0:3"
+            ],
+            "target": [
+              "token:0:target:0:1",
+              "token:0:target:0:2",
+              "token:0:target:0:3",
+              "token:0:target:0:4",
+              "token:0:target:0:5"
+            ]
+          },
+          "reverse": {
+            "source": [
+              "token:0:source:0:1",
+              "token:0:source:0:2",
+              "token:0:source:0:3"
+            ],
+            "target": [
+              "token:0:target:0:1",
+              "token:0:target:0:2",
+              "token:0:target:0:3",
+              "token:0:target:0:4",
+              "token:0:target:0:5"
+            ]
+          },
+          "symmetrized": {
+            "source": [
+              "token:0:source:0:1",
+              "token:0:source:0:2",
+              "token:0:source:0:3"
+            ],
+            "target": [
+              "token:0:target:0:1",
+              "token:0:target:0:2",
+              "token:0:target:0:3",
+              "token:0:target:0:4",
+              "token:0:target:0:5"
+            ]
+          }
+        },
+        "unaligned_source_ids": [
+          "token:0:source:0:1",
+          "token:0:source:0:2",
+          "token:0:source:0:3"
+        ],
+        "unaligned_target_ids": [
+          "token:0:target:0:1",
+          "token:0:target:0:2",
+          "token:0:target:0:3",
+          "token:0:target:0:4",
+          "token:0:target:0:5"
+        ]
+      },
+      {
+        "alignment_id": "alignment:1",
+        "counts": {
+          "forward": 1,
+          "reverse": 1,
+          "symmetrized": 1
+        },
+        "index_pairs": {
+          "forward": [
+            [
+              0,
+              0
+            ]
+          ],
+          "reverse": [
+            [
+              0,
+              0
+            ]
+          ],
+          "symmetrized": [
+            [
+              "token:1:source:0:0",
+              "token:1:target:0:0"
+            ]
+          ]
+        },
+        "links": {
+          "forward": [
+            {
+              "score": null,
+              "source_index": 0,
+              "target_index": 0
+            }
+          ],
+          "reverse": [
+            {
+              "score": null,
+              "source_index": 0,
+              "target_index": 0
+            }
+          ]
+        },
+        "reason": null,
+        "score_reason": "score_unavailable",
+        "source_segment_ids": [
+          "segment:1:source:0"
+        ],
+        "source_token_ids": [
+          "token:1:source:0:0",
+          "token:1:source:0:1",
+          "token:1:source:0:2",
+          "token:1:source:0:3"
+        ],
+        "status": "structural",
+        "target_segment_ids": [
+          "segment:1:target:0"
+        ],
+        "target_token_ids": [
+          "token:1:target:0:0",
+          "token:1:target:0:1",
+          "token:1:target:0:2",
+          "token:1:target:0:3",
+          "token:1:target:0:4",
+          "token:1:target:0:5"
+        ],
+        "unaligned_by_direction": {
+          "forward": {
+            "source": [
+              "token:1:source:0:1",
+              "token:1:source:0:2",
+              "token:1:source:0:3"
+            ],
+            "target": [
+              "token:1:target:0:1",
+              "token:1:target:0:2",
+              "token:1:target:0:3",
+              "token:1:target:0:4",
+              "token:1:target:0:5"
+            ]
+          },
+          "reverse": {
+            "source": [
+              "token:1:source:0:1",
+              "token:1:source:0:2",
+              "token:1:source:0:3"
+            ],
+            "target": [
+              "token:1:target:0:1",
+              "token:1:target:0:2",
+              "token:1:target:0:3",
+              "token:1:target:0:4",
+              "token:1:target:0:5"
+            ]
+          },
+          "symmetrized": {
+            "source": [
+              "token:1:source:0:1",
+              "token:1:source:0:2",
+              "token:1:source:0:3"
+            ],
+            "target": [
+              "token:1:target:0:1",
+              "token:1:target:0:2",
+              "token:1:target:0:3",
+              "token:1:target:0:4",
+              "token:1:target:0:5"
+            ]
+          }
+        },
+        "unaligned_source_ids": [
+          "token:1:source:0:1",
+          "token:1:source:0:2",
+          "token:1:source:0:3"
+        ],
+        "unaligned_target_ids": [
+          "token:1:target:0:1",
+          "token:1:target:0:2",
+          "token:1:target:0:3",
+          "token:1:target:0:4",
+          "token:1:target:0:5"
+        ]
+      },
+      {
+        "alignment_id": "alignment:2",
+        "counts": {
+          "forward": 0,
+          "reverse": 0,
+          "symmetrized": 0
+        },
+        "index_pairs": {
+          "forward": [],
+          "reverse": [],
+          "symmetrized": []
+        },
+        "links": {
+          "forward": [],
+          "reverse": []
+        },
+        "reason": null,
+        "score_reason": "score_unavailable",
+        "source_segment_ids": [
+          "segment:2:source:0"
+        ],
+        "source_token_ids": [
+          "token:2:source:0:0",
+          "token:2:source:0:1",
+          "token:2:source:0:2",
+          "token:2:source:0:3"
+        ],
+        "status": "structural",
+        "target_segment_ids": [
+          "segment:2:target:0"
+        ],
+        "target_token_ids": [
+          "token:2:target:0:0",
+          "token:2:target:0:1",
+          "token:2:target:0:2",
+          "token:2:target:0:3",
+          "token:2:target:0:4",
+          "token:2:target:0:5",
+          "token:2:target:0:6"
+        ],
+        "unaligned_by_direction": {
+          "forward": {
+            "source": [
+              "token:2:source:0:0",
+              "token:2:source:0:1",
+              "token:2:source:0:2",
+              "token:2:source:0:3"
+            ],
+            "target": [
+              "token:2:target:0:0",
+              "token:2:target:0:1",
+              "token:2:target:0:2",
+              "token:2:target:0:3",
+              "token:2:target:0:4",
+              "token:2:target:0:5",
+              "token:2:target:0:6"
+            ]
+          },
+          "reverse": {
+            "source": [
+              "token:2:source:0:0",
+              "token:2:source:0:1",
+              "token:2:source:0:2",
+              "token:2:source:0:3"
+            ],
+            "target": [
+              "token:2:target:0:0",
+              "token:2:target:0:1",
+              "token:2:target:0:2",
+              "token:2:target:0:3",
+              "token:2:target:0:4",
+              "token:2:target:0:5",
+              "token:2:target:0:6"
+            ]
+          },
+          "symmetrized": {
+            "source": [
+              "token:2:source:0:0",
+              "token:2:source:0:1",
+              "token:2:source:0:2",
+              "token:2:source:0:3"
+            ],
+            "target": [
+              "token:2:target:0:0",
+              "token:2:target:0:1",
+              "token:2:target:0:2",
+              "token:2:target:0:3",
+              "token:2:target:0:4",
+              "token:2:target:0:5",
+              "token:2:target:0:6"
+            ]
+          }
+        },
+        "unaligned_source_ids": [
+          "token:2:source:0:0",
+          "token:2:source:0:1",
+          "token:2:source:0:2",
+          "token:2:source:0:3"
+        ],
+        "unaligned_target_ids": [
+          "token:2:target:0:0",
+          "token:2:target:0:1",
+          "token:2:target:0:2",
+          "token:2:target:0:3",
+          "token:2:target:0:4",
+          "token:2:target:0:5",
+          "token:2:target:0:6"
+        ]
+      },
+      {
+        "alignment_id": "alignment:3",
+        "counts": {
+          "forward": 1,
+          "reverse": 1,
+          "symmetrized": 1
+        },
+        "index_pairs": {
+          "forward": [
+            [
+              0,
+              0
+            ]
+          ],
+          "reverse": [
+            [
+              0,
+              0
+            ]
+          ],
+          "symmetrized": [
+            [
+              "token:3:source:0:0",
+              "token:3:target:0:0"
+            ]
+          ]
+        },
+        "links": {
+          "forward": [
+            {
+              "score": null,
+              "source_index": 0,
+              "target_index": 0
+            }
+          ],
+          "reverse": [
+            {
+              "score": null,
+              "source_index": 0,
+              "target_index": 0
+            }
+          ]
+        },
+        "reason": null,
+        "score_reason": "score_unavailable",
+        "source_segment_ids": [
+          "segment:3:source:0"
+        ],
+        "source_token_ids": [
+          "token:3:source:0:0",
+          "token:3:source:0:1",
+          "token:3:source:0:2",
+          "token:3:source:0:3"
+        ],
+        "status": "structural",
+        "target_segment_ids": [
+          "segment:3:target:0",
+          "segment:3:target:1"
+        ],
+        "target_token_ids": [
+          "token:3:target:0:0",
+          "token:3:target:0:1",
+          "token:3:target:0:2",
+          "token:3:target:0:3",
+          "token:3:target:0:4",
+          "token:3:target:0:5",
+          "token:3:target:1:0",
+          "token:3:target:1:1",
+          "token:3:target:1:2"
+        ],
+        "unaligned_by_direction": {
+          "forward": {
+            "source": [
+              "token:3:source:0:1",
+              "token:3:source:0:2",
+              "token:3:source:0:3"
+            ],
+            "target": [
+              "token:3:target:0:1",
+              "token:3:target:0:2",
+              "token:3:target:0:3",
+              "token:3:target:0:4",
+              "token:3:target:0:5",
+              "token:3:target:1:0",
+              "token:3:target:1:1",
+              "token:3:target:1:2"
+            ]
+          },
+          "reverse": {
+            "source": [
+              "token:3:source:0:1",
+              "token:3:source:0:2",
+              "token:3:source:0:3"
+            ],
+            "target": [
+              "token:3:target:0:1",
+              "token:3:target:0:2",
+              "token:3:target:0:3",
+              "token:3:target:0:4",
+              "token:3:target:0:5",
+              "token:3:target:1:0",
+              "token:3:target:1:1",
+              "token:3:target:1:2"
+            ]
+          },
+          "symmetrized": {
+            "source": [
+              "token:3:source:0:1",
+              "token:3:source:0:2",
+              "token:3:source:0:3"
+            ],
+            "target": [
+              "token:3:target:0:1",
+              "token:3:target:0:2",
+              "token:3:target:0:3",
+              "token:3:target:0:4",
+              "token:3:target:0:5",
+              "token:3:target:1:0",
+              "token:3:target:1:1",
+              "token:3:target:1:2"
+            ]
+          }
+        },
+        "unaligned_source_ids": [
+          "token:3:source:0:1",
+          "token:3:source:0:2",
+          "token:3:source:0:3"
+        ],
+        "unaligned_target_ids": [
+          "token:3:target:0:1",
+          "token:3:target:0:2",
+          "token:3:target:0:3",
+          "token:3:target:0:4",
+          "token:3:target:0:5",
+          "token:3:target:1:0",
+          "token:3:target:1:1",
+          "token:3:target:1:2"
+        ]
+      }
+    ],
+    "method": "mock@0.1.0",
+    "run_id": "token-run",
+    "schema": "token-alignment-report",
+    "schema_version": 1,
+    "segment_run_id": "segment-run",
+    "source_tokenization_run_id": "tokenization-run",
+    "target_tokenization_run_id": "tokenization-run",
+    "totals": {
+      "edges": 9,
+      "excluded_groups": 0,
+      "groups": 4,
+      "skipped_groups": 0
+    }
+  }
+}

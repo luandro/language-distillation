@@ -1,0 +1,470 @@
+[
+  {
+    "id": "seg:01-parallel-distill/norm/0",
+    "language": "qaa",
+    "locator": {
+      "column": "qaa",
+      "ref": "TXT.1.1",
+      "row": 2
+    },
+    "normalized_text": "kanu mabi tesa.",
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 0,
+    "profile": "default_text@0.1.0",
+    "raw_text": "kanu mabi tesa.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/norm/1",
+    "language": "por",
+    "locator": {
+      "column": "por",
+      "ref": "TXT.1.1",
+      "row": 2
+    },
+    "normalized_text": "O homem vê a canoa.",
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 1,
+    "profile": "default_text@0.1.0",
+    "raw_text": "O homem vê a canoa.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/norm/2",
+    "language": "qaa",
+    "locator": {
+      "column": "qaa",
+      "ref": "TXT.1.2",
+      "row": 3
+    },
+    "normalized_text": "mabi-ki nawa wesa.",
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 2,
+    "profile": "default_text@0.1.0",
+    "raw_text": "mabi-ki nawa wesa.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/norm/3",
+    "language": "por",
+    "locator": {
+      "column": "por",
+      "ref": "TXT.1.2",
+      "row": 3
+    },
+    "normalized_text": "A canoa foi ao rio.",
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 3,
+    "profile": "default_text@0.1.0",
+    "raw_text": "A canoa foi ao rio.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/norm/4",
+    "language": "qaa",
+    "locator": {
+      "column": "qaa",
+      "ref": "TXT.1.3",
+      "row": 4
+    },
+    "normalized_text": "kanu nawa wesa-ra.",
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 4,
+    "profile": "default_text@0.1.0",
+    "raw_text": "kanu nawa wesa-ra.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/norm/5",
+    "language": "por",
+    "locator": {
+      "column": "por",
+      "ref": "TXT.1.3",
+      "row": 4
+    },
+    "normalized_text": "O homem não foi ao rio.",
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 5,
+    "profile": "default_text@0.1.0",
+    "raw_text": "O homem não foi ao rio.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/norm/6",
+    "language": "qaa",
+    "locator": {
+      "column": "qaa",
+      "ref": "TXT.1.4",
+      "row": 5
+    },
+    "normalized_text": "rumi tesa mabi-ki.",
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 6,
+    "profile": "default_text@0.1.0",
+    "raw_text": "rumi tesa mabi-ki.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/norm/7",
+    "language": "por",
+    "locator": {
+      "column": "por",
+      "ref": "TXT.1.4",
+      "row": 5
+    },
+    "normalized_text": "O pajé vê a canoa. Ele sorri.",
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 7,
+    "profile": "default_text@0.1.0",
+    "raw_text": "O pajé vê a canoa. Ele sorri.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/raw/0",
+    "language": "qaa",
+    "locator": {
+      "column": "qaa",
+      "ref": "TXT.1.1",
+      "row": 2
+    },
+    "normalized_text": null,
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 0,
+    "profile": null,
+    "raw_text": "kanu mabi tesa.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/raw/1",
+    "language": "por",
+    "locator": {
+      "column": "por",
+      "ref": "TXT.1.1",
+      "row": 2
+    },
+    "normalized_text": null,
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 1,
+    "profile": null,
+    "raw_text": "O homem vê a canoa.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/raw/2",
+    "language": "qaa",
+    "locator": {
+      "column": "qaa",
+      "ref": "TXT.1.2",
+      "row": 3
+    },
+    "normalized_text": null,
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 2,
+    "profile": null,
+    "raw_text": "mabi-ki nawa wesa.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/raw/3",
+    "language": "por",
+    "locator": {
+      "column": "por",
+      "ref": "TXT.1.2",
+      "row": 3
+    },
+    "normalized_text": null,
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 3,
+    "profile": null,
+    "raw_text": "A canoa foi ao rio.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/raw/4",
+    "language": "qaa",
+    "locator": {
+      "column": "qaa",
+      "ref": "TXT.1.3",
+      "row": 4
+    },
+    "normalized_text": null,
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 4,
+    "profile": null,
+    "raw_text": "kanu nawa wesa-ra.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/raw/5",
+    "language": "por",
+    "locator": {
+      "column": "por",
+      "ref": "TXT.1.3",
+      "row": 4
+    },
+    "normalized_text": null,
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 5,
+    "profile": null,
+    "raw_text": "O homem não foi ao rio.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/raw/6",
+    "language": "qaa",
+    "locator": {
+      "column": "qaa",
+      "ref": "TXT.1.4",
+      "row": 5
+    },
+    "normalized_text": null,
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 6,
+    "profile": null,
+    "raw_text": "rumi tesa mabi-ki.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:01-parallel-distill/raw/7",
+    "language": "por",
+    "locator": {
+      "column": "por",
+      "ref": "TXT.1.4",
+      "row": 5
+    },
+    "normalized_text": null,
+    "object": "sobj:01-parallel-distill/parallel.tsv",
+    "ordinal": 7,
+    "profile": null,
+    "raw_text": "O pajé vê a canoa. Ele sorri.",
+    "source": "src:01-parallel-distill",
+    "status": "ok"
+  },
+  {
+    "id": "seg:02-educational-direct/norm/0",
+    "language": "qaa",
+    "locator": {
+      "column": "qaa",
+      "ref": "L1",
+      "row": 2
+    },
+    "normalized_text": "kanú tesa.",
+    "object": "sobj:02-educational-direct/lessons.tsv",
+    "ordinal": 0,
+    "profile": "default_text@0.1.0",
+    "raw_text": "kanú tesa.",
+    "source": "src:02-educational-direct",
+    "status": "ok"
+  },
+  {
+    "id": "seg:02-educational-direct/norm/1",
+    "language": "por",
+    "locator": {
+      "column": "por",
+      "ref": "L1",
+      "row": 2
+    },
+    "normalized_text": "O homem vê.",
+    "object": "sobj:02-educational-direct/lessons.tsv",
+    "ordinal": 1,
+    "profile": "default_text@0.1.0",
+    "raw_text": "O homem vê.",
+    "source": "src:02-educational-direct",
+    "status": "ok"
+  },
+  {
+    "id": "seg:02-educational-direct/norm/2",
+    "language": "qaa",
+    "locator": {
+      "column": "qaa",
+      "ref": "L2",
+      "row": 3
+    },
+    "normalized_text": "mabi shara.",
+    "object": "sobj:02-educational-direct/lessons.tsv",
+    "ordinal": 2,
+    "profile": "default_text@0.1.0",
+    "raw_text": "mabi shara.",
+    "source": "src:02-educational-direct",
+    "status": "ok"
+  },
+  {
+    "id": "seg:02-educational-direct/norm/3",
+    "language": "por",
+    "locator": {
+      "column": "por",
+      "ref": "L2",
+      "row": 3
+    },
+    "normalized_text": "A canoa é boa.",
+    "object": "sobj:02-educational-direct/lessons.tsv",
+    "ordinal": 3,
+    "profile": "default_text@0.1.0",
+    "raw_text": "A canoa é boa.",
+    "source": "src:02-educational-direct",
+    "status": "ok"
+  },
+  {
+    "id": "seg:02-educational-direct/raw/0",
+    "language": "qaa",
+    "locator": {
+      "column": "qaa",
+      "ref": "L1",
+      "row": 2
+    },
+    "normalized_text": null,
+    "object": "sobj:02-educational-direct/lessons.tsv",
+    "ordinal": 0,
+    "profile": null,
+    "raw_text": "kanú tesa.",
+    "source": "src:02-educational-direct",
+    "status": "ok"
+  },
+  {
+    "id": "seg:02-educational-direct/raw/1",
+    "language": "por",
+    "locator": {
+      "column": "por",
+      "ref": "L1",
+      "row": 2
+    },
+    "normalized_text": null,
+    "object": "sobj:02-educational-direct/lessons.tsv",
+    "ordinal": 1,
+    "profile": null,
+    "raw_text": "O homem vê.",
+    "source": "src:02-educational-direct",
+    "status": "ok"
+  },
+  {
+    "id": "seg:02-educational-direct/raw/2",
+    "language": "qaa",
+    "locator": {
+      "column": "qaa",
+      "ref": "L2",
+      "row": 3
+    },
+    "normalized_text": null,
+    "object": "sobj:02-educational-direct/lessons.tsv",
+    "ordinal": 2,
+    "profile": null,
+    "raw_text": "mabi shara.",
+    "source": "src:02-educational-direct",
+    "status": "ok"
+  },
+  {
+    "id": "seg:02-educational-direct/raw/3",
+    "language": "por",
+    "locator": {
+      "column": "por",
+      "ref": "L2",
+      "row": 3
+    },
+    "normalized_text": null,
+    "object": "sobj:02-educational-direct/lessons.tsv",
+    "ordinal": 3,
+    "profile": null,
+    "raw_text": "A canoa é boa.",
+    "source": "src:02-educational-direct",
+    "status": "ok"
+  },
+  {
+    "id": "seg:05-monolingual/norm/0",
+    "language": "qaa",
+    "locator": {
+      "line": 1
+    },
+    "normalized_text": "kanu mabi tesa.",
+    "object": "sobj:05-monolingual/text.txt",
+    "ordinal": 0,
+    "profile": "default_text@0.1.0",
+    "raw_text": "kanu mabi tesa.",
+    "source": "src:05-monolingual",
+    "status": "ok"
+  },
+  {
+    "id": "seg:05-monolingual/norm/1",
+    "language": "qaa",
+    "locator": {
+      "line": 2
+    },
+    "normalized_text": "rumi shara.",
+    "object": "sobj:05-monolingual/text.txt",
+    "ordinal": 1,
+    "profile": "default_text@0.1.0",
+    "raw_text": "rumi shara.",
+    "source": "src:05-monolingual",
+    "status": "ok"
+  },
+  {
+    "id": "seg:05-monolingual/norm/2",
+    "language": "qaa",
+    "locator": {
+      "line": 3
+    },
+    "normalized_text": "kanú wesa.",
+    "object": "sobj:05-monolingual/text.txt",
+    "ordinal": 2,
+    "profile": "default_text@0.1.0",
+    "raw_text": "kanú wesa.",
+    "source": "src:05-monolingual",
+    "status": "ok"
+  },
+  {
+    "id": "seg:05-monolingual/raw/0",
+    "language": "qaa",
+    "locator": {
+      "line": 1
+    },
+    "normalized_text": null,
+    "object": "sobj:05-monolingual/text.txt",
+    "ordinal": 0,
+    "profile": null,
+    "raw_text": "kanu mabi tesa.",
+    "source": "src:05-monolingual",
+    "status": "ok"
+  },
+  {
+    "id": "seg:05-monolingual/raw/1",
+    "language": "qaa",
+    "locator": {
+      "line": 2
+    },
+    "normalized_text": null,
+    "object": "sobj:05-monolingual/text.txt",
+    "ordinal": 1,
+    "profile": null,
+    "raw_text": "rumi shara.",
+    "source": "src:05-monolingual",
+    "status": "ok"
+  },
+  {
+    "id": "seg:05-monolingual/raw/2",
+    "language": "qaa",
+    "locator": {
+      "line": 3
+    },
+    "normalized_text": null,
+    "object": "sobj:05-monolingual/text.txt",
+    "ordinal": 2,
+    "profile": null,
+    "raw_text": "kanú wesa.",
+    "source": "src:05-monolingual",
+    "status": "ok"
+  }
+]

@@ -1,0 +1,138 @@
+{
+  "$defs": {
+    "Span": {
+      "additionalProperties": false,
+      "description": "Half-open code-point range `[start, end)` over one text representation.",
+      "properties": {
+        "end": {
+          "minimum": 0,
+          "title": "End",
+          "type": "integer"
+        },
+        "representation": {
+          "$ref": "#/$defs/SpanRepresentation"
+        },
+        "start": {
+          "minimum": 0,
+          "title": "Start",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "representation",
+        "start",
+        "end"
+      ],
+      "title": "Span",
+      "type": "object"
+    },
+    "SpanRepresentation": {
+      "enum": [
+        "raw",
+        "normalized"
+      ],
+      "title": "SpanRepresentation",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:token-occurrence:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "form_id": {
+      "anyOf": [
+        {
+          "pattern": "^form_[0-9A-HJKMNP-TV-Z]{26}$",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Form Id"
+    },
+    "id": {
+      "pattern": "^tok_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "normalized_span": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Span"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "normalized_surface": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Normalized Surface"
+    },
+    "ordinal": {
+      "minimum": 0,
+      "title": "Ordinal",
+      "type": "integer"
+    },
+    "raw_span": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Span"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "raw_surface": {
+      "minLength": 1,
+      "title": "Raw Surface",
+      "type": "string"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "segment_id": {
+      "pattern": "^seg_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Segment Id",
+      "type": "string"
+    },
+    "tokenizer": {
+      "pattern": "^[a-z0-9][a-z0-9_.-]*@[0-9A-Za-z_.-]+$",
+      "title": "Tokenizer",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "segment_id",
+    "run_id",
+    "ordinal",
+    "raw_surface",
+    "tokenizer",
+    "created_at"
+  ],
+  "title": "TokenOccurrence",
+  "type": "object",
+  "x-schema-name": "token-occurrence",
+  "x-schema-version": 1
+}

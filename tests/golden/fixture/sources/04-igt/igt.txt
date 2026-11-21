@@ -1,0 +1,11 @@
+\ref IGT-1
+\t mabi-ki nawa wesa
+\m mabi-ki nawa wesa
+\g canoa-ERG rio ir.PST
+\f A canoa foi ao rio.
+
+\ref IGT-2
+\t wesa-ra
+\m wesa-ra
+\g ir-NEG
+\f não foi

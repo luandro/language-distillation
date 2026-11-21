@@ -1,0 +1,40 @@
+<xigt-corpus>
+  <igt id="IGT-1">
+    <tier id="w" type="words">
+      <item id="w1">mabi-ki</item>
+      <item id="w2">nawa</item>
+      <item id="w3">wesa</item>
+    </tier>
+    <tier id="m" type="morphemes" segmentation="w">
+      <item id="m1" segmentation="w1">mabi</item>
+      <item id="m2" segmentation="w1">-ki</item>
+      <item id="m3" segmentation="w2">nawa</item>
+      <item id="m4" segmentation="w3">wesa</item>
+    </tier>
+    <tier id="g" type="glosses" alignment="m">
+      <item id="g1" alignment="m1">canoa</item>
+      <item id="g2" alignment="m2">ERG</item>
+      <item id="g3" alignment="m3">rio</item>
+      <item id="g4" alignment="m4">ir.PST</item>
+    </tier>
+    <tier id="t" type="translations">
+      <item id="t1">A canoa foi ao rio.</item>
+    </tier>
+  </igt>
+  <igt id="IGT-2">
+    <tier id="w" type="words">
+      <item id="w2_1">wesa-ra</item>
+    </tier>
+    <tier id="m" type="morphemes" segmentation="w">
+      <item id="m2_1" segmentation="w2_1">wesa</item>
+      <item id="m2_2" segmentation="w2_1">-ra</item>
+    </tier>
+    <tier id="g" type="glosses" alignment="m">
+      <item id="g2_1" alignment="m2_1">ir</item>
+      <item id="g2_2" alignment="m2_2">NEG</item>
+    </tier>
+    <tier id="t" type="translations">
+      <item id="t2_1">não foi</item>
+    </tier>
+  </igt>
+</xigt-corpus>

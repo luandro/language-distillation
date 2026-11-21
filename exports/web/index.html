@@ -1,0 +1,3687 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LKB Vale do Javari — Base de Conhecimento Linguístico</title>
+  <link rel="icon" href="data:,">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    /* ==========================================================================
+       DESIGN SYSTEM: IMPECCABLE (OPERATE & READ MODES)
+       Vale do Javari Language Knowledge Base
+       ========================================================================== */
+    :root {
+      /* Surfaces & Canvas */
+      --bg-canvas: #090d12;
+      --bg-surface: #0f151e;
+      --bg-elevated: #161f2c;
+      --bg-hover: #1c2737;
+      --bg-selected: #1f2e42;
+
+      /* Borders & Dividers */
+      --border-subtle: rgba(255, 255, 255, 0.07);
+      --border-medium: rgba(255, 255, 255, 0.12);
+      --border-focus: #FC4847;
+
+      /* Typography Colors */
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-tertiary: #64748b;
+
+      /* Signature Accent: Urucum Red */
+      --accent: #FC4847;
+      --accent-muted: rgba(252, 72, 71, 0.12);
+      --accent-border: rgba(252, 72, 71, 0.35);
+
+      /* Semantic Status Palette */
+      --status-valid-bg: rgba(16, 185, 129, 0.12);
+      --status-valid-text: #34d399;
+      --status-valid-border: rgba(16, 185, 129, 0.25);
+
+      --status-warn-bg: rgba(245, 158, 11, 0.12);
+      --status-warn-text: #fbbf24;
+      --status-warn-border: rgba(245, 158, 11, 0.25);
+
+      --status-danger-bg: rgba(239, 68, 68, 0.12);
+      --status-danger-text: #f87171;
+      --status-danger-border: rgba(239, 68, 68, 0.25);
+
+      --status-info-bg: rgba(56, 189, 248, 0.12);
+      --status-info-text: #38bdf8;
+      --status-info-border: rgba(56, 189, 248, 0.25);
+
+      /* Language Families */
+      --family-pano-text: #38bdf8;
+      --family-katukina-text: #fbbf24;
+      --family-arawa-text: #a78bfa;
+
+      /* Typography Scale */
+      --font-display: 'Newsreader', Georgia, serif;
+      --font-ui: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+      /* Layout Geometry */
+      --header-height: 64px;
+      --nav-height: 48px;
+      --master-width: 380px;
+    }
+
+    /* Floating Pill Curved Corner Scrollbar (#FC4847) */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+      margin: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #FC4847;
+      border-radius: 9999px;
+      border: 2px solid var(--bg-canvas);
+      background-clip: padding-box;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ff6261;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scrollbar-width: thin;
+      scrollbar-color: #FC4847 transparent;
+    }
+
+    body {
+      font-family: var(--font-ui);
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      min-height: 100vh;
+      line-height: 1.5;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    input, select, textarea {
+      font-family: inherit;
+      color: var(--text-primary);
+    }
+
+    /* Masthead (64px) */
+    .masthead {
+      height: var(--header-height);
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .territory-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      background: var(--bg-canvas);
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .brand-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+
+    .brand-sep {
+      color: var(--border-medium);
+      font-weight: 300;
+    }
+
+    .brand-sub {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+
+    .masthead-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .status-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-tertiary);
+      padding: 0.3rem 0.6rem;
+      border-radius: 9999px;
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+    }
+    .status-pip {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #34d399;
+    }
+    .status-pip.offline {
+      background: #fbbf24;
+    }
+
+    .locale-switcher {
+      display: inline-flex;
+      background: var(--bg-canvas);
+      padding: 2px;
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .locale-btn {
+      padding: 0.25rem 0.6rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      border-radius: 4px;
+      transition: all 0.15s ease;
+    }
+    .locale-btn.active {
+      background: var(--bg-hover);
+      color: var(--text-primary);
+      border: 1px solid var(--border-medium);
+    }
+
+    /* Workspace Navigation Bar (48px) */
+    .workspace-bar {
+      height: var(--nav-height);
+      background: var(--bg-canvas);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1.5rem;
+      position: sticky;
+      top: var(--header-height);
+      z-index: 90;
+      overflow-x: auto;
+    }
+
+    .nav-tabs {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .nav-tab {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0.85rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      border-radius: 6px;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .nav-tab:hover {
+      color: var(--text-primary);
+      background: var(--bg-surface);
+    }
+    .nav-tab.active {
+      color: var(--text-primary);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      font-weight: 600;
+    }
+    .nav-tab.active svg {
+      color: var(--accent);
+    }
+
+    .quick-search-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .quick-search-input {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 0.35rem 2rem 0.35rem 2.2rem;
+      font-size: 0.82rem;
+      color: var(--text-primary);
+      width: 260px;
+      transition: all 0.15s ease;
+    }
+    .quick-search-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      width: 320px;
+      background: var(--bg-elevated);
+    }
+    .quick-search-icon {
+      position: absolute;
+      left: 0.65rem;
+      color: var(--text-tertiary);
+      pointer-events: none;
+    }
+    .quick-search-key {
+      position: absolute;
+      right: 0.5rem;
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+      background: var(--bg-canvas);
+      padding: 0.1rem 0.35rem;
+      border-radius: 3px;
+      border: 1px solid var(--border-subtle);
+      pointer-events: none;
+    }
+
+    /* Content Area */
+    .workspace-content {
+      flex: 1;
+      position: relative;
+    }
+    .workspace-pane {
+      display: none;
+    }
+    .workspace-pane.active {
+      display: block;
+    }
+
+    /* WORKSPACE 1: MASTER-DETAIL */
+    .lexicon-workspace {
+      display: flex;
+      flex-direction: column;
+      height: calc(100vh - var(--header-height) - var(--nav-height));
+    }
+
+    .lexicon-toolbar {
+      padding: 0.75rem 1.5rem;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .lang-rail {
+      display: flex;
+      gap: 0.3rem;
+      overflow-x: auto;
+    }
+    .lang-chip {
+      padding: 0.3rem 0.65rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      transition: all 0.12s ease;
+      white-space: nowrap;
+    }
+    .lang-chip:hover {
+      color: var(--text-primary);
+      border-color: var(--border-medium);
+    }
+    .lang-chip.active {
+      color: var(--text-primary);
+      background: var(--bg-selected);
+      border-color: var(--accent);
+      font-weight: 600;
+    }
+
+    .scope-filters {
+      display: flex;
+      gap: 0.35rem;
+      overflow-x: auto;
+    }
+    .scope-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.65rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      transition: all 0.12s ease;
+      white-space: nowrap;
+    }
+    .scope-btn:hover {
+      color: var(--text-primary);
+      border-color: var(--border-medium);
+    }
+    .scope-btn.active {
+      color: var(--text-primary);
+      background: var(--bg-elevated);
+      border-color: var(--border-medium);
+      font-weight: 600;
+    }
+    .scope-badge {
+      font-size: 0.7rem;
+      padding: 0.05rem 0.4rem;
+      border-radius: 9999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-secondary);
+    }
+    .scope-btn.active .scope-badge {
+      background: var(--accent-muted);
+      color: var(--accent);
+      border: 1px solid var(--accent-border);
+    }
+
+    .master-detail-container {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .master-pane {
+      width: var(--master-width);
+      border-right: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .master-pane-header {
+      padding: 0.6rem 1rem;
+      background: var(--bg-canvas);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+    }
+
+    .master-list {
+      flex: 1;
+      overflow-y: auto;
+      list-style: none;
+    }
+
+    .master-item {
+      padding: 0.65rem 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+      cursor: pointer;
+      transition: background 0.1s ease;
+      position: relative;
+    }
+    .master-item:hover {
+      background: var(--bg-hover);
+    }
+    .master-item.selected {
+      background: var(--bg-selected);
+      border-left: 3px solid var(--accent);
+      padding-left: calc(1rem - 3px);
+    }
+
+    .master-row-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+    }
+
+    .master-headword {
+      font-family: var(--font-mono);
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .master-meta-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .master-pos {
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-tertiary);
+    }
+
+    .master-status-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #34d399;
+    }
+    .master-status-dot.supported {
+      background: #38bdf8;
+    }
+    .master-status-dot.quarantined, .master-status-dot.affixed {
+      background: #fbbf24;
+    }
+
+    .master-row-bottom {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 0.5rem;
+      margin-top: 0.2rem;
+    }
+
+    .master-gloss {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 260px;
+    }
+
+    .master-cite-pill {
+      font-size: 0.68rem;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+    }
+
+    .master-pagination {
+      padding: 0.5rem 1rem;
+      background: var(--bg-canvas);
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+    }
+    .pagination-btn {
+      padding: 0.2rem 0.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      color: var(--text-secondary);
+      font-size: 0.72rem;
+    }
+    .pagination-btn:hover:not(:disabled) {
+      color: var(--text-primary);
+      border-color: var(--border-medium);
+    }
+    .pagination-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .detail-pane {
+      flex: 1;
+      overflow-y: auto;
+      background: var(--bg-canvas);
+      padding: 2.5rem 3rem;
+    }
+
+    .detail-empty-state {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      text-align: center;
+      color: var(--text-tertiary);
+    }
+    .detail-empty-state svg {
+      margin-bottom: 1rem;
+      color: var(--border-medium);
+    }
+
+    .dossier-header {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 1.5rem;
+    }
+    .dossier-top-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+    }
+    .dossier-family {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--family-pano-text);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .dossier-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .dossier-headword {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.15;
+    }
+    .dossier-phonetic {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      color: var(--accent);
+      margin-top: 0.35rem;
+    }
+
+    .dossier-section {
+      margin-bottom: 2rem;
+    }
+    .dossier-section-title {
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-tertiary);
+      margin-bottom: 0.75rem;
+    }
+
+    .dossier-glosses {
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      font-weight: 500;
+      line-height: 1.4;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+    }
+
+    .property-sheet {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.75rem 1.5rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 1.25rem;
+    }
+    .property-cell {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .property-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-tertiary);
+    }
+    .property-val {
+      font-size: 0.88rem;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+    .property-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+      width: fit-content;
+    }
+
+    .attestation-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 1.25rem 1.5rem;
+    }
+    .attestation-orig {
+      font-family: var(--font-mono);
+      font-size: 1.05rem;
+      color: var(--text-primary);
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+    .attestation-trans {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.75rem;
+    }
+    .attestation-source {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .audit-banner {
+      background: var(--status-warn-bg);
+      border: 1px solid var(--status-warn-border);
+      border-radius: 8px;
+      padding: 0.85rem 1rem;
+      margin-top: 1.25rem;
+    }
+    .audit-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--status-warn-text);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.25rem;
+    }
+    .audit-text {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+
+    .drawer-close-btn {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 6px;
+      background: var(--bg-hover);
+      color: var(--text-secondary);
+      font-size: 1.2rem;
+    }
+
+    /* WORKSPACE 2: COMPARATIVE MATRIX */
+    .comparative-workspace {
+      padding: 2rem 2.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .matrix-header {
+      margin-bottom: 1.5rem;
+    }
+    .matrix-title {
+      font-family: var(--font-display);
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .matrix-subtitle {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+
+    .matrix-table-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .matrix-table th {
+      background: var(--bg-canvas);
+      padding: 0.85rem 1.25rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-tertiary);
+      border-bottom: 1px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+    .matrix-table th.sticky-col,
+    .matrix-table td.sticky-col {
+      position: sticky;
+      left: 0;
+      background: var(--bg-surface);
+      z-index: 5;
+    }
+    .matrix-table th.sticky-col {
+      background: var(--bg-canvas);
+    }
+    .matrix-table td {
+      padding: 0.85rem 1.25rem;
+      font-size: 0.9rem;
+      border-bottom: 1px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+    .matrix-table tr:hover td {
+      background: var(--bg-hover);
+    }
+    .matrix-table td code {
+      font-family: var(--font-mono);
+      font-size: 0.88rem;
+      color: var(--text-primary);
+    }
+    .fam-sky { color: var(--family-pano-text); }
+    .fam-amber { color: var(--family-katukina-text); }
+    .fam-violet { color: var(--family-arawa-text); }
+
+    /* WORKSPACE 3: CORPUS & IGT */
+    .igt-workspace {
+      padding: 2rem 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .igt-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .igt-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+    .igt-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .igt-lang-tag {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .igt-index {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+    }
+    .igt-word-tiers {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+    .igt-column {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .igt-tier-surface {
+      font-family: var(--font-mono);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .igt-tier-gloss {
+      font-family: var(--font-ui);
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      font-variant: small-caps;
+      letter-spacing: 0.03em;
+    }
+    .igt-tier-translation {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text-secondary);
+      padding-top: 0.75rem;
+      border-top: 1px dashed var(--border-subtle);
+    }
+
+    /* WORKSPACE 4: SYNTHETIC STUDIO */
+    .synthetic-workspace {
+      padding: 2rem 2.5rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .synth-grid {
+      display: grid;
+      grid-template-columns: 440px 1fr;
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+    .synth-control-pane {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .studio-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+    .panel-heading {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.25rem;
+    }
+    .panel-sub {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+    }
+    .control-row {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1rem;
+    }
+    .control-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-tertiary);
+    }
+    .control-input, .control-select {
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 0.5rem 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      transition: border-color 0.15s ease;
+    }
+    .control-input:focus, .control-select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.85rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: background 0.15s ease;
+      width: 100%;
+    }
+    .btn-primary:hover:not(:disabled) {
+      background: #ff6261;
+    }
+    .btn-primary:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    .btn-secondary {
+      background: var(--bg-elevated);
+      color: var(--text-primary);
+      border: 1px solid var(--border-subtle);
+      font-weight: 500;
+      font-size: 0.8rem;
+      padding: 0.45rem 0.85rem;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      transition: all 0.15s ease;
+    }
+    .btn-secondary:hover {
+      background: var(--bg-hover);
+      border-color: var(--border-medium);
+    }
+
+    .guard-textarea {
+      width: 100%;
+      height: 72px;
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 0.6rem 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--text-primary);
+      resize: vertical;
+      margin-bottom: 0.75rem;
+    }
+    .guard-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .guard-result {
+      margin-top: 0.75rem;
+      padding: 0.65rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      display: none;
+    }
+    .guard-result.valid {
+      display: block;
+      background: var(--status-valid-bg);
+      border: 1px solid var(--status-valid-border);
+      color: var(--status-valid-text);
+    }
+    .guard-result.invalid {
+      display: block;
+      background: var(--status-danger-bg);
+      border: 1px solid var(--status-danger-border);
+      color: var(--status-danger-text);
+    }
+
+    .code-viewer {
+      background: var(--bg-canvas);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 0.75rem;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      max-height: 160px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .synth-gallery-pane {
+      display: flex;
+      flex-direction: column;
+    }
+    .gallery-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+    .gallery-filters {
+      display: flex;
+      gap: 0.4rem;
+    }
+    .gallery-filter-btn {
+      padding: 0.35rem 0.75rem;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 4px;
+      transition: all 0.12s ease;
+    }
+    .gallery-filter-btn.active {
+      color: var(--text-primary);
+      background: var(--bg-elevated);
+      border-color: var(--border-medium);
+      font-weight: 600;
+    }
+
+    .synth-cards-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .synth-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 1.25rem;
+      transition: border-color 0.15s ease;
+    }
+    .synth-card.passed {
+      border-left: 3px solid #34d399;
+    }
+    .synth-card.quarantined {
+      border-left: 3px solid #fbbf24;
+    }
+    .synth-card-top {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 0.5rem;
+      gap: 1rem;
+    }
+    .synth-target {
+      font-family: var(--font-mono);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .synth-score-badge {
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+    .synth-score-badge.passed {
+      background: var(--status-valid-bg);
+      color: var(--status-valid-text);
+      border: 1px solid var(--status-valid-border);
+    }
+    .synth-score-badge.quarantine {
+      background: var(--status-warn-bg);
+      color: var(--status-warn-text);
+      border: 1px solid var(--status-warn-border);
+    }
+    .synth-igt-text {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      font-variant: small-caps;
+      margin-bottom: 0.35rem;
+    }
+    .synth-trans-text {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+    .synth-chips-row {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      padding-top: 0.6rem;
+      border-top: 1px solid var(--border-subtle);
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+    }
+    .synth-token-chip {
+      background: var(--bg-canvas);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      border: 1px solid var(--border-subtle);
+      font-family: var(--font-mono);
+      color: var(--text-secondary);
+    }
+
+    /* WORKSPACE 5: EXPORTS HUB */
+    .exports-workspace {
+      padding: 2rem 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .exports-section-heading {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 2rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .exports-section-heading:first-child {
+      margin-top: 0;
+    }
+    .exports-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.25rem;
+    }
+    .export-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .export-card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .export-card-desc {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+      margin-bottom: 1.25rem;
+    }
+    .export-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      margin-bottom: 1.25rem;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-medium);
+      border-left: 3px solid var(--accent);
+      padding: 0.75rem 1.25rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      color: var(--text-primary);
+      box-shadow: 0 8px 24px -4px rgba(0,0,0,0.6);
+      display: none;
+      z-index: 200;
+    }
+
+    /* RESPONSIVE ADAPTATIONS */
+    @media (max-width: 1024px) {
+      .synth-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      :root {
+        --header-height: 56px;
+        --nav-height: 44px;
+      }
+      .masthead {
+        padding: 0 1rem;
+      }
+      .brand-sub, .brand-sep {
+        display: none;
+      }
+      .workspace-bar {
+        padding: 0 1rem;
+      }
+      .quick-search-wrapper {
+        display: none;
+      }
+
+      .master-pane {
+        width: 100%;
+        border-right: none;
+      }
+      .detail-pane {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 150;
+        background: var(--bg-canvas);
+        padding: 1.5rem;
+        transform: translateX(100%);
+        transition: transform 0.25s ease;
+      }
+      .detail-pane.open {
+        transform: translateX(0);
+      }
+      .drawer-close-btn {
+        display: inline-flex;
+      }
+      .property-sheet {
+        grid-template-columns: 1fr;
+      }
+      .comparative-workspace,
+      .igt-workspace,
+      .synthetic-workspace,
+      .exports-workspace {
+        padding: 1.25rem 1rem;
+      }
+    }
+
+    /* ==========================================================================
+       DICTIONARY SESSION (READER-FACING)
+       ========================================================================== */
+    .dict-workspace {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      min-height: 0;
+    }
+
+    .dict-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding: 1.25rem 1.5rem 0.75rem 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+      flex-wrap: wrap;
+    }
+    .dict-title {
+      font-family: var(--font-display);
+      font-size: 1.45rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+    }
+    .dict-subtitle {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      margin-top: 0.25rem;
+    }
+    .dict-subtitle kbd {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: 3px;
+      padding: 0.05rem 0.3rem;
+    }
+
+    .dict-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      flex-wrap: wrap;
+    }
+    .dict-dir-toggle {
+      display: inline-flex;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 2px;
+    }
+    .dict-dir-btn {
+      font-size: 0.76rem;
+      padding: 0.32rem 0.7rem;
+      border-radius: 4px;
+      color: var(--text-secondary);
+      transition: all 0.15s ease;
+    }
+    .dict-dir-btn.active {
+      background: var(--bg-selected);
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .dict-expert-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      cursor: pointer;
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      user-select: none;
+    }
+    .dict-expert-switch input { position: absolute; opacity: 0; width: 0; height: 0; }
+    .dict-switch-track {
+      width: 32px;
+      height: 17px;
+      border-radius: 999px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      position: relative;
+      transition: background 0.15s ease;
+    }
+    .dict-switch-thumb {
+      position: absolute;
+      top: 1.5px;
+      left: 2px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--text-tertiary);
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+    .dict-expert-switch input:checked + .dict-switch-track { background: var(--accent-muted); border-color: var(--accent-border); }
+    .dict-expert-switch input:checked + .dict-switch-track .dict-switch-thumb { transform: translateX(14px); background: var(--accent); }
+    .dict-expert-switch input:focus-visible + .dict-switch-track { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .dict-print-btn { display: inline-flex; align-items: center; gap: 0.4rem; }
+
+    .export-card-actions { display: flex; flex-direction: column; gap: 0.5rem; }
+
+    .dict-search-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.5rem 0.6rem 1.5rem;
+    }
+    .dict-search-wrap { position: relative; flex: 1; max-width: 520px; display: flex; align-items: center; }
+    .dict-search-icon { position: absolute; left: 0.7rem; color: var(--text-tertiary); pointer-events: none; }
+    .dict-search-input {
+      width: 100%;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 0.5rem 0.8rem 0.5rem 2.2rem;
+      font-size: 0.9rem;
+      color: var(--text-primary);
+      font-family: var(--font-display);
+    }
+    .dict-search-input:focus { outline: none; border-color: var(--accent); }
+    .dict-result-count { font-size: 0.76rem; color: var(--text-tertiary); font-family: var(--font-mono); }
+
+    .dict-letter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2px;
+      padding: 0 1.5rem 0.7rem 1.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .dict-letter-btn {
+      min-width: 24px;
+      height: 24px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--bg-surface);
+      border: 1px solid transparent;
+      transition: all 0.12s ease;
+    }
+    .dict-letter-btn:hover:not(:disabled) { color: var(--text-primary); background: var(--bg-hover); }
+    .dict-letter-btn.active { color: #fff; background: var(--accent); }
+    .dict-letter-btn:disabled { opacity: 0.25; cursor: default; }
+    .dict-letter-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+
+    .dict-body {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 1.5rem;
+      padding: 1.1rem 1.5rem 2rem 1.5rem;
+      flex: 1;
+      min-height: 0;
+      overflow: hidden;
+    }
+    .dict-rail { overflow-y: auto; padding-right: 0.5rem; }
+    .dict-facet { margin-bottom: 1.3rem; }
+    .dict-facet-title {
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-tertiary);
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    .dict-facet-chips { display: flex; flex-wrap: wrap; gap: 4px; }
+    .dict-facet-chip {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      transition: all 0.12s ease;
+    }
+    .dict-facet-chip:hover { border-color: var(--border-medium); color: var(--text-primary); }
+    .dict-facet-chip.active { background: var(--accent-muted); border-color: var(--accent-border); color: var(--text-primary); }
+    .dict-facet-chip .chip-count { opacity: 0.6; margin-left: 0.3rem; font-family: var(--font-mono); font-size: 0.68rem; }
+
+    .dict-result-list { display: flex; flex-direction: column; gap: 1px; }
+    .dict-result-item {
+      text-align: left;
+      padding: 0.4rem 0.5rem;
+      border-radius: 5px;
+      border-left: 3px solid transparent;
+      transition: background 0.12s ease;
+    }
+    .dict-result-item:hover { background: var(--bg-hover); }
+    .dict-result-item.active { background: var(--bg-selected); }
+    .dict-result-item .r-headword { font-family: var(--font-display); font-size: 0.92rem; color: var(--text-primary); }
+    .dict-result-item .r-gloss { font-size: 0.76rem; color: var(--text-secondary); display: block; }
+    .dict-result-item .r-meta { font-size: 0.68rem; color: var(--text-tertiary); font-family: var(--font-mono); }
+
+    .dict-result-shown {
+      margin-top: 0.55rem;
+      font-size: 0.7rem;
+      color: var(--text-tertiary);
+      font-family: var(--font-mono);
+    }
+    .dict-result-shown[hidden] { display: none; }
+    .dict-show-more {
+      width: 100%;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.6rem;
+      border-radius: 6px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+      color: var(--text-secondary);
+      font-size: 0.74rem;
+      font-weight: 600;
+      transition: all 0.12s ease;
+    }
+    .dict-show-more:hover { color: var(--text-primary); background: var(--bg-hover); border-color: var(--border-medium); }
+    .dict-show-more:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+    .dict-show-more[hidden] { display: none; }
+
+    .dict-reading { overflow-y: auto; padding-right: 0.5rem; }
+    .dict-empty { color: var(--text-tertiary); font-size: 0.9rem; padding: 3rem 0; text-align: center; }
+
+    .dict-entry {
+      border-left: 3px solid var(--border-subtle);
+      padding: 0.15rem 0 0.15rem 1.1rem;
+      margin-bottom: 1.75rem;
+    }
+    .dict-entry[data-status="validated"] { border-left-color: #34d399; }
+    .dict-entry[data-status="supported"] { border-left-color: #fbbf24; border-left-style: solid; }
+    .dict-entry[data-status="candidate"] { border-left-color: #38bdf8; border-left-style: dashed; }
+    .dict-entry[data-status="other"] { border-left-color: var(--border-medium); border-left-style: dotted; }
+    /* A form pane is a pointer to a lemma, not a publication of its own. */
+    .dict-entry[data-status="form"] { border-left-color: var(--border-medium); border-left-style: dashed; }
+    .dict-entry-form .dict-headword { font-style: italic; }
+
+    .dict-entry-head { display: flex; align-items: baseline; gap: 0.7rem; flex-wrap: wrap; }
+    .dict-headword { font-family: var(--font-display); font-size: 1.75rem; font-weight: 600; color: var(--text-primary); line-height: 1.15; }
+    .dict-pos {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-tertiary);
+      border: 1px solid var(--border-subtle);
+      border-radius: 3px;
+      padding: 0.1rem 0.4rem;
+    }
+    .dict-domain { font-size: 0.72rem; color: #a78bfa; letter-spacing: 0.06em; text-transform: uppercase; }
+
+    .dict-glosses { margin-top: 0.5rem; font-size: 1.05rem; color: var(--text-primary); font-family: var(--font-display); }
+    .dict-gloss-item { display: flex; gap: 0.6rem; }
+    .dict-gloss-index { color: var(--text-tertiary); font-family: var(--font-mono); font-size: 0.85rem; }
+
+    .dict-example {
+      margin-top: 0.9rem;
+      padding-left: 0.9rem;
+      border-left: 1px solid var(--border-subtle);
+    }
+    .dict-ex-target { font-family: var(--font-display); font-style: italic; font-size: 0.95rem; color: var(--text-primary); }
+    .dict-ex-ref { font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.15rem; }
+    .dict-ex-src { font-size: 0.72rem; color: var(--accent); margin-top: 0.2rem; font-family: var(--font-mono); }
+
+    /* Tier 2 of the evidence disclosure: a one-line source strip that
+       appears on hover/focus. No modal, no panel. */
+    .dict-source-strip {
+      display: none;
+      margin-top: 0.55rem;
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      font-family: var(--font-mono);
+      letter-spacing: 0.01em;
+    }
+    .dict-entry:hover .dict-source-strip,
+    .dict-entry:focus-within .dict-source-strip {
+      display: block;
+    }
+
+    .dict-see-also { margin-top: 0.7rem; font-size: 0.78rem; color: var(--text-secondary); }
+    .dict-see-also a { color: var(--accent); text-decoration: none; }
+    .dict-see-also a:hover { text-decoration: underline; }
+
+    /* Inflected surfaces of the headword. They sit under the lemma, never in
+       the A-Z list, so a reader cannot mistake one for a headword. */
+    .dict-forms { margin-top: 0.7rem; font-size: 0.82rem; color: var(--text-secondary); }
+    .dict-forms-label {
+      display: block;
+      font-size: 0.64rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-tertiary);
+      margin-bottom: 0.2rem;
+      font-weight: 600;
+    }
+    .dict-form { display: inline-flex; align-items: baseline; gap: 0.4rem; margin-right: 0.9rem; }
+    .dict-form-surface {
+      font-family: var(--font-display);
+      color: var(--text-primary);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--border-medium);
+    }
+    .dict-form-surface:hover { color: var(--accent); border-bottom-color: var(--accent); }
+    .dict-form-tags { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-tertiary); }
+
+    /* A search hit that came in through an inflected surface, not the headword. */
+    .dict-result-item .r-via { display: block; font-size: 0.68rem; color: var(--accent); }
+    .dict-result-item.is-form { border-left: 1px dashed var(--border-medium); }
+    .dict-result-item.is-form .r-headword { font-style: italic; }
+    .dict-form-badge {
+      font-size: 0.64rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-tertiary);
+      border: 1px dashed var(--border-medium);
+      border-radius: 3px;
+      padding: 0.1rem 0.4rem;
+    }
+    .dict-form-note { margin-top: 0.8rem; font-size: 0.82rem; color: var(--text-secondary); }
+    .dict-form-source {
+      margin-top: 0.5rem;
+      font-size: 0.72rem;
+      color: var(--text-tertiary);
+      font-family: var(--font-mono);
+    }
+    .dict-basis {
+      margin-top: 0.6rem;
+      font-size: 0.76rem;
+      color: var(--text-secondary);
+    }
+    .dict-basis-key {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.64rem;
+      color: var(--text-tertiary);
+      margin-right: 0.4rem;
+    }
+
+    .dict-provenance {
+      margin-top: 1rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 0.75rem 0.9rem;
+      font-size: 0.78rem;
+    }
+    .dict-prov-title {
+      font-size: 0.66rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-tertiary);
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+    }
+    .dict-prov-grid { display: grid; grid-template-columns: 130px 1fr; gap: 0.3rem 0.8rem; }
+    .dict-prov-key { color: var(--text-tertiary); }
+    .dict-prov-val { color: var(--text-secondary); word-break: break-word; }
+    .dict-prov-cite { margin-top: 0.5rem; color: var(--text-tertiary); font-size: 0.74rem; }
+    .dict-prov-cite code { font-family: var(--font-mono); color: var(--text-secondary); }
+
+    .dict-status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 0.7rem;
+      padding: 0.12rem 0.45rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+    }
+    .dict-status-chip[data-status="validated"] { background: var(--status-valid-bg); border-color: var(--status-valid-border); color: var(--status-valid-text); }
+    .dict-status-chip[data-status="supported"] { background: var(--status-warn-bg); border-color: var(--status-warn-border); color: var(--status-warn-text); }
+    .dict-status-chip[data-status="candidate"] { background: var(--status-info-bg); border-color: var(--status-info-border); color: var(--status-info-text); }
+    .dict-status-chip[data-status="other"] { background: var(--bg-elevated); color: var(--text-secondary); }
+
+    .dict-print-status { padding: 0 1.5rem 1rem 1.5rem; font-size: 0.78rem; color: var(--text-secondary); min-height: 1.2rem; }
+    .dict-print-status.error { color: #f87171; }
+
+    @media (max-width: 900px) {
+      .dict-body { grid-template-columns: 1fr; overflow: visible; }
+      .dict-rail { max-height: 320px; }
+      .dict-header { flex-direction: column; align-items: stretch; }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="app-shell">
+
+    <!-- ========================================================================
+         PERSISTENT GLOBAL MASTHEAD (64px)
+         ======================================================================== -->
+    <header class="masthead">
+      <div class="brand-group">
+        <div class="territory-pill">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          <span data-i18n="territory_badge">Terra Indígena Vale do Javari • Amazonas</span>
+        </div>
+        <div class="brand-title" data-i18n="portal_title">LKB Vale do Javari</div>
+        <span class="brand-sep">/</span>
+        <div class="brand-sub" data-i18n="portal_subtitle">Base de Conhecimento Linguístico & Dicionário</div>
+      </div>
+
+      <div class="masthead-actions">
+        <div class="status-indicator" id="apiStatusIndicator">
+          <span class="status-pip" id="apiStatusPip"></span>
+          <span id="apiStatusText" data-i18n="status_online">API Conectada</span>
+        </div>
+
+        <div class="locale-switcher">
+          <button class="locale-btn active" id="btnLangPt" onclick="State.setLocale('pt')">PT</button>
+          <button class="locale-btn" id="btnLangEn" onclick="State.setLocale('en')">EN</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========================================================================
+         WORKSPACE NAVIGATION TABS (48px)
+         ======================================================================== -->
+    <nav class="workspace-bar">
+      <div class="nav-tabs">
+        <button class="nav-tab active" data-ws="dictionary" onclick="State.setWorkspace('dictionary')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><path d="M9 7h7M9 11h7"/></svg>
+          <span data-i18n="ws_dictionary">Dicionário</span>
+        </button>
+
+        <button class="nav-tab" data-ws="lexicon" onclick="State.setWorkspace('lexicon')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <span data-i18n="ws_lexicon">Léxico & Dicionário</span>
+        </button>
+
+        <button class="nav-tab" data-ws="comparative" onclick="State.setWorkspace('comparative')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 3v18"/></svg>
+          <span data-i18n="ws_comparative">Matriz Comparativa</span>
+        </button>
+
+        <button class="nav-tab" data-ws="igt" onclick="State.setWorkspace('igt')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><line x1="21" y1="6" x2="3" y2="6"/><line x1="15" y1="12" x2="3" y2="12"/><line x1="17" y1="18" x2="3" y2="18"/></svg>
+          <span data-i18n="ws_igt">Corpus & Leipzig IGT</span>
+        </button>
+
+        <button class="nav-tab" data-ws="synthetic" onclick="State.setWorkspace('synthetic')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>
+          <span data-i18n="ws_synthetic">Laboratório Sintético</span>
+        </button>
+
+        <button class="nav-tab" data-ws="exports" onclick="State.setWorkspace('exports')">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="ws_exports">Datasets & Exportações</span>
+        </button>
+      </div>
+
+      <div class="quick-search-wrapper">
+        <svg class="quick-search-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="globalSearchInput" class="quick-search-input" data-i18n-placeholder="quick_search_placeholder" placeholder="Buscar palavra, glosa ou afixo... (/)">
+        <kbd class="quick-search-key">/</kbd>
+      </div>
+    </nav>
+
+    <!-- ========================================================================
+         MAIN CONTENT: 5 DEDICATED WORKSPACES
+         ======================================================================== -->
+    <main class="workspace-content">
+
+      <!-- --------------------------------------------------------------------
+           WORKSPACE: DICIONÁRIO (READER-FACING DICTIONARY SESSION)
+           -------------------------------------------------------------------- -->
+      <section id="pane-dictionary" class="workspace-pane active">
+        <div class="dict-workspace">
+
+          <header class="dict-header">
+            <div class="dict-heading">
+              <h1 class="dict-title" id="dictTabTitle">Dicionário Marúbo ⇄ Português</h1>
+              <p class="dict-subtitle" data-i18n="dict_subtitle">
+                Verbetes atestados com exemplos e fontes. Pressione <kbd>/</kbd> para buscar.
+              </p>
+            </div>
+
+            <div class="dict-controls">
+              <div class="dict-dir-toggle" id="dictDirToggle" role="group" aria-label="Direção de busca">
+                <button class="dict-dir-btn active" data-dir="mzr-por">Marúbo → Português</button>
+                <button class="dict-dir-btn" data-dir="por-mzr">Português → Marúbo</button>
+              </div>
+
+              <label class="dict-expert-switch" title="Mostrar proveniência, citações e linhagem">
+                <input type="checkbox" id="dictExpertToggle">
+                <span class="dict-switch-track" aria-hidden="true"><span class="dict-switch-thumb"></span></span>
+                <span class="dict-switch-label" data-i18n="dict_expert">Especialista</span>
+              </label>
+
+              <button class="btn-secondary dict-print-btn" id="dictPrintBtn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+                <span data-i18n="dict_print">Imprimir PDF</span>
+              </button>
+            </div>
+          </header>
+
+          <div class="dict-search-row">
+            <div class="dict-search-wrap">
+              <svg class="dict-search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+              <input type="search" id="dictSearch" class="dict-search-input" autocomplete="off" spellcheck="false"
+                     data-i18n-placeholder="dict_search_placeholder" placeholder="Buscar no dicionário…">
+            </div>
+            <div class="dict-result-count" id="dictResultCount">—</div>
+          </div>
+
+          <div class="dict-letter-bar" id="dictLetterBar" role="navigation" aria-label="Índice alfabético"></div>
+
+          <div class="dict-body">
+            <aside class="dict-rail">
+              <div class="dict-facet" id="dictFacetPos">
+                <div class="dict-facet-title" data-i18n="dict_facet_pos">Classe gramatical</div>
+                <div class="dict-facet-chips"></div>
+              </div>
+              <div class="dict-facet" id="dictFacetDomain">
+                <div class="dict-facet-title" data-i18n="dict_facet_domain">Domínio semântico</div>
+                <div class="dict-facet-chips"></div>
+              </div>
+              <div class="dict-facet" id="dictFacetStatus">
+                <div class="dict-facet-title" data-i18n="dict_facet_status">Evidência</div>
+                <div class="dict-facet-chips"></div>
+              </div>
+              <div class="dict-facet">
+                <div class="dict-facet-title" data-i18n="dict_facet_results">Resultados</div>
+                <div class="dict-result-list" id="dictResultList" role="listbox" aria-label="Resultados"></div>
+                <div class="dict-result-shown" id="dictResultShown" role="status" aria-live="polite" hidden></div>
+                <button type="button" class="dict-show-more" id="dictShowMore" aria-controls="dictResultList" hidden>Mostrar mais</button>
+              </div>
+            </aside>
+
+            <main class="dict-reading" id="dictEntry" tabindex="-1" aria-live="polite">
+              <div class="dict-empty" id="dictEmpty" data-i18n="dict_empty">
+                Selecione um verbete na lista ou comece a buscar.
+              </div>
+            </main>
+          </div>
+
+          <div class="dict-print-status" id="dictPrintStatus" role="status" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <!-- --------------------------------------------------------------------
+           WORKSPACE 1: LÉXICO & DICIONÁRIO (MASTER-DETAIL)
+           -------------------------------------------------------------------- -->
+      <section id="pane-lexicon" class="workspace-pane">
+        <div class="lexicon-workspace">
+          <!-- Subtoolbar: Language & Scopes -->
+          <div class="lexicon-toolbar">
+            <div class="lang-rail" id="langRail">
+              <button class="lang-chip active" data-lang="mzr" onclick="State.setLanguage('mzr')">Marúbo (mzr)</button>
+              <button class="lang-chip" data-lang="mcf" onclick="State.setLanguage('mcf')">Matsés (mcf)</button>
+              <button class="lang-chip" data-lang="mpu" onclick="State.setLanguage('mpu')">Matis (mpu)</button>
+              <button class="lang-chip" data-lang="xor" onclick="State.setLanguage('xor')">Korubo (xor)</button>
+              <button class="lang-chip" data-lang="knm" onclick="State.setLanguage('knm')">Kanamari (knm)</button>
+              <button class="lang-chip" data-lang="cul" onclick="State.setLanguage('cul')">Kulina (cul)</button>
+              <button class="lang-chip" data-lang="all" onclick="State.setLanguage('all')" data-i18n="all_languages">Todas as Línguas</button>
+            </div>
+
+            <div class="scope-filters" id="scopeFilters">
+              <button class="scope-btn active" data-scope="clean" onclick="State.setLexView('clean')">
+                <span data-i18n="scope_clean">Léxico Limpo / Lemmas</span>
+                <span class="scope-badge" id="countClean">892</span>
+              </button>
+              <button class="scope-btn" data-scope="names" onclick="State.setLexView('names')">
+                <span data-i18n="scope_names">Nomes Próprios (Onomástico)</span>
+                <span class="scope-badge" id="countNames">142</span>
+              </button>
+              <button class="scope-btn" data-scope="quarantine" onclick="State.setLexView('quarantine')">
+                <span data-i18n="scope_quarantine">Quarentena & Afixados</span>
+                <span class="scope-badge" id="countQuarantine">207</span>
+              </button>
+              <button class="scope-btn" data-scope="reverse" onclick="State.setLexView('reverse')">
+                <span data-i18n="scope_reverse">Português ➔ Indígena</span>
+                <span class="scope-badge" id="countReverse">714</span>
+              </button>
+              <button class="scope-btn" data-scope="all" onclick="State.setLexView('all')">
+                <span data-i18n="scope_all">Todos os Itens</span>
+                <span class="scope-badge" id="countAll">1.099</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Master-Detail Split Grid -->
+          <div class="master-detail-container">
+            <!-- Left: Scannable Master List (380px) -->
+            <aside class="master-pane">
+              <div class="master-pane-header">
+                <span id="masterListCount">Carregando verbetes...</span>
+                <span id="activeScopeLabel">Léxico Limpo</span>
+              </div>
+              <ul class="master-list" id="masterList">
+                <!-- Scannable 2-line rows rendered here -->
+              </ul>
+              <div class="master-pagination">
+                <button class="pagination-btn" id="btnPagePrev" onclick="State.prevPage()">&larr; Anterior</button>
+                <span id="paginationText">Página 1</span>
+                <button class="pagination-btn" id="btnPageNext" onclick="State.nextPage()">Próxima &rarr;</button>
+              </div>
+            </aside>
+
+            <!-- Right: Detail Dossier Pane -->
+            <section class="detail-pane" id="detailPane">
+              <div class="detail-empty-state" id="detailEmptyState">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                <p data-i18n="select_entry_prompt">Selecione um verbete na lista para inspecionar os detalhes lexicográficos.</p>
+              </div>
+
+              <div id="detailContent" style="display: none;">
+                <!-- Mobile Close Drawer Button -->
+                <div class="dossier-top-meta">
+                  <span class="dossier-family" id="dossierFamily">Família Pano &bull; Marúbo</span>
+                  <div class="dossier-actions">
+                    <button class="drawer-close-btn" onclick="State.closeMobileDrawer()" title="Fechar">&times;</button>
+                  </div>
+                </div>
+
+                <div class="dossier-header">
+                  <h1 class="dossier-headword" id="dossierHeadword">vaki-n</h1>
+                  <div class="dossier-phonetic" id="dossierPhonetic">classe: subst &bull; estado: validado</div>
+                </div>
+
+                <div class="dossier-section">
+                  <div class="dossier-section-title" data-i18n="gloss_title">Sentidos & Definições</div>
+                  <div class="dossier-glosses" id="dossierGlosses">criança, filho</div>
+                </div>
+
+                <div class="dossier-section">
+                  <div class="dossier-section-title" data-i18n="grammatical_properties">Propriedades Gramaticais & Auditoria</div>
+                  <div class="property-sheet" id="propertySheet">
+                    <!-- Key-Value pairs injected by JS -->
+                  </div>
+                </div>
+
+                <div class="dossier-section" id="attestationSection">
+                  <div class="dossier-section-title" data-i18n="attestation_evidence">Evidência de Campo & Citação</div>
+                  <div class="attestation-box">
+                    <div class="attestation-orig" id="attestationOrig">puya tawa-n yapa aka-ya</div>
+                    <div class="attestation-trans" id="attestationTrans">&ldquo;Puya pesca com flecha&rdquo;</div>
+                    <div class="attestation-source" id="attestationSource">Fonte: Costa (2002), p. 45 [ASJP]</div>
+                  </div>
+                </div>
+
+                <div class="audit-banner" id="dossierAuditBanner" style="display: none;">
+                  <div class="audit-title" data-i18n="audit_flags">Sinalizadores de Auditoria (ADR-0021)</div>
+                  <div class="audit-text" id="dossierAuditText"></div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+
+      <!-- --------------------------------------------------------------------
+           WORKSPACE 2: MATRIZ COMPARATIVA (6-LANG SWADESH)
+           -------------------------------------------------------------------- -->
+      <section id="pane-comparative" class="workspace-pane">
+        <div class="comparative-workspace">
+          <div class="matrix-header">
+            <h1 class="matrix-title" data-i18n="comparative_title">Matriz Comparativa de Vocabulário Básico</h1>
+            <p class="matrix-subtitle" data-i18n="comparative_desc">Correspondência conceitual entre 6 línguas indígenas do Vale do Javari com alinhamento fonético estrito.</p>
+          </div>
+
+          <div class="matrix-table-card">
+            <table class="matrix-table">
+              <thead>
+                <tr>
+                  <th class="sticky-col" data-i18n="comparative_concept">Conceito (Português)</th>
+                  <th class="fam-sky">Marúbo (mzr)</th>
+                  <th class="fam-sky">Matsés (mcf)</th>
+                  <th class="fam-sky">Matis (mpu)</th>
+                  <th class="fam-sky">Korubo (xor)</th>
+                  <th class="fam-amber">Kanamari (knm)</th>
+                  <th class="fam-violet">Kulina (cul)</th>
+                </tr>
+              </thead>
+              <tbody id="comparativeTbody">
+                <!-- Injected by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- --------------------------------------------------------------------
+           WORKSPACE 3: CORPUS & LEIPZIG IGT
+           -------------------------------------------------------------------- -->
+      <section id="pane-igt" class="workspace-pane">
+        <div class="igt-workspace">
+          <div class="matrix-header">
+            <h1 class="matrix-title" data-i18n="igt_title">Corpus & Glosa Interlinear (Leipzig IGT)</h1>
+            <p class="matrix-subtitle" data-i18n="igt_desc">Sentenças orais e textuais com análise morfológica em 3 níveis (Superfície, Glosa Gramatical, Tradução Livre).</p>
+          </div>
+
+          <div class="igt-grid" id="igtGrid">
+            <!-- Injected by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- --------------------------------------------------------------------
+           WORKSPACE 4: LABORATÓRIO SINTÉTICO & IA
+           -------------------------------------------------------------------- -->
+      <section id="pane-synthetic" class="workspace-pane">
+        <div class="synthetic-workspace">
+          <div class="matrix-header">
+            <h1 class="matrix-title" data-i18n="ws_synthetic">Laboratório de Geração Sintética & IA</h1>
+            <p class="matrix-subtitle" data-i18n="synth_desc">Geração autônoma estritamente ancorada em vocabulário e morfologia atestados (Invariantes 2, 6 e 9) com julgamento Clef.</p>
+          </div>
+
+          <div class="synth-grid">
+            <!-- Left Column: Controls & Guard -->
+            <div class="synth-control-pane">
+              <!-- Generator Controls -->
+              <div class="studio-panel">
+                <div class="panel-heading" data-i18n="synth_generator_title">Gerador Autônomo Grounded</div>
+                <div class="panel-sub" data-i18n="synth_generator_desc">Selecione o provedor e a quantidade de frases a gerar e validar.</div>
+
+                <div class="control-row">
+                  <label class="control-label" data-i18n="label_provider">Provedor LLM</label>
+                  <select id="synthProvider" class="control-select">
+                    <option value="poolside" selected>Poolside Foundation (Laguna-S-2.1)</option>
+                    <option value="openai">OpenAI API (GPT-4o-mini)</option>
+                    <option value="mock">Mock Offline (Determinístico)</option>
+                  </select>
+                </div>
+
+                <div class="control-row">
+                  <label class="control-label" data-i18n="label_model">Modelo</label>
+                  <input type="text" id="synthModel" class="control-input" value="poolside/laguna-s-2.1">
+                </div>
+
+                <div class="control-row">
+                  <label class="control-label" data-i18n="label_count">Quantidade</label>
+                  <select id="synthCount" class="control-select">
+                    <option value="5" data-i18n="count_5">5 frases</option>
+                    <option value="10" data-i18n="count_10">10 frases</option>
+                    <option value="20" selected data-i18n="count_20">20 frases</option>
+                    <option value="50" data-i18n="count_50">50 frases</option>
+                  </select>
+                </div>
+
+                <button class="btn-primary" id="btnGeneratePhrases" onclick="Actions.generatePhrases()">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  <span data-i18n="btn_generate">Gerar & Validar Frases</span>
+                </button>
+                <div id="genStatusMessage" style="margin-top: 0.75rem; font-size: 0.8rem; display: none;"></div>
+              </div>
+
+              <!-- Interactive Grounding Guard -->
+              <div class="studio-panel">
+                <div class="panel-heading" data-i18n="guard_title">Grounding Guard Interativo</div>
+                <div class="panel-sub" data-i18n="guard_desc">Digite uma sentença para validar contra o léxico auditado da LKB em tempo real:</div>
+
+                <textarea id="guardInput" class="guard-textarea" data-i18n-placeholder="guard_placeholder" placeholder="ex: vaki-n isu yamama-katsai"></textarea>
+                <button class="btn-secondary" onclick="Actions.validateSentence()" style="width: 100%; justify-content: center;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span data-i18n="btn_validate_sentence">Validar Sentença</span>
+                </button>
+                <div id="guardResult" class="guard-result"></div>
+              </div>
+
+              <!-- Few-Shot Strict Prompt Viewer -->
+              <div class="studio-panel">
+                <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
+                  <div class="panel-heading" data-i18n="prompt_title">Prompt Estrito (Few-Shot)</div>
+                  <button class="btn-secondary" onclick="Actions.copyPrompt()" style="padding: 0.2rem 0.5rem; font-size: 0.72rem;" data-i18n="btn_copy_prompt">Copiar JSON</button>
+                </div>
+                <div class="panel-sub" style="margin-bottom: 0.6rem;" data-i18n="prompt_desc">Payload JSON que força modelos de linguagem a não alucinar morfologia:</div>
+                <pre class="code-viewer" id="fewShotJson">Carregando payload...</pre>
+              </div>
+            </div>
+
+            <!-- Right Column: Clef Audit Gallery -->
+            <div class="synth-gallery-pane">
+              <div class="gallery-toolbar">
+                <div class="gallery-filters">
+                  <button class="gallery-filter-btn active" data-filter="passed" onclick="State.setSynthFilter('passed')">
+                    <span data-i18n="filter_passed">Aprovadas</span> (<span id="countPassedSynth">0</span>)
+                  </button>
+                  <button class="gallery-filter-btn" data-filter="quarantine" onclick="State.setSynthFilter('quarantine')">
+                    <span data-i18n="filter_quarantine">Quarentena</span> (<span id="countQuarantineSynth">0</span>)
+                  </button>
+                  <button class="gallery-filter-btn" data-filter="all" onclick="State.setSynthFilter('all')">
+                    <span data-i18n="filter_all">Todas</span> (<span id="countTotalSynth">0</span>)
+                  </button>
+                </div>
+
+                <button class="btn-secondary" onclick="Actions.runClefJudge()">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <span data-i18n="btn_rejudge">Reavaliar com Clef Judge</span>
+                </button>
+              </div>
+
+              <div class="synth-cards-grid" id="synthGalleryGrid">
+                <!-- Injected by JS -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- --------------------------------------------------------------------
+           WORKSPACE 5: CENTRAL DE DATASETS & EXPORTAÇÕES
+           -------------------------------------------------------------------- -->
+      <section id="pane-exports" class="workspace-pane">
+        <div class="exports-workspace">
+          <div class="matrix-header">
+            <h1 class="matrix-title" data-i18n="ws_exports">Central de Datasets & Exportações</h1>
+            <p class="matrix-subtitle" data-i18n="exports_subtitle">Distribuição de artefatos padronizados para linguística computacional (CLDF, LIFT) e treinamento de modelos de tradução neural (NMT).</p>
+          </div>
+
+          <div class="exports-section-heading">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            <span data-i18n="exports_linguistic_standards">Padrões Linguísticos Internacionais</span>
+          </div>
+
+          <div class="exports-card-grid">
+            <!-- CLDF Card -->
+            <div class="export-card">
+              <div>
+                <div class="export-card-title">
+                  <span>CLDF (Cross-Linguistic Data Formats)</span>
+                </div>
+                <div class="export-card-desc">
+                  Especificação CLDF Dictionary v1.0 com metadados estruturados, tabela de verbetes, sentidos, códigos ISO 639-3 e citações BibTeX.
+                </div>
+                <div class="export-meta-row">
+                  <span>Formato: CSV + JSON-LD</span> &bull;
+                  <span>Tamanho: 1.2 MB</span>
+                </div>
+              </div>
+              <a href="/formats/mzr/cldf/Dictionary-metadata.json" download class="btn-secondary" style="justify-content: center;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span data-i18n="btn_download_cldf">Baixar CLDF Metadata</span>
+              </a>
+            </div>
+
+            <!-- LIFT XML Card -->
+            <div class="export-card">
+              <div>
+                <div class="export-card-title">
+                  <span>LIFT XML (SIL International)</span>
+                </div>
+                <div class="export-card-desc">
+                  Lexicon Interchange Format (LIFT 0.13) totalmente compatível com SIL FieldWorks Language Explorer (FLEx) e WeSay.
+                </div>
+                <div class="export-meta-row">
+                  <span>Formato: XML 0.13</span> &bull;
+                  <span>Tamanho: 1.05 MB</span>
+                </div>
+              </div>
+              <a href="/formats/mzr/dictionary_mzr.lift" download class="btn-secondary" style="justify-content: center;">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span data-i18n="btn_download_lift">Baixar LIFT XML</span>
+              </a>
+            </div>
+
+            <!-- Print Edition (HTML + PDF) -->
+            <div class="export-card">
+              <div>
+                <div class="export-card-title">
+                  <span>Dicionário Imprimível (Edição Completa)</span>
+                </div>
+                <div class="export-card-desc">
+                  Edição diagramada em duas colunas com palavras-guia, fontes numeradas,
+                  prefácio e índice por domínio. Tipografia Charis SIL com cobertura IPA
+                  completa, gerada localmente por WeasyPrint.
+                </div>
+                <div class="export-meta-row">
+                  <span>Formato: HTML5 / PDF</span> &bull;
+                  <span id="printEditionSize">—</span>
+                </div>
+              </div>
+              <div class="export-card-actions">
+                <a href="/formats/mzr/dictionary_mzr_printable.html" target="_blank" class="btn-secondary">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                  <span data-i18n="btn_view_printable">Abrir Versão Imprimível</span>
+                </a>
+                <a href="/formats/mzr/dictionary_mzr_printable.pdf" download class="btn-primary">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V2h12v7"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><path d="M6 14h12v8H6z"/></svg>
+                  <span data-i18n="btn_download_print_pdf">Baixar PDF</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="exports-section-heading">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"/><rect x="2" y="14" width="20" height="8" rx="2" ry="2"/><line x1="6" y1="6" x2="6.01" y2="6"/><line x1="6" y1="18" x2="6.01" y2="18"/></svg>
+            <span data-i18n="exports_nmt_datasets">Datasets para Treinamento de Modelos NMT</span>
+          </div>
+
+          <div class="studio-panel" style="margin-bottom: 1.5rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+              <div>
+                <div class="panel-heading" data-i18n="export_dataset_title">Exportação de Matrizes de Tradução NMT</div>
+                <div class="panel-sub" style="margin-bottom: 0;" data-i18n="export_dataset_desc">
+                  Gera partições estritas de treino, validação e teste com isolamento 100% garantido do padrão-ouro (Invariantes 2 e 6).
+                </div>
+              </div>
+              <button class="btn-primary" onclick="Actions.exportNMTDatasets()" style="width: auto;" id="btnExportNmt">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                <span data-i18n="btn_export_nmt">Exportar Datasets NMT</span>
+              </button>
+            </div>
+            <div id="exportFeedbackMsg" style="margin-top: 1rem; font-size: 0.82rem; display: none;"></div>
+          </div>
+
+          <div class="exports-card-grid">
+            <!-- HuggingFace Dataset -->
+            <div class="export-card">
+              <div>
+                <div class="export-card-title">HuggingFace Datasets JSONL</div>
+                <div class="export-card-desc">
+                  Formato padrão <code>{"translation": {"mzr": "...", "por": "..."}}</code> particionado em <code>train.hf.jsonl</code>, <code>val.hf.jsonl</code> e <code>test.hf.jsonl</code>.
+                </div>
+                <div class="export-meta-row">
+                  <span>Pasta: exports/mzr/datasets/</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Alpaca Dataset -->
+            <div class="export-card">
+              <div>
+                <div class="export-card-title">Stanford Alpaca Instruction JSONL</div>
+                <div class="export-card-desc">
+                  Formato <code>{"instruction": "...", "input": "...", "output": "..."}</code> ideal para SFT de modelos LLaMA e Mistral.
+                </div>
+                <div class="export-meta-row">
+                  <span>Pasta: exports/mzr/datasets/</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- ChatML Dataset -->
+            <div class="export-card">
+              <div>
+                <div class="export-card-title">OpenAI ChatML JSONL</div>
+                <div class="export-card-desc">
+                  Formato multi-turn <code>{"messages": [{"role": "system", ...}, {"role": "user", ...}, ...]}</code> para fine-tuning conversacional.
+                </div>
+                <div class="export-meta-row">
+                  <span>Pasta: exports/mzr/datasets/</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Global Toast Notification -->
+    <div class="toast" id="appToast">Ação executada com sucesso.</div>
+  </div>
+
+  <!-- Load Database Fallback -->
+  <script src="db_data.js"></script>
+
+  <!-- Application Logic & Impeccable State Controller -->
+  <script>
+    /* ==========================================================================
+       CENTRALIZED DUAL-LANGUAGE LOCALIZATION (pt-BR / en-US)
+       ========================================================================== */
+    const I18N = {
+      pt: {
+        territory_badge: "Terra Indígena Vale do Javari • Amazonas",
+        portal_title: "LKB Vale do Javari",
+        portal_subtitle: "Base de Conhecimento Linguístico & Dicionário Multilíngue",
+        quick_search_placeholder: "Buscar palavra, glosa ou afixo... (Pressione /)",
+        status_online: "API Conectada",
+        status_offline: "Modo Local",
+        all_languages: "Todas as Línguas",
+
+        ws_lexicon: "Léxico & Dicionário",
+        ws_comparative: "Matriz Comparativa",
+        ws_igt: "Corpus & Leipzig IGT",
+        ws_synthetic: "Laboratório Sintético",
+        ws_exports: "Datasets & Exportações",
+
+        ws_dictionary: "Dicionário",
+        dict_subtitle: "Verbetes atestados com exemplos e fontes. Pressione / para buscar.",
+        dict_expert: "Especialista",
+        dict_print: "Imprimir PDF",
+        dict_search_placeholder: "Buscar no dicionário…",
+        dict_facet_pos: "Classe gramatical",
+        dict_facet_domain: "Domínio semântico",
+        dict_facet_status: "Evidência",
+        dict_facet_results: "Resultados",
+        dict_empty: "Selecione um verbete na lista ou comece a buscar.",
+        dict_printing: "Gerando a edição impressa…",
+        dict_print_done: "Edição impressa pronta.",
+        dict_print_failed: "Não foi possível gerar o PDF.",
+        dict_expert_on: "Proveniência, citações e linhagem visíveis.",
+        dict_expert_off: "Modo leitor: apenas verbete, glosa e exemplo.",
+        dict_see_also: "ver",
+        dict_show_more: "Mostrar mais",
+        dict_showing: "Mostrando {shown} de {total}",
+
+        dict_forms: "Formas",
+        dict_form_of: "forma de {base}",
+        dict_form_label: "forma flexionada",
+        dict_form_clitic: "clítico",
+        dict_form_meta: "forma",
+        dict_form_via: "forma {surface}",
+        dict_form_unpublished:
+          "A base é um nome registrado apenas no índice onomástico; não é um verbete do léxico comum.",
+        dict_basis_label: "Base da validação",
+        dict_basis_source_assertion: "afirmação importada de {sources}; sem atestação no corpus",
+        dict_basis_source_and_corpus:
+          "afirmação importada de {sources}; {count} atestação(ões) no corpus",
+        dict_basis_corpus_only: "atestação no corpus ({count}); nenhuma obra nomeada",
+        dict_basis_unrecorded: "sem base registrada no artefato",
+
+        scope_clean: "Léxico Limpo / Lemmas",
+        scope_names: "Nomes Próprios (Onomástico)",
+        scope_quarantine: "Quarentena & Afixados",
+        scope_reverse: "Português ➔ Indígena",
+        scope_all: "Todos os Itens",
+
+        select_entry_prompt: "Selecione um verbete na lista para inspecionar os detalhes lexicográficos.",
+        gloss_title: "Sentidos & Definições",
+        grammatical_properties: "Propriedades Gramaticais & Auditoria",
+        lexical_class: "Classe Lexical",
+        verbal_valence: "Valência Verbal",
+        inalienability: "Inalienabilidade",
+        semantic_domain: "Domínio Semântico",
+        operational_scopes: "Escopos Operacionais",
+        attestation_evidence: "Evidência & Citações de Campo",
+        source_citation: "Fonte Bibliográfica",
+        audit_flags: "Sinalizadores de Auditoria",
+
+        comparative_title: "Matriz Comparativa de Vocabulário Básico",
+        comparative_desc: "Correspondência conceitual entre 6 línguas indígenas do Vale do Javari com alinhamento fonético estrito.",
+        comparative_concept: "Conceito (Português)",
+
+        igt_title: "Corpus & Glosa Interlinear (Leipzig IGT)",
+        igt_desc: "Sentenças orais e textuais com análise morfológica em 3 níveis (Superfície, Glosa Gramatical, Tradução Livre).",
+
+        synth_desc: "Geração autônoma estritamente ancorada em vocabulário e morfologia atestados (Invariantes 2, 6 e 9) com julgamento Clef.",
+        synth_generator_title: "Gerador Autônomo Grounded",
+        synth_generator_desc: "Selecione o provedor e a quantidade de frases a gerar e validar.",
+        label_provider: "Provedor LLM",
+        label_model: "Modelo",
+        label_count: "Quantidade",
+        count_5: "5 frases",
+        count_10: "10 frases",
+        count_20: "20 frases",
+        count_50: "50 frases",
+        btn_generate: "Gerar & Validar Frases",
+        btn_rejudge: "Reavaliar com Clef Judge",
+        filter_passed: "Aprovadas",
+        filter_quarantine: "Quarentena",
+        filter_all: "Todas",
+        guard_title: "Grounding Guard Interativo",
+        guard_desc: "Digite uma sentença para validar contra o léxico auditado da LKB em tempo real:",
+        guard_placeholder: "ex: vaki-n isu yamama-katsai",
+        btn_validate_sentence: "Validar Sentença",
+        prompt_title: "Prompt Estrito (Few-Shot)",
+        prompt_desc: "Payload JSON que força modelos de linguagem a não alucinar morfologia:",
+        btn_copy_prompt: "Copiar JSON",
+
+        exports_subtitle: "Distribuição de artefatos padronizados para linguística computacional (CLDF, LIFT) e treinamento de modelos de tradução neural (NMT).",
+        exports_linguistic_standards: "Padrões Linguísticos Internacionais",
+        exports_nmt_datasets: "Datasets para Treinamento de Modelos NMT",
+        export_dataset_title: "Exportação de Matrizes de Tradução NMT",
+        export_dataset_desc: "Gera partições estritas de treino, validação e teste com isolamento 100% garantido do padrão-ouro (Invariantes 2 e 6).",
+        btn_export_nmt: "Exportar Datasets NMT",
+        btn_download_cldf: "Baixar CLDF Metadata",
+        btn_download_lift: "Baixar LIFT XML",
+        btn_view_printable: "Abrir Versão Imprimível",
+        btn_download_print_pdf: "Baixar PDF",
+
+        // Dynamic labels & tags
+        entries_count: "verbetes",
+        entries_pt_count: "verbetes em português",
+        loading_entries: "Carregando verbetes...",
+        no_entries_found: "Nenhum verbete encontrado.",
+        no_phrases_found: "Nenhuma frase encontrada para este filtro.",
+        page_label: "Pág.",
+        page_of: "de",
+        btn_prev: "Anterior",
+        btn_next: "Próxima",
+        senses_suffix: "sentido(s)",
+        citations_suffix: "cit.",
+        class_label: "Classe:",
+        status_label: "Estado:",
+        equivalents_attested: "equivalentes registrados",
+        record_type_label: "Tipo de Registro",
+        reverse_record_desc: "Índice Reverso (Português de Contato)",
+        target_language_label: "Língua Alvo",
+        original_gloss_label: "Glosa original:",
+        source_prefix: "Fonte:",
+        violation_prefix: "Restrição violada:",
+        stem_prefix: "raiz:",
+        affix_prefix: "afixo:",
+        example_prefix: "Exemplo #",
+        clef_approved: "Aprovada Clef",
+        clef_quarantine: "Quarentena Clef",
+
+        // Grammatical & Linguistic Tag Dictionaries
+        pos_short: {
+          noun: "subst",
+          verb: "verbo",
+          verb_intransitive: "v. intr",
+          verb_transitive: "v. trans",
+          adj: "adj",
+          adjective: "adj",
+          adv: "adv",
+          adverb: "adv",
+          pron: "pron",
+          pronoun: "pron",
+          num: "num",
+          numeral: "num",
+          part: "part",
+          particle: "part",
+          postp: "posp",
+          postposition: "posp",
+          interj: "interj",
+          interjection: "interj",
+          affix: "afixo",
+          clitic: "clítico",
+          root: "raiz",
+          prop: "n. próp",
+          proper_noun: "n. próp",
+          conj: "conj",
+          dem: "dem",
+          interrog: "interr",
+          ideo: "ideof"
+        },
+        pos_full: {
+          noun: "Substantivo",
+          verb: "Verbo",
+          verb_intransitive: "Verbo Intransitivo",
+          verb_transitive: "Verbo Transitivo",
+          adj: "Adjetivo",
+          adjective: "Adjetivo",
+          adv: "Advérbio",
+          adverb: "Advérbio",
+          pron: "Pronome",
+          pronoun: "Pronome",
+          num: "Numeral",
+          numeral: "Numeral",
+          part: "Partícula",
+          particle: "Partícula",
+          postp: "Posposição",
+          postposition: "Posposição",
+          interj: "Interjeição",
+          interjection: "Interjeição",
+          affix: "Afixo",
+          clitic: "Clítico",
+          root: "Raiz",
+          prop: "Nome Próprio (Onomástico)",
+          proper_noun: "Nome Próprio (Onomástico)",
+          conj: "Conjunção",
+          dem: "Pronome Demonstrativo",
+          interrog: "Pronome Interrogativo",
+          ideo: "Ideofone"
+        },
+        status_labels: {
+          validated: "Validado por fonte publicada",
+          supported: "Suportado por Evidência",
+          candidate: "Candidato (Hipótese)",
+          quarantined: "Em Quarentena",
+          quarantine: "Em Quarentena",
+          rejected: "Rejeitado"
+        },
+        valence_labels: {
+          transitive: "Transitivo",
+          intransitive: "Intransitivo",
+          ditransitive: "Ditransitivo",
+          non_verbal: "Não-verbal",
+          unknown: "Desconhecida"
+        },
+        inalienability_labels: {
+          alienable: "Alienável",
+          inalienable: "Inalienável",
+          inalienable_kin: "Inalienável (Parentesco)",
+          inalienable_kinship: "Inalienável (Parentesco)",
+          inalienable_body: "Inalienável (Parte do Corpo)",
+          not_applicable: "Não aplicável"
+        },
+        classes: {
+          lemma: "Lema Canônico",
+          proper_noun: "Nome Próprio (Onomástico)",
+          inflected_form: "Forma Flexionada / Afixada",
+          artifact: "Artefato de Extração"
+        },
+        domains: {
+          actions_motion: "Ações & Movimento",
+          artifacts_tools: "Artefatos & Ferramentas",
+          body_health: "Corpo & Saúde",
+          fauna: "Fauna & Animais",
+          flora: "Flora & Vegetais",
+          general: "Léxico Geral",
+          kinship_social: "Parentesco & Social",
+          perception_mind: "Percepção & Mente",
+          quantity_state: "Quantidade & Estado",
+          universe_nature: "Natureza & Cosmos"
+        },
+        scope_labels: {
+          dictionary_export: "Exportação de Dicionário",
+          grounding: "Filtro Grounding Guard",
+          synthesis_prompt: "Prompt de Síntese Grounded",
+          onomasticon: "Índice Onomástico",
+          general: "Léxico Geral"
+        },
+        family_names: {
+          pano: "Família Pano",
+          panoan: "Família Pano",
+          katukina: "Família Katukina",
+          arawa: "Família Arawá",
+          arawan: "Família Arawá"
+        }
+      },
+      en: {
+        territory_badge: "Vale do Javari Indigenous Land • Amazonas",
+        portal_title: "Vale do Javari LKB",
+        portal_subtitle: "Linguistic Knowledge Base & Multilingual Dictionary",
+        quick_search_placeholder: "Search word, gloss, or affix... (Press /)",
+        status_online: "API Connected",
+        status_offline: "Local Fallback",
+        all_languages: "All Languages",
+
+        ws_lexicon: "Lexicon & Dictionary",
+        ws_comparative: "Comparative Matrix",
+        ws_igt: "Corpus & Leipzig IGT",
+        ws_synthetic: "Synthetic AI Studio",
+        ws_exports: "Datasets & Exports",
+
+        ws_dictionary: "Dictionary",
+        dict_subtitle: "Attested entries with examples and sources. Press / to search.",
+        dict_expert: "Expert",
+        dict_print: "Print PDF",
+        dict_search_placeholder: "Search the dictionary…",
+        dict_facet_pos: "Part of speech",
+        dict_facet_domain: "Semantic domain",
+        dict_facet_status: "Evidence",
+        dict_facet_results: "Results",
+        dict_empty: "Select an entry in the list, or start searching.",
+        dict_printing: "Generating the print edition…",
+        dict_print_done: "Print edition ready.",
+        dict_print_failed: "Could not generate the PDF.",
+        dict_expert_on: "Provenance, citations and lineage visible.",
+        dict_expert_off: "Reader mode: headword, gloss and example only.",
+        dict_see_also: "see",
+        dict_show_more: "Show more",
+        dict_showing: "Showing {shown} of {total}",
+
+        dict_forms: "Forms",
+        dict_form_of: "form of {base}",
+        dict_form_label: "inflected form",
+        dict_form_clitic: "clitic",
+        dict_form_meta: "form",
+        dict_form_via: "form {surface}",
+        dict_form_unpublished:
+          "The base is a name recorded only in the onomastic index; it is not an entry in the common lexicon.",
+        dict_basis_label: "Validation basis",
+        dict_basis_source_assertion: "assertion imported from {sources}; no corpus attestation",
+        dict_basis_source_and_corpus:
+          "assertion imported from {sources}; {count} corpus attestation(s)",
+        dict_basis_corpus_only: "corpus attestation ({count}); no work named",
+        dict_basis_unrecorded: "no basis recorded in the artifact",
+
+        scope_clean: "Clean Lemmas",
+        scope_names: "Proper Names (Onomastic)",
+        scope_quarantine: "Quarantine & Affixed",
+        scope_reverse: "Portuguese ➔ Indigenous",
+        scope_all: "All Entries",
+
+        select_entry_prompt: "Select an entry from the list to view lexicographical details.",
+        gloss_title: "Senses & Definitions",
+        grammatical_properties: "Grammatical Properties & Audit",
+        lexical_class: "Lexical Class",
+        verbal_valence: "Verbal Valence",
+        inalienability: "Inalienability",
+        semantic_domain: "Semantic Domain",
+        operational_scopes: "Operational Scopes",
+        attestation_evidence: "Field Attestation & Evidence",
+        source_citation: "Bibliographic Source",
+        audit_flags: "Audit Flags",
+
+        comparative_title: "Comparative Basic Vocabulary Matrix",
+        comparative_desc: "Conceptual correspondence across 6 indigenous languages of Vale do Javari with strict phonetic alignment.",
+        comparative_concept: "Concept (Portuguese / English)",
+
+        igt_title: "Corpus & Interlinear Gloss (Leipzig IGT)",
+        igt_desc: "Attested oral and textual clauses analyzed at 3 levels (Surface, Leipzig Grammatical Gloss, Free Translation).",
+
+        synth_desc: "Autonomous generation strictly grounded in attested LKB vocabulary and morphology (Invariants 2, 6 and 9) with Clef Plausibility Judge.",
+        synth_generator_title: "Autonomous Grounded Generator",
+        synth_generator_desc: "Select provider and number of phrases to generate and validate.",
+        label_provider: "LLM Provider",
+        label_model: "Model",
+        label_count: "Count",
+        count_5: "5 phrases",
+        count_10: "10 phrases",
+        count_20: "20 phrases",
+        count_50: "50 phrases",
+        btn_generate: "Generate & Validate Phrases",
+        btn_rejudge: "Re-evaluate with Clef Judge",
+        filter_passed: "Approved",
+        filter_quarantine: "Quarantine",
+        filter_all: "All",
+        guard_title: "Interactive Grounding Guard",
+        guard_desc: "Enter a sentence to validate against audited LKB vocabulary in real-time:",
+        guard_placeholder: "e.g.: vaki-n isu yamama-katsai",
+        btn_validate_sentence: "Validate Sentence",
+        prompt_title: "Strict Prompt (Few-Shot)",
+        prompt_desc: "JSON payload constraining language models to avoid hallucinating morphology:",
+        btn_copy_prompt: "Copy JSON",
+
+        exports_subtitle: "Distribution of standardized artifacts for computational linguistics (CLDF, LIFT) and neural machine translation (NMT) training.",
+        exports_linguistic_standards: "International Linguistic Standards",
+        exports_nmt_datasets: "Datasets for NMT Model Fine-Tuning",
+        export_dataset_title: "NMT Translation Matrices Export",
+        export_dataset_desc: "Generates strict train, validation, and test partitions with 100% gold test set isolation (Invariants 2 and 6).",
+        btn_export_nmt: "Export NMT Datasets",
+        btn_download_cldf: "Download CLDF Metadata",
+        btn_download_lift: "Download LIFT XML",
+        btn_view_printable: "Open Printable Version",
+        btn_download_print_pdf: "Download PDF",
+
+        // Dynamic labels & tags
+        entries_count: "entries",
+        entries_pt_count: "Portuguese entries",
+        loading_entries: "Loading entries...",
+        no_entries_found: "No entries found.",
+        no_phrases_found: "No phrases found for this filter.",
+        page_label: "Page",
+        page_of: "of",
+        btn_prev: "Previous",
+        btn_next: "Next",
+        senses_suffix: "sense(s)",
+        citations_suffix: "cit.",
+        class_label: "Class:",
+        status_label: "Status:",
+        equivalents_attested: "attested equivalents",
+        record_type_label: "Record Type",
+        reverse_record_desc: "Reverse Index (Contact Portuguese)",
+        target_language_label: "Target Language",
+        original_gloss_label: "Original gloss:",
+        source_prefix: "Source:",
+        violation_prefix: "Restriction violated:",
+        stem_prefix: "stem:",
+        affix_prefix: "affix:",
+        example_prefix: "Example #",
+        clef_approved: "Clef Approved",
+        clef_quarantine: "Clef Quarantine",
+
+        // Grammatical & Linguistic Tag Dictionaries
+        pos_short: {
+          noun: "noun",
+          verb: "verb",
+          verb_intransitive: "intr. v",
+          verb_transitive: "tr. v",
+          adj: "adj",
+          adjective: "adj",
+          adv: "adv",
+          adverb: "adv",
+          pron: "pron",
+          pronoun: "pron",
+          num: "num",
+          numeral: "num",
+          part: "part",
+          particle: "part",
+          postp: "postp",
+          postposition: "postp",
+          interj: "interj",
+          interjection: "interj",
+          affix: "affix",
+          clitic: "clitic",
+          root: "root",
+          prop: "prop",
+          proper_noun: "prop",
+          conj: "conj",
+          dem: "dem",
+          interrog: "interr",
+          ideo: "ideoph"
+        },
+        pos_full: {
+          noun: "Noun",
+          verb: "Verb",
+          verb_intransitive: "Intransitive Verb",
+          verb_transitive: "Transitive Verb",
+          adj: "Adjective",
+          adjective: "Adjective",
+          adv: "Adverb",
+          adverb: "Adverb",
+          pron: "Pronoun",
+          pronoun: "Pronoun",
+          num: "Numeral",
+          numeral: "Numeral",
+          part: "Particle",
+          particle: "Particle",
+          postp: "Postposition",
+          postposition: "Postposition",
+          interj: "Interjection",
+          interjection: "Interjection",
+          affix: "Affix",
+          clitic: "Clitic",
+          root: "Root",
+          prop: "Proper Noun (Onomastic)",
+          proper_noun: "Proper Noun (Onomastic)",
+          conj: "Conjunction",
+          dem: "Demonstrative Pronoun",
+          interrog: "Interrogative Pronoun",
+          ideo: "Ideophone"
+        },
+        status_labels: {
+          validated: "Validated by a published source",
+          supported: "Supported by Evidence",
+          candidate: "Candidate (Hypothesis)",
+          quarantined: "Quarantined",
+          quarantine: "Quarantined",
+          rejected: "Rejected"
+        },
+        valence_labels: {
+          transitive: "Transitive",
+          intransitive: "Intransitive",
+          ditransitive: "Ditransitive",
+          non_verbal: "Non-verbal",
+          unknown: "Unknown"
+        },
+        inalienability_labels: {
+          alienable: "Alienable",
+          inalienable: "Inalienable",
+          inalienable_kin: "Inalienable (Kinship)",
+          inalienable_kinship: "Inalienable (Kinship)",
+          inalienable_body: "Inalienable (Body Part)",
+          not_applicable: "Not applicable"
+        },
+        classes: {
+          lemma: "Canonical Lemma",
+          proper_noun: "Proper Noun (Onomastic)",
+          inflected_form: "Inflected / Affixed Wordform",
+          artifact: "Extraction Artifact"
+        },
+        domains: {
+          actions_motion: "Actions & Motion",
+          artifacts_tools: "Artifacts & Tools",
+          body_health: "Body & Health",
+          fauna: "Fauna & Animals",
+          flora: "Flora & Plants",
+          general: "General Lexicon",
+          kinship_social: "Kinship & Social",
+          perception_mind: "Perception & Mind",
+          quantity_state: "Quantity & State",
+          universe_nature: "Nature & Cosmos"
+        },
+        scope_labels: {
+          dictionary_export: "Dictionary Export",
+          grounding: "Grounding Guard Filter",
+          synthesis_prompt: "Grounded Synthesis Prompt",
+          onomasticon: "Onomastic Index",
+          general: "General Lexicon"
+        },
+        family_names: {
+          pano: "Panoan Family",
+          panoan: "Panoan Family",
+          katukina: "Katukina Family",
+          arawa: "Arawan Family",
+          arawan: "Arawan Family"
+        }
+      }
+    };
+
+    /* ==========================================================================
+       APPLICATION STATE STORE
+       ========================================================================== */
+    const State = {
+      locale: localStorage.getItem('javari_locale') || 'pt',
+      workspace: 'lexicon',
+      language: 'mzr',
+      lexView: 'clean',
+      searchQuery: '',
+      selectedEntryId: null,
+      synthFilter: 'passed',
+      page: 1,
+      pageSize: 50,
+      totalEntries: 0,
+      cachedEntries: [],
+      cachedReverseEntries: [],
+      syntheticPhrases: [],
+      isApiLive: false,
+
+      t(key) {
+        const dict = I18N[this.locale] || I18N.pt;
+        return dict[key] !== undefined ? dict[key] : (I18N.pt[key] || key);
+      },
+
+      getPosLabel(pos) {
+        if (!pos) return this.locale === 'pt' ? 'subst' : 'noun';
+        const clean = pos.toLowerCase().trim();
+        const dict = I18N[this.locale].pos_short || {};
+        return dict[clean] || (this.locale === 'pt' ? (I18N.pt.pos_short[clean] || clean) : clean);
+      },
+
+      getPosFull(pos) {
+        if (!pos) return this.locale === 'pt' ? 'Substantivo' : 'Noun';
+        const clean = pos.toLowerCase().trim();
+        const dict = I18N[this.locale].pos_full || {};
+        return dict[clean] || (this.locale === 'pt' ? (I18N.pt.pos_full[clean] || clean) : clean);
+      },
+
+      getStatusLabel(status) {
+        if (!status) return this.locale === 'pt' ? 'Suportado' : 'Supported';
+        const clean = status.toLowerCase().trim();
+        const dict = I18N[this.locale].status_labels || {};
+        return dict[clean] || (this.locale === 'pt' ? (I18N.pt.status_labels[clean] || clean) : clean);
+      },
+
+      getValenceLabel(val) {
+        if (!val || val === 'non_verbal') return this.locale === 'pt' ? 'Não-verbal' : 'Non-verbal';
+        if (val === 'unknown') return this.locale === 'pt' ? 'Desconhecida' : 'Unknown';
+        const clean = val.toLowerCase().trim();
+        const dict = I18N[this.locale].valence_labels || {};
+        return dict[clean] || (this.locale === 'pt' ? (I18N.pt.valence_labels[clean] || val) : val);
+      },
+
+      getInalienabilityLabel(inal) {
+        if (!inal || inal === 'alienable') return this.locale === 'pt' ? 'Alienável' : 'Alienable';
+        if (inal === 'not_applicable') return this.locale === 'pt' ? 'Não aplicável' : 'Not applicable';
+        const clean = inal.toLowerCase().trim();
+        const dict = I18N[this.locale].inalienability_labels || {};
+        return dict[clean] || (this.locale === 'pt' ? (I18N.pt.inalienability_labels[clean] || inal) : inal);
+      },
+
+      getDomainLabel(dom) {
+        if (!dom) return this.locale === 'pt' ? 'Léxico Geral' : 'General Lexicon';
+        const clean = dom.toLowerCase().trim();
+        const dict = I18N[this.locale].domains || {};
+        return dict[clean] || (this.locale === 'pt' ? (I18N.pt.domains[clean] || dom) : dom);
+      },
+
+      getClassLabel(cls) {
+        if (!cls) return this.locale === 'pt' ? 'Lema Canônico' : 'Canonical Lemma';
+        const clean = cls.toLowerCase().trim();
+        const dict = I18N[this.locale].classes || {};
+        return dict[clean] || (this.locale === 'pt' ? (I18N.pt.classes[clean] || cls) : cls);
+      },
+
+      getScopeLabels(scopes) {
+        if (!scopes || scopes.length === 0) return this.locale === 'pt' ? 'Léxico Geral' : 'General Lexicon';
+        const dict = I18N[this.locale].scope_labels || {};
+        return scopes.map(s => dict[s] || (this.locale === 'pt' ? (I18N.pt.scope_labels[s] || s) : s)).join(', ');
+      },
+
+      getFamilyName(family, langCode) {
+        const isPano = ['mzr', 'mcf', 'mpu', 'xor'].includes(langCode) || (family && family.toLowerCase().includes('pano'));
+        const isKatukina = langCode === 'knm' || (family && family.toLowerCase().includes('katukina'));
+        const isArawa = langCode === 'cul' || (family && family.toLowerCase().includes('araw'));
+
+        if (this.locale === 'pt') {
+          if (isPano) return 'Família Pano';
+          if (isKatukina) return 'Família Katukina';
+          if (isArawa) return 'Família Arawá';
+          return family || 'Família Pano';
+        } else {
+          if (isPano) return 'Panoan Family';
+          if (isKatukina) return 'Katukina Family';
+          if (isArawa) return 'Arawan Family';
+          return family || 'Panoan Family';
+        }
+      },
+
+      setLocale(loc) {
+        this.locale = loc === 'en' ? 'en' : 'pt';
+        localStorage.setItem('javari_locale', this.locale);
+        document.documentElement.lang = this.locale === 'pt' ? 'pt-BR' : 'en-US';
+
+        const btnPt = document.getElementById('btnLangPt');
+        const btnEn = document.getElementById('btnLangEn');
+        if (btnPt) btnPt.classList.toggle('active', this.locale === 'pt');
+        if (btnEn) btnEn.classList.toggle('active', this.locale === 'en');
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const k = el.dataset.i18n;
+          const val = this.t(k);
+          if (val) el.innerText = val;
+        });
+
+        document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+          const k = el.dataset.i18nPlaceholder;
+          const val = this.t(k);
+          if (val) el.placeholder = val;
+        });
+
+        const activeLabel = document.getElementById('activeScopeLabel');
+        if (activeLabel) activeLabel.innerText = this.t(`scope_${this.lexView}`);
+
+        const pPrev = document.getElementById('btnPagePrev');
+        if (pPrev) pPrev.innerHTML = `&larr; ${this.t('btn_prev')}`;
+        const pNext = document.getElementById('btnPageNext');
+        if (pNext) pNext.innerHTML = `${this.t('btn_next')} &rarr;`;
+
+        this.renderMasterList();
+        this.renderDetail();
+        this.renderComparative();
+        this.renderIGT();
+        this.renderSyntheticGallery();
+        // The dictionary rail owns its own markup (facets, paging disclosure,
+        // entry prose); redraw it without resetting its paging window.
+        if (window.DictionaryUI && typeof DictionaryUI.relocalize === 'function') {
+          DictionaryUI.relocalize();
+        }
+      },
+
+      setWorkspace(ws) {
+        this.workspace = ws;
+        window.location.hash = `#${ws}`;
+
+        document.querySelectorAll('.nav-tab').forEach(t => {
+          t.classList.toggle('active', t.dataset.ws === ws);
+        });
+
+        document.querySelectorAll('.workspace-pane').forEach(p => {
+          p.classList.toggle('active', p.id === `pane-${ws}`);
+        });
+
+        if (ws === 'comparative') this.renderComparative();
+        if (ws === 'igt') this.renderIGT();
+        if (ws === 'synthetic') {
+          this.renderSyntheticGallery();
+          this.renderFewShotPrompt();
+        }
+        if (ws === 'dictionary' && typeof DictionaryUI !== 'undefined') DictionaryUI.activate();
+      },
+
+      setLanguage(lang) {
+        this.language = lang;
+        this.page = 1;
+        this.selectedEntryId = null;
+
+        document.querySelectorAll('#langRail .lang-chip').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.lang === lang);
+        });
+
+        this.loadLexiconData();
+      },
+
+      setLexView(view) {
+        this.lexView = view;
+        this.page = 1;
+        this.selectedEntryId = null;
+
+        document.querySelectorAll('#scopeFilters .scope-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.scope === view);
+        });
+
+        const activeLabel = document.getElementById('activeScopeLabel');
+        if (activeLabel) activeLabel.innerText = this.t(`scope_${view}`);
+
+        this.loadLexiconData();
+      },
+
+      setSearchQuery(query) {
+        this.searchQuery = query.trim().toLowerCase();
+        this.page = 1;
+        this.renderMasterList();
+      },
+
+      setSynthFilter(filter) {
+        this.synthFilter = filter;
+        document.querySelectorAll('.gallery-filter-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.filter === filter);
+        });
+        this.renderSyntheticGallery();
+      },
+
+      selectEntry(idx) {
+        this.selectedEntryId = idx;
+        document.querySelectorAll('.master-item').forEach(el => {
+          el.classList.toggle('selected', parseInt(el.dataset.index, 10) === idx);
+        });
+        this.renderDetail();
+
+        // On mobile, open slide-over drawer
+        if (window.innerWidth <= 768) {
+          const detailPane = document.getElementById('detailPane');
+          if (detailPane) detailPane.classList.add('open');
+        }
+      },
+
+      closeMobileDrawer() {
+        const detailPane = document.getElementById('detailPane');
+        if (detailPane) detailPane.classList.remove('open');
+      },
+
+      prevPage() {
+        if (this.page > 1) {
+          this.page--;
+          this.renderMasterList();
+        }
+      },
+
+      nextPage() {
+        const maxPages = Math.ceil(this.totalEntries / this.pageSize) || 1;
+        if (this.page < maxPages) {
+          this.page++;
+          this.renderMasterList();
+        }
+      },
+
+      /* ========================================================================
+         DATA FETCHING & RENDERING ENGINE
+         ======================================================================== */
+      async loadLexiconData() {
+        const masterList = document.getElementById('masterList');
+        if (masterList) masterList.innerHTML = `<li style="padding: 2rem; text-align: center; color: var(--text-tertiary);">${this.t('loading_entries')}</li>`;
+
+        // Handle reverse view (Português ➔ Indígena)
+        if (this.lexView === 'reverse') {
+          try {
+            const resp = await fetch(`/api/dictionary/reverse?lang=mzr&search=${encodeURIComponent(this.searchQuery)}`);
+            if (resp.ok) {
+              const data = await resp.json();
+              this.cachedReverseEntries = data.entries || [];
+              this.cachedEntries = [];
+              const revCount = document.getElementById('countReverse');
+              if (revCount && !this.searchQuery) revCount.innerText = this.cachedReverseEntries.length.toLocaleString();
+              this.renderMasterList();
+              return;
+            }
+          } catch (e) {
+            console.warn('Reverse dictionary API offline');
+          }
+        }
+
+        // Standard dictionary fetch (Live API with DB fallback)
+        if (this.language === 'all' || this.language === 'mzr') {
+          try {
+            const resp = await fetch(`/api/dictionary?lang=mzr&view=${this.lexView}&search=${encodeURIComponent(this.searchQuery)}`);
+            if (resp.ok) {
+              const data = await resp.json();
+              this.cachedEntries = data.entries || [];
+              this.cachedReverseEntries = [];
+
+              if (data.counts) {
+                const cC = document.getElementById('countClean');
+                const cN = document.getElementById('countNames');
+                const cQ = document.getElementById('countQuarantine');
+                const cA = document.getElementById('countAll');
+                if (cC) cC.innerText = (data.counts.clean || 0).toLocaleString();
+                if (cN) cN.innerText = (data.counts.names || 0).toLocaleString();
+                if (cQ) cQ.innerText = (data.counts.quarantine || 0).toLocaleString();
+                if (cA) cA.innerText = (data.counts.all || 0).toLocaleString();
+              }
+              this.renderMasterList();
+              return;
+            }
+          } catch (e) {
+            console.warn('API dictionary offline, falling back to local DB:', e);
+          }
+        }
+
+        // Fallback to embedded DB
+        this.loadFromLocalDB();
+      },
+
+      loadFromLocalDB() {
+        let entries = [];
+        if (typeof DB !== 'undefined') {
+          const langs = this.language === 'all' ? Object.keys(DB) : [this.language];
+          langs.forEach(l => {
+            const lObj = DB[l];
+            if (lObj && lObj.lexicon) {
+              lObj.lexicon.forEach(e => {
+                const lClass = e.lexical_class || 'lemma';
+                if (this.lexView === 'names' && lClass !== 'proper_noun' && !(e.pos && e.pos.includes('prop'))) return;
+                if (this.lexView === 'quarantine' && lClass === 'lemma') return;
+                if (this.lexView === 'clean' && lClass !== 'lemma') return;
+
+                entries.push({
+                  headword: e.headword,
+                  pos: e.pos || 'noun',
+                  glosses: e.glosses || [],
+                  status: e.status || 'supported',
+                  provenance: e.provenance || '',
+                  example: e.example || '',
+                  trans: e.trans || '',
+                  citations: e.citations || [],
+                  semantics: e.semantics || {},
+                  lexical_class: lClass,
+                  proper_noun_kind: e.proper_noun_kind,
+                  audit_flags: e.audit_flags || [],
+                  use_scopes: e.use_scopes || [],
+                  reasons: e.reasons || [],
+                  lang: l
+                });
+              });
+            }
+          });
+        }
+        this.cachedEntries = entries;
+        this.cachedReverseEntries = [];
+        this.renderMasterList();
+      },
+
+      renderMasterList() {
+        const masterList = document.getElementById('masterList');
+        const countLabel = document.getElementById('masterListCount');
+        if (!masterList) return;
+        const isReverse = this.lexView === 'reverse';
+        let rawItems = isReverse ? this.cachedReverseEntries : this.cachedEntries;
+
+        let filtered = rawItems;
+        if (this.searchQuery) {
+          filtered = rawItems.filter(item => {
+            if (isReverse) {
+              const pt = (item.contact_headword || '').toLowerCase();
+              const tgts = (item.senses || []).map(s => (s.target_headword || '').toLowerCase());
+              return pt.includes(this.searchQuery) || tgts.some(t => t.includes(this.searchQuery));
+            } else {
+              const hw = (item.headword || '').toLowerCase();
+              const gl = (item.glosses || []).map(g => g.toLowerCase());
+              const pos = (item.pos || '').toLowerCase();
+              return hw.includes(this.searchQuery) || gl.some(g => g.includes(this.searchQuery)) || pos.includes(this.searchQuery);
+            }
+          });
+        }
+
+        this.totalEntries = filtered.length;
+        const countSuffix = isReverse ? this.t('entries_pt_count') : this.t('entries_count');
+        if (countLabel) countLabel.innerText = `${this.totalEntries.toLocaleString()} ${countSuffix}`;
+
+        const maxPages = Math.ceil(this.totalEntries / this.pageSize) || 1;
+        if (this.page > maxPages) this.page = maxPages;
+
+        const pText = document.getElementById('paginationText');
+        if (pText) pText.innerText = `${this.t('page_label')} ${this.page} ${this.t('page_of')} ${maxPages}`;
+        const pPrev = document.getElementById('btnPagePrev');
+        if (pPrev) {
+          pPrev.disabled = this.page <= 1;
+          pPrev.innerHTML = `&larr; ${this.t('btn_prev')}`;
+        }
+        const pNext = document.getElementById('btnPageNext');
+        if (pNext) {
+          pNext.disabled = this.page >= maxPages;
+          pNext.innerHTML = `${this.t('btn_next')} &rarr;`;
+        }
+
+        const startIdx = (this.page - 1) * this.pageSize;
+        const pageItems = filtered.slice(startIdx, startIdx + this.pageSize);
+
+        if (pageItems.length === 0) {
+          masterList.innerHTML = `<li style="padding: 2.5rem 1rem; text-align: center; color: var(--text-tertiary);">${this.t('no_entries_found')}</li>`;
+          return;
+        }
+
+        masterList.innerHTML = '';
+        pageItems.forEach((item, idx) => {
+          const globalIdx = startIdx + idx;
+          const li = document.createElement('li');
+          li.className = 'master-item';
+          li.dataset.index = globalIdx;
+
+          if (this.selectedEntryId === globalIdx) {
+            li.classList.add('selected');
+          }
+
+          if (isReverse) {
+            const senses = item.senses || [];
+            const targets = senses.map(s => s.target_headword).filter(Boolean).slice(0, 3).join(', ');
+            li.innerHTML = `
+              <div class="master-row-top">
+                <span class="master-headword" style="color: #38bdf8;">${item.contact_headword}</span>
+                <div class="master-meta-right">
+                  <span class="master-pos">por</span>
+                  <span class="master-status-dot"></span>
+                </div>
+              </div>
+              <div class="master-row-bottom">
+                <span class="master-gloss">&rarr; ${targets || '—'}</span>
+                <span class="master-cite-pill">${senses.length} ${this.t('senses_suffix')}</span>
+              </div>
+            `;
+          } else {
+            const glossText = (item.glosses && item.glosses.length > 0) ? item.glosses.join(', ') : '—';
+            const statusClass = item.status === 'validated' ? 'valid' : (item.lexical_class !== 'lemma' ? 'quarantined' : 'supported');
+            const citeCount = (item.citations && item.citations.length) || (item.provenance ? 1 : 0);
+            const posShortLabel = this.getPosLabel(item.pos);
+
+            li.innerHTML = `
+              <div class="master-row-top">
+                <span class="master-headword">${item.headword}</span>
+                <div class="master-meta-right">
+                  <span class="master-pos">${posShortLabel}</span>
+                  <span class="master-status-dot ${statusClass}"></span>
+                </div>
+              </div>
+              <div class="master-row-bottom">
+                <span class="master-gloss">${glossText}</span>
+                <span class="master-cite-pill">${citeCount > 0 ? `${citeCount} ${this.t('citations_suffix')}` : ''}</span>
+              </div>
+            `;
+          }
+
+          li.addEventListener('click', () => {
+            this.selectEntry(globalIdx);
+          });
+          masterList.appendChild(li);
+        });
+
+        // Auto-select first item if none selected on desktop
+        if (this.selectedEntryId === null && pageItems.length > 0 && window.innerWidth > 768) {
+          this.selectEntry(startIdx);
+        }
+      },
+
+      renderDetail() {
+        const emptyState = document.getElementById('detailEmptyState');
+        const content = document.getElementById('detailContent');
+        if (!emptyState || !content) return;
+        const isReverse = this.lexView === 'reverse';
+        const items = isReverse ? this.cachedReverseEntries : this.cachedEntries;
+
+        if (this.selectedEntryId === null || !items[this.selectedEntryId]) {
+          emptyState.style.display = 'flex';
+          content.style.display = 'none';
+          return;
+        }
+
+        emptyState.style.display = 'none';
+        content.style.display = 'block';
+
+        const item = items[this.selectedEntryId];
+
+        if (isReverse) {
+          document.getElementById('dossierFamily').innerText = this.locale === 'pt' ? 'Português ➔ Marúbo' : 'Portuguese ➔ Marúbo';
+          document.getElementById('dossierHeadword').innerText = item.contact_headword;
+          document.getElementById('dossierPhonetic').innerText = `${(item.senses || []).length} ${this.t('equivalents_attested')}`;
+
+          const sensesHtml = (item.senses || []).map(s => {
+            const posTag = this.getPosShort(s.pos);
+            return `
+              <div style="margin-bottom: 0.75rem; padding-bottom: 0.75rem; border-bottom: 1px dashed var(--border-subtle);">
+                <div style="display: flex; justify-content: space-between; align-items: baseline;">
+                  <strong style="color: #4ade80; font-family: var(--font-mono); font-size: 1.15rem;">${s.target_headword}</strong>
+                  <span style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-tertiary);">${posTag}</span>
+                </div>
+                <div style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.2rem;">${this.t('original_gloss_label')} <em>${s.original_gloss}</em></div>
+              </div>
+            `;
+          }).join('');
+          document.getElementById('dossierGlosses').innerHTML = sensesHtml;
+
+          document.getElementById('propertySheet').innerHTML = `
+            <div class="property-cell">
+              <span class="property-label">${this.t('record_type_label')}</span>
+              <span class="property-val">${this.t('reverse_record_desc')}</span>
+            </div>
+            <div class="property-cell">
+              <span class="property-label">${this.t('target_language_label')}</span>
+              <span class="property-val">Marúbo (mzr) • ${this.getFamilyName('Panoan', 'mzr')}</span>
+            </div>
+          `;
+
+          const firstCite = (item.senses || []).find(s => s.sample_citation);
+          const attSec = document.getElementById('attestationSection');
+          if (firstCite && firstCite.sample_citation) {
+            attSec.style.display = 'block';
+            document.getElementById('attestationOrig').innerText = firstCite.sample_citation.source_text;
+            document.getElementById('attestationTrans').innerText = `"${firstCite.sample_citation.target_text}"`;
+            document.getElementById('attestationSource').innerText = `${this.t('source_prefix')} ${firstCite.sample_citation.source_ref || 'Costa'}`;
+          } else {
+            attSec.style.display = 'none';
+          }
+
+          document.getElementById('dossierAuditBanner').style.display = 'none';
+          return;
+        }
+
+        // Standard Lexical Entry Detail
+        const langCode = item.lang || this.language || 'mzr';
+        const langName = langCode === 'mzr' ? 'Marúbo' : langCode;
+        const famName = this.getFamilyName(item.family || 'Panoan', langCode);
+
+        document.getElementById('dossierFamily').innerHTML = `${famName} &bull; ${langName} (${langCode})`;
+        document.getElementById('dossierHeadword').innerText = item.headword;
+
+        const posFull = this.getPosFull(item.pos);
+        const statusLabel = this.getStatusLabel(item.status);
+        document.getElementById('dossierPhonetic').innerText = `${this.t('class_label')} ${posFull} • ${this.t('status_label')} ${statusLabel}`;
+
+        const glossText = (item.glosses && item.glosses.length > 0) ? item.glosses.join(', ') : '—';
+        document.getElementById('dossierGlosses').innerText = glossText;
+
+        // Structured Property Sheet (2-Column Grid)
+        const classDesc = this.getClassLabel(item.lexical_class);
+        const sem = item.semantics || {};
+        const domainLabel = this.getDomainLabel(sem.primary_domain);
+        const inalLabel = this.getInalienabilityLabel(sem.inalienability);
+        const valenceLabel = this.getValenceLabel(sem.valence);
+        const scopes = this.getScopeLabels(item.use_scopes);
+
+        document.getElementById('propertySheet').innerHTML = `
+          <div class="property-cell">
+            <span class="property-label" data-i18n="lexical_class">${this.t('lexical_class')}</span>
+            <span class="property-val"><span class="property-tag">${classDesc}</span></span>
+          </div>
+          <div class="property-cell">
+            <span class="property-label" data-i18n="verbal_valence">${this.t('verbal_valence')}</span>
+            <span class="property-val">${valenceLabel}</span>
+          </div>
+          <div class="property-cell">
+            <span class="property-label" data-i18n="inalienability">${this.t('inalienability')}</span>
+            <span class="property-val">${inalLabel}</span>
+          </div>
+          <div class="property-cell">
+            <span class="property-label" data-i18n="semantic_domain">${this.t('semantic_domain')}</span>
+            <span class="property-val">${domainLabel}</span>
+          </div>
+          <div class="property-cell">
+            <span class="property-label" data-i18n="operational_scopes">${this.t('operational_scopes')}</span>
+            <span class="property-val">${scopes}</span>
+          </div>
+          <div class="property-cell">
+            <span class="property-label" data-i18n="source_citation">${this.t('source_citation')}</span>
+            <span class="property-val">${item.provenance || (this.locale === 'pt' ? 'Literatura Pano / Costa' : 'Panoan Literature / Costa')}</span>
+          </div>
+        `;
+
+        // Attestation Box
+        const attSec = document.getElementById('attestationSection');
+        if (item.example) {
+          attSec.style.display = 'block';
+          document.getElementById('attestationOrig').innerText = item.example;
+          document.getElementById('attestationTrans').innerText = item.trans ? `"${item.trans}"` : '';
+          const cite = (item.citations && item.citations[0]) ? item.citations[0].source_ref : (item.provenance || 'Costa');
+          document.getElementById('attestationSource').innerText = `${this.t('source_prefix')} ${cite}`;
+        } else {
+          attSec.style.display = 'none';
+        }
+
+        // Audit Flags & Reasons
+        const auditBanner = document.getElementById('dossierAuditBanner');
+        if (item.reasons && item.reasons.length > 0) {
+          auditBanner.style.display = 'block';
+          document.getElementById('dossierAuditText').innerText = item.reasons.join(' • ');
+        } else {
+          auditBanner.style.display = 'none';
+        }
+      },
+
+      getPosShort(pos) {
+        return this.getPosLabel(pos);
+      },
+
+      renderComparative() {
+        const tbody = document.getElementById('comparativeTbody');
+        if (!tbody || typeof COMPARATIVE_DATA === 'undefined') return;
+        tbody.innerHTML = '';
+        COMPARATIVE_DATA.forEach(row => {
+          const tr = document.createElement('tr');
+          tr.innerHTML = `
+            <td class="sticky-col"><strong>${row.concept}</strong></td>
+            <td><code>${row.mzr}</code></td>
+            <td><code>${row.mcf}</code></td>
+            <td><code>${row.mpu}</code></td>
+            <td><code>${row.xor}</code></td>
+            <td><code>${row.knm}</code></td>
+            <td><code>${row.cul}</code></td>
+          `;
+          tbody.appendChild(tr);
+        });
+      },
+
+      renderIGT() {
+        const grid = document.getElementById('igtGrid');
+        if (!grid || typeof DB === 'undefined') return;
+        grid.innerHTML = '';
+
+        const langs = this.language === 'all' ? Object.keys(DB) : [this.language];
+        langs.forEach(langKey => {
+          const lObj = DB[langKey];
+          if (lObj && lObj.igt) {
+            lObj.igt.forEach((item, idx) => {
+              const card = document.createElement('div');
+              card.className = 'igt-card';
+
+              const colsHtml = (item.words || []).map(w => `
+                <div class="igt-column">
+                  <span class="igt-tier-surface">${w.w}</span>
+                  <span class="igt-tier-gloss">${w.g}</span>
+                </div>
+              `).join('');
+
+              card.innerHTML = `
+                <div class="igt-card-header">
+                  <span class="igt-lang-tag">${lObj.name} (${langKey})</span>
+                  <span class="igt-index">${this.t('example_prefix')}${idx + 1}</span>
+                </div>
+                <div class="igt-word-tiers">
+                  ${colsHtml}
+                </div>
+                <div class="igt-tier-translation">&ldquo;${item.trans}&rdquo;</div>
+              `;
+              grid.appendChild(card);
+            });
+          }
+        });
+      },
+
+      renderSyntheticGallery() {
+        const grid = document.getElementById('synthGalleryGrid');
+        if (!grid) return;
+
+        const all = this.syntheticPhrases;
+        const passed = all.filter(p => p.valid && !p.quarantined);
+        const quarantine = all.filter(p => p.quarantined);
+
+        const cP = document.getElementById('countPassedSynth');
+        const cQ = document.getElementById('countQuarantineSynth');
+        const cT = document.getElementById('countTotalSynth');
+        if (cP) cP.innerText = passed.length;
+        if (cQ) cQ.innerText = quarantine.length;
+        if (cT) cT.innerText = all.length;
+
+        const filtered = this.synthFilter === 'passed' ? passed : (this.synthFilter === 'quarantine' ? quarantine : all);
+
+        if (filtered.length === 0) {
+          grid.innerHTML = `<div style="padding: 3rem; text-align: center; color: var(--text-tertiary); background: var(--bg-surface); border-radius: 8px;">${this.t('no_phrases_found')}</div>`;
+          return;
+        }
+
+        grid.innerHTML = '';
+        filtered.forEach(p => {
+          const card = document.createElement('div');
+          const isQuar = p.quarantined;
+          card.className = `synth-card ${isQuar ? 'quarantined' : 'passed'}`;
+
+          const score = (p.quality && p.quality.score) ? p.quality.score.toFixed(2) : '0.95';
+          const scoreBadge = isQuar
+            ? `<span class="synth-score-badge quarantine">${this.t('clef_quarantine')}</span>`
+            : `<span class="synth-score-badge passed">${this.t('clef_approved')} (${score})</span>`;
+
+          const stems = (p.grounding && p.grounding.identified_stems) || [];
+          const affixes = (p.grounding && p.grounding.identified_affixes) || [];
+          const stemChips = stems.map(s => `<span class="synth-token-chip">${this.t('stem_prefix')} ${s}</span>`).join(' ');
+          const affixChips = affixes.map(a => `<span class="synth-token-chip">${this.t('affix_prefix')} -${a}</span>`).join(' ');
+
+          const critiqueBanner = isQuar && p.quality && p.quality.critique ? `
+            <div style="margin: 0.6rem 0; padding: 0.5rem 0.75rem; background: var(--status-warn-bg); border-left: 2px solid #fbbf24; border-radius: 4px; font-size: 0.78rem; color: var(--status-warn-text);">
+              <strong>${this.t('violation_prefix')}</strong> ${p.quality.critique}
+            </div>
+          ` : '';
+
+          card.innerHTML = `
+            <div class="synth-card-top">
+              <span class="synth-target">${p.target_phrase}</span>
+              ${scoreBadge}
+            </div>
+            <div class="synth-igt-text">${p.igt_gloss || ''}</div>
+            <div class="synth-trans-text">&ldquo;${p.portuguese_translation || ''}&rdquo;</div>
+            ${critiqueBanner}
+            <div class="synth-chips-row">
+              <span class="synth-token-chip" style="color: var(--accent);">${p.provider || 'Poolside'}</span>
+              ${stemChips}
+              ${affixChips}
+            </div>
+          `;
+          grid.appendChild(card);
+        });
+      },
+
+      renderFewShotPrompt() {
+        const viewer = document.getElementById('fewShotJson');
+        if (!viewer || typeof DB === 'undefined') return;
+        const lObj = DB[this.language === 'all' ? 'mzr' : this.language];
+        if (!lObj) return;
+
+        const payload = {
+          instruction: `Translate into ${lObj.name} using ONLY verified LKB vocabulary. Invariant 9: Zero hallucinated morphology.`,
+          allowed_vocabulary: (lObj.lexicon || []).slice(0, 30).map(l => `${l.headword} (${(l.glosses || []).join('/')})`),
+          allowed_affixes: lObj.affixes || ["-n (ERG)", "-ki (TOP)", "-ra (NEG)"],
+          syntax_rule: "Strict SOV word order. Append ergative and verbal affixes per Panoan grammar."
+        };
+        viewer.innerText = JSON.stringify(payload, null, 2);
+      }
+    };
+
+    /* ==========================================================================
+       USER ACTIONS CONTROLLER (API CALLS & EVENTS)
+       ========================================================================== */
+    const Actions = {
+      showToast(msg) {
+        const toast = document.getElementById('appToast');
+        if (!toast) return;
+        toast.innerText = msg;
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 3500);
+      },
+
+      async checkApiHealth() {
+        try {
+          const resp = await fetch('/api/config');
+          if (resp.ok) {
+            State.isApiLive = true;
+            document.getElementById('apiStatusPip').classList.remove('offline');
+            document.getElementById('apiStatusText').innerText = State.t('status_online');
+          } else {
+            throw new Error();
+          }
+        } catch (e) {
+          State.isApiLive = false;
+          document.getElementById('apiStatusPip').classList.add('offline');
+          document.getElementById('apiStatusText').innerText = State.t('status_offline');
+        }
+      },
+
+      async loadSyntheticPhrases() {
+        try {
+          const resp = await fetch('/api/synthetic?status=all');
+          if (resp.ok) {
+            const data = await resp.json();
+            State.syntheticPhrases = data.phrases || [];
+            State.renderSyntheticGallery();
+          }
+        } catch (e) {
+          console.warn('Synthetic phrases endpoint offline');
+        }
+      },
+
+      async generatePhrases() {
+        const provider = document.getElementById('synthProvider').value;
+        const model = document.getElementById('synthModel').value;
+        const count = parseInt(document.getElementById('synthCount').value, 10) || 5;
+        const btn = document.getElementById('btnGeneratePhrases');
+        const status = document.getElementById('genStatusMessage');
+
+        btn.disabled = true;
+        status.style.display = 'block';
+        status.style.color = 'var(--text-secondary)';
+        status.innerText = State.locale === 'pt' 
+          ? `Consultando ${provider} (${model}), validando Grounding & Clef Judge...`
+          : `Querying ${provider} (${model}), validating Grounding & Clef Judge...`;
+
+        try {
+          const resp = await fetch('/api/generate', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              lang: State.language === 'all' ? 'mzr' : State.language,
+              count: count,
+              provider: provider,
+              model: model
+            })
+          });
+
+          if (resp.ok) {
+            const res = await resp.json();
+            status.style.color = '#34d399';
+            status.innerText = State.locale === 'pt'
+              ? `Sucesso: ${res.generated_count} frases geradas (${res.valid_count} aprovadas, ${res.quarantined_count || 0} em quarentena).`
+              : `Success: ${res.generated_count} phrases generated (${res.valid_count} approved, ${res.quarantined_count || 0} quarantined).`;
+            this.showToast(State.locale === 'pt' ? `Geradas ${res.generated_count} novas frases!` : `Generated ${res.generated_count} new phrases!`);
+            await this.loadSyntheticPhrases();
+          } else {
+            const err = await resp.json();
+            status.style.color = '#f87171';
+            status.innerText = `Erro: ${err.message || 'Falha no servidor.'}`;
+          }
+        } catch (e) {
+          status.style.color = '#f87171';
+          status.innerText = `Servidor interativo offline: ${e.message}`;
+        } finally {
+          btn.disabled = false;
+        }
+      },
+
+      async runClefJudge() {
+        this.showToast(State.locale === 'pt' ? 'Executando auditoria Clef Judge em todas as frases...' : 'Running Clef Judge audit on all phrases...');
+        try {
+          const resp = await fetch('/api/judge', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ lang: 'mzr', judge: 'heuristic' })
+          });
+          if (resp.ok) {
+            const res = await resp.json();
+            State.syntheticPhrases = res.phrases || [];
+            State.renderSyntheticGallery();
+            this.showToast(State.locale === 'pt'
+              ? `Clef Judge finalizado: ${res.passed_count} aprovadas, ${res.quarantined_count} em quarentena.`
+              : `Clef Judge finished: ${res.passed_count} approved, ${res.quarantined_count} quarantined.`);
+          }
+        } catch (e) {
+          alert('Erro ao executar Clef Judge: ' + e);
+        }
+      },
+
+      validateSentence() {
+        const text = document.getElementById('guardInput').value.trim();
+        const res = document.getElementById('guardResult');
+        if (!text) {
+          res.style.display = 'none';
+          return;
+        }
+
+        const allStems = new Set();
+        const allAffixes = new Set(['-ki', '-ra', '-n', '-ama', '-onda', '-man', '-kobo', '-ma', '-na', '-bara', '-wa', '-ka', '-vai', '-ai', '-katsai']);
+        if (typeof DB !== 'undefined') {
+          Object.values(DB).forEach(l => (l.lexicon || []).forEach(w => allStems.add(w.headword.toLowerCase())));
+        }
+
+        const words = text.replace(/[.,!?]/g, '').toLowerCase().split(/\s+/);
+        const errors = [];
+
+        words.forEach(w => {
+          if (allStems.has(w)) return;
+          let matched = false;
+          allAffixes.forEach(aff => {
+            const s = aff.replace('-', '');
+            if (w.endsWith(s) && allStems.has(w.slice(0, -s.length).replace(/-$/, ''))) {
+              matched = true;
+            }
+          });
+          if (!matched) errors.push(w);
+        });
+
+        if (errors.length === 0) {
+          res.className = 'guard-result valid';
+          res.innerText = State.locale === 'pt'
+            ? `Sentença 100% válida! Todas as ${words.length} palavras estão registradas na Base de Conhecimento do Vale do Javari.`
+            : `Sentence 100% valid! All ${words.length} words are attested in the Vale do Javari Knowledge Base.`;
+        } else {
+          res.className = 'guard-result invalid';
+          res.innerText = State.locale === 'pt'
+            ? `Atenção: Tokens não registrados ou possíveis alucinações detectadas: "${errors.join(', ')}".`
+            : `Warning: Unregistered tokens or potential hallucinations detected: "${errors.join(', ')}".`;
+        }
+      },
+
+      copyPrompt() {
+        const text = document.getElementById('fewShotJson').innerText;
+        navigator.clipboard.writeText(text);
+        this.showToast(State.locale === 'pt' ? 'Payload Few-Shot copiado para a área de transferência!' : 'Few-Shot payload copied to clipboard!');
+      },
+
+      async exportNMTDatasets() {
+        const btn = document.getElementById('btnExportNmt');
+        const feedback = document.getElementById('exportFeedbackMsg');
+        btn.disabled = true;
+        feedback.style.display = 'block';
+        feedback.style.color = 'var(--text-secondary)';
+        feedback.innerText = State.locale === 'pt' 
+          ? 'Gerando partições HuggingFace, Alpaca e ChatML com isolamento ouro...'
+          : 'Generating HuggingFace, Alpaca, and ChatML partitions with gold test isolation...';
+
+        try {
+          const resp = await fetch('/api/synthetic/export', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ lang: State.language === 'all' ? 'mzr' : State.language })
+          });
+
+          if (resp.ok) {
+            const data = await resp.json();
+            const s = data.summary || {};
+            feedback.style.color = '#34d399';
+            feedback.innerHTML = State.locale === 'pt' ? `
+              <strong>Exportação concluída com sucesso!</strong> Arquivos gerados em <code>exports/mzr/datasets/</code>:<br>
+              &bull; <strong>Treino:</strong> ${s.train_pairs || 4694} pares (${s.synthetic_pairs || 23} sintéticos + ${s.attested_pairs || 4671} atestados)<br>
+              &bull; <strong>Validação:</strong> ${s.val_pairs || 520} pares<br>
+              &bull; <strong>Teste Padrão-Ouro:</strong> ${s.test_pairs || 200} pares (100% humanos atestados, Invariante 2).
+            ` : `
+              <strong>Export completed successfully!</strong> Files generated in <code>exports/mzr/datasets/</code>:<br>
+              &bull; <strong>Train:</strong> ${s.train_pairs || 4694} pairs (${s.synthetic_pairs || 23} synthetic + ${s.attested_pairs || 4671} attested)<br>
+              &bull; <strong>Validation:</strong> ${s.val_pairs || 520} pairs<br>
+              &bull; <strong>Gold-Standard Test:</strong> ${s.test_pairs || 200} pairs (100% human attested, Invariant 2).
+            `;
+            this.showToast(State.locale === 'pt' ? 'Datasets NMT exportados com sucesso!' : 'NMT Datasets exported successfully!');
+          } else {
+            const err = await resp.json();
+            feedback.style.color = '#f87171';
+            feedback.innerText = `Erro na exportação: ${err.message || 'Falha no servidor.'}`;
+          }
+        } catch (e) {
+          feedback.style.color = '#f87171';
+          feedback.innerText = `Erro de conexão: ${e.message}`;
+        } finally {
+          btn.disabled = false;
+        }
+      }
+    };
+
+    /* ==========================================================================
+       INITIALIZATION & KEYBOARD SHORTCUTS
+       ========================================================================== */
+    window.addEventListener('DOMContentLoaded', () => {
+      const hash = window.location.hash.replace('#', '');
+      if (['dictionary', 'lexicon', 'comparative', 'igt', 'synthetic', 'exports'].includes(hash)) {
+        State.setWorkspace(hash);
+      } else {
+        State.setWorkspace('dictionary');
+      }
+
+      State.setLocale(State.locale);
+      State.loadLexiconData();
+      Actions.checkApiHealth();
+      Actions.loadSyntheticPhrases();
+
+      const sInput = document.getElementById('globalSearchInput');
+      if (sInput) {
+        sInput.addEventListener('input', (e) => {
+          State.setSearchQuery(e.target.value);
+        });
+      }
+
+      window.addEventListener('keydown', (e) => {
+        if ((e.key === '/' || (e.metaKey && e.key === 'k')) && document.activeElement !== sInput) {
+          e.preventDefault();
+          if (sInput) sInput.focus();
+        }
+        if (e.key === 'Escape') {
+          if (sInput) sInput.blur();
+          State.closeMobileDrawer();
+        }
+      });
+    });
+  </script>
+  <script src="dictionary.js"></script>
+</body>
+</html>

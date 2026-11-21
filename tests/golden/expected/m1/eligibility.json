@@ -1,0 +1,32 @@
+{
+  "src:01-parallel-distill": {
+    "direct_training": "allow",
+    "synthetic_generation_support": "allow",
+    "third_party_api": "deny"
+  },
+  "src:02-educational-direct": {
+    "direct_training": "allow",
+    "synthetic_generation_support": "allow",
+    "third_party_api": "deny"
+  },
+  "src:03-wordlist": {
+    "direct_training": "allow",
+    "synthetic_generation_support": "allow",
+    "third_party_api": "deny"
+  },
+  "src:04-igt": {
+    "direct_training": "review_required",
+    "synthetic_generation_support": "review_required",
+    "third_party_api": "deny"
+  },
+  "src:05-monolingual": {
+    "direct_training": "allow",
+    "synthetic_generation_support": "allow",
+    "third_party_api": "deny"
+  },
+  "src:06-excluded": {
+    "direct_training": "deny",
+    "synthetic_generation_support": "deny",
+    "third_party_api": "deny"
+  }
+}

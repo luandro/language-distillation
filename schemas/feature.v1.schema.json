@@ -1,0 +1,54 @@
+{
+  "$id": "urn:langpipe:schema:feature:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "One gloss label in the append-only feature vocabulary, keyed `(namespace, label)`.\n\nFeatures carry no source lineage: a gloss label is not source content, so\nrevocation never removes vocabulary (ADR-0017 §6) — the `MorphSegmentFeature`\nassignment rows carry the governed link.",
+  "properties": {
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "defined_by": {
+      "title": "Defined By",
+      "type": "string"
+    },
+    "definition": {
+      "minLength": 1,
+      "title": "Definition",
+      "type": "string"
+    },
+    "id": {
+      "pattern": "^feat_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "label": {
+      "minLength": 1,
+      "title": "Label",
+      "type": "string"
+    },
+    "namespace": {
+      "title": "Namespace",
+      "type": "string"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    }
+  },
+  "required": [
+    "id",
+    "namespace",
+    "label",
+    "definition",
+    "defined_by",
+    "run_id",
+    "created_at"
+  ],
+  "title": "Feature",
+  "type": "object",
+  "x-schema-name": "feature",
+  "x-schema-version": 1
+}

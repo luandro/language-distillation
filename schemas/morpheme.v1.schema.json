@@ -1,0 +1,174 @@
+{
+  "$defs": {
+    "FormBasis": {
+      "enum": [
+        "surface",
+        "underlying"
+      ],
+      "title": "FormBasis",
+      "type": "string"
+    },
+    "LexicalScoreBreakdown": {
+      "additionalProperties": false,
+      "description": "Versioned raw scoring record for a lexical hypothesis. Never creates validation.",
+      "properties": {
+        "components": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Components",
+          "type": "object"
+        },
+        "independence_groups": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Independence Groups",
+          "type": "array"
+        },
+        "overall": {
+          "title": "Overall",
+          "type": "number"
+        },
+        "penalties": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Penalties",
+          "type": "object"
+        },
+        "policy_version": {
+          "minLength": 1,
+          "title": "Policy Version",
+          "type": "string"
+        }
+      },
+      "required": [
+        "policy_version",
+        "overall"
+      ],
+      "title": "LexicalScoreBreakdown",
+      "type": "object"
+    },
+    "LifecycleStatus": {
+      "enum": [
+        "candidate",
+        "supported",
+        "validated",
+        "rejected",
+        "deprecated"
+      ],
+      "title": "LifecycleStatus",
+      "type": "string"
+    },
+    "MorphRole": {
+      "enum": [
+        "root",
+        "lexical_stem",
+        "derivational_affix",
+        "inflectional_affix",
+        "clitic",
+        "reduplicant",
+        "bound_lexical",
+        "unknown_bound",
+        "unknown"
+      ],
+      "title": "MorphRole",
+      "type": "string"
+    }
+  },
+  "$id": "urn:langpipe:schema:morpheme:1",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "description": "A hypothesized morpheme. Identity is per producing run (ADR-0017 §8).",
+  "properties": {
+    "canonical_form": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Canonical Form"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "form_basis": {
+      "$ref": "#/$defs/FormBasis"
+    },
+    "gloss_labels": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Gloss Labels",
+      "type": "array"
+    },
+    "glosses": {
+      "additionalProperties": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "title": "Glosses",
+      "type": "object"
+    },
+    "id": {
+      "pattern": "^morph_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Id",
+      "type": "string"
+    },
+    "identity_key": {
+      "pattern": "^[0-9a-f]{64}$",
+      "title": "Identity Key",
+      "type": "string"
+    },
+    "language": {
+      "pattern": "^[a-z]{3}$",
+      "title": "Language",
+      "type": "string"
+    },
+    "role": {
+      "$ref": "#/$defs/MorphRole"
+    },
+    "run_id": {
+      "pattern": "^run_[0-9A-HJKMNP-TV-Z]{26}$",
+      "title": "Run Id",
+      "type": "string"
+    },
+    "score_breakdown": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/LexicalScoreBreakdown"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "status": {
+      "$ref": "#/$defs/LifecycleStatus",
+      "default": "candidate"
+    }
+  },
+  "required": [
+    "id",
+    "language",
+    "role",
+    "form_basis",
+    "identity_key",
+    "run_id",
+    "created_at"
+  ],
+  "title": "Morpheme",
+  "type": "object",
+  "x-schema-name": "morpheme",
+  "x-schema-version": 1
+}
